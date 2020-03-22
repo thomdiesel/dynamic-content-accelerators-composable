@@ -1,46 +1,23 @@
 {
-  "$schema": "http://bigcontent.io/cms/schema/v1/schema#",
-  "allOf": [
+    "contentTypeUri": "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/ultapoc/contentSchemas/slot.json",
+    "settings":
     {
-      "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
-    }
-  ],
-  "id": "https://unpkg.com/@amplience/dynamic-content-accelerators/dist/contentTypes/slot.json",
-  "title": "Slot",
-  "description": "Slot accelerator",
-  "type": "object",
-  "properties": {
-    "content": {
-      "type": "array",
-      "items": {
-        "allOf": [
-          {
-            "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
-          },
-          {
-            "properties": {
-              "contentType": {
-                "enum": [
-                  "https://unpkg.com/@amplience/dynamic-content-accelerators/dist/contentTypes/banner.json",
-                  "https://unpkg.com/@amplience/dynamic-content-accelerators/dist/contentTypes/blogpost.json",
-                  "https://unpkg.com/@amplience/dynamic-content-accelerators/dist/contentTypes/card.json",
-                  "https://unpkg.com/@amplience/dynamic-content-accelerators/dist/contentTypes/cardlist.json",
-                  "https://unpkg.com/@amplience/dynamic-content-accelerators/dist/contentTypes/externalblock.json",
-                  "https://unpkg.com/@amplience/dynamic-content-accelerators/dist/contentTypes/image.json",
-                  "https://unpkg.com/@amplience/dynamic-content-accelerators/dist/contentTypes/page.json",
-                  "https://unpkg.com/@amplience/dynamic-content-accelerators/dist/contentTypes/promo.json",
-                  "https://unpkg.com/@amplience/dynamic-content-accelerators/dist/contentTypes/promolist.json",
-                  "https://unpkg.com/@amplience/dynamic-content-accelerators/dist/contentTypes/slider.json",
-                  "https://unpkg.com/@amplience/dynamic-content-accelerators/dist/contentTypes/splitblock.json",
-                  "https://unpkg.com/@amplience/dynamic-content-accelerators/dist/contentTypes/text.json",
-                  "https://unpkg.com/@amplience/dynamic-content-accelerators/dist/contentTypes/video.json"
-                ]
-              }
-            }
-          }
-        ]
-      },
-      "title": "Page content"
-    }
-  }
+        "label": "Slot",
+        "visualizations": [
+        {
+            "label": "Amplience CRS",
+            "templatedUri":"https://{{vse.domain}}/v1/content/store/content-item/{{content.sys.id}}?template=acc-template-visualization&timestamp={{context.timestamp}}&locale={{locales}},en-US,*",
+            "default": true
+        }],
+        "icons": [
+        {
+            "size": 256,
+            "url": "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/ultapoc/icons/slider.icon.png"
+        }],
+        "cards": [
+        {
+            "templatedUri":"https://{{vse.domain}}/v1/content/store/content-item/{{content.sys.id}}?template=acc-template-cardsPreview&timestamp={{context.timestamp}}&locale={{locales}},en-US,*"
+        }]
+    },
+    "repositories": ["Slots"]
 }

@@ -1,26 +1,23 @@
 {
-  "$schema": "http://bigcontent.io/cms/schema/v1/schema#",
-  "id": "https://unpkg.com/@amplience/dynamic-content-accelerators/dist/contentTypes/video.json",
-  "title": "Video",
-  "description": "Video accelerator",
-  "allOf": [
+    "contentTypeUri": "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/ultapoc/contentSchemas/video.json",
+    "settings":
     {
-      "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
-    }
-  ],
-  "type": "object",
-  "properties": {
-    "video": {
-      "title": "Video",
-      "type": "object",
-      "anyOf": [
+        "label": "Video",
+        "visualizations": [
         {
-          "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/video-link"
-        }
-      ]
-    }
-  },
-  "propertyOrder": [
-    "video"
-  ]
+            "label": "Amplience CRS",
+            "templatedUri":"https://{{vse.domain}}/v1/content/store/content-item/{{content.sys.id}}?template=acc-template-visualization&timestamp={{context.timestamp}}&locale={{locales}},en-US,*",
+            "default": true
+        }],
+        "icons": [
+        {
+            "size": 256,
+            "url": "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/ultapoc/icons/video.icon.png"
+        }],
+        "cards": [
+        {
+            "templatedUri":"https://{{vse.domain}}/v1/content/store/content-item/{{content.sys.id}}?template=acc-template-cardsPreview&timestamp={{context.timestamp}}&locale={{locales}},en-US,*"
+        }]
+    },
+    "repositories": ["Content"]
 }

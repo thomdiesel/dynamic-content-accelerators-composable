@@ -1,0 +1,50 @@
+{
+  "$schema": "http://bigcontent.io/cms/schema/v1/schema#",
+  "id": "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/ultapoc/contentSchemas/card.json",
+  "title": "Card",
+  "description": "Card accelerator",
+  "allOf": [
+    {
+      "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+    }
+  ],
+  "type": "object",
+  "properties": {
+    "cardImage": {
+      "description": "",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/ultapoc/contentSchemas/image.json"
+        }
+      ],
+      "title": "Card image"
+    },
+    "cardName": {
+      "type": "string",
+      "minLength": 0,
+      "maxLength": 150,
+      "title": "Card name"
+    },
+    "description": {
+      "type": "string",
+      "minLength": 0,
+      "maxLength": 200,
+      "title": "Description"
+    },
+    "link": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/ultapoc/contentSchemas/accelerator-partials.json#/definitions/link"
+        }
+      ]
+    }
+  },
+  "propertyOrder": [
+    "cardImage",
+    "cardName",
+    "description",
+    "link"
+  ]
+}

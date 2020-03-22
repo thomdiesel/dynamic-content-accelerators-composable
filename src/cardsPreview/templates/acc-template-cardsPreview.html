@@ -19,10 +19,14 @@
             Updating these references to your own version will allow you to make style and code changes and observe them in the visualization.
             Further guidance can be found on the github project: https://github.com/amplience/dynamic-content-accelerators
     -->
-    <link rel="stylesheet" href="https://unpkg.com/@amplience/dynamic-content-accelerators@v5/dist/styles.min.css"/>
-    <link rel="stylesheet" href="https://unpkg.com/@amplience/dynamic-content-accelerators@v5/dist/cardsStyles.min.css"/>
-    <script src="https://unpkg.com/@amplience/dynamic-content-accelerators@v5/dist/utils.min.js"></script>
-    <script src="https://unpkg.com/@amplience/dynamic-content-accelerators@v5/dist/lory.min.js"></script>
+    <link rel="stylesheet" href="{DEPLOY_BASEPATH}styles.min.css"/>
+    <link rel="stylesheet" href="{DEPLOY_BASEPATH}cardsStyles.min.css"/>
+    <script src="{DEPLOY_BASEPATH}utils.min.js"></script>
+    <script src="{DEPLOY_BASEPATH}lory.min.js"></script>
+    <!-- jQuery for easy data loading -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <!-- Amplience Delivery SDK for data loading -->
+        <script src="https://unpkg.com/dc-delivery-sdk-js/dist/dynamicContent.browser.umd.min.js"></script>
 
 </head>
 <body>

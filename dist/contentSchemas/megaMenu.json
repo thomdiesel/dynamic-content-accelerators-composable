@@ -1,0 +1,186 @@
+{
+    "$schema": "http://bigcontent.io/cms/schema/v1/schema#",
+    "id": "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/ultapoc/contentSchemas/megaMenu.json",
+    "title": "Mega Menu",
+    "description": "An Example Mega Menu",
+    "allOf": [
+    {
+        "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+    }],
+    "type": "object",
+    "properties":
+    {
+        "menu":
+        {
+            "type": "array",
+            "title": "Mega Menu",
+            "ui:extension":
+            {
+                "url": "https://qa-patrick.s3-eu-west-1.amazonaws.com/dc-extension-tree/index.html?",
+                "params":
+                {
+                    "contentTypes":
+                    {
+                        "cards":
+                        {
+                            "*": "https://{{vse.domain}}/v1/content/store/content-item/{{content.sys.id}}?template=acc-template-cardsPreview&timestamp={{context.timestamp}}&locale={{locales}},en-US,*"
+                        },
+                        "icons":
+                        {
+                            "*": "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/ultapoc/icons/banner.icon.png"
+                        }
+                    }
+                }
+            },
+            "items":
+            {
+                "oneOf": [
+                {
+                    "$ref": "#/definitions/rootMenu"
+                }]
+            }
+        }
+    },
+    "propertyOrder": [],
+    "definitions":
+    {
+        "rootMenu":
+        {
+            "type": "object",
+            "title": "Menu",
+            "labelField": "label",
+            "properties":
+            {
+                "type":
+                {
+                    "const": "root-menu"
+                },
+                "data":
+                {
+                    "type": "object",
+                    "properties":
+                    {
+                        "label":
+                        {
+                            "type": "string",
+                            "title": "Label",
+                            "description": "Menu label"
+                        },
+                        "link":
+                        {
+                            "type": "string",
+                            "title": "Link / Delivery Key",
+                            "description": "Link or delivery key to navigate to when clicked"
+                        },
+                        "slot":
+                        {
+                            "title": "Content Slot",
+                            "description": "Content to display inside expanded mega menu",
+                            "allOf": [
+                            {
+                                "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+                            },
+                            {
+                                "properties":
+                                {
+                                    "contentType":
+                                    {
+                                        "enum": [
+                                            "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/ultapoc/contentSchemas/image.json"
+                                        ]
+                                    }
+                                }
+                            }]
+                        }
+                    }
+                },
+                "children":
+                {
+                    "type": "array",
+                    "items":
+                    {
+                        "oneOf": [
+                        {
+                            "$ref": "#/definitions/menuGroup"
+                        }]
+                    }
+                }
+            }
+        },
+        "menuGroup":
+        {
+            "type": "object",
+            "title": "Menu Group",
+            "labelField": "label",
+            "properties":
+            {
+                "type":
+                {
+                    "const": "menu-group"
+                },
+                "data":
+                {
+                    "type": "object",
+                    "properties":
+                    {
+                        "label":
+                        {
+                            "type": "string",
+                            "title": "Label",
+                            "description": "Menu label"
+                        }
+                    }
+                },
+                "children":
+                {
+                    "type": "array",
+                    "items":
+                    {
+                        "oneOf": [
+                        {
+                            "$ref": "#/definitions/menuItem"
+                        }]
+                    }
+                }
+            }
+        },
+        "menuItem":
+        {
+            "type": "object",
+            "title": "Menu Item",
+            "labelField": "label",
+            "properties":
+            {
+                "type":
+                {
+                    "const": "menu-item"
+                },
+                "data":
+                {
+                    "type": "object",
+                    "properties":
+                    {
+                        "label":
+                        {
+                            "type": "string",
+                            "title": "Label",
+                            "description": "Menu label"
+                        },
+                        "link":
+                        {
+                            "type": "string",
+                            "title": "Link / Delivery Key",
+                            "description": "Link or delivery key to navigate to when clicked"
+                        }
+                    }
+                },
+                "children":
+                {
+                    "type": "array",
+                    "items":
+                    {}
+                }
+            }
+        }
+    }
+}

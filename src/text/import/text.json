@@ -1,0 +1,5 @@
+{
+  "body": "{CONTENT_TYPE_BASEPATH}/text.json",
+  "schemaId": "{CONTENT_TYPE_BASEPATH}/text.json",
+  "validationLevel": "CONTENT_TYPE"
+}

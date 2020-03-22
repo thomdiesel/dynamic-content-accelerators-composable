@@ -1,63 +1,23 @@
 {
-  "$schema": "http://bigcontent.io/cms/schema/v1/schema#",
-  "id": "{CONTENT_TYPE_BASEPATH}/blogpost.json",
-  "title": "Blog post",
-  "description": "Blog post accelerator",
-  "allOf": [
+    "contentTypeUri": "{CONTENT_TYPE_BASEPATH}/blogpost.json",
+    "settings":
     {
-      "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
-    }
-  ],
-  "type": "object",
-  "properties": {
-    "snippet": {
-      "type": "object",
-      "title": "Snippet",
-      "description": "",
-      "allOf": [
+        "label": "Blog Post",
+        "visualizations": [
         {
-          "$ref": "{CONTENT_TYPE_BASEPATH}/accelerator-partials.json#/definitions/snippet"
-        }
-      ]
+            "label": "Amplience CRS",
+            "templatedUri":"https://{{vse.domain}}/v1/content/store/content-item/{{content.sys.id}}?template=acc-template-visualization&timestamp={{context.timestamp}}&locale={{locales}},en-US,*",
+            "default": true
+        }],
+        "icons": [
+        {
+            "size": 256,
+            "url": "{ICON_BASEPATH}/blogPost.icon.png"
+        }],
+        "cards": [
+        {
+            "templatedUri":"https://{{vse.domain}}/v1/content/store/content-item/{{content.sys.id}}?template=acc-template-cardsPreview&timestamp={{context.timestamp}}&locale={{locales}},en-US,*"
+        }]
     },
-    "title": {
-      "type": "string",
-      "minLength": 0,
-      "maxLength": 255,
-      "title": "Title"
-    },
-    "content": {
-      "type": "array",
-      "items": {
-        "allOf": [
-          {
-            "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
-          },
-          {
-            "properties": {
-              "contentType": {
-                "title": "Content",
-                "enum": [
-                  "{CONTENT_TYPE_BASEPATH}/banner.json",
-                  "{CONTENT_TYPE_BASEPATH}/image.json",
-                  "{CONTENT_TYPE_BASEPATH}/video.json",
-                  "{CONTENT_TYPE_BASEPATH}/text.json",
-                  "{CONTENT_TYPE_BASEPATH}/cardlist.json",
-                  "{CONTENT_TYPE_BASEPATH}/blogpost.json"
-                ]
-              }
-            }
-          }
-        ]
-      },
-      "minItems": 0,
-      "maxItems": 20,
-      "title": "Content"
-    }
-  },
-  "propertyOrder": [
-    "snippet",
-    "title",
-    "content"
-  ]
+    "repositories": {REPOSITORIES}
 }

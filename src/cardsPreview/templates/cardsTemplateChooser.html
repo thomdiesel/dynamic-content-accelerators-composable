@@ -53,3 +53,17 @@
 {{#if (test this.[@type] (toRegex ".*/page")) ~}}
 {{> acc-card-template-page }}
 {{~/if}}
+
+{{#if (test this.[@type] (toRegex ".*/megaMenu")) ~}}
+{{> acc-template-megaMenu }}
+{{~/if}}
+
+{{#if (test this.[@type] (toRegex ".*/customRichText")) ~}}
+{{> acc-template-customRichText }}
+{{~/if}}
+
+{{#if (test this.[@type] (toRegex ".*/slot.json")) ~}}
+    {{#each this.content}}
+        {{> templateChooser this }}
+    {{/each}}
+{{~/if}}

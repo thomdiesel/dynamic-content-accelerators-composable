@@ -1,39 +1,23 @@
 {
-  "$schema": "http://bigcontent.io/cms/schema/v1/schema#",
-  "id": "{CONTENT_TYPE_BASEPATH}/promolist.json",
-  "title": "Promo list",
-  "description": "Promo list accelerator",
-  "allOf": [
+    "contentTypeUri": "{CONTENT_TYPE_BASEPATH}/promolist.json",
+    "settings":
     {
-      "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
-    }
-  ],
-  "type": "object",
-  "properties": {
-    "promoItems": {
-      "type": "array",
-      "title": "Promo list items",
-      "items": {
-        "allOf": [
-          {
-            "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
-          },
-          {
-            "properties": {
-              "contentType": {
-                "enum": [
-                  "{CONTENT_TYPE_BASEPATH}/promo.json"
-                ]
-              }
-            }
-          }
-        ]
-      },
-      "minItems": 1,
-      "maxItems": 3
-    }
-  },
-  "propertyOrder": [
-    "promoItems"
-  ]
+        "label": "Promo List",
+        "visualizations": [
+        {
+            "label": "Amplience CRS",
+            "templatedUri":"https://{{vse.domain}}/v1/content/store/content-item/{{content.sys.id}}?template=acc-template-visualization&timestamp={{context.timestamp}}&locale={{locales}},en-US,*",
+            "default": true
+        }],
+        "icons": [
+        {
+            "size": 256,
+            "url": "{ICON_BASEPATH}/promoList.icon.png"
+        }],
+        "cards": [
+        {
+            "templatedUri":"https://{{vse.domain}}/v1/content/store/content-item/{{content.sys.id}}?template=acc-template-cardsPreview&timestamp={{context.timestamp}}&locale={{locales}},en-US,*"
+        }]
+    },
+    "repositories": {REPOSITORIES}
 }

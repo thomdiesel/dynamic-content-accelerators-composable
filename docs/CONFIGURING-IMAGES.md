@@ -37,7 +37,7 @@ Here we are passing an array of queries to our image generator partial. The last
 
 Using these additional properties for the `mediaQueries` we are adding properties to support responsive images: we are adding rendering options that will be dependent on "Device pixel ratio" (DPR) - `x1` supports standard image resolutions and `x2` supports Hi-res DPR. (`x1` and `x2` will be converted to `1x` and `2x` by the image generator). We have not added other higher resolution (`3x`, `4x` etc.) for the sake of simplicity and readability. Anyone using the accelerators can modify the code to support other DPR.
 
-The advanced parameters are also used for `banner-poi` [Transformation Templates (TT)](https://docs.amplience.net/contenthub/tools.html#templates) - passing the `x1` and/or `x2` parameters will add `$banner-poi$` to image request URL.
+The advanced parameters are also used for `banner-poi` [Transformation Templates (TT)](https://docs.amplience.net/contenthub/tools.html#templates) - passing the `x1` and/or `x2` parameters will add `$acc-banner-poi$` to image request URL.
 
 In the above example, we are also passing in a class via the `className` property - useful if you need to add a specific class for this template type.
 

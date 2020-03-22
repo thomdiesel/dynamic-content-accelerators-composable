@@ -1,56 +1,23 @@
 {
-  "$schema": "http://bigcontent.io/cms/schema/v1/schema#",
-  "id": "https://unpkg.com/@amplience/dynamic-content-accelerators/dist/contentTypes/image.json",
-  "title": "Image",
-  "description": "Image accelerator",
-  "allOf": [
+    "contentTypeUri": "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/ultapoc/contentSchemas/image.json",
+    "settings":
     {
-      "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
-    }
-  ],
-  "propertyOrder": [
-    "image",
-    "imageAltText",
-    "seoText",
-    "roundel"
-  ],
-  "type": "object",
-  "properties": {
-    "image": {
-      "title": "Image",
-      "description": "",
-      "type": "object",
-      "anyOf": [
+        "label": "Image",
+        "visualizations": [
         {
-          "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
-        }
-      ]
+            "label": "Amplience CRS",
+            "templatedUri":"https://{{vse.domain}}/v1/content/store/content-item/{{content.sys.id}}?template=acc-template-visualization&timestamp={{context.timestamp}}&locale={{locales}},en-US,*",
+            "default": true
+        }],
+        "icons": [
+        {
+            "size": 256,
+            "url": "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/ultapoc/icons/image.icon.png"
+        }],
+        "cards": [
+        {
+            "templatedUri":"https://{{vse.domain}}/v1/content/store/content-item/{{content.sys.id}}?template=acc-template-cardsPreview&timestamp={{context.timestamp}}&locale={{locales}},en-US,*"
+        }]
     },
-    "imageAltText": {
-      "type": "string",
-      "minLength": 0,
-      "maxLength": 150,
-      "title": "Image alt text"
-    },
-    "seoText": {
-      "type": "string",
-      "minLength": 0,
-      "maxLength": 100,
-      "title": "SEO text",
-      "pattern": "^[\/A-Za-z0-9+_-]+$",
-      "description": "Enter only alphanumeric, _, -, +, / characters"
-    },
-    "roundel": {
-      "title": "Roundels",
-      "type": "array",
-      "maxItems": 5,
-      "items": {
-        "allOf": [
-          {
-            "$ref": "https://unpkg.com/@amplience/dynamic-content-accelerators/dist/contentTypes/accelerator-partials.json#/definitions/roundel"
-          }
-        ]
-      }
-    }
-  }
+    "repositories": ["Content"]
 }

@@ -1,26 +1,23 @@
 {
-  "$schema": "http://bigcontent.io/cms/schema/v1/schema#",
-  "id": "{CONTENT_TYPE_BASEPATH}/video.json",
-  "title": "Video",
-  "description": "Video accelerator",
-  "allOf": [
+    "contentTypeUri": "{CONTENT_TYPE_BASEPATH}/video.json",
+    "settings":
     {
-      "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
-    }
-  ],
-  "type": "object",
-  "properties": {
-    "video": {
-      "title": "Video",
-      "type": "object",
-      "anyOf": [
+        "label": "Video",
+        "visualizations": [
         {
-          "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/video-link"
-        }
-      ]
-    }
-  },
-  "propertyOrder": [
-    "video"
-  ]
+            "label": "Amplience CRS",
+            "templatedUri":"https://{{vse.domain}}/v1/content/store/content-item/{{content.sys.id}}?template=acc-template-visualization&timestamp={{context.timestamp}}&locale={{locales}},en-US,*",
+            "default": true
+        }],
+        "icons": [
+        {
+            "size": 256,
+            "url": "{ICON_BASEPATH}/video.icon.png"
+        }],
+        "cards": [
+        {
+            "templatedUri":"https://{{vse.domain}}/v1/content/store/content-item/{{content.sys.id}}?template=acc-template-cardsPreview&timestamp={{context.timestamp}}&locale={{locales}},en-US,*"
+        }]
+    },
+    "repositories": {REPOSITORIES}
 }

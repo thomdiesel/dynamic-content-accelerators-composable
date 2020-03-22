@@ -1,51 +1,23 @@
 {
-  "$schema": "http://bigcontent.io/cms/schema/v1/schema#",
-  "id": "{CONTENT_TYPE_BASEPATH}/slider.json",
-  "title": "Slider",
-  "description": "Slider accelerator",
-  "allOf": [
+    "contentTypeUri": "{CONTENT_TYPE_BASEPATH}/slider.json",
+    "settings":
     {
-      "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
-    }
-  ],
-  "type": "object",
-  "properties": {
-    "slides": {
-      "type": "array",
-      "items": {
-        "allOf": [
-          {
-            "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
-          },
-          {
-            "properties": {
-              "contentType": {
-                "enum": [
-                  "{CONTENT_TYPE_BASEPATH}/banner.json",
-                  "{CONTENT_TYPE_BASEPATH}/image.json",
-                  "{CONTENT_TYPE_BASEPATH}/video.json"
-                ]
-              }
-            }
-          }
-        ]
-      },
-      "title": "Slides",
-      "minItems": 1,
-      "maxItems": 8
+        "label": "Slider",
+        "visualizations": [
+        {
+            "label": "Amplience CRS",
+            "templatedUri":"https://{{vse.domain}}/v1/content/store/content-item/{{content.sys.id}}?template=acc-template-visualization&timestamp={{context.timestamp}}&locale={{locales}},en-US,*",
+            "default": true
+        }],
+        "icons": [
+        {
+            "size": 256,
+            "url": "{ICON_BASEPATH}/slider.icon.png"
+        }],
+        "cards": [
+        {
+            "templatedUri":"https://{{vse.domain}}/v1/content/store/content-item/{{content.sys.id}}?template=acc-template-cardsPreview&timestamp={{context.timestamp}}&locale={{locales}},en-US,*"
+        }]
     },
-    "loop": {
-      "type": "boolean",
-      "title": "Loop slider"
-    },
-    "navigationDots": {
-      "type": "boolean",
-      "title": "Navigation dots"
-    }
-  },
-  "propertyOrder": [
-    "slides",
-    "loop",
-    "navigationDots"
-  ]
+    "repositories": {REPOSITORIES}
 }

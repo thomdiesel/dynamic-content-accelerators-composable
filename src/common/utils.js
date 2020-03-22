@@ -554,14 +554,20 @@
                         brand = masterVariant.attributes where name=webBrandName > value.en-CA
                         prodictId = https://www.ulta.com/silk-therapy-original?productId={{key}}xlsImpprod3530073
                     **/
-                    var brand = data.masterVariant.attributes.find(x => x.name === 'webBrandName').value["en-CA"];
-                    var image = data.masterVariant.attributes.find(x => x.name === 'largeImageUrl').value;
-                    var price = data.masterVariant.prices[0].value.centAmount;
-                    price /= 100;
-                    price = price.toLocaleString("en-US", {style:"currency", currency:"USD"});
+                    try{
+                        var brand = data.masterVariant.attributes.find(x => x.name === 'webBrandName').value["en-CA"];
+                        var image = data.masterVariant.attributes.find(x => x.name === 'largeImageUrl').value;
+                        var price = data.masterVariant.prices[0].value.centAmount;
+                        price /= 100;
+                        price = price.toLocaleString("en-US", {style:"currency", currency:"USD"});
 
-                    var html = '<a class="amp-dc-card-wrap" href=" https://www.ulta.com/amplience-link?productId=' + data.key + '"><div class="amp-dc-card-wrap"><div class="amp-dc-card-img-wrap"><picture class="amp-dc-image"><img src="' + image + '" class="amp-dc-image-pic"/></picture></div><div class="amp-dc-card-text-wrap"><div class="amp-dc-card-name">' + data.name["en-CA"] + '</div><p class="amp-dc-card-description">' + brand + '</p><div class="amp-dc-card-link">' + price + '</div></div></a></div>'
-                    $(item).html(html);
+                        var html = '<a class="amp-dc-card-wrap" href=" https://www.ulta.com/amplience-link?productId=' + data.key + '"><div class="amp-dc-card-wrap"><div class="amp-dc-card-img-wrap"><picture class="amp-dc-image"><img src="' + image + '" class="amp-dc-image-pic"/></picture></div><div class="amp-dc-card-text-wrap"><div class="amp-dc-card-name">' + data.name["en-CA"] + '</div><p class="amp-dc-card-description">' + brand + '</p><div class="amp-dc-card-link">' + price + '</div></div></a></div>'
+                        $(item).html(html);
+                    }catch(e){
+                        console.log("Error with CommerceTools Product:" + productCode);
+                        var html = '<a class="amp-dc-card-wrap" href=" https://www.ulta.com"><div class="amp-dc-card-wrap"><div class="amp-dc-card-img-wrap"><picture class="amp-dc-image"><img src=https://images.ulta.com/is/image/Ulta/no-image-found.jpg?$lg$" class="amp-dc-image-pic"/></picture></div><div class="amp-dc-card-text-wrap"><div class="amp-dc-card-name">Product: ' + productCode + ' not found</div><p class="amp-dc-card-description">Please select another</p><div class="amp-dc-card-link"></div></div></a></div>'
+                        $(item).html(html);
+                    }
 
                 },
                 error: function (jqXHR, textStatus, errorThrown) {

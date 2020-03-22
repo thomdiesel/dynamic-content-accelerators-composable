@@ -1,15 +1,15 @@
-<div class="amp-dc-card-list
+<div class="amp-dc-prod-card-list
 {{#compare cards.length '<' 6}}amp-dc-prod-{{cards.length}}-rows
-{{else}}amp-dc-prod-3-rows{{/compare}}">
+{{else}}amp-dc-prod-4-rows{{/compare}}">
 	{{#if header}}
-    <div class="amp-dc-card-title">
+    <div class="amp-dc-prod-card-title">
         {{ header }}
     </div>
     {{/if}}
 
-    <div class="amp-dc-card-list-wrap">
+    <div class="amp-dc-prod-card-list-wrap">
         {{#each products}}
-        	<div class="amp-dc-card" data-amp-product-code="{{this.id}}"></div>
+        	<div class="amp-dc-prod-card" data-amp-product-code="{{this.id}}"></div>
         {{/each}}
     </div>
 </div>

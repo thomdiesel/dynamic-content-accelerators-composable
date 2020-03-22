@@ -4,15 +4,6 @@
 
     var partialsToLoad = [
         "ultapoc-templateChooser",
-        "acc-card-template-banner",
-        "acc-card-template-blogPost",
-        "acc-card-template-card",
-        "acc-card-template-cardList",
-        "acc-card-template-image",
-        "acc-card-template-page",
-        "acc-card-template-slider",
-        "acc-card-template-splitBlock",
-        "acc-card-template-video",
         "acc-template-banner-poi",
         "acc-template-banner",
         "acc-template-blogPost",

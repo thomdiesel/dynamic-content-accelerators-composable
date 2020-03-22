@@ -1,0 +1,5 @@
+{
+  "body": "{CONTENT_TYPE_BASEPATH}/header-subheader.json",
+  "schemaId": "{CONTENT_TYPE_BASEPATH}/header-subheader.json",
+  "validationLevel": "CONTENT_TYPE"
+}

@@ -1,68 +1,68 @@
-{{#if (test this.[@type] (toRegex ".*/text")) ~}}
+{{#if (test this._meta.schema (toRegex ".*/text")) ~}}
 {{> acc-template-text }}
 {{~/if}}
 
-{{#if (test this.[@type] (toRegex ".*/video")) ~}}
+{{#if (test this._meta.schema (toRegex ".*/video")) ~}}
 {{> acc-template-video }}
 {{~/if}}
 
-{{#if (test this.[@type] (toRegex ".*/promolist")) ~}}
+{{#if (test this._meta.schema (toRegex ".*/promolist")) ~}}
 {{> acc-template-promoList }}
 {{~/if}}
 
-{{#if (test this.[@type] (toRegex ".*/promo.json")) ~}}
+{{#if (test this._meta.schema (toRegex ".*/promo.json")) ~}}
 {{> acc-template-promo }}
 {{~/if}}
 
-{{#if (test this.[@type] (toRegex ".*/splitblock")) ~}}
+{{#if (test this._meta.schema (toRegex ".*/splitblock")) ~}}
 {{> acc-template-splitBlock }}
 {{~/if}}
 
-{{#if (test this.[@type] (toRegex ".*/slider")) ~}}
+{{#if (test this._meta.schema (toRegex ".*/slider")) ~}}
 {{> acc-template-slider }}
 {{~/if}}
 
-{{#if (test this.[@type] (toRegex ".*/image")) ~}}
+{{#if (test this._meta.schema (toRegex ".*/image")) ~}}
 {{> acc-template-image this}}
 {{~/if}}
 
-{{#if (test this.[0].[@type] (toRegex ".*/image")) ~}}
+{{#if (test this.[0]._meta.schema (toRegex ".*/image")) ~}}
 {{> acc-template-image this.[0]}}
 {{~/if}}
 
-{{#if (test this.[@type] (toRegex ".*/externalblock")) ~}}
+{{#if (test this._meta.schema (toRegex ".*/externalblock")) ~}}
 {{> acc-template-externalBlock }}
 {{~/if}}
 
-{{#if (test this.[@type] (toRegex ".*/cardlist")) ~}}
+{{#if (test this._meta.schema (toRegex ".*/cardlist")) ~}}
 {{> acc-template-cardList }}
 {{~/if}}
 
-{{#if (test this.[@type] (toRegex ".*/card.json")) ~}}
+{{#if (test this._meta.schema (toRegex ".*/card.json")) ~}}
 {{> acc-template-card }}
 {{~/if}}
 
-{{#if (test this.[@type] (toRegex ".*/blogpost")) ~}}
+{{#if (test this._meta.schema (toRegex ".*/blogpost")) ~}}
 {{> acc-template-blogPost }}
 {{~/if}}
 
-{{#if (test this.[@type] (toRegex ".*/banner")) ~}}
+{{#if (test this._meta.schema (toRegex ".*/banner")) ~}}
 {{> acc-template-banner }}
 {{~/if}}
 
-{{#if (test this.[@type] (toRegex ".*/page")) ~}}
+{{#if (test this._meta.schema (toRegex ".*/page")) ~}}
 {{> acc-template-page }}
 {{~/if}}
 
-{{#if (test this.[@type] (toRegex ".*/megaMenu")) ~}}
+{{#if (test this._meta.schema (toRegex ".*/megaMenu")) ~}}
 {{> acc-template-megaMenu }}
 {{~/if}}
 
-{{#if (test this.[@type] (toRegex ".*/customRichText")) ~}}
+{{#if (test this._meta.schema (toRegex ".*/customRichText")) ~}}
 {{> acc-template-customRichText }}
 {{~/if}}
 
-{{#if (test this.[@type] (toRegex ".*/slot.json")) ~}}
+{{#if (test this._meta.schema (toRegex ".*/slot.json")) ~}}
     {{#each this.content}}
         {{> templateChooser this }}
     {{/each}}

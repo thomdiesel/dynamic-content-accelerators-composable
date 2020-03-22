@@ -1,0 +1,71 @@
+{{#if (test this._meta.schema (toRegex ".*/text")) ~}}
+{{> acc-template-text }}
+{{~/if}}
+
+{{#if (test this._meta.schema (toRegex ".*/video")) ~}}
+{{> acc-template-video }}
+{{~/if}}
+
+{{#if (test this._meta.schema (toRegex ".*/promolist")) ~}}
+{{> acc-template-promoList }}
+{{~/if}}
+
+{{#if (test this._meta.schema (toRegex ".*/promo.json")) ~}}
+{{> acc-template-promo }}
+{{~/if}}
+
+{{#if (test this._meta.schema (toRegex ".*/splitblock")) ~}}
+{{> acc-template-splitBlock }}
+{{~/if}}
+
+{{#if (test this._meta.schema (toRegex ".*/banner.json")) ~}}
+{{> ultapoc-template-advanced-banner }}
+{{~/if}}
+
+{{#if (test this._meta.schema (toRegex ".*/slider")) ~}}
+{{> acc-template-slider }}
+{{~/if}}
+
+{{#if (test this._meta.schema (toRegex ".*/image")) ~}}
+{{> acc-template-image this}}
+{{~/if}}
+
+{{#if (test this.[0]._meta.schema (toRegex ".*/image")) ~}}
+{{> acc-template-image this.[0]}}
+{{~/if}}
+
+{{#if (test this._meta.schema (toRegex ".*/header-subheader")) ~}}
+{{> ultapoc-template-header-subheader }}
+{{~/if}}
+
+{{#if (test this._meta.schema (toRegex ".*/product-list")) ~}}
+{{> ultapoc-template-product-list }}
+{{~/if}}
+
+{{#if (test this._meta.schema (toRegex ".*/simple-card.json")) ~}}
+{{> ultapoc-template-simple-card }}
+{{~/if}}
+ 
+{{#if (test this._meta.schema (toRegex ".*/product-card.json")) ~}}
+{{> ultapoc-template-product-card }} 
+{{~/if}}
+
+{{#if (test this._meta.schema (toRegex ".*/content-block")) ~}}
+{{> ultapoc-template-content-block }}
+{{~/if}}
+
+{{#if (test this._meta.schema (toRegex ".*/simple-banner")) ~}}
+{{> ultapoc-template-simple-banner }}
+{{~/if}}
+
+{{#if (test this._meta.schema (toRegex ".*/events-page")) ~}}
+{{> ultapoc-template-events-page }}
+{{~/if}}
+
+{{#if (test this._meta.schema (toRegex ".*/ulta-image")) ~}}
+{{> ultapoc-template-ulta-image }}
+{{~/if}}
+
+{{#if (test this._meta.schema (toRegex ".*/product-selector")) ~}}
+{{> acc-template-productSelector }}
+{{~/if}}

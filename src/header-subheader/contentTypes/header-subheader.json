@@ -1,8 +1,8 @@
 {
-    "contentTypeUri": "{CONTENT_TYPE_BASEPATH}/productSelector.json",
+    "contentTypeUri": "{CONTENT_TYPE_BASEPATH}/header-subheader.json",
     "settings":
     {
-        "label": "Card List",
+        "label": "Text",
         "visualizations": [
         {
             "label": "Amplience CRS",
@@ -12,7 +12,7 @@
         "icons": [
         {
             "size": 256,
-            "url": "{ICON_BASEPATH}/productSelector.icon.png"
+            "url": "{ICON_BASEPATH}/header-subheader.icon.png"
         }],
         "cards": [
         {

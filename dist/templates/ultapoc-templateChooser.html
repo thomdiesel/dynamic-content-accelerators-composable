@@ -1,12 +1,12 @@
-{{#if (test this._meta.schema (toRegex ".*/text")) ~}}
+{{#if (test this._meta.schema (toRegex ".*/text.json")) ~}}
 {{> acc-template-text }}
 {{~/if}}
 
-{{#if (test this._meta.schema (toRegex ".*/video")) ~}}
+{{#if (test this._meta.schema (toRegex ".*/video.json")) ~}}
 {{> acc-template-video }}
 {{~/if}}
 
-{{#if (test this._meta.schema (toRegex ".*/promolist")) ~}}
+{{#if (test this._meta.schema (toRegex ".*/promolist.json")) ~}}
 {{> acc-template-promoList }}
 {{~/if}}
 
@@ -14,7 +14,7 @@
 {{> acc-template-promo }}
 {{~/if}}
 
-{{#if (test this._meta.schema (toRegex ".*/splitblock")) ~}}
+{{#if (test this._meta.schema (toRegex ".*/splitblock.json")) ~}}
 {{> acc-template-splitBlock }}
 {{~/if}}
 
@@ -22,23 +22,23 @@
 {{> ultapoc-template-advanced-banner }}
 {{~/if}}
 
-{{#if (test this._meta.schema (toRegex ".*/slider")) ~}}
+{{#if (test this._meta.schema (toRegex ".*/slider.json")) ~}}
 {{> acc-template-slider }}
 {{~/if}}
 
-{{#if (test this._meta.schema (toRegex ".*/image")) ~}}
+{{#if (test this._meta.schema (toRegex ".*/image.json")) ~}}
 {{> acc-template-image this}}
 {{~/if}}
 
-{{#if (test this.[0]._meta.schema (toRegex ".*/image")) ~}}
+{{#if (test this.[0]._meta.schema (toRegex ".*/image.json")) ~}}
 {{> acc-template-image this.[0]}}
 {{~/if}}
 
-{{#if (test this._meta.schema (toRegex ".*/header-subheader")) ~}}
+{{#if (test this._meta.schema (toRegex ".*/header-subheader.json")) ~}}
 {{> ultapoc-template-header-subheader }}
 {{~/if}}
 
-{{#if (test this._meta.schema (toRegex ".*/product-list")) ~}}
+{{#if (test this._meta.schema (toRegex ".*/product-list.json")) ~}}
 {{> ultapoc-template-product-list }}
 {{~/if}}
 
@@ -50,22 +50,30 @@
 {{> ultapoc-template-product-card }} 
 {{~/if}}
 
-{{#if (test this._meta.schema (toRegex ".*/content-block")) ~}}
+{{#if (test this._meta.schema (toRegex ".*/content-block.json")) ~}}
 {{> ultapoc-template-content-block }}
 {{~/if}}
 
-{{#if (test this._meta.schema (toRegex ".*/simple-banner")) ~}}
+{{#if (test this._meta.schema (toRegex ".*/simple-banner.json")) ~}}
 {{> ultapoc-template-simple-banner }}
 {{~/if}}
 
-{{#if (test this._meta.schema (toRegex ".*/events-page")) ~}}
+{{#if (test this._meta.schema (toRegex ".*/events-page.json")) ~}}
 {{> ultapoc-template-events-page }}
 {{~/if}}
 
-{{#if (test this._meta.schema (toRegex ".*/ulta-image")) ~}}
+{{#if (test this._meta.schema (toRegex ".*/ulta-image.json")) ~}}
 {{> ultapoc-template-ulta-image }}
 {{~/if}}
 
 {{#if (test this._meta.schema (toRegex ".*/product-selector")) ~}}
 {{> acc-template-productSelector }}
+{{~/if}}
+
+{{#if (test this._meta.schema (toRegex ".*/customRichText.json")) ~}}
+{{> acc-template-customRichText }}
+{{~/if}}
+
+{{#if (test this._meta.schema (toRegex ".*/megaMenu")) ~}}
+{{> acc-template-megaMenu }}
 {{~/if}}

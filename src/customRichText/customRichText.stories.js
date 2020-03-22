@@ -9,4 +9,4 @@ import textStyles from './customRichText.scss';
 export const sampleContent = {};
 
 storiesOf('Custom Rich Text', module)
-  .add('Example content', () => renderContent('acc-template-text', sampleContent));
+  .add('Example content', () => renderContent('acc-template-customRichText', sampleContent));

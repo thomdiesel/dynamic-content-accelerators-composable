@@ -1,0 +1,63 @@
+{
+  "$schema": "http://bigcontent.io/cms/schema/v1/schema#",
+  "id": "{CONTENT_TYPE_BASEPATH}/product-card.json",
+  "title": "Product Card",
+  "description": "Product Card",
+  "allOf": [
+    {
+      "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+    }
+  ],
+  "type": "object",
+  "properties": {
+    "image": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "{CONTENT_TYPE_BASEPATH}/ulta-image.json"
+        }
+      ],
+      "title": "Banner image"
+    },
+    "cardPromo": {
+      "type": "string",
+      "minLength": 0,
+      "maxLength": 150,
+      "title": "Promotional Messaging"
+    },
+    "cardBrand": {
+      "type": "string",
+      "minLength": 0,
+      "maxLength": 200,
+      "title": "Brand"
+    },
+    "cardProduct": {
+      "type": "string",
+      "minLength": 0,
+      "maxLength": 250,
+      "title": "Product"
+    },
+    "cardPrice": {
+      "type": "string",
+      "minLength": 0,
+      "maxLength": 200,
+      "title": "Price Info"
+    },
+    "cardLink": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "{CONTENT_TYPE_BASEPATH}/accelerator-partials.json#/definitions/link"
+        }
+      ]
+    }
+  },
+  "propertyOrder": [
+    "image",
+    "cardPromo",
+    "cardBrand",
+    "cardProduct",
+    "cardPrice",
+    "cardlink"
+  ]
+}

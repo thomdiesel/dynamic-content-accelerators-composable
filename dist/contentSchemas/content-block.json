@@ -1,0 +1,45 @@
+{
+  "$schema": "http://bigcontent.io/cms/schema/v1/schema#",
+  "id": "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/ultapoc/contentSchemas/content-block.json",
+  "title": "Content Block",
+  "description": "Content Block",
+  "allOf": [
+    {
+      "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+    }
+  ],
+  "type": "object",
+  "properties": {
+    "content": {
+      "type": "array",
+      "items": {
+        "allOf": [
+          {
+            "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+          },
+          {
+            "properties": {
+              "contentType": {
+                "enum": [
+                  "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/ultapoc/contentSchemas/simple-card.json",
+                  "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/ultapoc/contentSchemas/ulta-image.json",
+                  "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/ultapoc/contentSchemas/text.json"
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "minItems": 2,
+      "maxItems": 2,
+      "title": "Content"
+    },
+    "split": {
+      "type": "string",
+      "enum": ["50/50", "70/30", "30/70"],
+      "title": "Split ratio"
+    }
+  },
+  "propertyOrder": ["content", "split"],
+  "required": ["split"]
+}

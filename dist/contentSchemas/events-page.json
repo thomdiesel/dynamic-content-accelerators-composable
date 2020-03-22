@@ -1,0 +1,48 @@
+{
+    "$schema": "http://bigcontent.io/cms/schema/v1/schema#",
+    "id": "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/ultapoc/contentSchemas/events-page.json",
+    "title": "Events Page",
+    "description": "Event Page",
+    "allOf": [
+    {
+        "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+    }],
+    "type": "object",
+    "properties":
+    {
+        "contentTypes":
+        {
+            "type": "array",
+            "items":
+            {
+                "allOf": [
+                {
+                    "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+                },
+                {
+                    "properties":
+                    {
+                        "contentType":
+                        {
+                            "enum": [
+                                "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/ultapoc/contentSchemas/simple-banner.json",
+                                "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/ultapoc/contentSchemas/simple-card.json",
+                                "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/ultapoc/contentSchemas/product-card.json",
+                                "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/ultapoc/contentSchemas/product-list.json",
+                                "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/ultapoc/contentSchemas/externalblock.json",
+                                "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/ultapoc/contentSchemas/header-subheader.json",
+                                "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/ultapoc/contentSchemas/content-block.json",
+                                "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/ultapoc/contentSchemas/product-selector"
+
+                            ]
+                        }
+                    }
+                }]
+            },
+            "title": "Content types"
+        }
+    },
+    "propertyOrder": [
+        "contentTypes"
+    ]
+}

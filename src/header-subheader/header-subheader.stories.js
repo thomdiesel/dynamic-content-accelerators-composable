@@ -64,5 +64,5 @@ export const sampleContent = {
     }
 };
 
-storiesOf('Header / Subheader', module)
+storiesOf('Header Subheader', module)
     .add('Example content', () => renderContent('ultapoc-template-header-subheader', sampleContent));

@@ -1,8 +1,8 @@
 {
   "$schema": "http://bigcontent.io/cms/schema/v1/schema#",
-  "id": "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/ultapoc/contentSchemas/text.json",
-  "title": "Text",
-  "description": "Text accelerator",
+  "id": "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/ultapoc/contentSchemas/header-subheader.json",
+  "title": "Header - Subheader",
+  "description": "Header & Subheader",
   "allOf": [
     {
       "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
@@ -10,15 +10,28 @@
   ],
   "type": "object",
   "properties": {
-    "text": {
-      "type": "string",
-      "format": "markdown",
-      "title": "Text",
-      "minLength": 0,
-      "maxLength": 6000
+   "image": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/ultapoc/contentSchemas/ulta-image.json"
+        }
+      ],
+      "title": "Banner image"
     }
   },
+    "headerLink": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/ultapoc/contentSchemas/accelerator-partials.json#/definitions/link"
+        }
+      ]
+    }
+  ,
   "propertyOrder": [
-    "text"
+    "desktopHeaderImage",
+    "mobileHeaderImage",
+    "headerLink"
   ]
 }

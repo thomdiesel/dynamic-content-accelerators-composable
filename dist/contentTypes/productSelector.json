@@ -1,5 +1,5 @@
 {
-    "contentTypeUri": "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/ultapoc/contentSchemas/cardlist.json",
+    "contentTypeUri": "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/ultapoc/contentSchemas/productSelector.json",
     "settings":
     {
         "label": "Card List",
@@ -12,7 +12,7 @@
         "icons": [
         {
             "size": 256,
-            "url": "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/ultapoc/icons/cardList.icon.png"
+            "url": "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/ultapoc/icons/productSelector.icon.png"
         }],
         "cards": [
         {

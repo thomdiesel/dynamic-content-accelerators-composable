@@ -1,5 +1,5 @@
 {
-    "contentTypeUri": "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/ultapoc/contentSchemas/text.json",
+    "contentTypeUri": "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/ultapoc/contentSchemas/header-subheader.json",
     "settings":
     {
         "label": "Text",
@@ -12,7 +12,7 @@
         "icons": [
         {
             "size": 256,
-            "url": "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/ultapoc/icons/text.icon.png"
+            "url": "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/ultapoc/icons/header-subheader.icon.png"
         }],
         "cards": [
         {

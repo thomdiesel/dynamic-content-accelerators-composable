@@ -1,0 +1,26 @@
+{{#if image}}
+    <picture class="amp-dc-image">
+        {{#if gifImage}}
+            {{#if mobileImage}}
+                <source srcset="//{{mobileImage.endpoint}}.a.bigcontent.io/v1/static/{{encodeURI mobileImage.name}}{{#if image.seoText}}/{{image.seoText}}{{/if}}" media="(max-width: 768px)">
+            {{/if}}
+            <img src="//{{image.image.endpoint}}.a.bigcontent.io/v1/static/{{encodeURI image.image.name}}{{#if image.seoText}}/{{image.seoText}}{{/if}}" {{#if image.imageAltText}}alt="{{image.imageAltText}}"{{/if}} class="amp-dc-image-pic {{classNames}}">
+            
+        {{else}}
+            {{> source image.image minWidth="1280" width="1600" highDensityWidth="3200" format="webp" poiAspect="2.5:1" }}
+            {{> source image.image minWidth="1280" width="1600" highDensityWidth="3200" poiAspect="2.5:1" }}
+            {{> source image.image minWidth="1024" width="1280" highDensityWidth="2560" format="webp" poiAspect="2:1" }}
+            {{> source image.image minWidth="1024" width="1280" highDensityWidth="2560" poiAspect="2:1" }}
+            {{> source image.image minWidth="768" width="1024" highDensityWidth="2048" format="webp" poiAspect="1.5:1" }}
+            {{> source image.image minWidth="768" width="1024" highDensityWidth="2048" poiAspect="1.5:1" }}
+            {{#if mobileImage}}
+                {{> source mobileImage maxWidth="768" width="768" highDensityWidth="1536" format="webp" poiAspect="1:1" }}
+                {{> source mobileImage maxWidth="768" width="768" highDensityWidth="1536" poiAspect="1:1" }}
+            {{else}}
+                {{> source image.image maxWidth="768" width="768" highDensityWidth="1536" format="webp" poiAspect="1:1" }}
+                {{> source image.image maxWidth="768" width="768" highDensityWidth="1536" poiAspect="1:1" }}
+            {{/if}}
+             <img src="{{> image-src image.image width='1600' }}" {{#if image.imageAltText}}alt="{{image.imageAltText}}"{{/if}} class="amp-dc-image-pic {{classNames}}">
+        {{/if}}
+    </picture>
+{{/if}}

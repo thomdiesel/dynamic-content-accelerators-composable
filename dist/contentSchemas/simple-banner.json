@@ -1,0 +1,36 @@
+{
+  "$schema": "http://bigcontent.io/cms/schema/v1/schema#",
+  "id": "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/ultapoc/contentSchemas/simple-banner.json",
+  "title": "Simple Banner",
+  "description": "Simple Banner ",
+  "allOf": [
+    {
+      "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+    }
+  ],
+  "type": "object",
+  "properties": {
+    "image": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/ultapoc/contentSchemas/ulta-image.json"
+        }
+      ],
+      "title": "Banner image"
+    },
+
+    "CTA": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/ultapoc/contentSchemas/accelerator-partials.json#/definitions/link"
+        }
+      ]
+    }
+  },
+  "propertyOrder": [
+    "image",
+    "CTA"
+  ]
+}

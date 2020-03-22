@@ -31,7 +31,6 @@
         "source",
         "templateChooser",
         "ultapoc-template-content-block",
-        "ultapoc-template-ct-product",
         "ultapoc-template-events-page",
         "ultapoc-template-header-subheader",
         "ultapoc-template-product-card",
@@ -39,8 +38,8 @@
         "ultapoc-template-simple-banner",
         "ultapoc-template-simple-card",
         "ultapoc-template-ulta-image",
-        "ultapoc-template-visualization",
-        "acc-template-productSelector"
+        "acc-template-productSelector",
+        "acc-template-customRichText"
     ];
 
     var loadLength = partialsToLoad.length;
@@ -366,9 +365,9 @@
 
         function loadDynamicHBSTemplates(name){
                 $.ajax({
-                    url: "https://presalesadisws.s3.eu-west-1.amazonaws.com/demo/ta/templates/" + name + ".html",
+                    url: "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/ultapoc/templates/" + name + ".html",
                     dataType: 'html',
-                    cache: false,
+                    cache: true,
                     success: function(data) {
                         Handlebars.registerPartial(name, data);
                         partialsToLoad = _.without(partialsToLoad, name);

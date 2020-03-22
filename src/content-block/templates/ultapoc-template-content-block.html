@@ -1,0 +1,22 @@
+<div class="amp-dc-contentBlock{{#unless split}} full-size{{/unless}}">
+    {{#each content}}
+    <div class="amp-dc-split-part{{#if ../split}} amp-dc-size-{{itemAt (split ../split "/") @index}}{{else}} amp-dc-size-50{{/if}}">
+        <div class="amp-dc-split-part-wrap">
+            {{#if (test this._meta.schema (toRegex ".*/text.json")) ~}}
+            {{> acc-template-text }}
+            {{~/if}}
+
+            {{#if (test this._meta.schema (toRegex ".*/video.json")) ~}}
+            {{> acc-template-video }}
+            {{~/if}}
+
+            {{#if (test this._meta.schema (toRegex ".*/ulta-image.json")) ~}}
+            <div class="amp-dc-image">
+                {{> ultapoc-template-ulta-image }}
+            </div>
+            {{~/if}}
+
+        </div>
+    </div>
+    {{/each}}
+</div>

@@ -1,0 +1,5 @@
+{
+  "body": "{CONTENT_TYPE_BASEPATH}/events-page.json",
+  "schemaId": "{CONTENT_TYPE_BASEPATH}/events-page.json",
+  "validationLevel": "CONTENT_TYPE"
+}

@@ -1,0 +1,39 @@
+<div class="amp-dc-product-card">
+    {{#if link}}
+    <a class="amp-dc-product-card-wrap" href="{{link.value}}">
+        {{else}}
+        <div class="amp-dc-product-card-wrap">
+            {{/if}}
+            <div class="amp-dc-product-card-img-wrap amp-dc-poi-image">
+                {{> ultapoc-template-ulta-image this.image}}
+            </div>
+            <div class="amp-dc-product-card-text-wrap">
+                {{#if cardPromo}}
+                <div class="amp-dc-product-card-name">
+                    <h4 class="amp-dc-product-card-name" style="color:#711b55;">
+                        <a href="https://www.ulta.com">
+                            {{cardPromo}}
+                        </a>
+                    </h4>
+                </div>
+                {{/if}}
+                {{#if cardBrand}}
+                <div class="amp-dc-product-card-name">
+                    {{cardBrand}}
+                </div>
+                {{/if}}
+                {{#if cardProduct}}
+                <p class="amp-dc-product-card-description">{{cardProduct}}</p>
+                {{/if}}
+                {{#if cardPrice}}
+                <div class="amp-dc-product-card-link">
+                    {{cardPrice}}
+                </div>
+                {{/if}}
+            </div>
+            {{#if link}}
+    </a>
+    {{else}}
+</div>
+{{/if}}
+</div>

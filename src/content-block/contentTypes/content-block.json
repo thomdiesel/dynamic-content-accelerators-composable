@@ -1,0 +1,23 @@
+{
+    "contentTypeUri": "{CONTENT_TYPE_BASEPATH}/content-block.json",
+    "settings":
+    {
+        "label": "Content Block",
+        "visualizations": [
+        {
+            "label": "Amplience CRS",
+            "templatedUri":"https://{{vse.domain}}/v1/content/store/content-item/{{content.sys.id}}?template=acc-template-visualization&timestamp={{context.timestamp}}&locale={{locales}},en-US,*",
+            "default": true
+        }],
+        "icons": [
+        {
+            "size": 256,
+            "url": "{ICON_BASEPATH}/content-block.icon.png"
+        }],
+        "cards": [
+        {
+            "templatedUri":"https://{{vse.domain}}/v1/content/store/content-item/{{content.sys.id}}?template=acc-template-cardsPreview&timestamp={{context.timestamp}}&locale={{locales}},en-US,*"
+        }]
+    },
+    "repositories": {REPOSITORIES}
+}

@@ -548,6 +548,9 @@
                     try{
                         var brand = data.masterVariant.attributes.find(x => x.name === 'webBrandName').value["en-CA"];
                         var image = data.masterVariant.attributes.find(x => x.name === 'largeImageUrl').value;
+                        if(image.indexOf("http://") >= 0){
+                            image = image.replace("http://", "https://");
+                        }
                         var price = data.masterVariant.prices[0].value.centAmount;
                         price /= 100;
                         price = price.toLocaleString("en-US", {style:"currency", currency:"USD"});

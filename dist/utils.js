@@ -39,6 +39,7 @@
         "ultapoc-template-simple-card",
         "ultapoc-template-ulta-image",
         "acc-template-productSelector",
+        "ultapoc-template-advanced-banner",
         "acc-template-customRichText"
     ];
 
@@ -60,8 +61,8 @@
         };
 
         var vse = getUrlParameter('vse', 'ultapoc.cdn.content.amplience.net');
-        var key = getUrlParameter('key', 'home');
-        var menukey = getUrlParameter('menukey', 'menu');
+        var key = getUrlParameter('key', 'ulta-home');
+        var menukey = getUrlParameter('menukey', 'ulta-megamenu');
         var locale = getUrlParameter('locale', 'en-US,en-*,*');
         var segment = getUrlParameter('segment', '');
         var cid = getUrlParameter('cid');

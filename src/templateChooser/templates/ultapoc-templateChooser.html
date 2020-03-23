@@ -18,10 +18,6 @@
 {{> acc-template-splitBlock }}
 {{~/if}}
 
-{{#if (test this._meta.schema (toRegex ".*/banner.json")) ~}}
-{{> ultapoc-template-advanced-banner }}
-{{~/if}}
-
 {{#if (test this._meta.schema (toRegex ".*/slider.json")) ~}}
 {{> acc-template-slider }}
 {{~/if}}
@@ -58,6 +54,10 @@
 {{> ultapoc-template-simple-banner }}
 {{~/if}}
 
+{{#if (test this._meta.schema (toRegex ".*/banner.json")) ~}}
+{{> ultapoc-template-advanced-banner }}
+{{~/if}}
+
 {{#if (test this._meta.schema (toRegex ".*/events-page.json")) ~}}
 {{> ultapoc-template-events-page }}
 {{~/if}}
@@ -76,4 +76,14 @@
 
 {{#if (test this._meta.schema (toRegex ".*/megaMenu")) ~}}
 {{> acc-template-megaMenu }}
+{{~/if}}
+
+{{#if (test this._meta.schema (toRegex ".*/slot.json")) ~}}
+    {{#each this.content}}
+        {{> ultapoc-templateChooser this }}
+    {{/each}}
+{{~/if}}
+
+{{#if (test this._meta.schema (toRegex ".*/menu-slot.json")) ~}}
+    {{> ultapoc-templateChooser this.content }}
 {{~/if}}

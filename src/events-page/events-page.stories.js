@@ -2055,4 +2055,4 @@ export const sampleContent = {
 };
 
 storiesOf('Events Page', module)
-  .add('Example content', () => renderContent('ultapoc-template-events-page', sampleContent));
+  .add('Example content', () => renderContent('ultapoc-template-events-page', sampleContent.content));

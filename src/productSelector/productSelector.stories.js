@@ -31,4 +31,4 @@ export const sampleContent = {
 };
 
 storiesOf('Product Selector', module)
-  .add('Example content', () => renderContent('acc-template-productSelector', sampleContent));
+  .add('Example content', () => renderContent('acc-template-productSelector', sampleContent.content));

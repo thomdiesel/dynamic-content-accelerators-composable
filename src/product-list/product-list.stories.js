@@ -726,4 +726,4 @@ export const sampleContent = {
 };
 
 storiesOf('Product List', module)
-  .add('Example content', () => renderContent('ultapoc-template-product-list', sampleContent));
+  .add('Example content', () => renderContent('ultapoc-template-product-list', sampleContent.content));

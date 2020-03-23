@@ -410,23 +410,6 @@
   list-style-position: outside;
 }
 
-.amp-dc-external-block .test {
-  padding: 20px;
-  background: #efefef;
-  border-radius: 5px;
-  margin: 20px;
-  min-width: 360px;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-.amp-dc-external-block .test > div {
-  padding: 20px;
-  background: #bff2b5;
-  border-radius: 5px;
-  margin: 20px;
-}
-
 .amp-dc-events-page {
   overflow: hidden;
   max-width: 1600px;
@@ -550,6 +533,23 @@
   .header-wrap .customer-menu .second-nav {
     display: none;
   }
+}
+
+.amp-dc-external-block .test {
+  padding: 20px;
+  background: #efefef;
+  border-radius: 5px;
+  margin: 20px;
+  min-width: 360px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.amp-dc-external-block .test > div {
+  padding: 20px;
+  background: #bff2b5;
+  border-radius: 5px;
+  margin: 20px;
 }
 
 .amp-dc-text {
@@ -1418,6 +1418,188 @@ div {
   }
 }
 
+.amp-dc-promo-banner {
+  margin-left: auto;
+  margin-right: auto;
+  white-space: normal;
+  overflow: hidden;
+}
+
+.amp-dc-promo-banner * {
+  margin: 0;
+  padding: 0;
+}
+
+.amp-dc-promo-banner .amp-dc-promo-banner-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+}
+
+.amp-dc-promo-banner .amp-dc-promo-banner-wrap div {
+  width: 100%;
+}
+
+.amp-dc-promo-banner .amp-dc-promo-banner-wrap .dc-width-2 {
+  width: 50%;
+}
+
+.amp-dc-promo-banner .amp-dc-promo-banner-wrap .dc-width-3 {
+  width: 33.3%;
+}
+
+.amp-dc-promo-banner .amp-dc-promo-text-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.amp-dc-promo-banner .amp-dc-promo-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: visible;
+  border: 4px solid transparent;
+}
+
+.amp-dc-promo-banner .amp-dc-promo-wrap {
+  height: 100%;
+}
+
+.amp-dc-promo-banner .amp-dc-promo-wrap > a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  overflow: hidden;
+  border: 1px solid #eeeeee;
+  text-decoration: none;
+  padding: 8px;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.amp-dc-promo-banner .amp-dc-promo-wrap > a :hover * {
+  opacity: 0.8;
+}
+
+.amp-dc-promo-banner .amp-dc-promo-text-wrap {
+  overflow: hidden;
+}
+
+.amp-dc-promo-banner .amp-dc-promo-ico {
+  margin-right: 15px;
+  min-height: 40px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.amp-dc-promo-banner .amp-dc-promo-ico > img {
+  display: block;
+}
+
+.amp-dc-promo-banner .amp-dc-promo-head-text {
+  font-weight: bold;
+  font-size: 16px;
+  color: #424242;
+}
+
+.amp-dc-promo-banner .amp-dc-promo-content-text {
+  font-size: 14px;
+  color: #9b9b9b;
+  margin-top: 3px;
+}
+
+.amp-dc-promo-banner .amp-dc-image-img {
+  width: 100%;
+  font-size: 14px;
+  display: block;
+}
+
+.amp-dc-promo-banner .amp-dc-promo-center {
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .amp-dc-promo-banner {
+    white-space: normal;
+  }
+  .amp-dc-promo-banner .amp-dc-promo-banner-wrap {
+    position: relative;
+    display: block;
+  }
+  .amp-dc-promo-banner .amp-dc-promo-block {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    -webkit-transition: opacity 1s ease-in-out;
+    -moz-transition: opacity 1s ease-in-out;
+    -ms-transition: opacity 1s ease-in-out;
+    -o-transition: opacity 1s ease-in-out;
+    opacity: 0;
+  }
+  .amp-dc-promo-banner .amp-dc-promo-block.dc-fade-in {
+    position: relative;
+    -webkit-transition: opacity 1.5s ease-in-out;
+    -moz-transition: opacity 1.5s ease-in-out;
+    -ms-transition: opacity 1.5s ease-in-out;
+    -o-transition: opacity 1.5s ease-in-out;
+    animation-delay: 0.5s;
+    -moz-animation-delay: 0.5s;
+    -webkit-animation-delay: 0.5s;
+    opacity: 1;
+  }
+  .amp-dc-promo-banner .amp-dc-promo-head-text {
+    font-size: 15px;
+  }
+  .amp-dc-promo-banner .amp-dc-promo-content-text {
+    font-size: 13px;
+  }
+  .amp-dc-promo-banner .amp-dc-promo-ico {
+    min-height: 35px;
+  }
+}
+
 .ulta-simplebanner .amp-dc-image {
   margin: 0;
   padding: 0;
@@ -1667,188 +1849,6 @@ div {
   .amp-dc-splitBlock .amp-dc-split-part:first-child .amp-dc-split-part-wrap {
     padding-left: 0;
     padding-right: 0;
-  }
-}
-
-.amp-dc-promo-banner {
-  margin-left: auto;
-  margin-right: auto;
-  white-space: normal;
-  overflow: hidden;
-}
-
-.amp-dc-promo-banner * {
-  margin: 0;
-  padding: 0;
-}
-
-.amp-dc-promo-banner .amp-dc-promo-banner-wrap {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  width: 100%;
-  height: 100%;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-}
-
-.amp-dc-promo-banner .amp-dc-promo-banner-wrap div {
-  width: 100%;
-}
-
-.amp-dc-promo-banner .amp-dc-promo-banner-wrap .dc-width-2 {
-  width: 50%;
-}
-
-.amp-dc-promo-banner .amp-dc-promo-banner-wrap .dc-width-3 {
-  width: 33.3%;
-}
-
-.amp-dc-promo-banner .amp-dc-promo-text-flex {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-.amp-dc-promo-banner .amp-dc-promo-block {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  overflow: visible;
-  border: 4px solid transparent;
-}
-
-.amp-dc-promo-banner .amp-dc-promo-wrap {
-  height: 100%;
-}
-
-.amp-dc-promo-banner .amp-dc-promo-wrap > a {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  height: 100%;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-  overflow: hidden;
-  border: 1px solid #eeeeee;
-  text-decoration: none;
-  padding: 8px;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-.amp-dc-promo-banner .amp-dc-promo-wrap > a :hover * {
-  opacity: 0.8;
-}
-
-.amp-dc-promo-banner .amp-dc-promo-text-wrap {
-  overflow: hidden;
-}
-
-.amp-dc-promo-banner .amp-dc-promo-ico {
-  margin-right: 15px;
-  min-height: 40px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-.amp-dc-promo-banner .amp-dc-promo-ico > img {
-  display: block;
-}
-
-.amp-dc-promo-banner .amp-dc-promo-head-text {
-  font-weight: bold;
-  font-size: 16px;
-  color: #424242;
-}
-
-.amp-dc-promo-banner .amp-dc-promo-content-text {
-  font-size: 14px;
-  color: #9b9b9b;
-  margin-top: 3px;
-}
-
-.amp-dc-promo-banner .amp-dc-image-img {
-  width: 100%;
-  font-size: 14px;
-  display: block;
-}
-
-.amp-dc-promo-banner .amp-dc-promo-center {
-  text-align: center;
-}
-
-@media screen and (max-width: 768px) {
-  .amp-dc-promo-banner {
-    white-space: normal;
-  }
-  .amp-dc-promo-banner .amp-dc-promo-banner-wrap {
-    position: relative;
-    display: block;
-  }
-  .amp-dc-promo-banner .amp-dc-promo-block {
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    display: block;
-    position: absolute;
-    width: 100%;
-    top: 0;
-    left: 0;
-    overflow: hidden;
-    -webkit-transition: opacity 1s ease-in-out;
-    -moz-transition: opacity 1s ease-in-out;
-    -ms-transition: opacity 1s ease-in-out;
-    -o-transition: opacity 1s ease-in-out;
-    opacity: 0;
-  }
-  .amp-dc-promo-banner .amp-dc-promo-block.dc-fade-in {
-    position: relative;
-    -webkit-transition: opacity 1.5s ease-in-out;
-    -moz-transition: opacity 1.5s ease-in-out;
-    -ms-transition: opacity 1.5s ease-in-out;
-    -o-transition: opacity 1.5s ease-in-out;
-    animation-delay: 0.5s;
-    -moz-animation-delay: 0.5s;
-    -webkit-animation-delay: 0.5s;
-    opacity: 1;
-  }
-  .amp-dc-promo-banner .amp-dc-promo-head-text {
-    font-size: 15px;
-  }
-  .amp-dc-promo-banner .amp-dc-promo-content-text {
-    font-size: 13px;
-  }
-  .amp-dc-promo-banner .amp-dc-promo-ico {
-    min-height: 35px;
   }
 }
 

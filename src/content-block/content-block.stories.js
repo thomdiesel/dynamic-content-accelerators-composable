@@ -117,4 +117,4 @@ export const sampleContent = {
 };
 
 storiesOf('Content Block', module)
-    .add('Example content', () => renderContent('ultapoc-template-content-block', sampleContent));
+    .add('Example content', () => renderContent('ultapoc-template-content-block', sampleContent.content));

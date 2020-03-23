@@ -86,5 +86,5 @@ export const sampleContent = {
     }
 };
 
-storiesOf('Card', module)
-  .add('Example content', () => renderContent('ultapoc-template-product-card', sampleContent));
+storiesOf('Product Card', module)
+  .add('Example content', () => renderContent('ultapoc-template-product-card', sampleContent.content));

@@ -410,6 +410,140 @@
   list-style-position: outside;
 }
 
+.amp-dc-image {
+  min-width: 0;
+}
+
+.amp-dc-prod-card-title {
+  font-size: 2em;
+  text-align: center;
+}
+
+.amp-dc-prod-card-list .amp-dc-prod-card-list-wrap {
+  font-size: 0;
+  margin-top: 20px;
+  margin-left: -50px;
+}
+
+.amp-dc-prod-card-list .amp-dc-prod-card {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.amp-dc-prod-card-list .amp-dc-prod-card {
+  width: 100%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.amp-dc-prod-card-list .amp-dc-prod-card * {
+  margin: 0;
+  padding: 0;
+}
+
+.amp-dc-prod-card-list .amp-dc-prod-card .amp-dc-hide {
+  display: none;
+}
+
+.amp-dc-prod-card-list .amp-dc-prod-card .amp-dc-card-text-wrap {
+  padding: 10px 0;
+  text-align: center;
+  background-color: #fff;
+}
+
+.amp-dc-prod-card-list .amp-dc-prod-card a.amp-dc-card-wrap {
+  display: block;
+  text-decoration: none;
+}
+
+.amp-dc-prod-card-list .amp-dc-prod-card a.amp-dc-card-wrap:hover .amp-dc-card-link {
+  text-decoration: underline;
+}
+
+.amp-dc-prod-card-list .amp-dc-prod-card .amp-dc-card-name {
+  font-size: 21px;
+  color: #000;
+  margin-bottom: 5px;
+}
+
+.amp-dc-prod-card-list .amp-dc-prod-card .amp-dc-card-description {
+  font-size: 14px;
+  color: #8F8F8F;
+  display: inline-block;
+}
+
+.amp-dc-prod-card-list .amp-dc-prod-card .amp-dc-card-link {
+  margin-top: 7px;
+  color: #8F8F8F;
+  font-size: 16px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.amp-dc-prod-card-list .amp-dc-prod-card-wrap {
+  margin: 0 0 50px 51px;
+}
+
+.amp-dc-prod-card-list .amp-dc-prod-card-wrap .amp-dc-prod-card-img {
+  max-height: 250px;
+}
+
+.amp-dc-prod-5-rows .amp-dc-prod-card {
+  width: 20%;
+}
+
+.amp-dc-prod-4-rows .amp-dc-prod-card {
+  width: 25%;
+}
+
+.amp-dc-prod-3-rows .amp-dc-prod-card {
+  width: 33.33%;
+}
+
+.amp-dc-prod-2-rows .amp-dc-prod-card {
+  width: 50%;
+}
+
+.amp-dc-prod-1-rows .amp-dc-prod-card {
+  width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .amp-dc-prod-5-rows .amp-dc-prod-card {
+    width: 50%;
+  }
+  .amp-dc-prod-4-rows .amp-dc-prod-card {
+    width: 50%;
+  }
+  .amp-dc-prod-3-rows .amp-dc-prod-card {
+    width: 50%;
+  }
+  .amp-dc-prod-2-rows .amp-dc-prod-card {
+    width: 50%;
+  }
+  .amp-dc-prod-1-rows .amp-dc-prod-card {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .amp-dc-prod-5-rows .amp-dc-prod-card {
+    width: 100%;
+  }
+  .amp-dc-prod-4-rows .amp-dc-prod-card {
+    width: 100%;
+  }
+  .amp-dc-prod-3-rows .amp-dc-prod-card {
+    width: 100%;
+  }
+  .amp-dc-prod-2-rows .amp-dc-prod-card {
+    width: 100%;
+  }
+  .amp-dc-prod-1-rows .amp-dc-prod-card {
+    width: 100%;
+  }
+}
+
 .amp-dc-events-page {
   overflow: hidden;
   max-width: 1600px;

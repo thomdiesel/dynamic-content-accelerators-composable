@@ -1,0 +1,12 @@
+<div class="amp-dc-prod-card-list
+{{#compare products.length '<' 6}}amp-dc-prod-{{products.length}}-rows
+{{else}}amp-dc-prod-4-rows{{/compare}}">
+	{{#if header}}
+    <div class="amp-dc-prod-card-title">
+        {{ header }}
+    </div>
+    {{/if}}
+
+    <div class="amp-dc-prod-card-list-wrap" data-amp-product-search="{{search}}" data-amp-product-limit="{{#if limit}}{{limit}}{{else}}5{{/if}}" data-amp-product-ignores="{{JSONstringify ignores}}">
+    </div>
+</div>

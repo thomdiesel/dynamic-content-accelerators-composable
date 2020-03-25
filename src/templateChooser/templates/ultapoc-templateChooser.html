@@ -78,10 +78,12 @@
 {{> acc-template-megaMenu }}
 {{~/if}}
 
-{{#if (test this._meta.schema (toRegex ".*/slot.json")) ~}}
-    {{#each this.content}}
-        {{> ultapoc-templateChooser this }}
-    {{/each}}
+{{#if (test this._meta.schema (toRegex ".*/megaMenu")) ~}}
+{{> acc-template-megaMenu }}
+{{~/if}}
+
+{{#if (test this._meta.schema (toRegex ".*/dynamic-product-list.json")) ~}}
+{{> acc-template-dynamicProductSelector }}
 {{~/if}}
 
 {{#if (test this._meta.schema (toRegex ".*/menu-slot.json")) ~}}

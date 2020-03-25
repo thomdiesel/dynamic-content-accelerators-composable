@@ -1,3 +1,9 @@
 <div class="ulta-simplebanner">
+    {{#if CTA}}
+    <a href="{{CTA.value}}">
     {{> ultapoc-template-ulta-image image}}
+    </a>
+    {{else}}
+    {{> ultapoc-template-ulta-image image}}
+    {{/if}} 
 </div>

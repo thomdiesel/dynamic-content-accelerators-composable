@@ -40,7 +40,8 @@
         "ultapoc-template-ulta-image",
         "acc-template-productSelector",
         "ultapoc-template-advanced-banner",
-        "acc-template-customRichText"
+        "acc-template-customRichText",
+        "acc-template-dynamicProductSelector"
     ];
 
     var loadLength = partialsToLoad.length;
@@ -73,6 +74,7 @@
         var creds = "VKHSs03dGkJ0TvOqaCXGf54K:arLe-BvFLyktQ1ROVbfvqiV61DZSami9";
         var creds64 = window.btoa(creds);
         var products;
+        var dynamicProducts;
 
     /**
      * Promo Banner - Javascript is used to animate the sections for resolutions that can only show a single section at a time
@@ -570,11 +572,81 @@
                 }
             });
         })
+    }
+
+    function drawDynamicProducts(){
+        dynamicProducts.forEach(function(item) {
+            var productSearch = item.getAttribute('data-amp-product-search');
+            var searchLimit = item.getAttribute('data-amp-product-limit');
+            var ignores = item.getAttribute('data-amp-product-ignores');
+            if(ignores) ignores = JSON.parse(ignores);
+            console.log(ignores)
+             $.ajax({
+                url: 'https://api.us-central1.gcp.commercetools.com/ulta-ca-qa-1/product-projections/search?staged=false&fuzzy=true&limit=' + searchLimit + '&text.en-CA="' + productSearch +'"',
+                method: "GET",
+                dataType: "json",
+                context: item,
+                cache: false,
+                beforeSend: function (xhr) {
+                    /* Authorization header */
+                    xhr.setRequestHeader("Authorization", "Bearer " + CT_AccessToken);
+                },
+                success: function (data) {
+                    console.log("Success")
+                    console.log(data);
+
+                    if( data && data.count > 0){
+                        var results = data.results;
+
+                        results.forEach(function(result){
+
+                            try{
+                                if(!result.name["en-CA"]) return;
+
+                                /** if ignore....*/
+                                if( ignores.indexOf(result.key) >= 0){
+                                    console.log("IGNORING: " + result.key);
+                                    return;
+                                }
+
+                                var brand = result.masterVariant.attributes.find(x => x.name === 'webBrandName').value["en-CA"];
+                                var image = result.masterVariant.attributes.find(x => x.name === 'largeImageUrl').value;
+                                if(image.indexOf("http://") >= 0){
+                                    image = image.replace("http://", "https://");
+                                }
+                                if(image.indexOf("images.ulta.com") < 0) return;
+                                var price = result.masterVariant.prices[0].value.centAmount;
+                                price /= 100;
+                                price = price.toLocaleString("en-US", {style:"currency", currency:"USD"});
+
+                                var html = '<div class="amp-dc-prod-card"><a class="amp-dc-card-wrap" href=" https://www.ulta.com/amplience-link?productId=' + result.key + '"><div class="amp-dc-card-wrap"><div class="amp-dc-card-img-wrap"><picture class="amp-dc-image"><img src="' + image + '" class="amp-dc-image-pic"/></picture></div><div class="amp-dc-card-text-wrap"><div class="amp-dc-card-name">' + result.name["en-CA"] + '</div><p class="amp-dc-card-description">' + brand + '</p><div class="amp-dc-card-link">' + price + '</div></div></a></div></div>'
+                                $(item).append(html);
+                                
+                            }catch(e){
+                                console.log("Error with CommerceTools Product:" + result.key);
+                                /*var html = '<a class="amp-dc-card-wrap" href=" https://www.ulta.com"><div class="amp-dc-card-wrap"><div class="amp-dc-card-img-wrap"><picture class="amp-dc-image"><img src=https://images.ulta.com/is/image/Ulta/no-image-found.jpg?$lg$" class="amp-dc-image-pic"/></picture></div><div class="amp-dc-card-text-wrap"><div class="amp-dc-card-name">Product: ' + result.key + ' not found</div><p class="amp-dc-card-description">Please select another</p><div class="amp-dc-card-link"></div></div></a></div>'
+                                resultsstr += html;*/
+                            }
+
+                        });
+
+                        
+                    }
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    console.log("error")
+                    console.log(jqXHR, textStatus, errorThrown)
+                }
+            });
+        })
     }     
 
     function findProducts(){
         products = document.querySelectorAll('[data-amp-product-code]');
         if(products.length >=1) authenticateProductAPI(drawProducts);
+
+        dynamicProducts = document.querySelectorAll('[data-amp-product-search]');
+        if(dynamicProducts.length >=1) authenticateProductAPI(drawDynamicProducts);
     }
 
     function attachComponents() {

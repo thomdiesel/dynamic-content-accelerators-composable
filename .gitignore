@@ -2,4 +2,6 @@ node_modules/*
 .idea
 .config-ulta.json
 .config-wickes.json
+.config-emily.json
 .config.json
+.config-interflora.json

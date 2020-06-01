@@ -14,7 +14,7 @@
 {{> acc-template-card-interflora }}
 {{~/if}}
 
-{{#if (test this._meta.schema (toRegex ".*/cardList.json")) ~}}
+{{#if (test this._meta.schema (toRegex ".*/cardlist.json")) ~}}
 {{> acc-template-cardList-interflora }}
 {{~/if}}
 
@@ -24,6 +24,18 @@
 
 {{#if (test this._meta.schema (toRegex ".*/landing-page.json")) ~}}
 {{> acc-template-landing-page }}
+{{~/if}}
+
+{{#if (test this._meta.schema (toRegex ".*/rich-text.json")) ~}}
+{{> acc-template-rich-text }}
+{{~/if}}
+
+{{#if (test this._meta.schema (toRegex ".*/algolia-search.json")) ~}}
+{{> acc-template-algolia-search }}
+{{~/if}}
+
+{{#if (test this._meta.schema (toRegex ".*/algolia-personalised-content.json")) ~}}
+{{> acc-template-algolia-personalised-content }}
 {{~/if}}
 
 {{#if (test this._meta.schema (toRegex ".*/flexible-slot.json")) ~}}

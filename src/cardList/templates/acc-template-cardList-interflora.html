@@ -1,6 +1,6 @@
 <div class="amp-dc-card-list
 {{#compare cards.length '<' 6}}amp-dc-prod-{{cards.length}}-rows
-{{else}}amp-dc-prod-3-rows{{/compare}} {{#compare cards.length '==' 3}}{{#if heroList}}amp-ca-cards-hero{{/if}}{{/compare}}">
+{{else}}amp-dc-prod-3-rows{{/compare}} {{#compare cards.length '==' 3}}{{#if heroList}}amp-dc-cards-hero{{/if}}{{/compare}}">
 	{{#if header}}
     <div class="amp-dc-card-title">
         {{ header }}
@@ -8,6 +8,6 @@
     {{/if}}
 
     <div class="amp-dc-card-list-wrap">
-        {{#each cards}}{{> templateChooser this}}{{/each}}
+        {{#each cards}} {{> acc-template-card-interflora this index=@index }} {{/each}}
     </div>
 </div>

@@ -28,7 +28,11 @@
                         "{CONTENT_TYPE_BASEPATH}/banner-personalised.json",
                         "{CONTENT_TYPE_BASEPATH}/image-poi.json",
                         "{CONTENT_TYPE_BASEPATH}/curated-product-list-ct.json",
-                        "{CONTENT_TYPE_BASEPATH}/landing-page.json"
+                        "{CONTENT_TYPE_BASEPATH}/landing-page.json",
+                        "{CONTENT_TYPE_BASEPATH}/rich-text.json",
+                        "{CONTENT_TYPE_BASEPATH}/cardlist.json",
+                        "{CONTENT_TYPE_BASEPATH}/algolia-personalised-content.json",
+                        "{CONTENT_TYPE_BASEPATH}/algolia-search.json"
                       ]
                     }
                   }

@@ -8,6 +8,8 @@
 }
 
 .amp-dc-card-list {
+    margin-top: 20px;
+
     .amp-dc-card-list-wrap {
         font-size: 0;
         margin-top: 20px;
@@ -20,10 +22,35 @@
     }
 
     .amp-dc-card-wrap {
-        margin: 0 0 50px 51px;
-
+        margin: 0 0 50px 50px;
         .amp-dc-card-img {
             max-height: 250px;
+        }
+    }
+
+    &.amp-dc-cards-hero {
+
+        .amp-dc-card-list-wrap {
+            margin-left: 0;
+            overflow: hidden;
+        }
+
+        .amp-dc-card-wrap {
+            margin: 0 0 50px 0;
+        }
+
+        .amp-dc-card {
+            float: right;
+            width: 30%;
+
+            &.amp-dc-card-1 {
+                float: left;
+                width: 70%;
+
+                .amp-dc-card-wrap {
+                    margin-right: 20px;
+                }
+            }
         }
     }
 }
@@ -42,7 +69,7 @@
 
 .amp-dc-prod-3-rows {
     .amp-dc-card {
-        width: 33.33%;
+        width: 33%;
     }
 }
 
@@ -64,26 +91,35 @@
             width: 50%;
         }
     }
-
     .amp-dc-prod-4-rows {
         .amp-dc-card {
             width: 50%;
         }
     }
-
     .amp-dc-prod-3-rows {
         .amp-dc-card {
             width: 50%;
         }
 
-    }
+        &.amp-dc-cards-hero {
+            .amp-dc-card {
+                width: 100%;
 
+                &.amp-dc-card-1 {
+                    width: 100%;
+
+                    .amp-dc-card-wrap {
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+    }
     .amp-dc-prod-2-rows {
         .amp-dc-card {
             width: 50%;
         }
     }
-
     .amp-dc-prod-1-rows {
         .amp-dc-card {
             width: 100%;
@@ -97,25 +133,21 @@
             width: 100%;
         }
     }
-
     .amp-dc-prod-4-rows {
         .amp-dc-card {
             width: 100%;
         }
     }
-
     .amp-dc-prod-3-rows {
         .amp-dc-card {
             width: 100%;
         }
     }
-
     .amp-dc-prod-2-rows {
         .amp-dc-card {
             width: 100%;
         }
     }
-
     .amp-dc-prod-1-rows {
         .amp-dc-card {
             width: 100%;

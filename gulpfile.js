@@ -95,6 +95,14 @@ var replace = function () {
         /\{CT_LOCALE\}/g,
         config.commercetools.locale
       );
+      fileContent = fileContent.replace(
+        /\{ALGOLIA_ID\}/g,
+        config.algolia.clientID
+      );
+      fileContent = fileContent.replace(
+        /\{ALGOLIA_SECRET\}/g,
+        config.algolia.clientSecret
+      );
     fileContent = fileContent.replace(/\{COMPANY_TAG\}/g, config.COMPANY_TAG);
     file.contents = new Buffer.from(fileContent);
     // send the updated file down the pipe

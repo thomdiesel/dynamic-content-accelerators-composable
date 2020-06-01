@@ -6,7 +6,9 @@
         "interflora-templateChooser",
         "acc-template-navigation",
         "acc-template-navigation-slot",
+        "acc-template-flexible-slot",
         "acc-template-image-poi",
+        "acc-template-curated-product-list-ct",
         "image-src",
         "source",
         "acc-template-banner-personalised",
@@ -33,8 +35,8 @@
         };
 
         var vse = getUrlParameter('vse', 'emilydemo.cdn.content.amplience.net');
-        var key = getUrlParameter('key', 'interflora-home');
-        var menukey = getUrlParameter('menukey', 'interflora-megamenu');
+        var key = getUrlParameter('key', 'interflora/web/home');
+        var menukey = getUrlParameter('menukey', 'interflora/web/navigation');
         var locale = getUrlParameter('locale', 'en-US,en-*,*');
         var segment = getUrlParameter('segment', '');
         var cid = getUrlParameter('cid');

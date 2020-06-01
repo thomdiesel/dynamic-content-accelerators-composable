@@ -1,0 +1,100 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "{CONTENT_TYPE_BASEPATH}/navigation-partials.json",
+	"definitions": {
+		"rootMenu": {
+			"type": "object",
+			"title": "Menu",
+			"labelField": "label",
+			"properties": {
+				"type": {
+					"const": "root-menu"
+				},
+				"data": {
+					"type": "object",
+					"properties": {
+						"label": {
+							"type": "string",
+							"title": "Label",
+							"description": "Menu label"
+						},
+						"link": {
+							"type": "string",
+							"title": "Link",
+							"description": "Link to navigate to when clicked"
+						}
+					}
+				},
+				"children": {
+					"type": "array",
+					"items": {
+						"oneOf": [
+							{
+								"$ref": "#/definitions/menuGroup"
+							}
+						]
+					}
+				}
+			}
+		},
+		"menuGroup": {
+			"type": "object",
+			"title": "Menu Group",
+			"labelField": "label",
+			"properties": {
+				"type": {
+					"const": "menu-group"
+				},
+				"data": {
+					"type": "object",
+					"properties": {
+						"label": {
+							"type": "string",
+							"title": "Label",
+							"description": "Menu label"
+						}
+					}
+				},
+				"children": {
+					"type": "array",
+					"items": {
+						"oneOf": [
+							{
+								"$ref": "#/definitions/menuItem"
+							}
+						]
+					}
+				}
+			}
+		},
+		"menuItem": {
+			"type": "object",
+			"title": "Menu Item",
+			"labelField": "label",
+			"properties": {
+				"type": {
+					"const": "menu-item"
+				},
+				"data": {
+					"type": "object",
+					"properties": {
+						"label": {
+							"type": "string",
+							"title": "Label",
+							"description": "Menu label"
+						},
+						"link": {
+							"type": "string",
+							"title": "Link",
+							"description": "Link to navigate to when clicked"
+						}
+					}
+				},
+				"children": {
+					"type": "array",
+					"items": {}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,174 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "{CONTENT_TYPE_BASEPATH}/interflora-metadata.json",
+  "definitions": {
+    "metadata": {
+      "title": "Interflora Metadata",
+      "type": "object",
+      "properties": {
+        "pznsegment": {
+          "title": "Personalization Segment",
+          "description": "Select the segment(s) this content relates to",
+          "type": "array",
+          "minItems": 0,
+          "maxItems": 10,
+          "items": {
+            "type": "string",
+            "enum": ["Bargain Hunter", "Big Spender"]
+          },
+          "default": ""
+        },
+        "occasion": {
+          "title": "Occasion",
+          "description": "Select the occasion this content relates to",
+          "type": "array",
+          "minItems": 0,
+          "maxItems": 10,
+          "items": {
+            "type": "string",
+            "enum": [
+              "Anniversary",
+              "Apology",
+              "Baby",
+              "Birthday",
+              "Congratulations",
+              "Get Well",
+              "Good Luck",
+              "New Home",
+              "Retirement",
+              "Romantic",
+              "Surprise",
+              "Thank you",
+              "Wedding"
+            ]
+          }
+        },
+        "category": {
+          "title": "Category",
+          "description": "Select the category(s) this content relates to",
+          "type": "array",
+          "minItems": 0,
+          "maxItems": 10,
+          "items": {
+            "type": "string",
+            "enum": [
+              "Women/Clothing",
+              "Women/Bags",
+              "Women/Shoes",
+              "Men/Clothing",
+              "Men/Bags",
+              "Men/Shoes",
+              "Accessories",
+              "Sale"
+            ]
+          }
+        },
+        "color": {
+          "title": "Color",
+          "description": "Select the color(s) this content relates to",
+          "type": "array",
+          "minItems": 0,
+          "maxItems": 10,
+          "items": {
+            "type": "string",
+            "enum": [
+              "White",
+              "Pink",
+              "Yellow",
+              "Red",
+              "Lilac",
+              "Orange",
+              "Blue",
+              "Cream",
+              "Purple",
+              "Green",
+              "Beige"
+            ]
+          }
+        },
+        "flowerType": {
+          "title": "Flower Type",
+          "description": "Select the flower type(s) this content relates to",
+          "type": "array",
+          "minItems": 0,
+          "maxItems": 10,
+          "items": {
+            "type": "string",
+            "enum": [
+              "Rose",
+              "Carnation",
+              "Chrysanthemum",
+              "Lily",
+              "Hydrangea",
+              "Gladioli",
+              "Eucalyptus",
+              "Freesia",
+              "Delphinium",
+              "Orchid",
+              "Tulip",
+              "Veronica",
+              "Germini",
+              "Iris"
+            ]
+          }
+        },
+        "priceRange": {
+          "title": "Price",
+          "description": "Select if content is specific for price range",
+          "type": "array",
+          "minItems": 0,
+          "maxItems": 1,
+          "items": {
+            "type": "string",
+            "enum": [
+              "0 to $20",
+              "$20 to $30",
+              "$30 to $40",
+              "$40 to $50",
+              "$50 to $75",
+              "over 75"
+            ]
+          }
+        },
+        "ranking": {
+          "title": "Ranking",
+          "description": "Ranking for this content (1-10)",
+          "type": "number",
+          "minimum": 0,
+          "maximum": 10
+        },
+        "pageType": {
+          "title": "Page Type",
+          "description": "Select if content is specific for the type of page",
+          "type": "array",
+          "minItems": 0,
+          "maxItems": 4,
+          "items": {
+            "type": "string",
+            "enum": ["pdp", "landing", "checkout", "search"]
+          }
+        },
+        "searchTerms": {
+          "title": "Search terms",
+          "description": "Enter any specific keywords for search",
+          "type": "array",
+          "minItems": 0,
+          "maxItems": 10,
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "propertyOrder": [
+        "category",
+        "color",
+        "flowerType",
+        "priceRange",
+        "pageType",
+        "pznsegment",
+        "searchTerms",
+        "ranking"
+      ]
+    }
+  }
+}

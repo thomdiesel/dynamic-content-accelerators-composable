@@ -1,0 +1,21 @@
+{
+    "id":null,
+    "hubId":null,
+    "url":"https://www.myextensionurl.com",
+    "name":"my-test-extension",
+    "label":"My Test Extension",
+    "height":200,
+    "category":"CONTENT_FIELD",
+    "snippets":[
+       {
+          "label":"My Snippet 1",
+          "body":"{\n \"mySnippet1\":\"myValue\"\n}"
+       },
+       {
+          "label":"My Snippet 2",
+          "body":"{\n \"mySnippet2\":\"myValue\"\n}"
+       }
+    ],
+    "description":"Did this actually update???",
+    "parameters":"{\n \"myInstallParam1\":\"value1\",\n \"myInstallParam2\":\"value2\"\n}"
+ }

@@ -3,45 +3,15 @@
 (function(exports) {
 
     var partialsToLoad = [
-        "ultapoc-templateChooser",
-        "acc-template-banner-poi",
-        "acc-template-banner",
-        "acc-template-blogPost",
-        "acc-template-card",
-        "acc-template-cardList",
-        "acc-template-cardsPreview",
-        "acc-template-externalBlock",
-        "acc-template-image-generator",
-        "acc-template-image",
-        "acc-template-megaMenu",
-        "acc-template-page",
-        "acc-template-preview",
-        "acc-template-promo",
-        "acc-template-promoList",
-        "acc-template-roundel",
-        "acc-template-slider",
-        "acc-template-snippet",
-        "acc-template-splitBlock",
-        "acc-template-text",
-        "acc-template-video",
-        "acc-template-visualization",
-        "cardsTemplateChooser",
+        "interflora-templateChooser",
+        "acc-template-navigation",
+        "acc-template-navigation-slot",
+        "acc-template-image-poi",
         "image-src",
-        "slotChooser",
         "source",
-        "templateChooser",
-        "ultapoc-template-content-block",
-        "ultapoc-template-events-page",
-        "ultapoc-template-header-subheader",
-        "ultapoc-template-product-card",
-        "ultapoc-template-product-list",
-        "ultapoc-template-simple-banner",
-        "ultapoc-template-simple-card",
-        "ultapoc-template-ulta-image",
-        "acc-template-productSelector",
-        "ultapoc-template-advanced-banner",
-        "acc-template-customRichText",
-        "acc-template-dynamicProductSelector"
+        "acc-template-banner-personalised",
+        "acc-template-card-interflora",
+        "acc-template-cardList-interflora",
     ];
 
     var loadLength = partialsToLoad.length;
@@ -62,8 +32,8 @@
         };
 
         var vse = getUrlParameter('vse', '{DELIVERY_BASE}');
-        var key = getUrlParameter('key', 'ulta-home');
-        var menukey = getUrlParameter('menukey', 'ulta-megamenu');
+        var key = getUrlParameter('key', 'interflora-home');
+        var menukey = getUrlParameter('menukey', 'interflora-megamenu');
         var locale = getUrlParameter('locale', 'en-US,en-*,*');
         var segment = getUrlParameter('segment', '');
         var cid = getUrlParameter('cid');
@@ -71,7 +41,7 @@
         hidemenu = hidemenu == "true" ? true : false;
 
         var CT_AccessToken;
-        var creds = "VKHSs03dGkJ0TvOqaCXGf54K:arLe-BvFLyktQ1ROVbfvqiV61DZSami9";
+        var creds = "{CT_ID}:{CT_SECRET}";
         var creds64 = window.btoa(creds);
         var products;
         var dynamicProducts;
@@ -356,6 +326,15 @@
     }
 
     function initApplication() {
+
+        var rs = getUrlParameter('template');
+        if(rs){
+            attachComponent('.amp-dc-promo-banner', PromoBanner);
+            attachComponent('.amp-dc-slider', Slider);
+            initPOI();
+            findProducts();
+            return;
+        }
        
         partialsToLoad.forEach(function (item, index) {
             var loadstr = "Loading Partial " + (index+1) + "/" + loadLength + " : " + item
@@ -368,7 +347,7 @@
 
         function loadDynamicHBSTemplates(name){
                 $.ajax({
-                    url: "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/ultapoc/templates/" + name + ".html",
+                    url: "{HOSTING_BASE}templates/" + name + ".html",
                     dataType: 'html',
                     cache: true,
                     success: function(data) {
@@ -381,7 +360,7 @@
                             var loadstr = "Files Loaded - loading content...";
                             $("#loader-text").html(loadstr)
                             console.log(loadstr);
-                            rendertemplate = Handlebars.compile("{{> ultapoc-templateChooser this}}");
+                            rendertemplate = Handlebars.compile("{{> interflora-templateChooser this}}");
 
                             if (!hidemenu) {
                                 var menuURL = "https://" + vse + "/content/key/" + menukey + "?locale=" + locale;
@@ -498,13 +477,13 @@
     function authenticateProductAPI(cb){
         console.log("authenticating")
         $.ajax({
-            url: 'https://auth.us-central1.gcp.commercetools.com/oauth/token',
+            url: '{CT_AUTH_URL}/oauth/token',
             method: "POST",
             dataType: "json",
             contentType: "application/x-www-form-urlencoded",
             data: {
                 grant_type: "client_credentials",
-                scope: "view_published_products:ulta-ca-qa-1"
+                scope: "{CT_SCOPE}:{CT_PROJECT_KEY}"
             },
             cache: false,
             beforeSend: function (xhr) {
@@ -529,7 +508,7 @@
         products.forEach(function(item) {
             var productCode = item.getAttribute('data-amp-product-code');
              $.ajax({
-                url: 'https://api.us-central1.gcp.commercetools.com/ulta-ca-qa-1/product-projections/' + productCode + '?localeProjection=en-CA',
+                url: '{CT_API_URL}/{CT_PROJECT_KEY}/product-projections/' + productCode + '?localeProjection={CT_LOCALE}',
                 method: "GET",
                 dataType: "json",
                 context: item,
@@ -541,27 +520,20 @@
                 success: function (data) {
                     console.log("Success")
                     console.log(data);
-                    /** Information to get: 
-                        name = name.en-CA
-                        description = description.en-CA
-                        brand = masterVariant.attributes where name=webBrandName > value.en-CA
-                        prodictId = https://www.ulta.com/silk-therapy-original?productId={{key}}xlsImpprod3530073
-                    **/
                     try{
-                        var brand = data.masterVariant.attributes.find(x => x.name === 'webBrandName').value["en-CA"];
-                        var image = data.masterVariant.attributes.find(x => x.name === 'largeImageUrl').value;
-                        if(image.indexOf("http://") >= 0){
-                            image = image.replace("http://", "https://");
-                        }
-                        var price = data.masterVariant.prices[0].value.centAmount;
-                        price /= 100;
-                        price = price.toLocaleString("en-US", {style:"currency", currency:"USD"});
 
-                        var html = '<a class="amp-dc-card-wrap" href=" https://www.ulta.com/amplience-link?productId=' + data.key + '"><div class="amp-dc-card-wrap"><div class="amp-dc-card-img-wrap"><picture class="amp-dc-image"><img src="' + image + '" class="amp-dc-image-pic"/></picture></div><div class="amp-dc-card-text-wrap"><div class="amp-dc-card-name">' + data.name["en-CA"] + '</div><p class="amp-dc-card-description">' + brand + '</p><div class="amp-dc-card-link">' + price + '</div></div></a></div>'
-                        $(item).html(html);
+                        var link = data.masterVariant.sku;
+                        var image = data.masterVariant.images[0].url;
+                        var name = data.name['{CT_LOCALE}'];
+                        //var description = data.description['en-GB'];
+                        var priceObj = data.masterVariant.prices[0].value;
+                        var price = "&pound;" + (priceObj.centAmount*0.1).toFixed(priceObj.fractionDigits);
+
+                        var html = '<a class="amp-dc-card-wrap" href="'+link+'"><div class="amp-dc-card-wrap"><div class="amp-dc-card-img-wrap"><picture class="amp-dc-image"><img src="' + image + '?$product-list$" class="amp-dc-image-pic"/></picture></div><div class="amp-dc-card-text-wrap"><div class="amp-dc-card-name">' + name + '</div><p class="amp-dc-card-description"></p><div class="amp-dc-card-link">' + price + '</div></div></a></div>'
+                        item.innerHTML=html;
                     }catch(e){
                         console.log("Error with CommerceTools Product:" + productCode);
-                        var html = '<a class="amp-dc-card-wrap" href=" https://www.ulta.com"><div class="amp-dc-card-wrap"><div class="amp-dc-card-img-wrap"><picture class="amp-dc-image"><img src=https://images.ulta.com/is/image/Ulta/no-image-found.jpg?$lg$" class="amp-dc-image-pic"/></picture></div><div class="amp-dc-card-text-wrap"><div class="amp-dc-card-name">Product: ' + productCode + ' not found</div><p class="amp-dc-card-description">Please select another</p><div class="amp-dc-card-link"></div></div></a></div>'
+                        var html = '<a class="amp-dc-card-wrap" href="#"><div class="amp-dc-card-wrap"><div class="amp-dc-card-img-wrap"><picture class="amp-dc-image"><img src="https://i8.amplience.net/s/willow/noimagefound?$product-list$" class="amp-dc-image-pic"/></picture></div><div class="amp-dc-card-text-wrap"><div class="amp-dc-card-name">Product: ' + productCode + ' not found</div><p class="amp-dc-card-description">Please select another</p><div class="amp-dc-card-link"></div></div></a></div>'
                         $(item).html(html);
                     }
 
@@ -582,7 +554,7 @@
             if(ignores) ignores = JSON.parse(ignores);
             console.log(ignores)
              $.ajax({
-                url: 'https://api.us-central1.gcp.commercetools.com/ulta-ca-qa-1/product-projections/search?staged=false&fuzzy=true&limit=' + searchLimit + '&text.en-CA="' + productSearch +'"',
+                url: '{CT_API_URL}/{CT_PROJECT_KEY/product-projections/search?staged=false&fuzzy=true&limit=' + searchLimit + '&text.{CT_LOCALE}="' + productSearch +'"',
                 method: "GET",
                 dataType: "json",
                 context: item,
@@ -602,12 +574,6 @@
 
                             try{
                                 if(!result.name["en-CA"]) return;
-
-                                /** if ignore....*/
-                                if( ignores.indexOf(result.key) >= 0){
-                                    console.log("IGNORING: " + result.key);
-                                    return;
-                                }
 
                                 var brand = result.masterVariant.attributes.find(x => x.name === 'webBrandName').value["en-CA"];
                                 var image = result.masterVariant.attributes.find(x => x.name === 'largeImageUrl').value;

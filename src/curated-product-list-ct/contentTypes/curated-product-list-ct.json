@@ -1,0 +1,29 @@
+{
+    "contentTypeUri": "{CONTENT_TYPE_BASEPATH}/curated-product-list-ct.json",
+    "settings":
+    {
+        "label": "Curated Product List (CommerceTools)",
+        "visualizations": [
+        {
+            "label": "Amplience CRS",
+            "templatedUri":"https://{{vse.domain}}/v1/content/store/content-item/{{content.sys.id}}?template=acc-template-visualization-interflora&timestamp={{context.timestamp}}&locale={{locales}},en-US,*",
+            "default": true
+        },
+        {
+            "label": "JSON",
+            "templatedUri":"https://{{vse.domain}}/content/id/{{content.sys.id}}?depth=all&format=inlined",
+            "default": false
+        }
+        ],
+        "icons": [
+        {
+            "size": 256,
+            "url": "{ICON_BASEPATH}/curated-product-list-ct.icon.jpg"
+        }],
+        "cards": [
+        {
+            "templatedUri":"https://{{vse.domain}}/v1/content/store/content-item/{{content.sys.id}}?template=acc-template-visualization-interflora&timestamp={{context.timestamp}}&locale={{locales}},en-US,*"
+        }]
+    },
+    "repositories": {REPOSITORIES}
+}

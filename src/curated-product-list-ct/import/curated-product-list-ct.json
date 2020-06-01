@@ -1,0 +1,5 @@
+{
+    "body": "{CONTENT_TYPE_BASEPATH}/curated-product-list-ct.json",
+    "schemaId": "{CONTENT_TYPE_BASEPATH}/curated-product-list-ct.json",
+    "validationLevel": "CONTENT_TYPE"
+  }

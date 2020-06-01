@@ -1,6 +1,0 @@
-<div class="amp-dc-text">
-    {{#each text}}
-    	{{#if (test type (toRegex "markdown")) ~}} {{{markdown this.data}}} {{~/if}}
-    	{{#if (test type (toRegex "dc-content-link")) ~}} {{> ultapoc-templateChooser this.data}} {{~/if}}
-	{{/each}}
-</div>

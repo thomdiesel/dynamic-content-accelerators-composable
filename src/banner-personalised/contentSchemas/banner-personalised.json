@@ -1,0 +1,115 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "{CONTENT_TYPE_BASEPATH}/banner-personalised.json",
+  "title": "Banner Personalised",
+  "description": "Banner accelerator (Personalised)",
+  "allOf": [
+    {
+      "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+    }
+  ],
+  "type": "object",
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "title": "Meta Data",
+      "description": "Meta data related to this content",
+      "allOf": [
+        {
+          "$ref": "{CONTENT_TYPE_BASEPATH}/interflora-metadata.json#/definitions/metadata"
+        }
+      ]
+    },
+    "img": {
+      "description": "The image used in this banner",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "{CONTENT_TYPE_BASEPATH}/image-poi.json"
+        }
+      ],
+      "title": "Banner image"
+    },
+    "header": {
+      "type": "string",
+      "minLength": 0,
+      "maxLength": 255,
+      "title": "Header"
+    },
+    "subheader": {
+      "type": "string",
+      "minLength": 0,
+      "maxLength": 255,
+      "title": "Subheader"
+    },
+    "description": {
+      "type": "string",
+      "minLength": 0,
+      "maxLength": 2000,
+      "title": "Description"
+    },
+    "button": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "https://raw.githubusercontent.com/neilmistryamplience/dc-example-website/emily/content-types/link.json"
+        }
+      ]
+    },
+    "alignment": {
+      "type": "string",
+      "title": "Alignment",
+      "description": "Alignment of the text content in the banner (left/right). Default is left",
+      "enum": [
+        "left",
+        "right",
+        "center"
+      ]
+    },
+    "percH": {
+      "title": "Horizontal alignment percentage",
+      "description": "A value between -100 and 100 (e.g. 30) Default is 0",
+      "type": "number",
+      "minimum": -100,
+      "maximum": 100
+    },
+    "percV": {
+      "title": "Vertical alignment percentage",
+      "description": "A value between -100 and 100 (e.g. 30) Default is 0",
+      "type": "number",
+      "minimum": -100,
+      "maximum": 100
+    },
+    "textColor": {
+      "type": "string",
+      "format": "color",
+      "title": "Font color"
+    },
+    "bannerColor": {
+      "type": "string",
+      "format": "color",
+      "title": "Copy block color"
+    },
+    "stackMobileLayout": {
+      "type": "boolean",
+      "title": "Stack mobile layout",
+      "description": "Enable to allow banner text to stack underneath the image on small screens"
+    }
+  },
+  "propertyOrder": [
+    "metadata",
+    "img",
+    "header",
+    "subheader",
+    "description",
+    "alignment",
+    "percH",
+    "percV",
+    "textColor",
+    "bannerColor",
+    "textPositionLeft",
+    "textPositionTop",
+    "button",
+    "stackMobileLayout"
+  ]
+}

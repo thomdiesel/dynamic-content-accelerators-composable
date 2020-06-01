@@ -10,6 +10,7 @@
         "image-src",
         "source",
         "acc-template-banner-personalised",
+        "acc-template-landing-page",
         "acc-template-card-interflora",
         "acc-template-cardList-interflora",
     ];

@@ -395,6 +395,36 @@
   animation-fill-mode: forwards;
 }
 
+.amp-dc-landingpage {
+  overflow: hidden;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.amp-dc-landingpage .amp-dc-block-wrap {
+  margin-top: 50px;
+}
+
+.amp-dc-landingpage .amp-dc-text {
+  margin: 0 25px;
+}
+
+.amp-dc-landingpage .amp-dc-splitBlock {
+  overflow: hidden;
+}
+
+.amp-dc-landingpage .amp-dc-splitBlock {
+  overflow: hidden;
+}
+
+.amp-dc-landingpage .amp-dc-promo-banner-wrap {
+  margin: 20px 0;
+}
+
+.amp-dc-landingpage .amp-dc-promo-banner {
+  margin: -70px -5px 0 -5px;
+}
+
 .af-banner-top {
   color: #ffffff;
   background: #000000;

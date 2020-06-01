@@ -22,6 +22,10 @@
 {{> acc-template-curated-product-list-ct }}
 {{~/if}}
 
+{{#if (test this._meta.schema (toRegex ".*/landing-page.json")) ~}}
+{{> acc-template-landing-page }}
+{{~/if}}
+
 {{#if (test this._meta.schema (toRegex ".*/navigation-slot.json")) ~}}
 {{> acc-template-navigation-slot }}
 {{~/if}}

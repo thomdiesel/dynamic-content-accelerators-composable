@@ -136,7 +136,10 @@
 								}
 							},
 							"ui:extension": {
-								"name": "image-poi"
+								"name": "image-poi",
+								"params": {
+									"useVSE": true
+								}
 							}
 						}
 					}

@@ -1,0 +1,193 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Interflora: Search</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=block" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Hind:400,600,700|Open+Sans:400,600|Poppins:700&display=swap" rel="stylesheet">
+    <link href="./app.css" rel="stylesheet" />
+    <style>
+        .interflora-header-container{
+            height: 100px;
+            background-color: black;
+            background-image: url("https://www.ifloraimg.co.uk/kernel/imageload?table=content_images;key1=fd_img_2396018_1;t=20170531031446;v=20171130094577");
+            background-repeat: no-repeat;
+            background-position:45px;
+        }
+    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <!-- Bootstrap for Menu -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+   <!-- Amplience accelerators dependencies -->
+   <link rel="stylesheet" href="https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/interflora/styles.min.css"/>
+   <!-- Algolia Fonts & CSS-->
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=block" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Hind:400,600,700|Open+Sans:400,600|Poppins:700&display=swap" rel="stylesheet">
+   <!-- <link href="./app.css" rel="stylesheet" /> -->
+   <!-- Bootstrap for Menu -->
+   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+   <!-- handlebars & underscore for easy data loading -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.3/handlebars.min.js" integrity="sha256-/PJBs6QWvXijOFIX04kZpLb6ZtSQckdOIavLWKKOgXU=" crossorigin="anonymous"></script>
+   <script src="https://doowb.com/handlebars-helpers-browserify-example/app.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js" integrity="sha256-G7A4JrJjJlFqP0yamznwPjAApIKPkadeHfyIwiaa9e0=" crossorigin="anonymous"></script>
+
+   <script src="https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/interflora/utils.min.js"></script>
+    <script src="https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/interflora/lory.min.js"></script>
+   <!-- Optional to load in content to the page, You can use your own JS if you like with the direct access to the HTML in your index (ampURLHTML) or our SDK with Example -->
+   <script src="https://unpkg.com/dc-delivery-sdk-js/dist/dynamicContent.browser.umd.min.js"></script>
+</head>
+
+<body>
+    <div id="amp-menu-holder"></div>
+    <div class="interflora-header-container">
+        <header class="header preview-searcharea">
+            <div class="searchWidget widget">
+                <div class="searchWidgetPreview">
+                    <div class="ais-SearchBox-wrapper" id="search-wrapper">
+                        <div class="ais-SearchBox" id="search-input"></div>
+                    </div>
+                </div>
+                <div class="absolute bottom-0 text-center w-full flex flex-col"></div>
+            </div>
+        </header>
+    </div>
+    <main>
+        <div id="filtering" class="demo ">
+            <div class="ais-InstantSearch__root">
+                <!--<header class="header preview-searcharea">
+                    <div class="searchWidget widget">
+                        <div class="searchWidgetPreview">
+                            <div class="ais-SearchBox-wrapper" id="search-wrapper">
+                                <div class="ais-SearchBox" id="search-input"></div>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-0 text-center w-full flex flex-col"></div>
+                    </div>
+                </header> -->
+                <main class="homeTab container">
+                    <div class="container-wrapper">
+                        <section class="container-filters">
+                        </section>
+                    </div>
+                    <section class="main-wrapper">
+                    </section>
+                </main>
+                <section class="custom-banner">
+                    <!-- <div id="queryRuleCustomData"></div> -->
+                </section>
+                <main class="resultsTab container">
+                    <div class="container-wrapper">
+                        <section class="container-filters">
+                            <div class="container-header">
+                                <h2>Search</h2>
+                                <div data-layout="desktop">
+                                    <div id="clear-refinements-desktop"></div>
+                                </div>
+                                <div data-layout="mobile">
+                                    <div class="ais-Stats" id="stats-mobile"></div>
+                                </div>
+                            </div>
+                            <aside class="container-body">
+                                <div class="widget">
+                                    <div class="ais-Menu" id="main_category_c1ba1cfc-e6f9-d919-0850-21f77ee2e9a3"></div>
+                                </div>
+                            </aside>
+                        </section>
+                        <footer data-layout="mobile" class="container-filters-footer">
+                            <div class="container-filters-footer-button-wrapper">
+                                <div class="ais-ClearRefinements" id="clear-refinements-mobile"></div>
+                            </div>
+                            <div class="container-filters-footer-button-wrapper">
+                                <div class="ais-Stats" id="stats-bottom"></div>
+                            </div>
+                        </footer>
+                    </div>
+                    <section class="container-results">
+                        <header class="container-header container-options no-title">
+                            <div id="hitsPerPage"></div>
+                            <div id="stats-top"></div>
+                        </header>
+                        <div class="flex">
+                            <section class="hits">
+                                <div class="hitsWidgetWrapper widget">
+                                    <div>
+                                        <div>
+                                            <div class="single-results-block">
+                                                <h2>Articles</h2>
+                                                <div id="hits-content_test"></div>
+                                            </div>
+                                            <div class="single-results-block">
+                                                <h2>Products</h2>
+                                                <div id="queryRuleCustomData"></div>
+                                                <div id="search-results"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="absolute bottom-0 text-center w-full flex flex-col"></div>
+                        </div>
+                    </section>
+            </div>
+            <footer class="container-footer">
+                <nav data-widget="pagination">
+                    <div class="ais-Panel">
+                        <div class="ais-Panel-body">
+                            <div>
+                                <div id="pagination"></div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </footer>
+            </section>
+    </main>
+    <aside data-layout="mobile" class="resultsTab container-filters-button">
+        <button class="base primary filters-button" onclick="window.openFiltering()">
+            <i class="mr-1 materialIcons">filter_list</i>&nbsp;Filters
+        </button>
+    </aside>
+    </div>
+    </div>
+    </main>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/algoliasearch@3.35.1/dist/algoliasearchLite.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.0.0/dist/instantsearch.production.min.js"></script>
+<script src="./app.js"></script>
+<script>
+function openFiltering() {
+    opening = true;
+    document.querySelector('#filtering').classList.add('filtering');
+    document.addEventListener('click', closeFiltering);
+    filtering = true;
+}
+
+const container = document.querySelector("section.container-filters");
+
+function closeFiltering(e) {
+    if (opening) {
+        opening = false;
+        return;
+    }
+
+    // hack to prevent side-effect from instantsearch
+    const targetIsExcluded = Array.from(e.target.classList).filter(c => c.startsWith('ais-')).length > 0;
+
+    const targetIsClose = e.target.getAttribute('data-action') === 'close-filtering';
+    const targetIsOutside = !container.contains(e.target);
+
+    if (filtering && !targetIsExcluded && (targetIsOutside || targetIsClose)) {
+        e.preventDefault();
+        filtering = false;
+        document.querySelector('#filtering').classList.remove('filtering');
+        document.removeEventListener('click', closeFiltering);
+    }
+}
+</script>
+
+</html>

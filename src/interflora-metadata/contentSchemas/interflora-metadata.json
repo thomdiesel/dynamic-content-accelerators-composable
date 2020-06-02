@@ -72,21 +72,21 @@
           "items": {
             "type": "string",
             "enum": [
-              "White",
-              "Pink",
-              "Yellow",
-              "Red",
-              "Lilac",
-              "Orange",
-              "Blue",
-              "Cream",
-              "Purple",
-              "Green",
-              "Beige"
+              "white",
+              "pink",
+              "yellow",
+              "red",
+              "lilac",
+              "orange",
+              "blue",
+              "cream",
+              "purple",
+              "green",
+              "beige"
             ]
           }
         },
-        "flowerType": {
+        "flower-type": {
           "title": "Flower Type",
           "description": "Select the flower type(s) this content relates to",
           "type": "array",
@@ -95,38 +95,20 @@
           "items": {
             "type": "string",
             "enum": [
-              "Rose",
-              "Carnation",
-              "Chrysanthemum",
-              "Lily",
-              "Hydrangea",
-              "Gladioli",
-              "Eucalyptus",
-              "Freesia",
-              "Delphinium",
-              "Orchid",
-              "Tulip",
-              "Veronica",
-              "Germini",
-              "Iris"
-            ]
-          }
-        },
-        "priceRange": {
-          "title": "Price",
-          "description": "Select if content is specific for price range",
-          "type": "array",
-          "minItems": 0,
-          "maxItems": 1,
-          "items": {
-            "type": "string",
-            "enum": [
-              "0 to $20",
-              "$20 to $30",
-              "$30 to $40",
-              "$40 to $50",
-              "$50 to $75",
-              "over 75"
+              "rose",
+              "carnation",
+              "chrysanthemum",
+              "lily",
+              "hydrangea",
+              "gladioli",
+              "eucalyptus",
+              "freesia",
+              "delphinium",
+              "orchid",
+              "tulip",
+              "veronica",
+              "germini",
+              "iris"
             ]
           }
         },
@@ -136,17 +118,6 @@
           "type": "number",
           "minimum": 0,
           "maximum": 10
-        },
-        "pageType": {
-          "title": "Page Type",
-          "description": "Select if content is specific for the type of page",
-          "type": "array",
-          "minItems": 0,
-          "maxItems": 4,
-          "items": {
-            "type": "string",
-            "enum": ["pdp", "landing", "checkout", "search"]
-          }
         },
         "searchTerms": {
           "title": "Search terms",
@@ -163,8 +134,7 @@
         "category",
         "color",
         "flowerType",
-        "priceRange",
-        "pageType",
+        "occasion",
         "pznsegment",
         "searchTerms",
         "ranking"

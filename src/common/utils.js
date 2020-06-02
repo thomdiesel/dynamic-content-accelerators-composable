@@ -14,9 +14,11 @@
     'acc-template-banner-personalised',
     'acc-template-landing-page',
     'acc-template-algolia-personalised-content',
-    'acc-template-algolia-search',
+    'acc-template-article',
+    'acc-template-article-snippet',
     'acc-template-card-interflora',
     'acc-template-cardList-interflora',
+    'acc-template-interflora-video',
   ];
 
   var loadLength = partialsToLoad.length;
@@ -43,6 +45,7 @@
   var menukey = getUrlParameter('menukey', 'interflora/web/navigation');
   var locale = getUrlParameter('locale', 'en-US,en-*,*');
   var segment = getUrlParameter('segment', '');
+  var segment = getUrlParameter('customerid', '');
   var cid = getUrlParameter('cid');
   var hidemenu = getUrlParameter('hidemenu', 'false');
   hidemenu = hidemenu == 'true' ? true : false;
@@ -677,47 +680,31 @@
       authenticateProductAPI(drawDynamicProducts);
   }
 
-  function configureSearch(){
-    searchClient = algoliasearch('{ALGOLIA_ID}','{ALGOLIA_SECRET}');
-
+  function configureSearch() {
+    searchClient = algoliasearch('{ALGOLIA_ID}', '{ALGOLIA_SECRET}');
     var algoliasearches = document.querySelectorAll('[data-amp-index-name]');
     algoliasearches.forEach(function (item) {
+      var indexName = item.getAttribute('data-amp-index-name');
+      console.log('ALGOLIA INDEX TO USE: ' + indexName);
+      var query = item.getAttribute('data-amp-query');
+      var attributes = item.getAttribute('data-amp-attributes');
 
-        var indexName = item.getAttribute('data-amp-index-name');
-        console.log("ALGOLIA INDEX TO USE: " + indexName);
-        var query = item.getAttribute('data-amp-query');
-        var attributes = item.getAttribute('data-amp-attributes');
-
-        var index = searchClient.initIndex(indexName);
-        var searchSettings = {
-            hitsPerPage: 1,
+      var index = searchClient.initIndex(indexName);
+      var searchSettings = {
+        hitsPerPage: 1,
+        ruleContexts: [
+          'front_end'
+        ]
+      };
+      if (attributes) searchSettings.attributesToRetrieve = attributes;
+      index.search(query, searchSettings).then(({ hits }) => {
+        console.log('QUERY RESPONSE:');
+        console.log(hits);
+        console.log(item);
+        if (hits[0]) {
+          $(item).load(hits[0].ampURLHTML);
         }
-        if(attributes) searchSettings.attributesToRetrieve = attributes;
-        index.search(query, searchSettings).then(({ hits }) => {
-            console.log("QUERY RESPONSE:")
-            console.log(hits);
-            console.log(item);
-            if(hits[0]){
-                $(item).load(hits[0].ampURLHTML);
-            }
-          });
-
-        /*var queries = [{
-            indexName: indexName,
-            query: query,
-            params: {
-              hitsPerPage: 1,
-              attributesToRetrieve: attributes
-            }
-          }];
-          searchClient.multipleQueries(queries).then(({ results }) => {
-            console.log("QUERY RESPONSE:")
-            console.log(results);
-            console.log(item);
-          });*/
-        
-
-        
+      });
     });
   }
 

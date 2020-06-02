@@ -1,0 +1,33 @@
+<div class="amp-ca-snippet js_ca_snippet {{viewType}}">
+    {{#if image}}
+    <div class="amp-ca-image">
+        {{>acc-template-image-poi image }}
+    </div>
+    {{/if}}
+    <div class="amp-ca-category-container">
+        {{#each category}}
+        <div class="amp-ca-category">{{this}}</div>
+        <span class="line"></span> {{/each}}
+    </div>
+    {{#if title}}
+    <div class="amp-ca-title">{{title}}</div>
+    {{/if}}
+    {{#if blogdate}}
+    <div class="amp-ca-blogdate">{{blogdate}}</div>
+    {{/if}}
+    {{#if description}}
+    <div class="amp-ca-description">{{description}}</div>
+    {{/if}}
+    {{#compare viewType '!=' 'list'}}
+    {{#if author}}
+    <div class="amp-ca-author">@{{author}}</div>
+    {{/if}}
+
+    <div class="amp-ca-keywords-container">
+        {{#each keywords}}
+        <div class="amp-ca-keyword">{{this}}</div>
+        {{/each}}
+    </div>
+
+    {{/compare}}
+</div>

@@ -1,0 +1,14 @@
+<div class="amp-ca-blog">
+    {{> acc-template-article-snippet snippet }}
+     {{#if snippet}}
+        <div class="amp-ca-blocks-container">
+    {{/if}}
+        <div class="amp-ca-blog-content"> 
+        {{#each contentTypes as |item|}}
+            <div class="amp-ca-block-wrap">{{> interflora-templateChooser item }}</div>
+        {{/each}} 
+        </div>
+        {{#if snippet}}
+    </div>
+    {{/if}} 
+</div>

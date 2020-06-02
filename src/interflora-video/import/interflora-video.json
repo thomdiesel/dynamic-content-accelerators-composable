@@ -1,0 +1,5 @@
+{
+  "body": "{CONTENT_TYPE_BASEPATH}/interflora-video.json",
+  "schemaId": "{CONTENT_TYPE_BASEPATH}/interflora-video.json",
+  "validationLevel": "CONTENT_TYPE"
+}

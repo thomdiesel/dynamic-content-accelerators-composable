@@ -1,8 +1,8 @@
 {
-    "contentTypeUri": "{CONTENT_TYPE_BASEPATH}/algolia-search.json",
+    "contentTypeUri": "{CONTENT_TYPE_BASEPATH}/article.json",
     "settings":
     {
-        "label": "Algolia Search",
+        "label": "Article",
         "visualizations": [
         {
             "label": "Amplience CRS",
@@ -18,7 +18,7 @@
         "icons": [
         {
             "size": 256,
-            "url": "{ICON_BASEPATH}/algolia-search.icon.png"
+            "url": "{ICON_BASEPATH}/article.icon.png"
         }],
         "cards": [
         {

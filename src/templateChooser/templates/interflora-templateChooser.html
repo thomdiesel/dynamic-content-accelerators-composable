@@ -30,8 +30,12 @@
 {{> acc-template-rich-text }}
 {{~/if}}
 
-{{#if (test this._meta.schema (toRegex ".*/algolia-search.json")) ~}}
-{{> acc-template-algolia-search }}
+{{#if (test this._meta.schema (toRegex ".*/article.json")) ~}}
+{{> acc-template-article }}
+{{~/if}}
+
+{{#if (test this._meta.schema (toRegex ".*/interflora-video.json")) ~}}
+{{> acc-template-interflora-video }}
 {{~/if}}
 
 {{#if (test this._meta.schema (toRegex ".*/algolia-personalised-content.json")) ~}}

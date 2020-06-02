@@ -30,9 +30,9 @@
                         "{CONTENT_TYPE_BASEPATH}/curated-product-list-ct.json",
                         "{CONTENT_TYPE_BASEPATH}/landing-page.json",
                         "{CONTENT_TYPE_BASEPATH}/rich-text.json",
+                        "{CONTENT_TYPE_BASEPATH}/interflora-video.json",
                         "{CONTENT_TYPE_BASEPATH}/cardlist.json",
-                        "{CONTENT_TYPE_BASEPATH}/algolia-personalised-content.json",
-                        "{CONTENT_TYPE_BASEPATH}/algolia-search.json"
+                        "{CONTENT_TYPE_BASEPATH}/algolia-personalised-content.json"
                       ]
                     }
                   }

@@ -139,6 +139,13 @@ gulp.task('copy-templates', function () {
     .pipe(gulp.dest('dist/templates'));
 });
 
+gulp.task('copy-search-app', function () {
+  return gulp
+    .src(['src/search/*.*', 'src/product/*.*'])
+    .pipe(flatten())
+    .pipe(gulp.dest('dist'));
+});
+
 gulp.task('copy-dependant-media', function () {
   return gulp
     .src(['src/media-dependencies/*.*'])
@@ -200,6 +207,7 @@ gulp.task('build-js', function () {
       'src/**/*.js',
       'node_modules/poi-js-lib/dist/poi-lib.min.js',
       '!**/*.stories.js',
+      '!src/search/*.js',
     ])
     .pipe(concat('utils.js'))
     .pipe(replace())
@@ -291,6 +299,7 @@ gulp.task(
     'addLoryLicense',
     'build-js',
     'minify-js',
+    'copy-search-app',
     //'build-cards-css',
     'build-css',
     'minify-css',

@@ -1,23 +1,50 @@
 const searchClient = algoliasearch(
   'T7I8W0D1V2',
   'c572522c02c617013a1f53c1fa9968e5'
-)
+);
 
 const search = instantsearch({
   indexName: 'products_test_demo',
   searchClient,
-})
+});
 
 const renderPageStats = (renderOptions, isFirstRender) => {
-  const { nbHits, page, hitsPerPage, widgetParams } = renderOptions
-  const start = page * hitsPerPage + 1
-  const end = (page + 1) * hitsPerPage
-  widgetParams.container.innerHTML = `<span class="ais-Page-stats">Results ${start}-${end} of ${nbHits}</span>`
-}
+  const { nbHits, page, hitsPerPage, widgetParams } = renderOptions;
+  const start = page * hitsPerPage + 1;
+  const end = (page + 1) * hitsPerPage;
+  widgetParams.container.innerHTML = `<span class="ais-Page-stats">Results ${start}-${end} of ${nbHits}</span>`;
+};
 
-const customPageStats = instantsearch.connectors.connectStats(renderPageStats)
+const customPageStats = instantsearch.connectors.connectStats(renderPageStats);
+
+const renderBanner = ({ widgetParams, hits }, isFirstRender) => {
+  const container = document.querySelector(widgetParams.container);
+  console.log('rendering', hits);
+
+  if (hits && hits.length) {
+    $(container).load(hits[0].ampURLHTML);
+  } else {
+    container.innerHTML = '';
+  }
+};
+
+const customBanner = instantsearch.connectors.connectHits(renderBanner);
 
 search.addWidgets([
+  PersonaDropDown({
+    container: '#personas-dropdown',
+    personas: [
+      {
+        label: 'John',
+        context: 'persona_john',
+      },
+      {
+        label: 'Mary',
+        context: 'persona_mary',
+      },
+    ],
+    searchParameters: {},
+  }),
   instantsearch.widgets.clearRefinements({
     container: '#clear-refinements-desktop',
     templates: {
@@ -84,9 +111,9 @@ search.addWidgets([
     loadingIndicator: false,
     magnifier: true,
     queryHook(query, search) {
-      if (query) document.querySelector('.demo').classList.add('searching')
-      else document.querySelector('.demo').classList.remove('searching')
-      search(query)
+      if (query) document.querySelector('.demo').classList.add('searching');
+      else document.querySelector('.demo').classList.remove('searching');
+      search(query);
     },
   }),
 
@@ -99,13 +126,13 @@ search.addWidgets([
   instantsearch.widgets.queryRuleCustomData({
     container: '#queryRuleCustomData',
     transformItems(items) {
-      let banner = ''
+      let banner = '';
       if (items.length > 0) {
         if (items.find((el) => el['image']) !== undefined) {
-          banner = items.find((el) => el['image']).image
+          banner = items.find((el) => el['image']).image;
         }
       }
-      return { banner: banner }
+      return { banner: banner };
     },
     templates: {
       default: `
@@ -130,7 +157,7 @@ search.addWidgets([
         ...item,
         price: item.prices.find((o) => o.currency === 'USD'),
         isPromoted: item._rankingInfo && item._rankingInfo.promoted,
-      }))
+      }));
     },
     templates: {
       item: `<article class="hit">
@@ -156,7 +183,8 @@ search.addWidgets([
                   </span>
                 </h1>
                 
-                <div class="hit-description"><b class="hit-currency">$</b> {{{price.amount}}}</div>                
+                <div class="hit-description"><b class="hit-currency">$</b> {{{price.amount}}}</div>
+                
               </main>
               </a>
             </article>`,
@@ -203,9 +231,21 @@ search.addWidgets([
     },
   }),
 
+  instantsearch.widgets.index({ indexName: 'content_test' }).addWidgets([
+    customBanner({
+      container: '#hits-content_test',
+      transformItems(items) {
+        return items.slice(0, 1).map((item) => ({
+          ...item,
+          isPromoted: item._rankingInfo && item._rankingInfo.promoted,
+        }));
+      },
+    }),
+  ]),
+
   instantsearch.widgets.index({ indexName: 'article_test' }).addWidgets([
     instantsearch.widgets.hits({
-      container: '#hits-content_test',
+      container: '#hits-articles_test',
       transformItems(items) {
         return items.map((item) => ({
           ...item,
@@ -307,6 +347,6 @@ search.addWidgets([
   customPageStats({
     container: document.querySelector('#stats-top'),
   }),
-])
+]);
 
-search.start()
+search.start();

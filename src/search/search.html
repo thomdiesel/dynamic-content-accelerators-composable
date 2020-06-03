@@ -8,7 +8,7 @@
     <title>Interflora: Search</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=block" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Hind:400,600,700|Open+Sans:400,600|Poppins:700&display=swap" rel="stylesheet">
-    <link href="./app.css" rel="stylesheet" />
+    <link href="app.css" rel="stylesheet" />
     <style>
         .interflora-header-container{
             height: 100px;
@@ -43,151 +43,160 @@
 </head>
 
 <body>
+    <div class="interflora-header-container"></div>
     <div id="amp-menu-holder"></div>
-    <div class="interflora-header-container">
-        <header class="header preview-searcharea">
-            <div class="searchWidget widget">
-                <div class="searchWidgetPreview">
-                    <div class="ais-SearchBox-wrapper" id="search-wrapper">
-                        <div class="ais-SearchBox" id="search-input"></div>
-                    </div>
-                </div>
-                <div class="absolute bottom-0 text-center w-full flex flex-col"></div>
-            </div>
-        </header>
-    </div>
     <main>
         <div id="filtering" class="demo ">
-            <div class="ais-InstantSearch__root">
-                <!--<header class="header preview-searcharea">
-                    <div class="searchWidget widget">
-                        <div class="searchWidgetPreview">
-                            <div class="ais-SearchBox-wrapper" id="search-wrapper">
-                                <div class="ais-SearchBox" id="search-input"></div>
-                            </div>
-                        </div>
-                        <div class="absolute bottom-0 text-center w-full flex flex-col"></div>
-                    </div>
-                </header> -->
-                <main class="homeTab container">
-                    <div class="container-wrapper">
-                        <section class="container-filters">
-                        </section>
-                    </div>
-                    <section class="main-wrapper">
-                    </section>
-                </main>
-                <section class="custom-banner">
-                    <!-- <div id="queryRuleCustomData"></div> -->
-                </section>
-                <main class="resultsTab container">
-                    <div class="container-wrapper">
-                        <section class="container-filters">
-                            <div class="container-header">
-                                <h2>Search</h2>
-                                <div data-layout="desktop">
-                                    <div id="clear-refinements-desktop"></div>
-                                </div>
-                                <div data-layout="mobile">
-                                    <div class="ais-Stats" id="stats-mobile"></div>
-                                </div>
-                            </div>
-                            <aside class="container-body">
-                                <div class="widget">
-                                    <div class="ais-Menu" id="main_category_c1ba1cfc-e6f9-d919-0850-21f77ee2e9a3"></div>
-                                </div>
-                            </aside>
-                        </section>
-                        <footer data-layout="mobile" class="container-filters-footer">
-                            <div class="container-filters-footer-button-wrapper">
-                                <div class="ais-ClearRefinements" id="clear-refinements-mobile"></div>
-                            </div>
-                            <div class="container-filters-footer-button-wrapper">
-                                <div class="ais-Stats" id="stats-bottom"></div>
-                            </div>
-                        </footer>
-                    </div>
-                    <section class="container-results">
-                        <header class="container-header container-options no-title">
-                            <div id="hitsPerPage"></div>
-                            <div id="stats-top"></div>
-                        </header>
-                        <div class="flex">
-                            <section class="hits">
-                                <div class="hitsWidgetWrapper widget">
-                                    <div>
-                                        <div>
-                                            <div class="single-results-block">
-                                                <h2>Articles</h2>
-                                                <div id="hits-content_test"></div>
-                                            </div>
-                                            <div class="single-results-block">
-                                                <h2>Products</h2>
-                                                <div id="queryRuleCustomData"></div>
-                                                <div id="search-results"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="absolute bottom-0 text-center w-full flex flex-col"></div>
-                        </div>
-                    </section>
+          <div class="ais-InstantSearch__root">
+            <header class="header preview-searcharea" >
+          
+          
+          <div class="searchWidget widget">
+              <div class="searchWidgetPreview">
+                <div class="ais-SearchBox-wrapper" id="search-wrapper">
+                  <div class="ais-SearchBox" id="search-input"></div>
+                  
+                </div>
+              </div>
+              <div class="absolute bottom-0 text-center w-full flex flex-col"></div>
             </div>
-            <footer class="container-footer">
-                <nav data-widget="pagination">
-                    <div class="ais-Panel">
-                        <div class="ais-Panel-body">
-                            <div>
-                                <div id="pagination"></div>
+        </header>
+            <main class="homeTab container">
+              <div class="container-wrapper">
+                <section class="container-filters">
+                    
+                </section>
+              </div>
+              <section class="main-wrapper">
+                    
+              </section>
+            </main>
+    
+            <section class="custom-banner">
+              <!-- <div id="queryRuleCustomData"></div> -->
+            </section>
+        
+            <main class="resultsTab container">
+              <div class="container-wrapper">
+                <section class="container-filters">
+                  <div style="width: 100%" id="personas-dropdown"></div>
+                  <div class="container-header">
+                    <h2>Search</h2>
+                    <div data-layout="desktop">
+                      <div id="clear-refinements-desktop"></div>
+                    </div>
+                    <div data-layout="mobile">
+                      <div class="ais-Stats" id="stats-mobile"></div>
+                    </div>
+                  </div>
+                  <aside class="container-body">
+                    <div class="widget">
+                      <div class="ais-Menu" id="main_category_c1ba1cfc-e6f9-d919-0850-21f77ee2e9a3"></div>
+                    </div>
+                  </aside>
+                </section>
+                <footer data-layout="mobile" class="container-filters-footer">
+                  <div class="container-filters-footer-button-wrapper">
+                    <div class="ais-ClearRefinements" id="clear-refinements-mobile"></div>
+                  </div>
+                  <div class="container-filters-footer-button-wrapper">
+                    <div class="ais-Stats" id="stats-bottom"></div>
+                  </div>
+                </footer>
+              </div>
+              <section class="container-results">
+                <header class="container-header container-options no-title">
+                  <div id="hitsPerPage"></div>
+                  <div id="stats-top"></div>
+                </header>
+                <div class="flex">
+              <section class="hits">
+                <div class="hitsWidgetWrapper widget">
+                  <div>
+                    <div>
+                      <div class="single-results-block">
+                        <!-- <h2>Articles</h2> -->
+                        <div id="hits-content_test"></div>
+                      </div>
+                      <div class="single-results-block" style="margin-top:10px">
+                        <h2>Products</h2>
+                        <div id="queryRuleCustomData"></div>
+                        <div id="search-results"></div>
+                      </div>
+                      <div class="single-results-block">
+                        <h2>Articles</h2>
+                        <div id="hits-articles_test"></div>
+                      </div>
+                    </header>
+                    <main class="homeTab container">
+                        <div class="container-wrapper">
+                            <section class="container-filters">
+                            </section>
+                        </div>
+                        <section class="main-wrapper">
+                        </section>
+                    </main>
+                    <section class="custom-banner">
+                        <!-- <div id="queryRuleCustomData"></div> -->
+                    </section>
+                    
+                </div>
+                <footer class="container-footer">
+                    <nav data-widget="pagination">
+                        <div class="ais-Panel">
+                            <div class="ais-Panel-body">
+                                <div>
+                                    <div id="pagination"></div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </nav>
-            </footer>
-            </section>
-    </main>
-    <aside data-layout="mobile" class="resultsTab container-filters-button">
-        <button class="base primary filters-button" onclick="window.openFiltering()">
-            <i class="mr-1 materialIcons">filter_list</i>&nbsp;Filters
-        </button>
-    </aside>
-    </div>
-    </div>
-    </main>
+                    </nav>
+                </footer>
+                </section>
+        </main>
+        <aside data-layout="mobile" class="resultsTab container-filters-button">
+            <button class="base primary filters-button" onclick="window.openFiltering()">
+                <i class="mr-1 materialIcons">filter_list</i>&nbsp;Filters
+            </button>
+        </aside>
+        </div>
+        </div>
+        </main>
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/algoliasearch@3.35.1/dist/algoliasearchLite.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.0.0/dist/instantsearch.production.min.js"></script>
-<script src="./app.js"></script>
+<script src="PersonaDropDown.js"></script>
+<script src="app.js"></script>
 <script>
-function openFiltering() {
-    opening = true;
-    document.querySelector('#filtering').classList.add('filtering');
-    document.addEventListener('click', closeFiltering);
-    filtering = true;
-}
-
-const container = document.querySelector("section.container-filters");
-
-function closeFiltering(e) {
-    if (opening) {
-        opening = false;
-        return;
+    function openFiltering() {
+        opening = true;
+        document.querySelector('#filtering').classList.add('filtering');
+        document.addEventListener('click', closeFiltering);
+        filtering = true;
     }
-
-    // hack to prevent side-effect from instantsearch
-    const targetIsExcluded = Array.from(e.target.classList).filter(c => c.startsWith('ais-')).length > 0;
-
-    const targetIsClose = e.target.getAttribute('data-action') === 'close-filtering';
-    const targetIsOutside = !container.contains(e.target);
-
-    if (filtering && !targetIsExcluded && (targetIsOutside || targetIsClose)) {
-        e.preventDefault();
-        filtering = false;
-        document.querySelector('#filtering').classList.remove('filtering');
-        document.removeEventListener('click', closeFiltering);
+    
+    const container = document.querySelector("section.container-filters");
+    
+    function closeFiltering(e) {
+        if (opening) {
+            opening = false;
+            return;
+        }
+    
+        // hack to prevent side-effect from instantsearch
+        const targetIsExcluded = Array.from(e.target.classList).filter(c => c.startsWith('ais-')).length > 0;
+    
+        const targetIsClose = e.target.getAttribute('data-action') === 'close-filtering';
+        const targetIsOutside = !container.contains(e.target);
+    
+        if (filtering && !targetIsExcluded && (targetIsOutside || targetIsClose)) {
+            e.preventDefault();
+            filtering = false;
+            document.querySelector('#filtering').classList.remove('filtering');
+            document.removeEventListener('click', closeFiltering);
+        }
     }
-}
-</script>
+    </script>
 
 </html>

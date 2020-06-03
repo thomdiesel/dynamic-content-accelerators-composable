@@ -555,7 +555,7 @@
           console.log('Success');
           console.log(data);
           try {
-            var link = data.masterVariant.sku;
+            var link = "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/interflora/product.html?productcode=" + data.masterVariant.sku;
             var image = data.masterVariant.images[0].url;
             var name = data.name['en'];
             //var description = data.description['en-GB'];

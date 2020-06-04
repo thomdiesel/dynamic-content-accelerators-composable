@@ -20,10 +20,10 @@ const customPageStats = instantsearch.connectors.connectStats(renderPageStats)
 const renderBanner = ({ widgetParams, hits }, isFirstRender) => {
   const container = document.querySelector(widgetParams.container)
   console.log('rendering', hits)
-  $.ajaxSetup ({
+  $.ajaxSetup({
     // Disable caching of AJAX responses
-    cache: false
-});
+    cache: false,
+  })
 
   if (hits && hits.length) {
     $(container).load(hits[0].ampURLHTML)
@@ -342,6 +342,48 @@ search.addWidgets([
     showMoreLimit: 10,
     // note that searchable doesn't work for the menu widget
     searchable: true,
+    searchablePlaceholder: 'Search here...',
+    showMore: true,
+    cssClasses: {
+      count: 'not-hidden',
+    },
+  }),
+
+  instantsearch.widgets.panel({
+    templates: {
+      header: 'Colour',
+      collapseButtonText: `{{#collapsed}}<i class="materialIcons ais-Panel-collapseButton">add</i>{{/collapsed}}
+                  {{^collapsed}}<i class="materialIcons ais-Panel-collapseButton">remove</i>{{/collapsed}}`,
+    },
+    collapsed: () => false,
+  })(instantsearch.widgets.refinementList)({
+    container: '#main_category_c1ba1cfc-e6f9-d919-0850-21f77ee2e9a3',
+    attribute: 'style',
+    limit: 5,
+    showMoreLimit: 10,
+    // note that searchable doesn't work for the menu widget
+    searchable: true,
+    searchablePlaceholder: 'Search here...',
+    showMore: true,
+    cssClasses: {
+      count: 'not-hidden',
+    },
+  }),
+
+  instantsearch.widgets.panel({
+    templates: {
+      header: 'Gender',
+      collapseButtonText: `{{#collapsed}}<i class="materialIcons ais-Panel-collapseButton">add</i>{{/collapsed}}
+                  {{^collapsed}}<i class="materialIcons ais-Panel-collapseButton">remove</i>{{/collapsed}}`,
+    },
+    collapsed: () => false,
+  })(instantsearch.widgets.refinementList)({
+    container: '#main_category_gender',
+    attribute: 'gender',
+    limit: 5,
+    showMoreLimit: 10,
+    // note that searchable doesn't work for the menu widget
+    searchable: false,
     searchablePlaceholder: 'Search here...',
     showMore: true,
     cssClasses: {

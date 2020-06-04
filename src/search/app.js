@@ -1,34 +1,38 @@
 const searchClient = algoliasearch(
   'T7I8W0D1V2',
   'c572522c02c617013a1f53c1fa9968e5'
-);
+)
 
 const search = instantsearch({
   indexName: 'products_test_demo',
   searchClient,
-});
+})
 
 const renderPageStats = (renderOptions, isFirstRender) => {
-  const { nbHits, page, hitsPerPage, widgetParams } = renderOptions;
-  const start = page * hitsPerPage + 1;
-  const end = (page + 1) * hitsPerPage;
-  widgetParams.container.innerHTML = `<span class="ais-Page-stats">Results ${start}-${end} of ${nbHits}</span>`;
-};
+  const { nbHits, page, hitsPerPage, widgetParams } = renderOptions
+  const start = page * hitsPerPage + 1
+  const end = (page + 1) * hitsPerPage
+  widgetParams.container.innerHTML = `<span class="ais-Page-stats">Results ${start}-${end} of ${nbHits}</span>`
+}
 
-const customPageStats = instantsearch.connectors.connectStats(renderPageStats);
+const customPageStats = instantsearch.connectors.connectStats(renderPageStats)
 
 const renderBanner = ({ widgetParams, hits }, isFirstRender) => {
-  const container = document.querySelector(widgetParams.container);
-  console.log('rendering', hits);
+  const container = document.querySelector(widgetParams.container)
+  console.log('rendering', hits)
+  $.ajaxSetup ({
+    // Disable caching of AJAX responses
+    cache: false
+});
 
   if (hits && hits.length) {
-    $(container).load(hits[0].ampURLHTML);
+    $(container).load(hits[0].ampURLHTML)
   } else {
-    container.innerHTML = '';
+    container.innerHTML = ''
   }
-};
+}
 
-const customBanner = instantsearch.connectors.connectHits(renderBanner);
+const customBanner = instantsearch.connectors.connectHits(renderBanner)
 
 search.addWidgets([
   PersonaDropDown({
@@ -111,9 +115,9 @@ search.addWidgets([
     loadingIndicator: false,
     magnifier: true,
     queryHook(query, search) {
-      if (query) document.querySelector('.demo').classList.add('searching');
-      else document.querySelector('.demo').classList.remove('searching');
-      search(query);
+      if (query) document.querySelector('.demo').classList.add('searching')
+      else document.querySelector('.demo').classList.remove('searching')
+      search(query)
     },
   }),
 
@@ -121,18 +125,19 @@ search.addWidgets([
     getRankingInfo: true,
     attributesToSnippet: ['undefined:10'],
     snippetEllipsisText: '...',
+    enablePersonalization: true,
   }),
 
   instantsearch.widgets.queryRuleCustomData({
     container: '#queryRuleCustomData',
     transformItems(items) {
-      let banner = '';
+      let banner = ''
       if (items.length > 0) {
         if (items.find((el) => el['image']) !== undefined) {
-          banner = items.find((el) => el['image']).image;
+          banner = items.find((el) => el['image']).image
         }
       }
-      return { banner: banner };
+      return { banner: banner }
     },
     templates: {
       default: `
@@ -157,7 +162,7 @@ search.addWidgets([
         ...item,
         price: item.prices.find((o) => o.currency === 'USD'),
         isPromoted: item._rankingInfo && item._rankingInfo.promoted,
-      }));
+      }))
     },
     templates: {
       item: `<article class="hit">
@@ -238,7 +243,7 @@ search.addWidgets([
         return items.slice(0, 1).map((item) => ({
           ...item,
           isPromoted: item._rankingInfo && item._rankingInfo.promoted,
-        }));
+        }))
       },
     }),
   ]),
@@ -347,6 +352,6 @@ search.addWidgets([
   customPageStats({
     container: document.querySelector('#stats-top'),
   }),
-]);
+])
 
-search.start();
+search.start()

@@ -477,24 +477,47 @@
     var poi = new window.POI(params);
     poi.init();
   }
-
+  // because we have a different search page, we need to redirect if its a key change to the app.
   function evaluateAmplienceMenuLink(lnk) {
     console.log('link clicked = ' + lnk);
     if (lnk.indexOf('https://') >= 0) {
       window.open(lnk, '_self');
     } else {
+      // Always need to replace the search / product page with the main URL for the application....
       var currenturl = window.location.href;
-      if (currenturl.indexOf('&key=') >= 0) {
-        // Replace the key
-        var urlarr = currenturl.split('&');
+      if ( (currenturl.indexOf('/search.html') >=0 ) || (currenturl.indexOf('/product.html') >=0 ) ){
+        // https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/interflora/templates/acc-template-preview-interflora.html
+        currenturl = "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/interflora/templates/acc-template-preview-interflora.html" + window.location.href.substring(window.location.href.indexOf(".html") + 5);
+      }
 
+      if ( (currenturl.indexOf('&key=') >= 0) || (currenturl.indexOf('?key=') >= 0) ) {
+        // Replace the key
+        //var urlarr = currenturl.split('&');
+        var urlarr = currenturl.split(/[?]|[&]/);
         for (var i = 0; i < urlarr.length; i++) {
           var line = urlarr[i];
           if (line.indexOf('key=') == 0) {
             urlarr[i] = 'key=' + lnk;
           }
         }
-        var newurl = urlarr.join('&');
+        var newurl = "";
+        for(var h in urlarr){
+          if(h == 0){
+            newurl += urlarr[h]
+          }
+          if(h == 1){
+            newurl += "?" + urlarr[h]
+          }
+          if(h > 1){
+            newurl += "&" + urlarr[h]
+          }
+        }
+
+        /*if(urlarr.length <= 2){
+          newurl = urlarr.join('?')
+        }else{
+          newurl = urlarr.join('&');
+        }*/
         window.open(newurl, '_self');
       } else {
         if (currenturl.indexOf('?') >= 0) {
@@ -682,29 +705,67 @@
 
   function configureSearch() {
     searchClient = algoliasearch('{ALGOLIA_ID}', '{ALGOLIA_SECRET}');
-    var algoliasearches = document.querySelectorAll('[data-amp-index-name]');
+
+    var algoliasearches = document.querySelectorAll('[data-amp-index-type]');
     algoliasearches.forEach(function (item) {
-      var indexName = item.getAttribute('data-amp-index-name');
+      var indexType = item.getAttribute('data-amp-index-type');
+      var indexName;
+
+      switch(indexType) {
+        case "Banners":
+          indexName = "content_test";
+          break;
+        case "Articles":
+          indexName = "article_test"
+          break;
+        case "Products":
+          indexName = "products_test_demo"
+          break;
+        default:
+          indexName = "content_test";
+      }
+
       console.log('ALGOLIA INDEX TO USE: ' + indexName);
       var query = item.getAttribute('data-amp-query');
-      var attributes = item.getAttribute('data-amp-attributes');
-
+      var max = 1;
+      var maxdata = item.getAttribute('data-amp-max');
+      if(maxdata){
+        max = Number(maxdata)
+      }
       var index = searchClient.initIndex(indexName);
       var searchSettings = {
-        hitsPerPage: 1,
-        ruleContexts: [
-          'front_end'
-        ]
-      };
-      if (attributes) searchSettings.attributesToRetrieve = attributes;
+        hitsPerPage: max
+      }
       index.search(query, searchSettings).then(({ hits }) => {
         console.log('QUERY RESPONSE:');
         console.log(hits);
         console.log(item);
-        if (hits[0]) {
-          $(item).load(hits[0].ampURLHTML);
+        
+        if(hits.length >= 1){
+          $.ajaxSetup({ async: false })
+          // How to make this into a carousel
+          var htmlstr = '<div class="amp-dc-slider js_slider" data-infinite="true" data-autoplay="true"><div class="amp-dc-slider-frame js_frame"><ul class="amp-dc-slider-slides js_slides">';
+          if(hits.length > 1){
+            htmlstr += '</li></ul><span class="amp-dc-slider-prev js_prev js_slider_toggle"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 501.5 501.5"><g><path d="M302.67 90.877l55.77 55.508L254.575 250.75 358.44 355.116l-55.77 55.506L143.56 250.75z"/></g></svg></span><span class="amp-dc-slider-next js_next js_slider_toggle"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 501.5 501.5"><g><path d="M199.33 410.622l-55.77-55.508L247.425 250.75 143.56 146.384l55.77-55.507L358.44 250.75z"/></g></svg></span>';
+          }
+          htmlstr += '</div></div>';
+          $(item).append(htmlstr)
+
+          for(var c in hits){
+            var htmlurl = hits[c].ampURLHTML;
+            $.get(htmlurl, '', function (data) {
+              $('.amp-dc-slider-slides').append('<li class="amp-dc-slider-slide js_dc_slide">' + data + '</div>');
+              //$(item).append('<li class="amp-dc-slider-slide js_dc_slide">' + data + '</div>');
+            });
+          }
+          /*if(hits.length > 1){
+            $(item).append('</li></ul><span class="amp-dc-slider-prev js_prev js_slider_toggle"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 501.5 501.5"><g><path d="M302.67 90.877l55.77 55.508L254.575 250.75 358.44 355.116l-55.77 55.506L143.56 250.75z"/></g></svg></span><span class="amp-dc-slider-next js_next js_slider_toggle"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 501.5 501.5"><g><path d="M199.33 410.622l-55.77-55.508L247.425 250.75 143.56 146.384l55.77-55.507L358.44 250.75z"/></g></svg></span>')
+          }
+          $(item).append('</div></div>')*/
+          $.ajaxSetup({ async: true });
+          attachComponent('.amp-dc-slider', Slider);
         }
-      });
+      })
     });
   }
 

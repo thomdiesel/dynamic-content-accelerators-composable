@@ -66,7 +66,7 @@ input {
 .container {
   display: flex;
   margin: 0 auto;
-  max-width: 1100px;
+  max-width: 1280px;
   padding: 2rem 1rem
 }
 
@@ -1253,7 +1253,7 @@ h1, h2, h3, h4, h5, h6 {
 .searchWidget { padding: .5rem 1rem }
         .searchWidget,.searchWidgetPreview { max-width: 100%; width: 47rem }
         @media (max-width: 900px) {
-          .searchWidget { bottom: 0; position: absolute; transform: translateY(50%) }
+          .searchWidget { bottom: 0; transform: translateY(50%) }
           .demo.no-theme .searchWidget { position: relative; top: 0; left: 0; transform: none; }
         }
         #voicesearch-input { height: 100%; display: inline; }

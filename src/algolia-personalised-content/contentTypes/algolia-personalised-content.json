@@ -2,7 +2,7 @@
     "contentTypeUri": "{CONTENT_TYPE_BASEPATH}/algolia-personalised-content.json",
     "settings":
     {
-        "label": "Algolia Personalised Content",
+        "label": "Algolia Dynamic Content",
         "visualizations": [
         {
             "label": "Amplience CRS",
@@ -12,7 +12,8 @@
         {
             "label": "JSON",
             "templatedUri":"https://{{vse.domain}}/content/id/{{content.sys.id}}?depth=all&format=inlined",
-            "default": false
+            "default": false,
+            "cachebust": false
         }
         ],
         "icons": [

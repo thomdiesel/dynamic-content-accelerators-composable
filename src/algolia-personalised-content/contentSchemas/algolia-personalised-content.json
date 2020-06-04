@@ -10,12 +10,15 @@
 	],
 	"type": "object",
 	"properties": {
-		"index": {
+		"type": {
 			"type": "string",
-			"minLength": 0,
-			"maxLength": 50,
-			"title": "Index",
-			"description": "The name of the index to use in Algolia"
+			"title": "Type",
+			"description": "Type of content to display",
+			"enum": [
+			  "Banners",
+			  "Articles",
+			  "Products"
+			]
 		},
 		"query": {
 			"type": "string",
@@ -24,16 +27,17 @@
 			"title": "Query",
 			"description": "The query used to search"
 		},
-		"attributes": {
-			"title": "Attributes",
-			"description": "THe attributes to return",
-			"type": "array",
-			"minItems": 0,
-			"maxItems": 10,
-			"items": {
-			   "type": "string"
-			}
+		"max": {
+			"type": "string",
+			"title": "Max Items",
+			"description": "Maximum Number of items to display (defaults to 1)",
+			"enum": [
+			  "1",
+			  "2",
+			  "3",
+			  "5"
+			]
 		}
 	},
-	"propertyOrder": ["index", "query", "attributes"]
+	"propertyOrder": ["type", "search", "max"]
 }

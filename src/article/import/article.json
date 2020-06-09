@@ -1,5 +1,5 @@
 {
-    "body": "{CONTENT_TYPE_BASEPATH}/article.json",
+    "body": "../contentSchemas/article.json",
     "schemaId": "{CONTENT_TYPE_BASEPATH}/article.json",
     "validationLevel": "CONTENT_TYPE"
 }

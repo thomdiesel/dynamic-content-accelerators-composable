@@ -1,5 +1,5 @@
 {
-  "body": "{CONTENT_TYPE_BASEPATH}/navigation-slot.json",
+  "body": "../contentSchemas/navigation-slot.json",
   "schemaId": "{CONTENT_TYPE_BASEPATH}/navigation-slot.json",
   "validationLevel": "SLOT"
 }

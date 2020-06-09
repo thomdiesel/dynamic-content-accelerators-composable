@@ -1,5 +1,5 @@
 {
-    "body": "{CONTENT_TYPE_BASEPATH}/flexible-slot.json",
+    "body": "../contentSchemas/flexible-slot.json",
     "schemaId": "{CONTENT_TYPE_BASEPATH}/flexible-slot.json",
     "validationLevel": "SLOT"
   }

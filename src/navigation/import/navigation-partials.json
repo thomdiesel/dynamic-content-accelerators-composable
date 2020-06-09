@@ -1,5 +1,5 @@
 {
-  "body": "{CONTENT_TYPE_BASEPATH}/navigation-partials.json",
+  "body": "../contentSchemas/navigation-partials.json",
   "schemaId": "{CONTENT_TYPE_BASEPATH}/navigation-partials.json",
   "validationLevel": "PARTIAL"
 }

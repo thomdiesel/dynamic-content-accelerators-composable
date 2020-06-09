@@ -1,5 +1,5 @@
 {
-    "body": "{CONTENT_TYPE_BASEPATH}/interflora-metadata.json",
+    "body": "../contentSchemas/interflora-metadata.json",
     "schemaId": "{CONTENT_TYPE_BASEPATH}/interflora-metadata.json",
     "validationLevel": "PARTIAL"
   }

@@ -1,5 +1,5 @@
 {
-    "body": "{CONTENT_TYPE_BASEPATH}/landing-page.json",
+    "body": "../contentSchemas/landing-page.json",
     "schemaId": "{CONTENT_TYPE_BASEPATH}/landing-page.json",
     "validationLevel": "CONTENT_TYPE"
 }

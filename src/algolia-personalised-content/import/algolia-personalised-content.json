@@ -1,5 +1,5 @@
 {
-    "body": "{CONTENT_TYPE_BASEPATH}/algolia-personalised-content.json",
+    "body": "../contentSchemas/algolia-personalised-content.json",
     "schemaId": "{CONTENT_TYPE_BASEPATH}/algolia-personalised-content.json",
     "validationLevel": "CONTENT_TYPE"
 }

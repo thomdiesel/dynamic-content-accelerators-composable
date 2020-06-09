@@ -633,7 +633,7 @@ gulp.task('importclischemas', function (cb) {
 gulp.task('importclitypes', function (cb) {
   console.log('Importing Content Types');
   var importcontentypes = exec(
-    'dc-cli content-type import dist/contentTypes',
+    'dc-cli content-type import dist/contentTypes --sync',
     (error, stdout, stderr) => {
       if (error) {
         throw error;

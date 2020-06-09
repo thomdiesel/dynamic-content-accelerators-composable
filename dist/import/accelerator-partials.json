@@ -1,5 +1,5 @@
 {
-  "body": "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/interflora/contentSchemas/accelerator-partials.json",
+  "body": "../contentSchemas/accelerator-partials.json",
   "schemaId": "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/interflora/contentSchemas/accelerator-partials.json",
   "validationLevel": "PARTIAL"
 }

@@ -1,5 +1,5 @@
 {
-    "body": "{CONTENT_TYPE_BASEPATH}/image-poi.json",
+    "body": "../contentSchemas/image-poi.json",
     "schemaId": "{CONTENT_TYPE_BASEPATH}/image-poi.json",
     "validationLevel": "CONTENT_TYPE"
   }

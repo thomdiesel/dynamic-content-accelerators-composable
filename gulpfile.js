@@ -58,14 +58,14 @@ gulp.task('copy-templates', function () {
         .pipe(gulp.dest('dist/templates'));
 });
 
-gulp.task('copy-local-content-types', function () {
+gulp.task('copy-local-content-schemas', function () {
     return gulp
         .src([
-            'src/*/contentTypes/*.json'
+            'src/*/content-schemas/*.json'
         ])
         .pipe(replace())
         .pipe(flatten())
-        .pipe(gulp.dest('dist/contentTypes'));
+        .pipe(gulp.dest('dist/content-schemas'));
 });
 
 gulp.task('copy-node-modules', function () {
@@ -166,7 +166,7 @@ gulp.task(
         'copy-node-modules',
         'copy-icons',
         'copy-templates',
-        'copy-local-content-types',
+        'copy-local-content-schemas',
         'addLoryLicense',
         'build-js',
         'minify-js',

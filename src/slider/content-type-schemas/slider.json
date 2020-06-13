@@ -1,0 +1,5 @@
+{
+    "body": "../content-schemas/slider.json",
+    "schemaId": "{CONTENT_TYPE_BASEPATH}/slider.json",
+    "validationLevel": "CONTENT_TYPE"
+  }

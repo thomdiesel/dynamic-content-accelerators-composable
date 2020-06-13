@@ -1,0 +1,5 @@
+{
+    "body": "../content-schemas/cardList.json",
+    "schemaId": "{CONTENT_TYPE_BASEPATH}/cardList.json",
+    "validationLevel": "CONTENT_TYPE"
+  }

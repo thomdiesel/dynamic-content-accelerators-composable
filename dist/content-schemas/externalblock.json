@@ -1,7 +1,7 @@
 {
   "$schema": "http://bigcontent.io/cms/schema/v1/schema#",
-  "id": "https://unpkg.com/@amplience/dynamic-content-accelerators/dist/contentTypes/externalblock.json",
-  "title": "External block",
+  "id": "https://unpkg.com/@amplience/dynamic-content-accelerators/dist/contentTypes/externalBlock.json",
+  "title": "External Block",
   "description": "External block accelerator",
   "allOf": [
     {
@@ -18,7 +18,5 @@
       "description": "Insert HTML code here"
     }
   },
-  "propertyOrder": [
-    "external"
-  ]
+  "propertyOrder": ["external"]
 }

@@ -1,8 +1,8 @@
 {
   "$schema": "http://bigcontent.io/cms/schema/v1/schema#",
-  "id": "https://unpkg.com/@amplience/dynamic-content-accelerators/dist/contentTypes/splitblock.json",
-  "title": "Split block",
-  "description": "Split block accelerator",
+  "id": "https://unpkg.com/@amplience/dynamic-content-accelerators/dist/contentTypes/splitBlock.json",
+  "title": "Split Block",
+  "description": "Split Block accelerator",
   "allOf": [
     {
       "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
@@ -36,19 +36,10 @@
     },
     "split": {
       "type": "string",
-      "enum": [
-        "50/50",
-        "70/30",
-        "30/70"
-      ],
+      "enum": ["50/50", "70/30", "30/70"],
       "title": "Split ratio"
     }
   },
-  "propertyOrder": [
-    "content",
-    "split"
-  ],
-  "required": [
-    "split"
-  ]
+  "propertyOrder": ["content", "split"],
+  "required": ["split"]
 }

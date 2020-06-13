@@ -1,7 +1,7 @@
 {
   "$schema": "http://bigcontent.io/cms/schema/v1/schema#",
-  "id": "{CONTENT_TYPE_BASEPATH}/cardlist.json",
-  "title": "Card list",
+  "id": "{CONTENT_TYPE_BASEPATH}/cardList.json",
+  "title": "Card List",
   "description": "Card list accelerator",
   "allOf": [
     {
@@ -26,9 +26,7 @@
           {
             "properties": {
               "contentType": {
-                "enum": [
-                  "{CONTENT_TYPE_BASEPATH}/card.json"
-                ]
+                "enum": ["{CONTENT_TYPE_BASEPATH}/card.json"]
               }
             }
           }
@@ -39,8 +37,5 @@
       "title": "Cards"
     }
   },
-  "propertyOrder": [
-    "header",
-    "cards"
-  ]
+  "propertyOrder": ["header", "cards"]
 }

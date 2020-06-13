@@ -1,0 +1,5 @@
+{
+    "body": "../content-schemas/promoList.json",
+    "schemaId": "{CONTENT_TYPE_BASEPATH}/promoList.json",
+    "validationLevel": "CONTENT_TYPE"
+  }

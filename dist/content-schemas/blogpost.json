@@ -1,7 +1,7 @@
 {
   "$schema": "http://bigcontent.io/cms/schema/v1/schema#",
-  "id": "https://unpkg.com/@amplience/dynamic-content-accelerators/dist/contentTypes/blogpost.json",
-  "title": "Blog post",
+  "id": "https://unpkg.com/@amplience/dynamic-content-accelerators/dist/contentTypes/blogPost.json",
+  "title": "Blog Post",
   "description": "Blog post accelerator",
   "allOf": [
     {
@@ -55,9 +55,5 @@
       "title": "Content"
     }
   },
-  "propertyOrder": [
-    "snippet",
-    "title",
-    "content"
-  ]
+  "propertyOrder": ["snippet", "title", "content"]
 }

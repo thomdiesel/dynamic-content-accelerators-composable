@@ -1,7 +1,7 @@
 {
   "$schema": "http://bigcontent.io/cms/schema/v1/schema#",
-  "id": "{CONTENT_TYPE_BASEPATH}/externalblock.json",
-  "title": "External block",
+  "id": "{CONTENT_TYPE_BASEPATH}/externalBlock.json",
+  "title": "External Block",
   "description": "External block accelerator",
   "allOf": [
     {
@@ -18,7 +18,5 @@
       "description": "Insert HTML code here"
     }
   },
-  "propertyOrder": [
-    "external"
-  ]
+  "propertyOrder": ["external"]
 }

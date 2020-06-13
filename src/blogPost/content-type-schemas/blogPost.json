@@ -1,0 +1,5 @@
+{
+    "body": "../content-schemas/blogPost.json",
+    "schemaId": "{CONTENT_TYPE_BASEPATH}/blogPost.json",
+    "validationLevel": "CONTENT_TYPE"
+  }

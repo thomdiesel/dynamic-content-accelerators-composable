@@ -8,12 +8,7 @@
       "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
     }
   ],
-  "propertyOrder": [
-    "image",
-    "imageAltText",
-    "seoText",
-    "roundel"
-  ],
+  "propertyOrder": ["image", "imageAltText", "seoText", "roundel"],
   "type": "object",
   "properties": {
     "image": {
@@ -37,7 +32,7 @@
       "minLength": 0,
       "maxLength": 100,
       "title": "SEO text",
-      "pattern": "^[\/A-Za-z0-9+_-]+$",
+      "pattern": "^[/A-Za-z0-9+_-]+$",
       "description": "Enter only alphanumeric, _, -, +, / characters"
     },
     "roundel": {

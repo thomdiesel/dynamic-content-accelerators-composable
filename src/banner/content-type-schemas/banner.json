@@ -1,0 +1,5 @@
+{
+  "body": "../content-schemas/banner.json",
+  "schemaId": "{CONTENT_TYPE_BASEPATH}/banner.json",
+  "validationLevel": "CONTENT_TYPE"
+}

@@ -1,0 +1,5 @@
+{
+    "body": "../content-schemas/video.json",
+    "schemaId": "{CONTENT_TYPE_BASEPATH}/video.json",
+    "validationLevel": "CONTENT_TYPE"
+  }

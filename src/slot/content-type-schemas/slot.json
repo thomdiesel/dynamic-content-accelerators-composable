@@ -1,0 +1,5 @@
+{
+    "body": "../content-schemas/slot.json",
+    "schemaId": "{CONTENT_TYPE_BASEPATH}/slot.json",
+    "validationLevel": "CONTENT_TYPE"
+  }

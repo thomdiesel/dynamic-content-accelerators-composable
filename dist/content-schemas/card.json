@@ -41,10 +41,5 @@
       ]
     }
   },
-  "propertyOrder": [
-    "cardImage",
-    "cardName",
-    "description",
-    "link"
-  ]
+  "propertyOrder": ["cardImage", "cardName", "description", "link"]
 }

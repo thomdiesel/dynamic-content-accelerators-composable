@@ -22,15 +22,14 @@
               "contentType": {
                 "enum": [
                   "https://unpkg.com/@amplience/dynamic-content-accelerators/dist/contentTypes/banner.json",
-                  "https://unpkg.com/@amplience/dynamic-content-accelerators/dist/contentTypes/blogpost.json",
+                  "https://unpkg.com/@amplience/dynamic-content-accelerators/dist/contentTypes/blogPost.json",
                   "https://unpkg.com/@amplience/dynamic-content-accelerators/dist/contentTypes/card.json",
-                  "https://unpkg.com/@amplience/dynamic-content-accelerators/dist/contentTypes/cardlist.json",
-                  "https://unpkg.com/@amplience/dynamic-content-accelerators/dist/contentTypes/externalblock.json",
+                  "https://unpkg.com/@amplience/dynamic-content-accelerators/dist/contentTypes/cardList.json",
+                  "https://unpkg.com/@amplience/dynamic-content-accelerators/dist/contentTypes/externalBlock.json",
                   "https://unpkg.com/@amplience/dynamic-content-accelerators/dist/contentTypes/image.json",
-                  "https://unpkg.com/@amplience/dynamic-content-accelerators/dist/contentTypes/promo.json",
-                  "https://unpkg.com/@amplience/dynamic-content-accelerators/dist/contentTypes/promolist.json",
+                  "https://unpkg.com/@amplience/dynamic-content-accelerators/dist/contentTypes/promoList.json",
                   "https://unpkg.com/@amplience/dynamic-content-accelerators/dist/contentTypes/slider.json",
-                  "https://unpkg.com/@amplience/dynamic-content-accelerators/dist/contentTypes/splitblock.json",
+                  "https://unpkg.com/@amplience/dynamic-content-accelerators/dist/contentTypes/splitBlock.json",
                   "https://unpkg.com/@amplience/dynamic-content-accelerators/dist/contentTypes/text.json",
                   "https://unpkg.com/@amplience/dynamic-content-accelerators/dist/contentTypes/video.json"
                 ]
@@ -42,7 +41,5 @@
       "title": "Content types"
     }
   },
-  "propertyOrder": [
-    "contentTypes"
-  ]
+  "propertyOrder": ["contentTypes"]
 }

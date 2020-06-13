@@ -10,6 +10,10 @@
   ],
   "type": "object",
   "properties": {
+    "component": {
+      "type": "string",
+      "const": "Page"
+    },
     "contentTypes": {
       "type": "array",
       "items": {
@@ -41,5 +45,5 @@
       "title": "Content types"
     }
   },
-  "propertyOrder": ["contentTypes"]
+  "propertyOrder": ["contentTypes", "component"]
 }

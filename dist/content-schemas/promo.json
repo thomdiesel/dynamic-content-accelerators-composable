@@ -10,6 +10,10 @@
   ],
   "type": "object",
   "properties": {
+    "component": {
+      "type": "string",
+      "const": "Promo"
+    },
     "icon": {
       "title": "Icon",
       "type": "object",
@@ -65,6 +69,7 @@
     "toplineColor",
     "bottomLine",
     "bottomlineColor",
-    "link"
+    "link",
+    "component"
   ]
 }

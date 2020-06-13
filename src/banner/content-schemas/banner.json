@@ -10,6 +10,10 @@
   ],
   "type": "object",
   "properties": {
+    "component": {
+      "type": "string",
+      "const": "Banner"
+    },
     "bannerImage": {
       "description": "",
       "type": "object",
@@ -86,6 +90,7 @@
     "textPositionLeft",
     "textPositionTop",
     "button",
-    "stackMobileLayout"
+    "stackMobileLayout",
+    "component"
   ]
 }

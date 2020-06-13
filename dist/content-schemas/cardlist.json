@@ -10,6 +10,10 @@
   ],
   "type": "object",
   "properties": {
+    "component": {
+      "type": "string",
+      "const": "CardList"
+    },
     "header": {
       "type": "string",
       "minLength": 0,
@@ -37,5 +41,5 @@
       "title": "Cards"
     }
   },
-  "propertyOrder": ["header", "cards"]
+  "propertyOrder": ["header", "cards", "component"]
 }

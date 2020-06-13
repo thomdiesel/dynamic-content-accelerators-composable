@@ -10,6 +10,10 @@
   ],
   "type": "object",
   "properties": {
+    "component": {
+      "type": "string",
+      "const": "PromoList"
+    },
     "promoItems": {
       "type": "array",
       "title": "Promo list items",
@@ -31,5 +35,5 @@
       "maxItems": 3
     }
   },
-  "propertyOrder": ["promoItems"]
+  "propertyOrder": ["promoItems", "component"]
 }

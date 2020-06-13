@@ -10,6 +10,10 @@
   ],
   "type": "object",
   "properties": {
+    "component": {
+      "type": "string",
+      "const": "Video"
+    },
     "video": {
       "title": "Video",
       "type": "object",
@@ -20,5 +24,5 @@
       ]
     }
   },
-  "propertyOrder": ["video"]
+  "propertyOrder": ["video", "component"]
 }

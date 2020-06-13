@@ -1,6 +1,6 @@
 {
-  "$schema": "http://bigcontent.io/cms/schema/v1/schema#",
-  "id": "{CONTENT_TYPE_BASEPATH}/accelerator-partials.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "{CONTENT_TYPE_BASEPATH}/accelerator-partials.json",
   "title": "Accelerator partials",
   "description": "Partials",
   "allOf": [

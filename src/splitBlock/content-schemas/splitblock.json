@@ -1,6 +1,6 @@
 {
-  "$schema": "http://bigcontent.io/cms/schema/v1/schema#",
-  "id": "{CONTENT_TYPE_BASEPATH}/splitBlock.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "{CONTENT_TYPE_BASEPATH}/splitBlock.json",
   "title": "Split Block",
   "description": "Split Block accelerator",
   "allOf": [

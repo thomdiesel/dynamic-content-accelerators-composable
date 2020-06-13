@@ -1,11 +1,11 @@
 {
-  "$schema": "http://bigcontent.io/cms/schema/v1/schema#",
+  "$schema": "http://json-schema.org/draft-07/schema#",
   "allOf": [
     {
       "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
     }
   ],
-  "id": "{CONTENT_TYPE_BASEPATH}/slot.json",
+  "$id": "{CONTENT_TYPE_BASEPATH}/slot.json",
   "title": "Slot",
   "description": "Slot accelerator",
   "type": "object",

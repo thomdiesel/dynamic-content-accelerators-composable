@@ -1,0 +1,5 @@
+{
+    "body": "../content-schemas/externalBlock.json",
+    "schemaId": "https://unpkg.com/@amplience/dynamic-content-accelerators/dist/contentTypes/externalBlock.json",
+    "validationLevel": "CONTENT_TYPE"
+  }

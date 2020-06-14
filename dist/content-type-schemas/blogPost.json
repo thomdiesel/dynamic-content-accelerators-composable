@@ -1,0 +1,5 @@
+{
+    "body": "../content-schemas/blogPost.json",
+    "schemaId": "https://unpkg.com/@amplience/dynamic-content-accelerators/dist/contentTypes/blogPost.json",
+    "validationLevel": "CONTENT_TYPE"
+  }

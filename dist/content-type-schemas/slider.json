@@ -1,0 +1,5 @@
+{
+    "body": "../content-schemas/slider.json",
+    "schemaId": "https://unpkg.com/@amplience/dynamic-content-accelerators/dist/contentTypes/slider.json",
+    "validationLevel": "CONTENT_TYPE"
+  }

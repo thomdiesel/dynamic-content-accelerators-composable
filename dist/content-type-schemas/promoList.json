@@ -1,0 +1,5 @@
+{
+    "body": "../content-schemas/promoList.json",
+    "schemaId": "https://unpkg.com/@amplience/dynamic-content-accelerators/dist/contentTypes/promoList.json",
+    "validationLevel": "CONTENT_TYPE"
+  }

@@ -1,0 +1,27 @@
+{
+	"contentTypeUri": "https://unpkg.com/@amplience/dynamic-content-accelerators/dist/contentTypes/text.json",
+	"settings": {
+		"label": "Text",
+		"visualizations": [
+			{
+				"label": "Preview",
+				"templatedUri": "https://{{vse.domain}}/v1/content/demo/content-item/{{content.sys.id}}?template=acc-template-visualization",
+				"default": true
+			}
+		],
+		"icons": [
+			{
+				"size": 256,
+				"url": "https://bigcontent.io/cms/icons/potter/potter-text.png"
+			}
+		],
+		"cards": [
+			{
+				"templatedUri": "https://{{vse.domain}}/v1/content/demo/content-item/{{content.sys.id}}?template=acc-template-cardsPreview"
+			}
+		]
+	},
+	"repositories": [
+		"content"
+	]
+}

@@ -13,6 +13,7 @@ var addSrc = require('gulp-add-src');
 var connect = require('gulp-connect');
 var flatten = require('gulp-flatten');
 var cleanCSS = require('gulp-clean-css');
+var jsonFormat = require('gulp-json-format');
 
 var toReplace = require('./.replace.json');
 
@@ -30,6 +31,35 @@ var replaceCompany = function () {
     return es.map(function (file, cb) {
         var fileContent = file.contents.toString();
         fileContent = fileContent.replace(/\{COMPANY_TAG\}/g, toReplace.COMPANY_TAG);
+        file.contents = new Buffer.from(fileContent);
+        // send the updated file down the pipe
+        cb(null, file);
+    });
+};
+
+var globalVisualizations = toReplace.VISUALIZATIONS;
+var globalVisualizationsString = "";
+if( globalVisualizations && globalVisualizations.length >= 1 ){
+    for (var i in globalVisualizations){
+        globalVisualizationsString += JSON.stringify(globalVisualizations[i])+ ",";
+    }
+    globalVisualizationsString = globalVisualizationsString.substring(0, globalVisualizationsString.length - 1);
+
+}
+console.log("VISUALIZATIONS")
+console.log(globalVisualizations.length);
+console.log("STRING")
+console.log(globalVisualizationsString);
+
+/* Checks in the configuration for global visualisations, if they exists adds them as an object whilst allowing additions */
+var replaceVisualizations = function () {
+    return es.map(function (file, cb) {
+        if(globalVisualizationsString == ""){
+            cb(null, file);
+            return;
+        }
+        var fileContent = file.contents.toString();
+        fileContent = fileContent.replace(/\{VISUALIZATIONS\}/g, globalVisualizationsString);
         file.contents = new Buffer.from(fileContent);
         // send the updated file down the pipe
         cb(null, file);
@@ -66,6 +96,28 @@ gulp.task('copy-local-content-schemas', function () {
         .pipe(replace())
         .pipe(flatten())
         .pipe(gulp.dest('dist/content-schemas'));
+});
+
+gulp.task('copy-local-content-types', function () {
+    return gulp
+        .src([
+            'src/*/content-types/*.json'
+        ])
+        .pipe(replace())
+        .pipe(replaceVisualizations())
+        .pipe(flatten())
+        .pipe(jsonFormat("\t"))
+        .pipe(gulp.dest('dist/content-types'));
+});
+
+gulp.task('copy-local-content-type-schemas', function () {
+    return gulp
+        .src([
+            'src/*/content-type-schemas/*.json'
+        ])
+        .pipe(replace())
+        .pipe(flatten())
+        .pipe(gulp.dest('dist/content-type-schemas'));
 });
 
 gulp.task('copy-node-modules', function () {
@@ -167,6 +219,8 @@ gulp.task(
         'copy-icons',
         'copy-templates',
         'copy-local-content-schemas',
+        'copy-local-content-types',
+        'copy-local-content-type-schemas',
         'addLoryLicense',
         'build-js',
         'minify-js',

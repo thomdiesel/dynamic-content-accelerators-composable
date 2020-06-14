@@ -3,11 +3,7 @@
     "settings": {
       "label": "Split Block",
       "visualizations": [
-        {
-          "label": "Preview",
-          "templatedUri": "https://{{vse.domain}}/v1/content/demo/content-item/{{content.sys.id}}?template=acc-template-visualization",
-          "default": true
-        }
+        {VISUALIZATIONS}
       ],
       "icons": [
         {

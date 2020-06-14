@@ -3,14 +3,9 @@
   "COMPANY_TAG": "csdemo",
   "VISUALIZATIONS": [
     {
-      "label": "DEV (Localhost)",
+      "label": "Visualization",
       "templatedUri": "https://{{vse.domain}}/v1/content/demo/content-item/{{content.sys.id}}?template=acc-template-visualization",
       "default": true
-    },
-    {
-      "label": "DEV (Localhost)",
-      "templatedUri": "TBC",
-      "default": false
     },
     {
       "label": "JSON (CDV2)",

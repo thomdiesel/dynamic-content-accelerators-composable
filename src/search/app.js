@@ -4,7 +4,7 @@ const searchClient = algoliasearch(
 )
 
 const search = instantsearch({
-  indexName: 'products_test_demo',
+  indexName: 'interflora_products_test_demo',
   searchClient,
 })
 
@@ -236,7 +236,7 @@ search.addWidgets([
     },
   }),
 
-  instantsearch.widgets.index({ indexName: 'content_test' }).addWidgets([
+  instantsearch.widgets.index({ indexName: 'interflora_content_test' }).addWidgets([
     customBanner({
       container: '#hits-content_test',
       transformItems(items) {
@@ -248,7 +248,7 @@ search.addWidgets([
     }),
   ]),
 
-  instantsearch.widgets.index({ indexName: 'article_test' }).addWidgets([
+  instantsearch.widgets.index({ indexName: 'interflora_article_test' }).addWidgets([
     instantsearch.widgets.hits({
       container: '#hits-articles_test',
       transformItems(items) {

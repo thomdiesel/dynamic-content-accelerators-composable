@@ -713,13 +713,10 @@
 
       switch(indexType) {
         case "Banners":
-          indexName = "content_test";
+          indexName = "interflora_content_test";
           break;
         case "Articles":
-          indexName = "article_test"
-          break;
-        case "Products":
-          indexName = "products_test_demo"
+          indexName = "interflora_article_test"
           break;
         default:
           indexName = "content_test";

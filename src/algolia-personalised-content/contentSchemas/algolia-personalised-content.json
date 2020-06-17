@@ -16,8 +16,7 @@
 			"description": "Type of content to display",
 			"enum": [
 			  "Banners",
-			  "Articles",
-			  "Products"
+			  "Articles"
 			]
 		},
 		"query": {

@@ -1,8 +1,8 @@
 [![Amplience Dynamic Content](media/header.png)](https://amplience.com/dynamic-content)
 
-# Dynamic Content Accelerators - Rendering Service
+# Dynamic Content Accelerators
 
-> Extensible content types and rendering templates for use with the Amplience Rendering Service
+> Extensible content types and handlebars rendering templates for use in your applications.
 
 [![github version](https://img.shields.io/github/release/amplience/dynamic-content-accelerators.svg)](https://github.com/amplience/dynamic-content-accelerators/releases/latest) [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
@@ -131,7 +131,7 @@ These changes should ensure that the project is quick and easy to use, the conte
 If you need help please reach out using one of the following channels:
 
 * Ask a question on [StackOverflow](https://stackoverflow.com/) using the tag `amplience-dynamic-content`
-* Contact your [Amplience Customer Success](https://amplience.com/customer-success) representative
+* Contact your Amplience Customer Success representative
 * If you have found a bug please report it by [opening an issue](https://github.com/amplience/dynamic-content-accelerators/issues/new)
 
 ## License

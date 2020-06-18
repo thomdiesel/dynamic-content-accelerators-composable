@@ -392,8 +392,10 @@
                 menukey +
                 '?locale=' +
                 locale;
+              $.ajaxSetup({cache:true})
               $.getJSON(menuURL, { format: 'inlined', depth: 'all' }).done(
                 function (data) {
+                  $.ajaxSetup({cache:false})
                   var htmltorender = rendertemplate(data.content);
                   console.log(htmltorender);
                   $('#amp-menu-holder').html(htmltorender);
@@ -403,11 +405,12 @@
 
             var url = 'https://' + vse + '/content/key/' + key;
             if (cid) url = 'https://' + vse + '/content/id/' + cid;
-
+            $.ajaxSetup({cache:true})
             $.getJSON(url + '?locale=' + locale, {
               format: 'inlined',
               depth: 'all',
             }).done(function (data) {
+              $.ajaxSetup({cache:false})
               var loadstr = 'DONE!';
               $('#loader-text').html(loadstr);
               console.log(loadstr);

@@ -150,6 +150,7 @@ gulp.task('copy-templates', function () {
 gulp.task('copy-search-app', function () {
   return gulp
     .src(['src/search/*.*', 'src/product/*.*'])
+    .pipe(replace())
     .pipe(flatten())
     .pipe(gulp.dest('dist'));
 });

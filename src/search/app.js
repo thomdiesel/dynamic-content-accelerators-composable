@@ -160,7 +160,7 @@ search.addWidgets([
     transformItems(items) {
       return items.map((item) => ({
         ...item,
-        price: item.prices.find((o) => o.currency === 'USD'),
+        price: item['euro-price'], //item.prices.find((o) => o.currency === 'USD'),
         isPromoted: item._rankingInfo && item._rankingInfo.promoted,
       }))
     },
@@ -188,7 +188,7 @@ search.addWidgets([
                   </span>
                 </h1>
                 
-                <div class="hit-description"><b class="hit-currency">$</b> {{{price.amount}}}</div>
+                <div class="hit-description"><b class="hit-currency">$</b> {{{price}}}</div>
                 
               </main>
               </a>

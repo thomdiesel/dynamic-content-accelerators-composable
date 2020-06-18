@@ -36,23 +36,6 @@
       "minLength": 0,
       "maxLength": 500
     },
-    "category": {
-      "type": "array",
-      "title": "Category",
-      "description": "The name of the category this relates too",
-      "items": {
-        "type": "string",
-        "enum": [
-          "women",
-          "men",
-          "beauty",
-          "lighting",
-          "furniture",
-          "electricals",
-          "inspiration"
-        ]
-      }
-    },
     "keywords": {
       "type": "array",
       "title": "Keywords",
@@ -90,40 +73,24 @@
       "minLength": 0,
       "maxLength": 10
     },
-    "flower-type": {
-      "title": "Flower Type",
-      "description": "Select the flower type(s) this content relates to",
-      "type": "array",
-      "minItems": 0,
-      "maxItems": 10,
-      "items": {
-        "type": "string",
-        "enum": [
-          "rose",
-          "carnation",
-          "chrysanthemum",
-          "lily",
-          "hydrangea",
-          "gladioli",
-          "eucalyptus",
-          "freesia",
-          "delphinium",
-          "orchid",
-          "tulip",
-          "veronica",
-          "germini",
-          "iris"
-        ]
-      }
+    "metadata": {
+      "type": "object",
+      "title": "Meta Data",
+      "description": "Meta data related to this content",
+      "allOf": [
+        {
+          "$ref": "{CONTENT_TYPE_BASEPATH}/algolia-metadata.json#/definitions/metadata"
+        }
+      ]
     }
   },
   "propertyOrder": [
     "blogdate",
-    "category",
     "image",
     "title",
     "description",
     "keywords",
-    "author"
+    "author",
+    "metadata"
   ]
 }

@@ -11,7 +11,7 @@
         },
         {
             "label": "JSON",
-            "templatedUri":"https://{{vse.domain}}/content/id/{{content.sys.id}}?depth=all&format=inlined",
+            "templatedUri":"https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/dc-visualiization-content-delivery/index.html?vse={{vse.domain}}&id={{content.sys.id}}&depth=all&format=inlined",
             "default": false
         }
         ],
@@ -25,5 +25,5 @@
             "templatedUri":"https://{{vse.domain}}/v1/content/store/content-item/{{content.sys.id}}?template=acc-template-visualization&timestamp={{context.timestamp}}&locale={{locales}},en-US,*"
         }]
     },
-    "repositories": {REPOSITORIES}
+    "repositories": {NAVIGATION_REPOSITORIES}
 }

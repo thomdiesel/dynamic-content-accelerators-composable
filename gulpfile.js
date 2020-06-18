@@ -52,6 +52,11 @@ var replace = function () {
       JSON.stringify(config.SLOT_REPOSITORIES)
     );
     fileContent = fileContent.replace(
+      /\{NAVIGATION_REPOSITORIES\}/g,
+      JSON.stringify(config.NAVIGATION_REPOSITORIES)
+    );
+    
+    fileContent = fileContent.replace(
       /\{ICON_BASEPATH\}/g,
       config.s3.url + config.s3.uploadpath + 'icons'
     );
@@ -126,6 +131,12 @@ gulp.task('copy-icons', function () {
     .src(['src/**/*.icon.*'])
     .pipe(flatten())
     .pipe(gulp.dest('dist/icons'));
+});
+gulp.task('copy-logo', function () {
+  return gulp
+    .src(['*.png'])
+    .pipe(flatten())
+    .pipe(gulp.dest('dist'));
 });
 
 gulp.task('copy-templates', function () {
@@ -290,6 +301,7 @@ gulp.task(
     'del',
     'copy-node-modules',
     'copy-icons',
+    'copy-logo',
     'copy-templates',
     'copy-local-extensions',
     'copy-local-content-schemas',

@@ -2,7 +2,7 @@
 
 (function (exports) {
   var partialsToLoad = [
-    'interflora-templateChooser',
+    'templateChooser',
     'acc-template-navigation',
     'acc-template-navigation-slot',
     'acc-template-flexible-slot',
@@ -16,9 +16,9 @@
     'acc-template-algolia-personalised-content',
     'acc-template-article',
     'acc-template-article-snippet',
-    'acc-template-card-interflora',
-    'acc-template-cardList-interflora',
-    'acc-template-interflora-video',
+    'acc-template-card',
+    'acc-template-cardList',
+    'acc-template-video',
   ];
 
   var loadLength = partialsToLoad.length;
@@ -40,9 +40,9 @@
     if (sDefault) return sDefault;
   };
 
-  var vse = getUrlParameter('vse', 'emilydemo.cdn.content.amplience.net');
-  var key = getUrlParameter('key', 'interflora/web/home');
-  var menukey = getUrlParameter('menukey', 'interflora/web/navigation');
+  var vse = getUrlParameter('vse', 'algoliaampse.cdn.content.amplience.net');
+  var key = getUrlParameter('key', 'web/home');
+  var menukey = getUrlParameter('menukey', 'web/navigation');
   var locale = getUrlParameter('locale', 'en-US,en-*,*');
   var segment = getUrlParameter('segment', '');
   var segment = getUrlParameter('customerid', '');
@@ -362,7 +362,7 @@
 
     function loadDynamicHBSTemplates(name) {
       $.ajax({
-        url: 'https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/interflora/templates/' + name + '.html',
+        url: 'https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/algolia-amplience-ct-demo/templates/' + name + '.html',
         dataType: 'html',
         cache: true,
         success: function (data) {
@@ -381,7 +381,7 @@
             $('#loader-text').html(loadstr);
             console.log(loadstr);
             rendertemplate = Handlebars.compile(
-              '{{> interflora-templateChooser this}}'
+              '{{> templateChooser this}}'
             );
 
             if (!hidemenu) {
@@ -431,7 +431,7 @@
   function initPOI() {
     var params = window.poiDefaults || {
       domain: 'https://' + vse,
-      account: 'presales',
+      account: 'algoliaampse',
       containerClass: 'amp-dc-poi-image',
       imgClass: 'amp-dc-image-pic',
       images: [
@@ -486,8 +486,7 @@
       // Always need to replace the search / product page with the main URL for the application....
       var currenturl = window.location.href;
       if ( (currenturl.indexOf('/search.html') >=0 ) || (currenturl.indexOf('/product.html') >=0 ) ){
-        // https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/interflora/templates/acc-template-preview-interflora.html
-        currenturl = "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/interflora/templates/acc-template-preview-interflora.html" + window.location.href.substring(window.location.href.indexOf(".html") + 5);
+        currenturl = "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/algolia-amplience-ct-demo/templates/acc-template-preview.html" + window.location.href.substring(window.location.href.indexOf(".html") + 5);
       }
 
       if ( (currenturl.indexOf('&key=') >= 0) || (currenturl.indexOf('?key=') >= 0) ) {
@@ -578,7 +577,7 @@
           console.log('Success');
           console.log(data);
           try {
-            var link = "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/interflora/product.html?productcode=" + data.masterVariant.sku;
+            var link = "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/algolia-amplience-ct-demo/product.html?productcode=" + data.masterVariant.sku;
             var image = data.masterVariant.images[0].url;
             var name = data.name['en'];
             //var description = data.description['en-GB'];
@@ -713,13 +712,13 @@
 
       switch(indexType) {
         case "Banners":
-          indexName = "interflora_content_test";
+          indexName = "amplience_content_banners";
           break;
         case "Articles":
-          indexName = "interflora_article_test"
+          indexName = "amplience_content_articles"
           break;
         default:
-          indexName = "content_test";
+          indexName = "amplience_content_banners";
       }
 
       console.log('ALGOLIA INDEX TO USE: ' + indexName);

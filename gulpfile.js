@@ -30,7 +30,7 @@ var CHAccessToken;
 var CHHub;
 var CHMappingIds = {};
 
-var config = require('./.config-interflora.json');
+var config = require('./.config-algolia-demo.json');
 var s3 = require('gulp-s3-upload')({
   accessKeyId: config.s3.accessKeyId,
   secretAccessKey: config.s3.secretAccessKey,
@@ -63,46 +63,43 @@ var replace = function () {
       /\{DELIVERY_BASE\}/g,
       config.DELIVERY_BASE
     );
+    fileContent = fileContent.replace(/\{HOSTING_BASE\}/g, config.HOSTING_BASE);
     fileContent = fileContent.replace(
-        /\{HOSTING_BASE\}/g,
-        config.HOSTING_BASE
-      );
-      fileContent = fileContent.replace(
-        /\{CT_ID\}/g,
-        config.commercetools.clientID
-      );
-      fileContent = fileContent.replace(
-        /\{CT_SECRET\}/g,
-        config.commercetools.clientSecret
-      );
-      fileContent = fileContent.replace(
-        /\{CT_AUTH_URL\}/g,
-        config.commercetools.authURL
-      );
-      fileContent = fileContent.replace(
-        /\{CT_API_URL\}/g,
-        config.commercetools.apiURL
-      );
-      fileContent = fileContent.replace(
-        /\{CT_PROJECT_KEY\}/g,
-        config.commercetools.projectKey
-      );
-      fileContent = fileContent.replace(
-        /\{CT_SCOPE\}/g,
-        config.commercetools.scope
-      );
-      fileContent = fileContent.replace(
-        /\{CT_LOCALE\}/g,
-        config.commercetools.locale
-      );
-      fileContent = fileContent.replace(
-        /\{ALGOLIA_ID\}/g,
-        config.algolia.clientID
-      );
-      fileContent = fileContent.replace(
-        /\{ALGOLIA_SECRET\}/g,
-        config.algolia.clientSecret
-      );
+      /\{CT_ID\}/g,
+      config.commercetools.clientID
+    );
+    fileContent = fileContent.replace(
+      /\{CT_SECRET\}/g,
+      config.commercetools.clientSecret
+    );
+    fileContent = fileContent.replace(
+      /\{CT_AUTH_URL\}/g,
+      config.commercetools.authURL
+    );
+    fileContent = fileContent.replace(
+      /\{CT_API_URL\}/g,
+      config.commercetools.apiURL
+    );
+    fileContent = fileContent.replace(
+      /\{CT_PROJECT_KEY\}/g,
+      config.commercetools.projectKey
+    );
+    fileContent = fileContent.replace(
+      /\{CT_SCOPE\}/g,
+      config.commercetools.scope
+    );
+    fileContent = fileContent.replace(
+      /\{CT_LOCALE\}/g,
+      config.commercetools.locale
+    );
+    fileContent = fileContent.replace(
+      /\{ALGOLIA_ID\}/g,
+      config.algolia.clientID
+    );
+    fileContent = fileContent.replace(
+      /\{ALGOLIA_SECRET\}/g,
+      config.algolia.clientSecret
+    );
     fileContent = fileContent.replace(/\{COMPANY_TAG\}/g, config.COMPANY_TAG);
     file.contents = new Buffer.from(fileContent);
     // send the updated file down the pipe
@@ -162,12 +159,12 @@ gulp.task('copy-local-content-schemas', function () {
 });
 
 gulp.task('copy-local-extensions', function () {
-    return gulp
-      .src(['extensions/*.json'])
-      .pipe(replace())
-      .pipe(flatten())
-      .pipe(gulp.dest('dist/extensions'));
-  });
+  return gulp
+    .src(['extensions/*.json'])
+    .pipe(replace())
+    .pipe(flatten())
+    .pipe(gulp.dest('dist/extensions'));
+});
 
 gulp.task('copy-local-content-types', function () {
   return gulp
@@ -273,16 +270,18 @@ gulp.task('build-cards-css', function () {
 });
 
 gulp.task('minify-css', function () {
-  return gulp
-    //.src(['dist/styles.css', 'dist/cardsStyles.css'])
-    .src(['dist/styles.css'])
-    .pipe(cleanCSS())
-    .pipe(
-      rename({
-        suffix: '.min',
-      })
-    )
-    .pipe(gulp.dest('dist'));
+  return (
+    gulp
+      //.src(['dist/styles.css', 'dist/cardsStyles.css'])
+      .src(['dist/styles.css'])
+      .pipe(cleanCSS())
+      .pipe(
+        rename({
+          suffix: '.min',
+        })
+      )
+      .pipe(gulp.dest('dist'))
+  );
 });
 
 gulp.task(
@@ -923,142 +922,178 @@ gulp.task('configure-extensions', function (cb) {
         2) List all of the current extensions
 
     */
-    console.log('Getting Files:');
-    const extensionsfolder = './extensions/';
-    var getLocalExtensionFiles = function(dir, result) {
-        fs.readdir(dir, function (err, files) {
-            files.forEach((file, index) => {
-              console.log("Getting file:" + file);
-              fs.readFile(extensionsfolder + file, 'utf-8', function (err, content) {
-                if (err) {
-                  onError(err);
-                  return;
-                }
-                var extSchema = JSON.parse(content);
-                console.log("Found Extension " + (index+1) + " of " + files.length + ": " + extSchema.name + ", adding to list");
-                var temp = {"name":extSchema.name,"data":extSchema};
-                localExtensions.push(temp);
-                if(index >= files.length - 1){
-                    result();
-                }
-              });
-            });
+  console.log('Getting Files:');
+  const extensionsfolder = './dist/extensions/';
+  var getLocalExtensionFiles = function (dir, result) {
+    fs.readdir(dir, function (err, files) {
+      files.forEach((file, index) => {
+        console.log('Getting file:' + file);
+        fs.readFile(extensionsfolder + file, 'utf-8', function (err, content) {
+          if (err) {
+            onError(err);
+            return;
+          }
+          var extSchema = JSON.parse(content);
+          console.log(
+            'Found Extension ' +
+              (index + 1) +
+              ' of ' +
+              files.length +
+              ': ' +
+              extSchema.name +
+              ', adding to list'
+          );
+          var temp = { name: extSchema.name, data: extSchema };
+          localExtensions.push(temp);
+          if (index >= files.length - 1) {
+            result();
+          }
         });
-    }
+      });
+    });
+  };
 
-    getLocalExtensionFiles(extensionsfolder, function(items){
-        console.log("Found all localExtensions");
-        console.log(localExtensions);
+  getLocalExtensionFiles(extensionsfolder, function (items) {
+    console.log('Found all localExtensions');
+    console.log(localExtensions);
 
-        // Need to check if there are any extensions to add!
+    // Need to check if there are any extensions to add!
 
-        /// AUTHENTICATE
-        var payload =
-        'grant_type=client_credentials' +
-        '&client_id=' +
-        encodeURIComponent(config.auth['client-id']) +
-        '&client_secret=' +
-        encodeURIComponent(config.auth['client-secret']);
+    /// AUTHENTICATE
+    var payload =
+      'grant_type=client_credentials' +
+      '&client_id=' +
+      encodeURIComponent(config.auth['client-id']) +
+      '&client_secret=' +
+      encodeURIComponent(config.auth['client-secret']);
 
-        request.post(
-            {
-              url: config.auth['auth-api-url'] + 'oauth/token?' + payload,
-              headers: {
-                'Content-Type': 'application/x-www-form-urlencoded',
-              },
+    request.post(
+      {
+        url: config.auth['auth-api-url'] + 'oauth/token?' + payload,
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+      },
+      function (error, response, body) {
+        if (error || response.statusCode >= 400) {
+          throw new PluginError({
+            plugin: 'CH-auth',
+            message: error,
+          });
+        }
+
+        CHAccessToken = JSON.parse(body).access_token;
+        request.get(
+          {
+            url:
+              config.auth['dc-api-url'] +
+              '/hubs/' +
+              config.auth['dc-hub-id'] +
+              '/extensions',
+            headers: {
+              'Content-Type': 'application/json',
+              Authorization: 'Bearer ' + CHAccessToken.toString(),
             },
-            function (error, response, body) {
-              if (error || response.statusCode >= 400) {
-                throw new PluginError({
-                  plugin: 'CH-auth',
-                  message: error,
-                });
-              }
-        
-              CHAccessToken = JSON.parse(body).access_token;
-              request.get(
-                {
-                  url:
-                    config.auth['dc-api-url'] +
-                    '/hubs/' +
-                    config.auth['dc-hub-id'] +
-                    '/extensions',
-                  headers: {
-                    'Content-Type': 'application/json',
-                    Authorization: 'Bearer ' + CHAccessToken.toString(),
-                  },
-                },
-                function (error, response, body) {
-                  var parsedBody = JSON.parse(body);
-        
-                  if (error || parsedBody.error) {
-                    throw new PluginError({
-                      plugin: 'DC-set-settings',
-                      message: parsedBody.error || error,
-                    });
-                  }
-        
-                  var registeredExtensions = parsedBody._embedded.extensions;
-        
-                  console.log('Current Extensions:');
-                  console.log(registeredExtensions);
+          },
+          function (error, response, body) {
+            var parsedBody = JSON.parse(body);
+            console.log('body');
+            console.log(body);
+            console.log('error');
+            console.log(error);
+            console.log('response');
+            console.log(response);
 
-                  // Need to go through localExtensions
-                  console.log("Going through locals:")
-                    localExtensions.forEach((extension, index) => {
-                        console.log(extension.name);
-
-                        // check if the extension already exists
-                        var match = registeredExtensions.find(item=>item.name==extension.name);
-                        console.log("Match? :" + JSON.stringify(match));
-                        if(match){
-                            // Need to do a patch with existing ID's
-
-                            var mergedJSON = extension.data;
-                            mergedJSON.id = match.id;
-                            mergedJSON.hubId =  match.hubId;
-                            request.patch(
-                                {
-                                  url:
-                                    config.auth['dc-api-url'] +
-                                    '/hubs/' +
-                                    config.auth['dc-hub-id'] +
-                                    '/extensions/' +
-                                    match['id'],
-
-                                  headers: {
-                                    'Content-Type': 'application/json',
-                                    Authorization: 'Bearer ' + CHAccessToken.toString(),
-                                  },
-                                  json: mergedJSON
-                                },
-                                function (error, response, body) {
-                                  if (error) {
-                                    throw new PluginError({
-                                      plugin: 'DC-set-devices',
-                                      message: error,
-                                    });
-                                  }
-                                  console.log(body);
-                                  console.log('i have patched the Extension');
-                                }
-                              );
-                        }else{
-                            // Need to do a POST
-
-                        }
-                        
-
-
-
-                    });
-                }
-              );
-        
-              cb();
+            if (error || parsedBody.error) {
+              throw new PluginError({
+                plugin: 'DC-set-settings',
+                message: parsedBody.error || error,
+              });
             }
+
+            var registeredExtensions = parsedBody._embedded.extensions;
+
+            console.log('Current Extensions:');
+            console.log(registeredExtensions);
+
+            // Need to go through localExtensions
+            console.log('Going through locals:');
+            localExtensions.forEach((extension, index) => {
+              console.log(extension.name);
+
+              // check if the extension already exists
+              var match = registeredExtensions.find(
+                (item) => item.name == extension.name
+              );
+              console.log('Match? :' + JSON.stringify(match));
+              if (match) {
+                // Need to do a patch with existing ID's
+
+                var mergedJSON = extension.data;
+                mergedJSON.id = match.id;
+                mergedJSON.hubId = match.hubId;
+                request.patch(
+                  {
+                    url:
+                      config.auth['dc-api-url'] +
+                      '/hubs/' +
+                      config.auth['dc-hub-id'] +
+                      '/extensions/' +
+                      match['id'],
+
+                    headers: {
+                      'Content-Type': 'application/json',
+                      Authorization: 'Bearer ' + CHAccessToken.toString(),
+                    },
+                    json: mergedJSON,
+                  },
+                  function (error, response, body) {
+                    if (error) {
+                      throw new PluginError({
+                        plugin: 'DC-set-devices',
+                        message: error,
+                      });
+                    }
+                    console.log(body);
+                    console.log('i have patched the Extension');
+                  }
+                );
+              } else {
+                // Need to do a POST
+                request.post(
+                  {
+                    url:
+                      config.auth['dc-api-url'] +
+                      '/hubs/' +
+                      config.auth['dc-hub-id'] +
+                      '/extensions',
+
+                    headers: {
+                      'Content-Type': 'application/json',
+                      Authorization: 'Bearer ' + CHAccessToken.toString(),
+                    },
+                    json: extension.data,
+                  },
+                  function (error, response, body) {
+                    if (error) {
+                      throw new PluginError({
+                        plugin: 'DC-set-devices',
+                        message: error,
+                      });
+                    }
+                    console.log(body);
+                    console.log('i have created the Extension');
+                  }
+                );
+              }
+            });
+          }
         );
-    })
+
+        cb();
+      }
+    );
+  });
 });
 
 gulp.task(
@@ -1076,18 +1111,18 @@ gulp.task(
 );
 
 gulp.task(
-    'update-and-deploy',
-    gulp.series(
-        'build',
-        's3upload',
-        'installcli',
-        'configurecli',
-        'importclischemas',
-        'importclitypes',
-        'create-renders'
-    ),
-    function () {}
-  );
+  'update-and-deploy',
+  gulp.series(
+    'build',
+    's3upload',
+    'installcli',
+    'configurecli',
+    'importclischemas',
+    'importclitypes',
+    'create-renders'
+  ),
+  function () {}
+);
 
 gulp.task(
   'provision-all',

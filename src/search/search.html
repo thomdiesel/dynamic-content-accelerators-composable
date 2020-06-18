@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="robots" content="noindex, nofollow">
-    <title>Interflora: Search</title>
+    <title>Search</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=block" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Hind:400,600,700|Open+Sans:400,600|Poppins:700&display=swap" rel="stylesheet">
     <style>
-        .interflora-header-container{
+        .header-container{
             height: 100px;
             background-color: black;
             background-image: url("https://www.ifloraimg.co.uk/kernel/imageload?table=content_images;key1=fd_img_2396018_1;t=20170531031446;v=20171130094577");
@@ -23,7 +23,7 @@
 
     <link href="app.css" rel="stylesheet" />
    <!-- Amplience accelerators dependencies -->
-   <link rel="stylesheet" href="https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/interflora/styles.min.css"/>
+   <link rel="stylesheet" href="https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/algolia-amplience-ct-demo/styles.min.css"/>
    <!-- Algolia Fonts & CSS-->
    <link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=block" rel="stylesheet">
    <link href="https://fonts.googleapis.com/css?family=Hind:400,600,700|Open+Sans:400,600|Poppins:700&display=swap" rel="stylesheet">
@@ -37,14 +37,14 @@
    <script src="https://doowb.com/handlebars-helpers-browserify-example/app.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js" integrity="sha256-G7A4JrJjJlFqP0yamznwPjAApIKPkadeHfyIwiaa9e0=" crossorigin="anonymous"></script>
 
-   <script src="https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/interflora/utils.min.js"></script>
-    <script src="https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/interflora/lory.min.js"></script>
+   <script src="https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/algolia-amplience-ct-demo/utils.min.js"></script>
+    <script src="https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/algolia-amplience-ct-demo/lory.min.js"></script>
    <!-- Optional to load in content to the page, You can use your own JS if you like with the direct access to the HTML in your index (ampURLHTML) or our SDK with Example -->
    <script src="https://unpkg.com/dc-delivery-sdk-js/dist/dynamicContent.browser.umd.min.js"></script>
 </head>
 
 <body>
-    <div class="interflora-header-container"></div>
+    <div class="header-container"></div>
     <div id="amp-menu-holder"></div>
     <main>
         <div id="filtering" class="demo ">

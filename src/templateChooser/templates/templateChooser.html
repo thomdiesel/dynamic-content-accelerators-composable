@@ -11,11 +11,11 @@
 {{~/if}}
 
 {{#if (test this._meta.schema (toRegex ".*/card.json")) ~}}
-{{> acc-template-card-interflora }}
+{{> acc-template-card }}
 {{~/if}}
 
 {{#if (test this._meta.schema (toRegex ".*/cardlist.json")) ~}}
-{{> acc-template-cardList-interflora }}
+{{> acc-template-cardList }}
 {{~/if}}
 
 {{#if (test this._meta.schema (toRegex ".*/curated-product-list-ct.json")) ~}}
@@ -34,8 +34,8 @@
 {{> acc-template-article }}
 {{~/if}}
 
-{{#if (test this._meta.schema (toRegex ".*/interflora-video.json")) ~}}
-{{> acc-template-interflora-video }}
+{{#if (test this._meta.schema (toRegex ".*/video.json")) ~}}
+{{> acc-template-video }}
 {{~/if}}
 
 {{#if (test this._meta.schema (toRegex ".*/algolia-personalised-content.json")) ~}}

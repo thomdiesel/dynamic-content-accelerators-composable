@@ -39,7 +39,7 @@
                   "{CONTENT_TYPE_BASEPATH}/curated-product-list-ct.json",
                   "{CONTENT_TYPE_BASEPATH}/rich-text.json",
                   "{CONTENT_TYPE_BASEPATH}/cardlist.json",
-                  "{CONTENT_TYPE_BASEPATH}/interflora-video.json",
+                  "{CONTENT_TYPE_BASEPATH}/video.json",
                   "{CONTENT_TYPE_BASEPATH}/algolia-personalised-content.json"
                 ]
               }

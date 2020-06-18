@@ -1,7 +1,7 @@
 {
   "$schema": "http://bigcontent.io/cms/schema/v1/schema#",
-  "id": "{CONTENT_TYPE_BASEPATH}/interflora-video.json",
-  "title": "Interflora Video",
+  "id": "{CONTENT_TYPE_BASEPATH}/video.json",
+  "title": "Video",
   "description": "Video accelerator",
   "allOf": [
     {

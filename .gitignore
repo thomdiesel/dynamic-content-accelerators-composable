@@ -6,3 +6,4 @@ dist/
 .config-emily.json
 .config.json
 .config-interflora.json
+.config-algolia-demo.json

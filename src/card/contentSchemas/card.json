@@ -37,7 +37,7 @@
       "title": "Links",
       "description": "Links for the card",
       "items": {
-        "$ref": "https://raw.githubusercontent.com/neilmistryamplience/dc-example-website/emily/content-types/link.json"
+        "$ref": "{CONTENT_TYPE_BASEPATH}/link.json"
       },
       "minItems": 0,
       "maxItems": 4

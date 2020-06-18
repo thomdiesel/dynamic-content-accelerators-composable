@@ -1,12 +1,12 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Interflora - Preview</title>
+        <title>Algolia / Amplience / CommerceTools - Preview</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
          <!-- Bootstrap for Menu -->
          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <!-- Amplience accelerators dependencies -->
-        <link rel="stylesheet" href="https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/interflora/styles.min.css"/>
+        <link rel="stylesheet" href="https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/algolia-amplience-ct-demo/styles.min.css"/>
         <!-- Algolia Fonts & CSS-->
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=block" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Hind:400,600,700|Open+Sans:400,600|Poppins:700&display=swap" rel="stylesheet">
@@ -16,13 +16,13 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         <!-- Viewer Files -->
         <!-- Amplience Viewer files -->
-      <link rel="stylesheet" href="https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/interflora/viewer/css/viewer.min.css">
-      <script src="https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/interflora/viewer/jquery-ui-custom.js"></script>
-      <script src="https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/interflora/viewer/viewer.js"></script>
+      <link rel="stylesheet" href="https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/algolia-amplience-ct-demo/viewer/css/viewer.min.css">
+      <script src="https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/algolia-amplience-ct-demo/viewer/jquery-ui-custom.js"></script>
+      <script src="https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/algolia-amplience-ct-demo/viewer/viewer.js"></script>
 
-      <script src="https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/interflora/utils.min.js"></script>
+      <script src="https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/algolia-amplience-ct-demo/utils.min.js"></script>
         <style>
-            .interflora-header-container{
+            .header-container{
                 height: 100px;
                 background-color: black;
                 background-image: url("https://www.ifloraimg.co.uk/kernel/imageload?table=content_images;key1=fd_img_2396018_1;t=20170531031446;v=20171130094577");
@@ -97,7 +97,7 @@
         </style>
     </head>
     <body>
-        <div class="interflora-header-container"></div>
+        <div class="header-container"></div>
         <div id="amp-menu-holder"></div>
         <div class="amp-product-detail">
             <!-- Amplience Content Written  in here..... -->
@@ -115,7 +115,7 @@
             var creds = 'u1dO23i5JuRIRllKMk9NOCVV:VwxflHqzerWZvlyNenAzCZGgfhZQ0uRc';
             var creds64 = window.btoa(creds);
 
-            $('#amp-menu-holder').load("https://c1.adis.ws/v1/content/presales/content-item/05acbdf8-3b63-4596-bc83-4714817aa9a7?template=interflora-templateChooser&timestamp={{context.timestamp}}&locale=,en-US,*");
+            $('#amp-menu-holder').load("https://c1.adis.ws/v1/content/presales/content-item/05acbdf8-3b63-4596-bc83-4714817aa9a7?template=templateChooser&timestamp={{context.timestamp}}&locale=,en-US,*");
 
             var getUrlParameter = function getUrlParameter(sParam, sDefault) {
                 var sPageURL = window.location.search.substring(1),

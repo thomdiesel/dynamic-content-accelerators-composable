@@ -2,11 +2,11 @@
     "contentTypeUri": "{CONTENT_TYPE_BASEPATH}/card.json",
     "settings":
     {
-        "label": "Interflora Card",
+        "label": "Card",
         "visualizations": [
             {
                 "label": "Amplience CRS",
-                "templatedUri":"https://{{vse.domain}}/v1/content/store/content-item/{{content.sys.id}}?template=acc-template-visualization-interflora&timestamp={{context.timestamp}}&locale={{locales}},en-US,*",
+                "templatedUri":"https://{{vse.domain}}/v1/content/store/content-item/{{content.sys.id}}?template=acc-template-visualization&timestamp={{context.timestamp}}&locale={{locales}},en-US,*",
                 "default": true
             },
             {
@@ -22,7 +22,7 @@
             }],
             "cards": [
             {
-                "templatedUri":"https://{{vse.domain}}/v1/content/store/content-item/{{content.sys.id}}?template=acc-template-visualization-interflora&timestamp={{context.timestamp}}&locale={{locales}},en-US,*"
+                "templatedUri":"https://{{vse.domain}}/v1/content/store/content-item/{{content.sys.id}}?template=acc-template-visualization&timestamp={{context.timestamp}}&locale={{locales}},en-US,*"
             }]
     },
     "repositories": {REPOSITORIES}

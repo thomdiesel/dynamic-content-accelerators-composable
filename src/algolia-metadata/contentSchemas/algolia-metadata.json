@@ -1,0 +1,85 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "{CONTENT_TYPE_BASEPATH}/algolia-metadata.json",
+  "definitions": {
+    "metadata": {
+      "title": "Algolia Metadata",
+      "type": "object",
+      "properties": {
+        "category": {
+          "title": "Category",
+          "description": "Select the category(s) this content relates to",
+          "type": "array",
+          "minItems": 0,
+          "maxItems": 10,
+          "items": {
+            "type": "string",
+            "enum": ["sale", "women", "men", "accessories", "new"]
+          }
+        },
+        "color": {
+          "title": "Colour",
+          "description": "Select the Colour(s) this content relates to",
+          "type": "array",
+          "minItems": 0,
+          "maxItems": 10,
+          "items": {
+            "type": "string",
+            "enum": [
+              "blue",
+              "black",
+              "grey",
+              "beige",
+              "multicolored",
+              "white",
+              "brown",
+              "pink",
+              "green",
+              "red",
+              "silver",
+              "yellow",
+              "gold",
+              "oliv",
+              "orange",
+              "turqoise",
+              "petrol",
+              "purple"
+            ]
+          }
+        },
+        "gender": {
+          "title": "Gender",
+          "description": "Select the Gender this content relates to",
+          "type": "string",
+          "enum": ["men", "women"]
+        },
+        "season": {
+          "title": "Season",
+          "description": "Select the Season this content relates to",
+          "type": "string",
+          "enum": ["s15", "A15", "A14"]
+        },
+        "style": {
+          "title": "Style",
+          "description": "Select the Style this content relates to",
+          "type": "string",
+          "enum": ["sporty", "business"]
+        },
+        "pricegroup": {
+          "title": "Price Group",
+          "description": "Select the Price Group this content relates to",
+          "type": "string",
+          "enum": ["bargain-hunter", "average-buyer", "big-spender"]
+        }
+      },
+      "propertyOrder": [
+        "category",
+        "color",
+        "gender",
+        "season",
+        "style",
+        "pricegroup"
+      ]
+    }
+  }
+}

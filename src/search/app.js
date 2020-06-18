@@ -4,7 +4,7 @@ const searchClient = algoliasearch(
 )
 
 const search = instantsearch({
-  indexName: 'interflora_products_test_demo',
+  indexName: 'commercetools-products',
   searchClient,
 })
 
@@ -166,7 +166,7 @@ search.addWidgets([
     },
     templates: {
       item: `<article class="hit">
-              <a href="https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/interflora/product.html?productcode={{objectID}}">
+              <a href="https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/algolia-amplience-ct-demo/product.html?productcode={{objectID}}">
               <figure class="hit-image-container">
                 <div class="hit-image-container-box">
                   <img class="hit-image" src="{{{images}}}">
@@ -236,7 +236,7 @@ search.addWidgets([
     },
   }),
 
-  instantsearch.widgets.index({ indexName: 'interflora_content_test' }).addWidgets([
+  instantsearch.widgets.index({ indexName: 'amplience_content_banners' }).addWidgets([
     customBanner({
       container: '#hits-content_test',
       transformItems(items) {
@@ -248,7 +248,7 @@ search.addWidgets([
     }),
   ]),
 
-  instantsearch.widgets.index({ indexName: 'interflora_article_test' }).addWidgets([
+  instantsearch.widgets.index({ indexName: 'amplience_content_articles' }).addWidgets([
     instantsearch.widgets.hits({
       container: '#hits-articles_test',
       transformItems(items) {
@@ -259,7 +259,7 @@ search.addWidgets([
       },
       templates: {
         item: `<article class="hit">
-                <a href="https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/interflora/templates/acc-template-preview-interflora.html?menukey=interflora/web/navigation&cid={{id}}">
+                <a href="https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/algolia-amplience-ct-demo/templates/acc-template-preview.html?menukey=web/navigation&cid={{id}}">
                   <figure class="hit-image-container article">
                     <div class="hit-image-container-box">
                       <img class="hit-image" src="{{{image}}}">

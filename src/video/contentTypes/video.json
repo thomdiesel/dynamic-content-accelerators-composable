@@ -1,8 +1,8 @@
 {
-    "contentTypeUri": "{CONTENT_TYPE_BASEPATH}/algolia-personalised-content.json",
+    "contentTypeUri": "{CONTENT_TYPE_BASEPATH}/video.json",
     "settings":
     {
-        "label": "Algolia Dynamic Content",
+        "label": "Video",
         "visualizations": [
         {
             "label": "Amplience CRS",
@@ -12,14 +12,13 @@
         {
             "label": "JSON",
             "templatedUri":"https://{{vse.domain}}/content/id/{{content.sys.id}}?depth=all&format=inlined",
-            "default": false,
-            "cachebust": false
+            "default": false
         }
         ],
         "icons": [
         {
             "size": 256,
-            "url": "{ICON_BASEPATH}/algolia-personalised-content.icon.png"
+            "url": "{ICON_BASEPATH}/video.icon.png"
         }],
         "cards": [
         {

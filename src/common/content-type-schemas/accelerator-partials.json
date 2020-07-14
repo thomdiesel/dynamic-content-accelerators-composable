@@ -1,0 +1,5 @@
+{
+  "body": "../content-schemas/accelerator-partials.json",
+  "schemaId": "{CONTENT_TYPE_BASEPATH}/accelerator-partials.json",
+  "validationLevel": "PARTIAL"
+}

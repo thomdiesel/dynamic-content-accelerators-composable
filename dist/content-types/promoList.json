@@ -1,26 +1,21 @@
 {
-	"contentTypeUri": "https://unpkg.com/@amplience/dynamic-content-accelerators/dist/contentTypes/promoList.json",
+	"contentTypeUri": "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/test1/promoList.json",
 	"settings": {
 		"label": "Promo List",
 		"visualizations": [
 			{
-				"label": "DEV (Localhost)",
+				"label": "Visualization",
 				"templatedUri": "https://{{vse.domain}}/v1/content/demo/content-item/{{content.sys.id}}?template=acc-template-visualization",
 				"default": true
 			},
 			{
-				"label": "DEV (Localhost)",
-				"templatedUri": "TBC",
-				"default": false
-			},
-			{
 				"label": "JSON (CDV2)",
-				"templatedUri": "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/dc-visualiization-content-delivery/index.html?vse={{vse.domain}}&id={{content.sys.id}}&format=inlined&depth=all&v2=true",
+				"templatedUri": "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/dc-visualization-content-delivery/index.html?vse={{vse.domain}}&id={{content.sys.id}}&format=inlined&depth=all&v2=true",
 				"default": false
 			},
 			{
 				"label": "JSON (CDV1)",
-				"templatedUri": "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/dc-visualiization-content-delivery/index.html?vse={{vse.domain}}&id={{content.sys.id}}&format=inlined&depth=all&v2=false",
+				"templatedUri": "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/dc-visualization-content-delivery/index.html?vse={{vse.domain}}&id={{content.sys.id}}&format=inlined&depth=all&v2=false",
 				"default": false
 			}
 		],

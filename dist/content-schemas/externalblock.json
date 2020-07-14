@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://unpkg.com/@amplience/dynamic-content-accelerators/dist/contentTypes/externalBlock.json",
+  "$id": "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/test1/externalBlock.json",
   "title": "External Block",
   "description": "External block accelerator",
   "allOf": [

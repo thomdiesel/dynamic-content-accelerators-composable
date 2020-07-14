@@ -1,5 +1,5 @@
 {
     "body": "../content-schemas/promo.json",
-    "schemaId": "https://unpkg.com/@amplience/dynamic-content-accelerators/dist/contentTypes/promo.json",
+    "schemaId": "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/test1/promo.json",
     "validationLevel": "CONTENT_TYPE"
   }

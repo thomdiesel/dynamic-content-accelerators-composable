@@ -82,7 +82,7 @@ gulp.task('del', function () {
 
 gulp.task('copy-icons', function () {
   return gulp
-    .src(['src/**/*.icon.png'])
+    .src(['src/**/icons/*.icon.png'])
     .pipe(flatten())
     .pipe(gulp.dest('dist/icons'));
 });
@@ -141,7 +141,7 @@ gulp.task('build-js', function () {
     .src([
       'src/**/*.js',
       'node_modules/poi-js-lib/dist/poi-lib.min.js',
-      '!**/*.stories.js',
+      '!**/stories/*.stories.js',
     ])
     .pipe(concat('utils.js'))
     .pipe(replaceCompany())
@@ -163,9 +163,9 @@ gulp.task('minify-js', function () {
 gulp.task('build-css', function () {
   return gulp
     .src([
-      'src/**/*.scss',
-      '!src/cardsPreview/cardsPreview.scss',
-      '!src/cardsPreview/localCardsStyles.scss',
+      'src/**/css/*.scss',
+      '!src/cardsPreview/css/cardsPreview.scss',
+      '!src/cardsPreview/css/localCardsStyles.scss',
     ])
     .pipe(
       sass({
@@ -184,7 +184,7 @@ gulp.task('build-css', function () {
 
 gulp.task('build-cards-css', function () {
   return gulp
-    .src(['src/cardsPreview/cardsPreview.scss'])
+    .src(['src/cardsPreview/css/cardsPreview.scss'])
     .pipe(
       sass({
         outputStyle: 'expanded',

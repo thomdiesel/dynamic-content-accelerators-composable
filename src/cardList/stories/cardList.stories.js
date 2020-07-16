@@ -4,9 +4,9 @@ import {
 
 import {
   renderContent
-} from '../../.storybook/rendering-service';
+} from '../../../.storybook/rendering-service';
 
-import cardListStyles from './cardList.scss';
+import cardListStyles from '../css/cardList.scss';
 
 export const sampleContent = {
   "@id": "http://content.cms.amplience.com/3d35c8be-22d3-408e-8067-51dd38abaa63",

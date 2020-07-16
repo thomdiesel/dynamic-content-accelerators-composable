@@ -4,9 +4,9 @@ import {
 
 import {
   renderContent
-} from '../../.storybook/rendering-service';
+} from '../../../.storybook/rendering-service';
 
-import videoStyles from './video.scss';
+import videoStyles from '../css/video.scss';
 
 export const sampleContent = {
   "@id": "http://content.cms.amplience.com/05c1affc-ac26-4f4f-98dc-9f12dc912583",

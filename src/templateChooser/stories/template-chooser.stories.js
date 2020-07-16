@@ -4,7 +4,7 @@ import {
 
 import {
   renderContent
-} from '../../.storybook/rendering-service';
+} from '../../../.storybook/rendering-service';
 
 const components = [
   ['Banner', 'banner'],
@@ -25,5 +25,5 @@ const components = [
 const stories = storiesOf('Template Chooser', module);
 
 components.forEach(([label, name, contentName = 'sampleContent']) => {
-  stories.add(label, () => renderContent('templateChooser', require(`../${name}/${name}.stories`)[contentName]));
+  stories.add(label, () => renderContent('templateChooser', require(`../../${name}/stories/${name}.stories`)[contentName]));
 });

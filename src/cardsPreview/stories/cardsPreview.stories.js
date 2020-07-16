@@ -4,24 +4,24 @@ import {
 
 import {
   renderContent
-} from '../../.storybook/rendering-service';
+} from '../../../.storybook/rendering-service';
 
-import styles from './cardsPreview.scss';
-import localStyles from './localCardsStyles.scss';
+import styles from '../css/cardsPreview.scss';
+import localStyles from '../css/localCardsStyles.scss';
 
-import {sampleContent} from '../slider/slider.stories';
-import {sampleContent as samplePageContent} from '../page/page.stories';
-import {sampleContent as sampleBlogContent} from '../blogPost/blogPost.stories';
-import {sampleContent as sampleBannerContent} from '../banner/banner.stories';
-import {sampleContent as sampleCardContent} from '../card/card.stories';
-import {sampleContent as sampleCardListContent} from '../cardList/cardList.stories';
-import {sampleContent as sampleExternalBlockContent} from '../externalBlock/externalBlock.stories';
-import {sampleContent as sampleImageContent} from '../image/image.stories';
-import {sampleContent as samplePromoContent} from '../promo/promo.stories';
-import {samplePromoListContent as samplePromoListContent} from '../promo/promo.stories';
-import {sampleContent as sampleSplitBlockContent} from '../splitBlock/splitBlock.stories';
-import {sampleContent as sampleTextContent} from '../text/text.stories';
-import {sampleContent as sampleVideoContent} from '../video/video.stories';
+import {sampleContent} from '../../slider/stories/slider.stories';
+import {sampleContent as samplePageContent} from '../../page/stories/page.stories';
+import {sampleContent as sampleBlogContent} from '../../blogPost/stories/blogPost.stories';
+import {sampleContent as sampleBannerContent} from '../../banner/stories/banner.stories';
+import {sampleContent as sampleCardContent} from '../../card/stories/card.stories';
+import {sampleContent as sampleCardListContent} from '../../cardList/stories/cardList.stories';
+import {sampleContent as sampleExternalBlockContent} from '../../externalBlock/stories/externalBlock.stories';
+import {sampleContent as sampleImageContent} from '../../image/stories/image.stories';
+import {sampleContent as samplePromoContent} from '../../promo/stories/promo.stories';
+import {samplePromoListContent as samplePromoListContent} from '../../promo/stories/promo.stories';
+import {sampleContent as sampleSplitBlockContent} from '../../splitBlock/stories/splitBlock.stories';
+import {sampleContent as sampleTextContent} from '../../text/stories/text.stories';
+import {sampleContent as sampleVideoContent} from '../../video/stories/video.stories';
 
 
 storiesOf('Cards Preview', module)

@@ -2,9 +2,9 @@ import {
   storiesOf
 } from '@storybook/html';
 
-import { renderContent } from '../../.storybook/rendering-service';
+import { renderContent } from '../../../.storybook/rendering-service';
 
-import textStyles from './text.scss';
+import textStyles from '../css/text.scss';
 
 export const sampleContent = {
   "@id": "http://content.cms.amplience.com/bc3f11ab-ed9c-4163-8e87-ac64fec19f44",

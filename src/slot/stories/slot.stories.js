@@ -4,7 +4,7 @@ import {
 
 import {
   renderContent
-} from '../../.storybook/rendering-service';
+} from '../../../.storybook/rendering-service';
 
 export const sampleContent = {
   "@id": "http://content.cms.amplience.com/a34ec334-0e78-41df-9bf4-5c15209bb266",

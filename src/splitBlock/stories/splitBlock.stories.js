@@ -4,9 +4,9 @@ import {
 
 import {
   renderContent
-} from '../../.storybook/rendering-service';
+} from '../../../.storybook/rendering-service';
 
-import splitBlockStyles from './splitBlock.scss';
+import splitBlockStyles from '../css/splitBlock.scss';
 
 export const sampleContent = {
   "@id": "http://content.cms.amplience.com/47c6b9bf-c164-4c7f-8087-1a608028108e",

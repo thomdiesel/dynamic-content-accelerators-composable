@@ -4,9 +4,9 @@ import {
 
 import {
   renderContent
-} from '../../.storybook/rendering-service';
+} from '../../../.storybook/rendering-service';
 
-import sliderStyles from './slider.scss';
+import sliderStyles from '../css/slider.scss';
 
 export const sampleContent = {
   "@id": "http://content.cms.amplience.com/42041097-5281-4e6d-b506-62b08b85ab80",

@@ -26,6 +26,7 @@
               "contentType": {
                 "enum": [
                   "{CONTENT_TYPE_BASEPATH}/banner.json",
+                  "{CONTENT_TYPE_BASEPATH}/advanced-banner.json",
                   "{CONTENT_TYPE_BASEPATH}/blogPost.json",
                   "{CONTENT_TYPE_BASEPATH}/card.json",
                   "{CONTENT_TYPE_BASEPATH}/cardList.json",

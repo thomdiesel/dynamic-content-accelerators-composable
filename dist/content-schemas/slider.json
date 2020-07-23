@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/test1/slider.json",
+  "$id": "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/composable-commerce/v1/content-schemas/slider.json",
   "title": "Slider",
   "description": "Slider accelerator",
   "allOf": [
@@ -25,9 +25,9 @@
             "properties": {
               "contentType": {
                 "enum": [
-                  "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/test1/banner.json",
-                  "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/test1/image.json",
-                  "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/test1/video.json"
+                  "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/composable-commerce/v1/content-schemas/banner.json",
+                  "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/composable-commerce/v1/content-schemas/image.json",
+                  "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/composable-commerce/v1/content-schemas/video.json"
                 ]
               }
             }

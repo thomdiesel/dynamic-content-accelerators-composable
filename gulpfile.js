@@ -17,28 +17,24 @@ var connect = require('gulp-connect');
 var flatten = require('gulp-flatten');
 var cleanCSS = require('gulp-clean-css');
 var jsonFormat = require('gulp-json-format');
+var handlebars = require('gulp-handlebars');
+var wrap = require('gulp-wrap');
+var declare = require('gulp-declare');
+var babel = require('gulp-babel');
 
 var toReplace = require('./.replace.json');
 
 var replace = function () {
   return es.map(function (file, cb) {
     var fileContent = file.contents.toString();
-    fileContent = fileContent.replace(
-      /\{CONTENT_TYPE_BASEPATH\}/g,
-      toReplace.CONTENT_TYPE_BASEPATH
-    );
-    file.contents = new Buffer.from(fileContent);
-    // send the updated file down the pipe
-    cb(null, file);
-  });
-};
-
-var replaceCompany = function () {
-  return es.map(function (file, cb) {
-    var fileContent = file.contents.toString();
+    fileContent = fileContent.replace(/\{BASEPATH\}/g, toReplace.BASEPATH);
     fileContent = fileContent.replace(
       /\{COMPANY_TAG\}/g,
       toReplace.COMPANY_TAG
+    );
+    fileContent = fileContent.replace(
+      /\{CONTENT_TYPE_BASEPATH\}/g,
+      toReplace.BASEPATH + '/content-schemas'
     );
     file.contents = new Buffer.from(fileContent);
     // send the updated file down the pipe
@@ -90,8 +86,25 @@ gulp.task('copy-icons', function () {
 gulp.task('copy-templates', function () {
   return gulp
     .src(['src/*/templates/*.html'])
+    .pipe(replace())
     .pipe(flatten())
     .pipe(gulp.dest('dist/templates'));
+});
+
+gulp.task('build-templates', function () {
+  return gulp
+    .src('dist/templates/*.html')
+    .pipe(handlebars())
+    .pipe(wrap('Handlebars.template(<%= contents %>)'))
+    .pipe(
+      declare({
+        namespace: 'HBTemplates',
+        noRedeclare: true,
+      })
+    )
+    .pipe(uglify())
+    .pipe(concat('templates.js'))
+    .pipe(gulp.dest('dist'));
 });
 
 gulp.task('copy-local-content-schemas', function () {
@@ -144,13 +157,18 @@ gulp.task('build-js', function () {
       '!**/stories/*.stories.js',
     ])
     .pipe(concat('utils.js'))
-    .pipe(replaceCompany())
+    .pipe(replace())
     .pipe(gulp.dest('dist'));
 });
 
 gulp.task('minify-js', function () {
   return gulp
     .src(['dist/utils.js'])
+    .pipe(
+      babel({
+        presets: ['@babel/env'],
+      })
+    )
     .pipe(uglify())
     .pipe(
       rename({
@@ -164,6 +182,7 @@ gulp.task('build-css', function () {
   return gulp
     .src([
       'src/**/css/*.scss',
+      'src/**/css/*.css',
       '!src/cardsPreview/css/cardsPreview.scss',
       '!src/cardsPreview/css/localCardsStyles.scss',
     ])
@@ -232,8 +251,28 @@ gulp.task(
   function () {}
 );
 
-gulp.task('deploy', gulp.series('automate-dynamic-content'), function () {});
-gulp.task('deploy-renders', gulp.series('upload-build-to-s3', 'authenticate-content-hub', 'upload-render-templates-to-ch-and-publish'), function () {});
+gulp.task('deploy-content-types', gulp.series('automate-dynamic-content'), function () {});
+gulp.task(
+  'deploy-renders-to-ch',
+  gulp.series(
+    'authenticate-content-hub',
+    'upload-local-render-templates-to-ch-and-publish'
+  ),
+  function () {}
+);
+
+gulp.task('deploy-to-s3', gulp.series('upload-build-to-s3'), function () {});
+
+gulp.task(
+  'buildAndDeploy',
+  gulp.series(
+    'build',
+    'deploy-content-types',
+    'deploy-renders-to-ch',
+    'deploy-to-s3'
+  ),
+  function () {}
+);
 
 gulp.task('buildAllWithoutReload', gulp.series('build'));
 
@@ -248,7 +287,6 @@ gulp.task('server', function (done) {
     livereload: true,
     debug: true,
   });
-
   done();
 });
 

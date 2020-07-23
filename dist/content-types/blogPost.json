@@ -1,5 +1,5 @@
 {
-	"contentTypeUri": "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/test1/blogPost.json",
+	"contentTypeUri": "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/composable-commerce/v1/content-schemas/blogPost.json",
 	"settings": {
 		"label": "Blog Post",
 		"visualizations": [

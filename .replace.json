@@ -1,5 +1,5 @@
 {
-  "CONTENT_TYPE_BASEPATH": "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/test1",
+  "BASEPATH": "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/composable-commerce/v1",
   "COMPANY_TAG": "nmdemo",
   "VISUALIZATIONS": [
     {

@@ -6,7 +6,7 @@
 {{> acc-card-template-video }}
 {{~/if}}
 
-{{#if (test this.[@type] (toRegex ".*/promolist")) ~}}
+{{#if (test this.[@type] (toRegex ".*/promoList")) ~}}
 {{> acc-template-promoList }}
 {{~/if}}
 
@@ -14,7 +14,7 @@
 {{> acc-template-promo }}
 {{~/if}}
 
-{{#if (test this.[@type] (toRegex ".*/splitblock")) ~}}
+{{#if (test this.[@type] (toRegex ".*/splitBlock")) ~}}
 {{> acc-card-template-splitBlock }}
 {{~/if}}
 
@@ -30,11 +30,11 @@
 {{> acc-card-template-image this.[0]}}
 {{~/if}}
 
-{{#if (test this.[@type] (toRegex ".*/externalblock")) ~}}
+{{#if (test this.[@type] (toRegex ".*/externalBlock")) ~}}
 {{> acc-template-externalBlock }}
 {{~/if}}
 
-{{#if (test this.[@type] (toRegex ".*/cardlist")) ~}}
+{{#if (test this.[@type] (toRegex ".*/cardList")) ~}}
 {{> acc-card-template-cardList }}
 {{~/if}}
 
@@ -42,12 +42,16 @@
 {{> acc-card-template-card }}
 {{~/if}}
 
-{{#if (test this.[@type] (toRegex ".*/blogpost")) ~}}
+{{#if (test this.[@type] (toRegex ".*/blogPost")) ~}}
 {{> acc-card-template-blogPost }}
 {{~/if}}
 
 {{#if (test this.[@type] (toRegex ".*/banner")) ~}}
 {{> acc-card-template-banner }}
+{{~/if}}
+
+{{#if (test this.[@type] (toRegex ".*/advanced-banner")) ~}}
+{{> acc-template-advanced-banner }}
 {{~/if}}
 
 {{#if (test this.[@type] (toRegex ".*/page")) ~}}

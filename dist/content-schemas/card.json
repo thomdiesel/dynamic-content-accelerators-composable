@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/test1/card.json",
+  "$id": "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/composable-commerce/v1/content-schemas/card.json",
   "title": "Card",
   "description": "Card accelerator",
   "allOf": [
@@ -19,7 +19,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/test1/image.json"
+          "$ref": "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/composable-commerce/v1/content-schemas/image.json"
         }
       ],
       "title": "Card image"
@@ -40,7 +40,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/test1/accelerator-partials.json#/definitions/link"
+          "$ref": "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/composable-commerce/v1/content-schemas/accelerator-partials.json#/definitions/link"
         }
       ]
     }

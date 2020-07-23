@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/test1/accelerator-partials.json",
+  "$id": "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/composable-commerce/v1/content-schemas/accelerator-partials.json",
   "title": "Accelerator partials",
   "description": "Partials",
   "allOf": [
@@ -71,7 +71,7 @@
           "type": "object",
           "allOf": [
             {
-              "$ref": "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/test1/image.json"
+              "$ref": "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/composable-commerce/v1/content-schemas/image.json"
             }
           ],
           "title": "Image"

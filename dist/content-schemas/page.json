@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/test1/page.json",
+  "$id": "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/composable-commerce/v1/content-schemas/page.json",
   "title": "Page",
   "description": "Page accelerator",
   "allOf": [
@@ -25,17 +25,18 @@
             "properties": {
               "contentType": {
                 "enum": [
-                  "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/test1/banner.json",
-                  "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/test1/blogPost.json",
-                  "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/test1/card.json",
-                  "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/test1/cardList.json",
-                  "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/test1/externalBlock.json",
-                  "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/test1/image.json",
-                  "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/test1/promoList.json",
-                  "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/test1/slider.json",
-                  "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/test1/splitBlock.json",
-                  "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/test1/text.json",
-                  "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/test1/video.json"
+                  "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/composable-commerce/v1/content-schemas/banner.json",
+                  "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/composable-commerce/v1/content-schemas/advanced-banner.json",
+                  "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/composable-commerce/v1/content-schemas/blogPost.json",
+                  "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/composable-commerce/v1/content-schemas/card.json",
+                  "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/composable-commerce/v1/content-schemas/cardList.json",
+                  "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/composable-commerce/v1/content-schemas/externalBlock.json",
+                  "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/composable-commerce/v1/content-schemas/image.json",
+                  "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/composable-commerce/v1/content-schemas/promoList.json",
+                  "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/composable-commerce/v1/content-schemas/slider.json",
+                  "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/composable-commerce/v1/content-schemas/splitBlock.json",
+                  "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/composable-commerce/v1/content-schemas/text.json",
+                  "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/composable-commerce/v1/content-schemas/video.json"
                 ]
               }
             }

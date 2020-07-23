@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/test1/cardList.json",
+  "$id": "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/composable-commerce/v1/content-schemas/cardList.json",
   "title": "Card List",
   "description": "Card list accelerator",
   "allOf": [
@@ -30,7 +30,7 @@
           {
             "properties": {
               "contentType": {
-                "enum": ["https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/test1/card.json"]
+                "enum": ["https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/composable-commerce/v1/content-schemas/card.json"]
               }
             }
           }

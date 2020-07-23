@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/test1/splitBlock.json",
+  "$id": "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/composable-commerce/v1/content-schemas/splitBlock.json",
   "title": "Split Block",
   "description": "Split Block accelerator",
   "allOf": [
@@ -25,9 +25,9 @@
             "properties": {
               "contentType": {
                 "enum": [
-                  "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/test1/image.json",
-                  "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/test1/video.json",
-                  "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/test1/text.json"
+                  "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/composable-commerce/v1/content-schemas/image.json",
+                  "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/composable-commerce/v1/content-schemas/video.json",
+                  "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/composable-commerce/v1/content-schemas/text.json"
                 ]
               }
             }

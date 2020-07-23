@@ -1,5 +1,5 @@
 {
   "body": "../content-schemas/banner.json",
-  "schemaId": "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/test1/banner.json",
+  "schemaId": "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/composable-commerce/v1/content-schemas/banner.json",
   "validationLevel": "CONTENT_TYPE"
 }

@@ -53,3 +53,7 @@
 {{#if (test this.[@type] (toRegex ".*/page.json")) ~}}
 {{> acc-template-page }}
 {{~/if}}
+
+{{#if (test this.[@type] (toRegex ".*/advanced-banner.json")) ~}}
+{{> acc-template-advanced-banner }}
+{{~/if}}

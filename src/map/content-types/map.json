@@ -1,0 +1,22 @@
+{
+    "contentTypeUri": "{CONTENT_TYPE_BASEPATH}/map.json",
+    "settings": {
+      "label": "Map",
+      "visualizations": [
+        {VISUALIZATIONS}
+      ],
+      "icons": [
+        {
+          "size": 256,
+          "url": "https://bigcontent.io/cms/icons/bond/bond-localizedbanner.png"
+        }
+      ],
+      "cards": [
+        {
+          "templatedUri": "https://{{vse.domain}}/v1/content/demo/content-item/{{content.sys.id}}?template=acc-template-cardsPreview"
+        }
+      ]
+    },
+    "repositories": ["content"]
+  }
+  

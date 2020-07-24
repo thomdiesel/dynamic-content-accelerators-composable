@@ -2,20 +2,24 @@
 {{> acc-template-text }}
 {{~/if}}
 
+{{#if (test this.[@type] (toRegex ".*/rich-text.json")) ~}}
+{{> acc-template-rich-text }}
+{{~/if}}
+
 {{#if (test this.[@type] (toRegex ".*/video.json")) ~}}
 {{> acc-template-video }}
 {{~/if}}
 
-{{#if (test this.[@type] (toRegex ".*/promoList.json")) ~}}
-{{> acc-template-promoList }}
+{{#if (test this.[@type] (toRegex ".*/promo-list.json")) ~}}
+{{> acc-template-promo-list }}
 {{~/if}}
 
 {{#if (test this.[@type] (toRegex ".*/promo.json")) ~}}
 {{> acc-template-promo }}
 {{~/if}}
 
-{{#if (test this.[@type] (toRegex ".*/splitBlock.json")) ~}}
-{{> acc-template-splitBlock }}
+{{#if (test this.[@type] (toRegex ".*/split-block.json")) ~}}
+{{> acc-template-split-block }}
 {{~/if}}
 
 {{#if (test this.[@type] (toRegex ".*/slider.json")) ~}}
@@ -30,20 +34,20 @@
 {{> acc-template-image this.[0]}}
 {{~/if}}
 
-{{#if (test this.[@type] (toRegex ".*/externalBlock.json")) ~}}
-{{> acc-template-externalBlock }}
+{{#if (test this.[@type] (toRegex ".*/external-block.json")) ~}}
+{{> acc-template-external-block }}
 {{~/if}}
 
-{{#if (test this.[@type] (toRegex ".*/cardList.json")) ~}}
-{{> acc-template-cardList }}
+{{#if (test this.[@type] (toRegex ".*/card-list.json")) ~}}
+{{> acc-template-card-list }}
 {{~/if}}
 
 {{#if (test this.[@type] (toRegex ".*/card.json")) ~}}
 {{> acc-template-card }}
 {{~/if}}
 
-{{#if (test this.[@type] (toRegex ".*/blogPost.json")) ~}}
-{{> acc-template-blogPost }}
+{{#if (test this.[@type] (toRegex ".*/blog-post.json")) ~}}
+{{> acc-template-blog-post }}
 {{~/if}}
 
 {{#if (test this.[@type] (toRegex ".*/banner.json")) ~}}
@@ -57,3 +61,12 @@
 {{#if (test this.[@type] (toRegex ".*/advanced-banner.json")) ~}}
 {{> acc-template-advanced-banner }}
 {{~/if}}
+
+{{#if (test this.[@type] (toRegex ".*/navigation.json")) ~}}
+{{> acc-template-navigation }}
+{{~/if}}
+
+<!-- Added for Thom -->
+{{#if (test this.[@type] (toRegex ".*/email-banner")) ~}} {{> banner }} {{~/if}}
+{{#if (test this.[@type] (toRegex ".*/two-column")) ~}} {{> two-column }} {{~/if}}
+{{#if (test this.[@type] (toRegex ".*/email-page")) ~}} {{> page-template }} {{~/if}}

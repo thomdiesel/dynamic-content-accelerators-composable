@@ -6,16 +6,16 @@
 {{> acc-card-template-video }}
 {{~/if}}
 
-{{#if (test this.[@type] (toRegex ".*/promoList")) ~}}
-{{> acc-template-promoList }}
+{{#if (test this.[@type] (toRegex ".*/promo-list")) ~}}
+{{> acc-template-promo-list }}
 {{~/if}}
 
 {{#if (test this.[@type] (toRegex ".*/promo.json")) ~}}
 {{> acc-template-promo }}
 {{~/if}}
 
-{{#if (test this.[@type] (toRegex ".*/splitBlock")) ~}}
-{{> acc-card-template-splitBlock }}
+{{#if (test this.[@type] (toRegex ".*/split-block")) ~}}
+{{> acc-card-template-split-block }}
 {{~/if}}
 
 {{#if (test this.[@type] (toRegex ".*/slider")) ~}}
@@ -30,20 +30,20 @@
 {{> acc-card-template-image this.[0]}}
 {{~/if}}
 
-{{#if (test this.[@type] (toRegex ".*/externalBlock")) ~}}
-{{> acc-template-externalBlock }}
+{{#if (test this.[@type] (toRegex ".*/external-block")) ~}}
+{{> acc-template-external-block }}
 {{~/if}}
 
-{{#if (test this.[@type] (toRegex ".*/cardList")) ~}}
-{{> acc-card-template-cardList }}
+{{#if (test this.[@type] (toRegex ".*/card-list")) ~}}
+{{> acc-card-template-card-list }}
 {{~/if}}
 
 {{#if (test this.[@type] (toRegex ".*/card.json")) ~}}
 {{> acc-card-template-card }}
 {{~/if}}
 
-{{#if (test this.[@type] (toRegex ".*/blogPost")) ~}}
-{{> acc-card-template-blogPost }}
+{{#if (test this.[@type] (toRegex ".*/blog-post")) ~}}
+{{> acc-card-template-blog-post }}
 {{~/if}}
 
 {{#if (test this.[@type] (toRegex ".*/banner")) ~}}
@@ -56,4 +56,11 @@
 
 {{#if (test this.[@type] (toRegex ".*/page")) ~}}
 {{> acc-card-template-page }}
+{{~/if}}
+
+{{#if (test this.[@type] (toRegex ".*/navigation.json")) ~}}
+{{> acc-template-navigation }}
+{{~/if}}
+{{#if (test this.[@type] (toRegex ".*/rich-text.json")) ~}}
+{{> acc-template-rich-text }}
 {{~/if}}

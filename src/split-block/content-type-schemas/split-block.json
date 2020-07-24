@@ -1,0 +1,5 @@
+{
+    "body": "../content-schemas/split-block.json",
+    "schemaId": "{CONTENT_TYPE_BASEPATH}/split-block.json",
+    "validationLevel": "CONTENT_TYPE"
+  }

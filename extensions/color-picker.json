@@ -1,0 +1,16 @@
+{
+    "id" : "null",
+    "hubId" : "null",
+    "name" : "color-picker",
+    "label" : "Color Picker",
+    "description" : "Pick from a palette",
+    "url" : "https://apps.dev-artifacts.adis.ws/dc-extension-brand-colours/PR-1/index.html",
+    "height" : 200,
+    "category" : "CONTENT_FIELD",
+    "parameters" : "{}",
+    "snippets" : [ {
+      "label" : "Color Palette",
+      "body" : "{\n  \"type\": \"string\",\n  \"ui:extension\": {\n    \"name\": \"color-picker\",\n    \"params\": {\n      \"title\": \"title\",\n      \"contentID\": \"id-here\",\n      \"groups\": [\n        \"\"\n      ]\n    }\n  }\n}"
+    } ],
+    "status" : "ACTIVE"
+  }

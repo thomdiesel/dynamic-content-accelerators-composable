@@ -1,5 +1,0 @@
-{
-    "body": "../content-schemas/externalBlock.json",
-    "schemaId": "{CONTENT_TYPE_BASEPATH}/externalBlock.json",
-    "validationLevel": "CONTENT_TYPE"
-  }

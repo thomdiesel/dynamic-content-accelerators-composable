@@ -1,0 +1,5 @@
+{
+    "body": "../content-schemas/map.json",
+    "schemaId": "{CONTENT_TYPE_BASEPATH}/map.json",
+    "validationLevel": "CONTENT_TYPE"
+  }

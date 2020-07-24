@@ -1,5 +1,5 @@
 {
     "body": "../content-schemas/image.json",
-    "schemaId": "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/composable-commerce/v1/content-schemas/image.json",
+    "schemaId": "https://gap.com/image.json",
     "validationLevel": "CONTENT_TYPE"
   }

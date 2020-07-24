@@ -1,29 +1,26 @@
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>Amplience Accelerators - Preview</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
-
-        <!--
-            Amplience accelerators dependencies
-                Updating these references to your own version will allow you to make style and code changes and observe them in the visualization.
-                Further guidance can be found on the github project: https://github.com/amplience/dynamic-content-accelerators
-        -->
-        <!-- Optional to load in content to the page, You can use your own JS if you like with the direct access to the HTML in your index (ampURLHTML) or our SDK with Example -->
-        <script src="https://unpkg.com/dc-delivery-sdk-js/dist/dynamicContent.browser.umd.min.js"></script>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
-        <link rel="stylesheet" href="{BASEPATH}/styles.min.css"/>
-        <script src="{BASEPATH}/utils.min.js"></script>
-        <script src="{BASEPATH}/lory.min.js"></script>
-       
-        
-    </head>
-    <body>
-        <div class="amp-header-container"></div>
-        <div id="amp-menu-holder"></div>
-        <div id="amp-page-content-holder" style="position: absolute; width: 100%; height:100%">
-            <div id="loader"></div>
-            <div id="loader-text">Loading...</div>
-        </div>
-    </body>
+  <head>
+    <meta charset="utf-8" />
+    <title>Amplience Accelerators - Preview</title>
+    <!-- Optional to load in content to the page, You can use your own JS if you like with the direct access to the HTML in your index (ampURLHTML) or our SDK with Example -->
+    <script src="https://unpkg.com/dc-delivery-sdk-js/dist/dynamicContent.browser.umd.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="{DEPLOY_PATH}styles.min.css" />
+    <script src="{DEPLOY_PATH}utils.min.js"></script>
+    <script src="{DEPLOY_PATH}lory.min.js"></script>
+  </head>
+  <body>
+    <div class="amp-header-container"></div>
+    <div id="amp-menu-holder"></div>
+    <div
+      id="amp-page-content-holder"
+      style="position: absolute; width: 100%; height: 100%;"
+    >
+      <div id="loader"></div>
+      <div id="loader-text">Loading...</div>
+    </div>
+  </body>
 </html>

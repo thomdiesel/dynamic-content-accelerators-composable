@@ -1,0 +1,18 @@
+
+{
+    "id":null,
+    "hubId":null,
+    "url":"https://presalesadisws.s3.eu-west-1.amazonaws.com/ui-extensions/ct-product-loader-extension/index.html",
+    "name":"map",
+    "label":"Map",
+    "height":208,
+    "category":"CONTENT_FIELD",
+    "snippets":[
+       {
+          "label":"Map",
+          "body":"{\n    \"title\": \"Location\",\n    \"description\": \"Place location latitude and longitude\",\n    \"type\": \"object\",\n    \"properties\":\n    {\n        \"lat\":\n        {\n            \"title\": \"Latitude\",\n            \"type\": \"number\"\n        },\n        \"lng\":\n        {\n            \"title\": \"Longitude\",\n            \"type\": \"number\"\n        }\n    },\n    \"ui:extension\":\n    {\n        \"name\": \"map\"\n    }\n}"
+       }
+    ],
+    "description":"Allows easy selection of locations on a map",
+    "parameters":"{\n      \"apiKey\": \"it8LjVPuiR5IAe9I2gIj9fk0\"    \n}"
+ }

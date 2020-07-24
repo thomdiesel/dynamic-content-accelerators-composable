@@ -36,6 +36,7 @@
                   "{CONTENT_TYPE_BASEPATH}/slider.json",
                   "{CONTENT_TYPE_BASEPATH}/splitBlock.json",
                   "{CONTENT_TYPE_BASEPATH}/text.json",
+                  "{CONTENT_TYPE_BASEPATH}/rich-text.json",
                   "{CONTENT_TYPE_BASEPATH}/video.json"
                 ]
               }

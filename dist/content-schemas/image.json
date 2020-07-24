@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/composable-commerce/v1/content-schemas/image.json",
+  "$id": "https://gap.com/image.json",
   "title": "Image",
   "description": "Image accelerator",
   "allOf": [
@@ -14,6 +14,7 @@
       "type": "string",
       "const": "Image"
     },
+    
     "image": {
       "title": "Image",
       "description": "",
@@ -38,18 +39,28 @@
       "pattern": "^[/A-Za-z0-9+_-]+$",
       "description": "Enter only alphanumeric, _, -, +, / characters"
     },
-    "roundel": {
-      "title": "Roundels",
-      "type": "array",
-      "maxItems": 5,
-      "items": {
-        "allOf": [
-          {
-            "$ref": "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/composable-commerce/v1/content-schemas/accelerator-partials.json#/definitions/roundel"
-          }
-        ]
-      }
+    "imageEffect": {
+      "title": "Image Effect",
+      "description": "Add an image effect",
+      "type": "string",
+      "enum": [
+        "Zoom-in dark",
+        "Zoom-in blur",
+        "Linear",
+        "Double-line Horizontal",
+        "Parallax"
+      ]
+    },
+    "gifImage": {
+      "title": "Gif image",
+      "description": "Is the image a gif?",
+      "type": "boolean"
+    },
+    "togglePOI": {
+      "title": "toggle POI",
+      "description": "toggle POI?",
+      "type": "boolean"
     }
   },
-  "propertyOrder": ["image", "imageAltText", "seoText", "roundel"]
+  "propertyOrder": ["image", "imageAltText", "seoText", "imageEffect", "gifImage", "togglePOI", "component" ]
 }

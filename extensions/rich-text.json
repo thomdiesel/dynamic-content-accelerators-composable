@@ -1,0 +1,16 @@
+{
+    "id" : "null",
+    "hubId" : "null",
+    "name" : "rich-text",
+    "label" : "Rich Text",
+    "description" : "Custom Rich Text Control",
+    "url" : "https://techiedarren.github.io/dc-extension-rich-text/index.html",
+    "height" : 200,
+    "category" : "CONTENT_FIELD",
+    "parameters" : "{}",
+    "snippets" : [ {
+      "label" : "Custom Rich Text",
+      "body" : "{\n    \"type\": \"array\",\n    \"ui:extension\": {\n        \"name\": \"rich-text\",\n        \"params\": {\n            \"language\": \"json\",\n            \"tools\": {\n                \"dc-content-link\": {\n                    \"contentTypes\": [\n                        \"{CONTENT_TYPE_BASEPATH}\/image.json\"\n                    ],\n                    \"contentTypeSettings\": {\n                        \"cards\": {\n                            \"*\": \"https:\/\/{{vse.domain}}\/v1\/content\/demo\/content-item\/{{content.sys.id}}?template=acc-template-cardsPreview\"\n                        }\n                    }\n                }\n            }\n        }\n    }\n}"
+    } ],
+    "status" : "ACTIVE"
+  }

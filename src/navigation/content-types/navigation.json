@@ -1,0 +1,22 @@
+{
+    "contentTypeUri": "{CONTENT_TYPE_BASEPATH}/navigation.json",
+    "settings": {
+      "label": "Navigation",
+      "visualizations": [
+        {VISUALIZATIONS}
+      ],
+      "icons": [
+        {
+          "size": 256,
+          "url": "https://raw.githubusercontent.com/neilmistryamplience/dynamic-content-accelerators/demos/algolia-generic-demo/src/navigation/navigation.icon.jpg"
+        }
+      ],
+      "cards": [
+        {
+          "templatedUri": "https://{{vse.domain}}/v1/content/demo/content-item/{{content.sys.id}}?template=acc-template-cardsPreview"
+        }
+      ]
+    },
+    "repositories": ["content"]
+  }
+  

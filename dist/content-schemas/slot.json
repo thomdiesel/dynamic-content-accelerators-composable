@@ -5,7 +5,7 @@
       "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
     }
   ],
-  "$id": "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/composable-commerce/v1/content-schemas/slot.json",
+  "$id": "https://gap.com/slot.json",
   "title": "Slot",
   "description": "Slot accelerator",
   "type": "object",
@@ -21,18 +21,18 @@
             "properties": {
               "contentType": {
                 "enum": [
-                  "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/composable-commerce/v1/content-schemas/banner.json",
-                  "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/composable-commerce/v1/content-schemas/blogPost.json",
-                  "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/composable-commerce/v1/content-schemas/card.json",
-                  "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/composable-commerce/v1/content-schemas/cardList.json",
-                  "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/composable-commerce/v1/content-schemas/externalBlock.json",
-                  "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/composable-commerce/v1/content-schemas/image.json",
-                  "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/composable-commerce/v1/content-schemas/page.json",
-                  "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/composable-commerce/v1/content-schemas/promoList.json",
-                  "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/composable-commerce/v1/content-schemas/slider.json",
-                  "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/composable-commerce/v1/content-schemas/splitBlock.json",
-                  "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/composable-commerce/v1/content-schemas/text.json",
-                  "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/composable-commerce/v1/content-schemas/video.json"
+                  "https://gap.com/banner.json",
+                  "https://gap.com/blogPost.json",
+                  "https://gap.com/card.json",
+                  "https://gap.com/cardList.json",
+                  "https://gap.com/externalBlock.json",
+                  "https://gap.com/image.json",
+                  "https://gap.com/page.json",
+                  "https://gap.com/promoList.json",
+                  "https://gap.com/slider.json",
+                  "https://gap.com/splitBlock.json",
+                  "https://gap.com/text.json",
+                  "https://gap.com/video.json"
                 ]
               }
             }

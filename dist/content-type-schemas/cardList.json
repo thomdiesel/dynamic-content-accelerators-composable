@@ -1,5 +1,0 @@
-{
-    "body": "../content-schemas/cardList.json",
-    "schemaId": "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/composable-commerce/v1/content-schemas/cardList.json",
-    "validationLevel": "CONTENT_TYPE"
-  }

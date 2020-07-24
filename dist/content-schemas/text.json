@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/composable-commerce/v1/content-schemas/text.json",
+  "$id": "https://gap.com/text.json",
   "title": "Text",
   "description": "Text accelerator",
   "allOf": [

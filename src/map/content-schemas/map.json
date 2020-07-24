@@ -1,0 +1,84 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "{CONTENT_TYPE_BASEPATH}/map.json",
+  "title": "Map",
+  "description": "Map accelerator",
+  "allOf": [
+		{
+			"$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+		}
+	],
+	"type": "object",
+	"properties": {
+		"location": {
+			"title": "Location",
+			"description": "Place location latitude and longitude",
+			"type":"object",
+			"properties": {
+				"lat": {
+					"title": "Latitude",
+					"type": "number"
+				},
+				"lng": {
+					"title": "Longitude",
+					"type": "number"
+				}
+			},
+			"ui:extension": {
+					"url": "https://amplience.github.io/dc-extension-map-ui/index.html",
+					"params": {
+						"apiKey": "AIzaSyCuS1s7Xj-it8LjVPuiR5IAe9I2gIj9fk0"
+					}
+			}
+		},
+		"locationName": {
+			"title": "Store Name ",
+			"description": "Short name of location to show, ex \"Athleta NYC Flagship\"",
+			"type": "string",
+			"maxLength": 56
+		},
+		"theme": {
+			"title": "Theme",
+			"description": "",
+			"enum": [
+				"Dark",
+				"Light"
+			]
+		},
+		"mapZoom": {
+			"title": "Zoom",
+			"description": "Initial zoom on map",
+			"type": "string"
+		},
+		"gestureHandling": {
+			"title": "Gesture zoom",
+			"description": "Handles gestures on the map",
+			"enum": [
+				"Auto",
+				"Greedy",
+				"Cooperative"
+			]
+		},
+		"zoomControl": {
+			"title": "Zoom control",
+			"description": "Displays \"+\" and \"-\" buttons for changing the zoom level of the map",
+			"type": "boolean"
+		},
+		"mapTypeControl": {
+			"title": "Map type control",
+			"description": "Is available in a dropdown or horizontal button bar style, allowing the user to choose a map type",
+			"type": "boolean"
+		},
+		"streetViewControl": {
+			"title": "Street view control",
+			"description": "Contains a Pegman icon which can be dragged onto the map to enable Street View",
+			"type": "boolean"
+		},
+		"fullscreenControl": {
+			"title": "Full screen control",
+			"description": "Offers the option to open the map in fullscreen mode",
+			"type": "boolean"
+		}
+	},
+	"propertyOrder": []
+}

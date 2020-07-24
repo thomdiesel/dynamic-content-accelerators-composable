@@ -1,0 +1,17 @@
+{
+    "id":null,
+    "hubId":null,
+    "url":"https://presalesadisws.s3.eu-west-1.amazonaws.com/ui-extensions/dc-extension-localization/index.html",
+    "name":"localisation",
+    "label":"Localisation",
+    "height":500,
+    "category":"CONTENT_FIELD",
+    "snippets":[
+       {
+          "label":"Auto Localisation",
+          "body":"{\n  \"title\": \"title\",\n  \"description\": \"description\",\n  \"allOf\": [\n    {\n      \"$ref\": \"http:\/\/bigcontent.io\/cms\/schema\/v1\/localization#\/definitions\/localized-string\"\n    }\n  ],\r\n  \"ui:extension\": {\n    \"name\": \"localization\"\n  }\n}"
+       }
+    ],
+    "description":"Editing Interface for managing an Image",
+    "parameters":"{\n  \"TRANSLATION_API_KEY\": \"trnsl.1.1.20200216T110352Z.410397522afbf2b9.6c9b23466b1a7b95f1a52c42fc16ce66572a3d1b\" \n }"
+ }

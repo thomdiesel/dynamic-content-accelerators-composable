@@ -23,6 +23,7 @@ var declare = require('gulp-declare');
 var babel = require('gulp-babel');
 
 var toReplace = require('./.replace.json');
+var config = require('./.automation-credentials.json');
 
 var replace = function () {
   return es.map(function (file, cb) {
@@ -34,7 +35,11 @@ var replace = function () {
     );
     fileContent = fileContent.replace(
       /\{CONTENT_TYPE_BASEPATH\}/g,
-      toReplace.BASEPATH + '/content-schemas'
+      toReplace.BASEPATH
+    );
+    fileContent = fileContent.replace(
+      /\{DEPLOY_PATH\}/g,
+      config.s3.domain + config.s3.uploadpath
     );
     file.contents = new Buffer.from(fileContent);
     // send the updated file down the pipe
@@ -133,6 +138,14 @@ gulp.task('copy-local-content-type-schemas', function () {
     .pipe(gulp.dest('dist/content-type-schemas'));
 });
 
+gulp.task('copy-local-extensions', function () {
+  return gulp
+    .src(['extensions/*.json'])
+    .pipe(replace())
+    .pipe(flatten())
+    .pipe(gulp.dest('dist/extensions'));
+});
+
 gulp.task('copy-node-modules', function () {
   return gulp
     .src(['node_modules/lory.js/dist/lory.min.js'])
@@ -154,6 +167,9 @@ gulp.task('build-js', function () {
     .src([
       'src/**/*.js',
       'node_modules/poi-js-lib/dist/poi-lib.min.js',
+      'node_modules/jquery/dist/jquery.min.js',
+      'node_modules/bootstrap/dist/js/bootstrap.min.js',
+      'node_modules/@popperjs/core/dist/umd/popper.min.js',
       '!**/stories/*.stories.js',
     ])
     .pipe(concat('utils.js'))
@@ -183,6 +199,7 @@ gulp.task('build-css', function () {
     .src([
       'src/**/css/*.scss',
       'src/**/css/*.css',
+      'node_modules/bootstrap/dist/css/bootstrap.min.css',
       '!src/cardsPreview/css/cardsPreview.scss',
       '!src/cardsPreview/css/localCardsStyles.scss',
     ])
@@ -238,6 +255,7 @@ gulp.task(
     'copy-node-modules',
     'copy-icons',
     'copy-templates',
+    'copy-local-extensions',
     'copy-local-content-schemas',
     'copy-local-content-types',
     'copy-local-content-type-schemas',
@@ -273,6 +291,8 @@ gulp.task(
   ),
   function () {}
 );
+
+gulp.task('deploy-extensions', gulp.series('automate-extensions'), function () {});
 
 gulp.task('buildAllWithoutReload', gulp.series('build'));
 

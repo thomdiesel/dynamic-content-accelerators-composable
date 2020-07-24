@@ -1,0 +1,17 @@
+{
+    "id":null,
+    "hubId":null,
+    "url":"https://presalesadisws.s3.eu-west-1.amazonaws.com/ui-extensions/navigation/index.html",
+    "name":"navigation",
+    "label":"Navigation",
+    "height":400,
+    "category":"CONTENT_FIELD",
+    "snippets":[
+       {
+          "label":"Mega Menu",
+          "body":"{\n  \"type\": \"array\",\n  \"title\": \"Mega Menu\",\n  \"ui:extension\": {\n    \"name\": \"navigation\"\n  },\n  \"items\": {\n    \"oneOf\": [\n      {\n        \"$ref\": \"{CONTENT_TYPE_BASEPATH}/navigation-partials.json#/definitions/rootMenu\"\n      }\n    ]\n  }\n}"
+       }
+    ],
+    "description":"Navigation UI Extension",
+    "parameters":""
+ }

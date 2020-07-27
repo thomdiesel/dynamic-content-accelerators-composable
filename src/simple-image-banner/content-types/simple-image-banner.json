@@ -1,0 +1,21 @@
+{
+  "contentTypeUri": "{CONTENT_TYPE_BASEPATH}/simple-image-banner.json",
+  "settings": {
+    "label": "Simple Image Banner",
+    "visualizations": [
+      {VISUALIZATIONS}
+    ],
+    "icons": [
+      {
+        "size": 256,
+        "url": "https://bigcontent.io/cms/icons/potter/potter-banner.png"
+      }
+    ],
+    "cards": [
+      {
+        "templatedUri": "https://{{vse.domain}}/v1/content/demo/content-item/{{content.sys.id}}?template=acc-template-cardsPreview&locale={{locales}},en-*,*"
+      }
+    ]
+  },
+  "repositories": ["content"]
+}

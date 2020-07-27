@@ -50,6 +50,10 @@
 {{> acc-template-blog-post }}
 {{~/if}}
 
+{{#if (test this.[@type] (toRegex ".*/blog-list.json")) ~}}
+{{> acc-template-blog-list }}
+{{~/if}}
+
 {{#if (test this.[@type] (toRegex ".*/banner.json")) ~}}
 {{> acc-template-banner }}
 {{~/if}}
@@ -62,11 +66,29 @@
 {{> acc-template-advanced-banner }}
 {{~/if}}
 
+{{#if (test this.[@type] (toRegex ".*/simple-image-banner-localised.json")) ~}}
+{{> acc-template-simple-image-banner-localised }}
+{{~/if}}
+{{#if (test this.[@type] (toRegex ".*/simple-image-banner.json")) ~}}
+{{> acc-template-simple-image-banner }}
+{{~/if}}
+
 {{#if (test this.[@type] (toRegex ".*/navigation.json")) ~}}
 {{> acc-template-navigation }}
 {{~/if}}
 
-<!-- Added for Thom -->
+{{#if (test this.[@type] (toRegex ".*/slot.json")) ~}}
+    {{#each this.content}}
+        {{> templateChooser this }}
+    {{/each}}
+{{~/if}}
+
+{{#if (test this.[@type] (toRegex ".*/localised-slot.json")) ~}}
+    {{#each this.content}}
+        {{> templateChooser this }}
+    {{/each}}
+{{~/if}}
+
 {{#if (test this.[@type] (toRegex ".*/email-banner")) ~}} {{> banner }} {{~/if}}
 {{#if (test this.[@type] (toRegex ".*/two-column")) ~}} {{> two-column }} {{~/if}}
 {{#if (test this.[@type] (toRegex ".*/email-page")) ~}} {{> page-template }} {{~/if}}

@@ -46,12 +46,23 @@
 {{> acc-card-template-blog-post }}
 {{~/if}}
 
+{{#if (test this.[@type] (toRegex ".*/blog-list.json")) ~}}
+{{> acc-template-blog-list }}
+{{~/if}}
+
 {{#if (test this.[@type] (toRegex ".*/banner")) ~}}
 {{> acc-card-template-banner }}
 {{~/if}}
 
 {{#if (test this.[@type] (toRegex ".*/advanced-banner")) ~}}
 {{> acc-template-advanced-banner }}
+{{~/if}}
+
+{{#if (test this.[@type] (toRegex ".*/simple-image-banner-localised.json")) ~}}
+{{> acc-template-simple-image-banner-localised }}
+{{~/if}}
+{{#if (test this.[@type] (toRegex ".*/simple-image-banner.json")) ~}}
+{{> acc-template-simple-image-banner }}
 {{~/if}}
 
 {{#if (test this.[@type] (toRegex ".*/page")) ~}}
@@ -61,6 +72,19 @@
 {{#if (test this.[@type] (toRegex ".*/navigation.json")) ~}}
 {{> acc-template-navigation }}
 {{~/if}}
+
 {{#if (test this.[@type] (toRegex ".*/rich-text.json")) ~}}
 {{> acc-template-rich-text }}
+{{~/if}}
+
+{{#if (test this.[@type] (toRegex ".*/slot.json")) ~}}
+    {{#each this.content}}
+        {{> templateChooser this }}
+    {{/each}}
+{{~/if}}
+
+{{#if (test this.[@type] (toRegex ".*/localised-slot.json")) ~}}
+    {{#each this.content}}
+        {{> templateChooser this }}
+    {{/each}}
 {{~/if}}

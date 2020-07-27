@@ -53,7 +53,7 @@
   loadContent(menukey, 'amp-menu-holder');
   loadContent(key, 'amp-page-content-holder');
 
-  function evaluateAmplienceMenuLink(lnk) {
+  function evaluateAmplienceLink(lnk) {
     console.log('link clicked = ' + lnk);
     if (lnk.indexOf('https://') >= 0) {
       window.open(lnk, '_self');
@@ -80,4 +80,9 @@
       }
     }
   }
-});
+  exports.Utils = window.AmpCa.Utils || exports.Utils || {};
+  exports.Utils.evaluateAmplienceLink = evaluateAmplienceLink;
+})
+(
+  window.AmpCa = window.AmpCa || {}
+);

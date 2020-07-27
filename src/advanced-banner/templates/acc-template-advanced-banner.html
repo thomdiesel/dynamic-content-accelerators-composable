@@ -1,5 +1,4 @@
-<div>
-    <div class="amp-dc-advanced-banner js_dc_banner {{#is bannerImage.imageEffect 'Zoom-in dark'}} hovereffect ehover1 {{/is}}{{#is bannerImage.imageEffect 'Zoom-in blur'}} hovereffect ehover3 {{/is}}{{#is bannerImage.imageEffect 'Linear'}} hovereffect ehover12 {{/is}}{{#is bannerImage.imageEffect 'Double-line Horizontal'}} hovereffect ehover13 {{/is}}">
+    <div class="amp-dc-advanced-banner amp-dc-card js_dc_banner {{#is bannerImage.imageEffect 'Zoom-in dark'}} hovereffect ehover1 {{/is}}{{#is bannerImage.imageEffect 'Zoom-in blur'}} hovereffect ehover3 {{/is}}{{#is bannerImage.imageEffect 'Linear'}} hovereffect ehover12 {{/is}}{{#is bannerImage.imageEffect 'Double-line Horizontal'}} hovereffect ehover13 {{/is}}">
         {{#if disclaimer}}
         <div class="o-dc-disclaimer-text 
             {{#if disclaimerTextHorizontal}}o-dc-disclaimer-text-{{disclaimerTextHorizontal}}{{/if}} {{disclaimercolor}} {{#if disclaimerweight}}o-dc-text-{{disclaimerweight}}{{/if}}">
@@ -18,7 +17,7 @@
             <picture class="amp-dc-image">
     
                 {{#if bannerImage.gifImage}}
-                <img src="//miguel.a.bigcontent.io/v1/static/{{encodeURI bannerImage.image.name}}" {{#if bannerImage.imageAltText}}alt="{{bannerImage.imageAltText}}"{{/if}}>
+                <img src="//{{bannerImage.image.endpoint}}.a.bigcontent.io/v1/static/{{encodeURI bannerImage.image.name}}" {{#if bannerImage.imageAltText}}alt="{{bannerImage.imageAltText}}"{{/if}}>
                 {{else}}
     
                 <source media="(max-width: 640px)" srcset="//{{bannerImage.image.defaultHost}}/i/{{bannerImage.image.endpoint}}/{{encodeURI bannerImage.image.name}}?$poi$&w=640&sm=aspect&aspect=1:1&qlt=80">
@@ -49,7 +48,7 @@
             {{#is bannerImage.imageEffect 'Parallax'}}
     
             {{#if bannerImage.gifImage}}
-            <div class="o-dc-parrallax" data-ios-disabled="false" data-android-disabled="false" data-parallax="scroll" data-bleed="0" data-position="center center" data-speed="0.0" data-image-src="//miguel.a.bigcontent.io/v1/static/{{encodeURI bannerImage.image.name}}"  data-mirror-container=".amp-dc-advanced-banner-mirror-{{encodeURI bannerImage.image.name}}"></div>
+            <div class="o-dc-parrallax" data-ios-disabled="false" data-android-disabled="false" data-parallax="scroll" data-bleed="0" data-position="center center" data-speed="0.0" data-image-src="//{{bannerImage.image.endpoint}}.a.bigcontent.io/v1/static/{{encodeURI bannerImage.image.name}}"  data-mirror-container=".amp-dc-advanced-banner-mirror-{{encodeURI bannerImage.image.name}}"></div>
             {{else}}
             <div class="o-dc-parrallax{{#if smallerheight}} o-dc-parrallax-smaller{{/if}}" data-ios-disabled="false" data-android-disabled="false" data-parallax="scroll" data-bleed="0" data-position="center center" data-speed="0.0" data-image-src="//{{bannerImage.image.defaultHost}}/i/{{bannerImage.image.endpoint}}/{{encodeURI bannerImage.image.name}}?$poi_old$&w=2560&sm=aspect&aspect={{#if smallerheight}}3{{else}}2{{/if}}:1&qlt=80"  data-mirror-container=".amp-dc-advanced-banner-mirror-{{encodeURI bannerImage.image.name}}"></div>
             {{/if}}
@@ -58,7 +57,7 @@
             <picture class="amp-dc-image">
     
                 {{#if bannerImage.gifImage}}
-                <img src="//miguel.a.bigcontent.io/v1/static/{{encodeURI bannerImage.image.name}}" {{#if bannerImage.imageAltText}}alt="{{bannerImage.imageAltText}}"{{/if}}>
+                <img src="//{{bannerImage.image.endpoint}}.a.bigcontent.io/v1/static/{{encodeURI bannerImage.image.name}}" {{#if bannerImage.imageAltText}}alt="{{bannerImage.imageAltText}}"{{/if}}>
                 {{else}}
     
                 {{#if togglePOI}}
@@ -159,4 +158,3 @@
         <a href="#" class="js-scrollto"></a>
     </div>
     {{/if}}
-    </div>

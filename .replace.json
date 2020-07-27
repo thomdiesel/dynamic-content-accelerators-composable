@@ -1,20 +1,20 @@
 {
   "BASEPATH": "https://gap.com",
-  "COMPANY_TAG": "nmdemo",
+  "COMPANY_TAG": "gaptest",
   "VISUALIZATIONS": [
     {
       "label": "Visualization",
-      "templatedUri": "https://{{vse.domain}}/v1/content/demo/content-item/{{content.sys.id}}?template=acc-template-visualization",
+      "templatedUri": "https://{{vse.domain}}/v1/content/demo/content-item/{{content.sys.id}}?template=acc-template-visualization&locale={{locales}},en-*,*",
       "default": true
     },
     {
       "label": "JSON (CDV2)",
-      "templatedUri": "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/dc-visualization-content-delivery/index.html?vse={{vse.domain}}&id={{content.sys.id}}&format=inlined&depth=all&v2=true",
+      "templatedUri": "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/dc-visualization-content-delivery/index.html?vse={{vse.domain}}&id={{content.sys.id}}&format=inlined&depth=all&v2=true&locale={{locales}},en-*,*",
       "default": false
     },
     {
       "label": "JSON (CDV1)",
-      "templatedUri": "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/dc-visualization-content-delivery/index.html?vse={{vse.domain}}&id={{content.sys.id}}&format=inlined&depth=all&v2=false",
+      "templatedUri": "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/dc-visualization-content-delivery/index.html?vse={{vse.domain}}&id={{content.sys.id}}&format=inlined&depth=all&v2=false&locale={{locales}},en-*,*",
       "default": false
     }
   ]

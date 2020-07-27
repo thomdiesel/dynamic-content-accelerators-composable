@@ -30,7 +30,11 @@
           {
             "properties": {
               "contentType": {
-                "enum": ["{CONTENT_TYPE_BASEPATH}/card.json"]
+                "enum": [
+                  "{CONTENT_TYPE_BASEPATH}/card.json",
+                  "{CONTENT_TYPE_BASEPATH}/advanced-banner.json",
+                  "{CONTENT_TYPE_BASEPATH}/simple-image-banner.json"
+                ]
               }
             }
           }

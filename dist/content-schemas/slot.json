@@ -10,6 +10,16 @@
   "description": "Slot accelerator",
   "type": "object",
   "properties": {
+    "_meta":{
+      "type":"object",
+      "properties":{
+        "deliveryKey":{
+          "type":"string",
+          "title":"Delivery key",
+          "description": "Enter the delivery key for this item"
+        }
+      }
+    },
     "content": {
       "type": "array",
       "items": {
@@ -21,25 +31,33 @@
             "properties": {
               "contentType": {
                 "enum": [
-                  "https://gap.com/banner.json",
-                  "https://gap.com/blogPost.json",
-                  "https://gap.com/card.json",
-                  "https://gap.com/cardList.json",
-                  "https://gap.com/externalBlock.json",
                   "https://gap.com/image.json",
-                  "https://gap.com/page.json",
-                  "https://gap.com/promoList.json",
+                  "https://gap.com/banner.json",
+                  "https://gap.com/simple-image-banner-localised.json",
+                  "https://gap.com/advanced-banner.json",
+                  "https://gap.com/blog-post.json",
+                  "https://gap.com/blog-list.json",
+                  "https://gap.com/card.json",
+                  "https://gap.com/card-list.json",
+                  "https://gap.com/external-block.json",
+                  "https://gap.com/promo-list.json",
                   "https://gap.com/slider.json",
-                  "https://gap.com/splitBlock.json",
+                  "https://gap.com/split-block.json",
                   "https://gap.com/text.json",
-                  "https://gap.com/video.json"
+                  "https://gap.com/rich-text.json",
+                  "https://gap.com/video.json",
+                  "https://gap.com/page.json"
                 ]
               }
             }
           }
         ]
       },
-      "title": "Page content"
+      "title": "Content"
     }
-  }
+  },
+  "propertyOrder": [
+    "_meta",
+    "content"
+  ]
 }

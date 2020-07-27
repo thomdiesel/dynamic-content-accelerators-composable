@@ -1,0 +1,32 @@
+.amp-dc-simple-banner {
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  .amp-dc-banner-pic-wrap{
+    .amp-dc-simple-image {
+      max-width: 100%;
+      display: block;
+  
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.amp-dc-banner {
+  @media screen and (max-width: 768px) {
+    
+  }
+
+  @media screen and (max-width: 480px) {
+    
+  }
+
+}

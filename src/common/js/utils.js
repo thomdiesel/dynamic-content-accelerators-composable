@@ -337,7 +337,7 @@
     setTimeout(scrollCard, 2000);
   }
 
-  exports.Utils = exports.Utils || {};
+  exports.Utils = window.AmpCa.Utils || exports.Utils || {};
   exports.Utils.attachComponents = attachComponents;
 
   /**

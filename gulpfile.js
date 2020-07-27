@@ -41,6 +41,9 @@ var replace = function () {
       /\{DEPLOY_PATH\}/g,
       config.s3.domain + config.s3.uploadpath
     );
+
+    fileContent = fileContent.replace(/\{ALGOLIA_ID\}/g, config.algolia["application-id"]);
+    fileContent = fileContent.replace(/\{ALGOLIA_SECRET\}/g, config.algolia["application-secret"]);
     file.contents = new Buffer.from(fileContent);
     // send the updated file down the pipe
     cb(null, file);
@@ -185,7 +188,7 @@ gulp.task('minify-js', function () {
         presets: ['@babel/env'],
       })
     )
-    .pipe(uglify())
+    //.pipe(uglify())
     .pipe(
       rename({
         suffix: '.min',

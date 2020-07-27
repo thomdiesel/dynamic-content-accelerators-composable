@@ -1,5 +1,5 @@
 {
     "body": "../content-schemas/slot.json",
     "schemaId": "https://gap.com/slot.json",
-    "validationLevel": "CONTENT_TYPE"
+    "validationLevel": "SLOT"
   }

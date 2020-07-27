@@ -1,0 +1,23 @@
+{
+  "contentTypeUri": "{CONTENT_TYPE_BASEPATH}/personalized-slot.json",
+  "settings": {
+    "label": "Slot",
+    "visualizations": [
+      {VISUALIZATIONS}
+    ],
+    "icons": [
+      {
+        "size": 256,
+        "url": "https://bigcontent.io/cms/icons/potter/potter-page.png"
+      }
+    ],
+    "cards": [
+      {
+        "templatedUri": "https://{{vse.domain}}/v1/content/demo/content-item/{{content.sys.id}}?template=acc-template-cardsPreview"
+      }
+    ]
+  },
+  "repositories": [
+    "slots"
+  ]
+}

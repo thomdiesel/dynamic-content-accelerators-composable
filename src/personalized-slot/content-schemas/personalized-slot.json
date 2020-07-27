@@ -1,0 +1,67 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "allOf": [
+    {
+      "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+    }
+  ],
+  "$id": "{CONTENT_TYPE_BASEPATH}/personalized-slot.json",
+  "title": "Personalized Slot",
+  "description": "Personalized Slot accelerator",
+  "type": "object",
+  "properties": {
+    "_meta": {
+      "type": "object",
+      "properties": {
+        "deliveryKey": {
+          "type": "string",
+          "title": "Delivery key",
+          "description": "Enter the delivery key for this item"
+        }
+      }
+    },
+    "segments": {
+      "type": "array",
+      "title": "Content",
+      "items": {
+        "type": "object",
+        "properties": {
+          "segment": {
+            "type": "string",
+            "ui:extension": {
+              "url": "https://presalesadisws.s3.eu-west-1.amazonaws.com/ui-extensions/data-extension/index.html",
+              "params": {
+                "apiurl": "https://presalesadisws.s3.eu-west-1.amazonaws.com/ui-extensions/data-extension/gapsegments.json"
+              }
+            }
+          },
+          "content": {
+            "title": "Content",
+            "allOf": [
+              {
+                "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+              },
+              {
+                "properties": {
+                  "contentType": {
+                    "title": "contentType",
+                    "enum": [
+                      "{CONTENT_TYPE_BASEPATH}/image.json",
+                      "{CONTENT_TYPE_BASEPATH}/banner.json",
+                      "{CONTENT_TYPE_BASEPATH}/simple-image-banner-localised.json",
+                      "{CONTENT_TYPE_BASEPATH}/advanced-banner.json"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "propertyOrder": [
+    "_meta",
+    "content"
+  ]
+}

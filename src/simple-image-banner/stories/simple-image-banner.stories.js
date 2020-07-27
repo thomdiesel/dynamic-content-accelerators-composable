@@ -9,7 +9,7 @@ import {
   renderContent
 } from '../../../.storybook/rendering-service';
 
-import bannerStyles from '../css/banner.scss';
+import bannerStyles from '../css/simple-image-banner-localised.scss';
 
 export const sampleContent = {
   "@id": "http://content.cms.amplience.com/04125527-a0b0-415e-9b83-0791d7669638",

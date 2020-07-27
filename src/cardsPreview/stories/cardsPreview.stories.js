@@ -1,7 +1,7 @@
 import {
   storiesOf
 } from '@storybook/html';
-
+/*
 import {
   renderContent
 } from '../../../.storybook/rendering-service';
@@ -38,3 +38,4 @@ storiesOf('Cards Preview', module)
   .add('Split block card', () => renderContent('acc-template-cardsPreview', sampleSplitBlockContent))
   .add('Text card', () => renderContent('acc-template-cardsPreview', sampleTextContent))
   .add('Video card', () => renderContent('acc-template-cardsPreview', sampleVideoContent));
+*/

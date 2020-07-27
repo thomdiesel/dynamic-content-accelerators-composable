@@ -4,7 +4,7 @@ import {
 
 import { renderContent } from '../../../.storybook/rendering-service';
 
-import imageStyles from '../css/image.scss';
+import imageStyles from '../css/map.scss';
 
 export const sampleContent = {
   "@id": "http://content.cms.amplience.com/38476590-9594-4d46-8f5a-c54e293fd094",

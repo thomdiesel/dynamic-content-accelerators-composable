@@ -93,6 +93,10 @@
     {{/each}}
 {{~/if}}
 
+{{#if (test this.[@type] (toRegex ".*/navigation-slot.json")) ~}}
+    {{> templateChooser navigation }}
+{{~/if}}
+
 {{#if (test this.[@type] (toRegex ".*/email-banner")) ~}} {{> banner }} {{~/if}}
 {{#if (test this.[@type] (toRegex ".*/two-column")) ~}} {{> two-column }} {{~/if}}
 {{#if (test this.[@type] (toRegex ".*/email-page")) ~}} {{> page-template }} {{~/if}}

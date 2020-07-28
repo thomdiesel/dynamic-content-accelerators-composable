@@ -92,3 +92,7 @@
         {{> templateChooser this }}
     {{/each}}
 {{~/if}}
+
+{{#if (test this.[@type] (toRegex ".*/navigation-slot.json")) ~}}
+    {{> templateChooser navigation }}
+{{~/if}}

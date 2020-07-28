@@ -1,31 +1,42 @@
-
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-	"$id": "{CONTENT_TYPE_BASEPATH}/navigation-slot.json",
-	"title": "Navigation Slot",
-	"description": "Navigation Slot",
-	"allOf": [
-		{
-			"$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
-		}
-	],
-	"type": "object",
-	"properties": {
-		"menu": {
-			"type": "array",
-			"title": "Mega Menu",
-			"ui:extension": {
-				"name": "navigation"
-			},
-			"items": {
-				"oneOf": [
-					{
-						"$ref": "{CONTENT_TYPE_BASEPATH}/navigation-partials.json#/definitions/rootMenu"
-					}
-				]
-			}
-		}
-		
-	},
-	"propertyOrder": ["menu"]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "{CONTENT_TYPE_BASEPATH}/navigation-slot.json",
+  "title": "Navigation Slot",
+  "description": "Navigation Slot",
+  "allOf": [
+    {
+      "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+    }
+  ],
+  "type": "object",
+  "properties": {
+    "_meta": {
+      "type": "object",
+      "properties": {
+        "deliveryKey": {
+          "type": "string",
+          "title": "Delivery key",
+          "description": "Enter the delivery key for this item"
+        }
+      }
+    },
+    "navigation": {
+      "title": "Navigation",
+      "allOf": [
+        {
+          "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+        },
+        {
+          "properties": {
+            "contentType": {
+              "enum": [
+                "{CONTENT_TYPE_BASEPATH}/navigation.json"
+              ]
+            }
+          }
+        }
+      ]
+    }
+  },
+  "propertyOrder": ["_meta","navigation"]
 }

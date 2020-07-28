@@ -40,9 +40,9 @@
   var clientV2 = new ampDynamicContent.ContentClient(AmpSDKObj);
 
   function loadContent(key, container) {
-    console.log('asked to load!', cid);
+    console.log('asked to load!', key);
     clientV2
-      .getContentItemByKey(cid)
+      .getContentItemByKey(key)
       .then((content) => {
         console.log(content.body);
         /*var htmltorender = rendertemplate(content.body);

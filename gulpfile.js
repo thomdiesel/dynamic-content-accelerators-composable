@@ -28,22 +28,25 @@ var config = require('./.automation-credentials.json');
 var replace = function () {
   return es.map(function (file, cb) {
     var fileContent = file.contents.toString();
-    fileContent = fileContent.replace(/\{BASEPATH\}/g, toReplace.BASEPATH);
-    fileContent = fileContent.replace(
-      /\{COMPANY_TAG\}/g,
-      toReplace.COMPANY_TAG
-    );
-    fileContent = fileContent.replace(
-      /\{CONTENT_TYPE_BASEPATH\}/g,
-      toReplace.BASEPATH
-    );
-    fileContent = fileContent.replace(
-      /\{DEPLOY_PATH\}/g,
-      config.s3.domain + config.s3.uploadpath
-    );
 
+    // Amplience
+    fileContent = fileContent.replace(/\{BASEPATH\}/g, toReplace.BASEPATH);
+    fileContent = fileContent.replace(/\{COMPANY_TAG\}/g, toReplace.COMPANY_TAG);
+    fileContent = fileContent.replace(/\{CONTENT_TYPE_BASEPATH\}/g, toReplace.BASEPATH);
+    fileContent = fileContent.replace(/\{DEPLOY_PATH\}/g, config.s3.domain + config.s3.uploadpath);
+    // Algolia
     fileContent = fileContent.replace(/\{ALGOLIA_ID\}/g, config.algolia["application-id"]);
     fileContent = fileContent.replace(/\{ALGOLIA_SECRET\}/g, config.algolia["application-secret"]);
+
+    // Comemrcetools
+    fileContent = fileContent.replace(/\{CT_API_URL\}/g, config.commercetools.apiURL);
+    fileContent = fileContent.replace(/\{CT_AUTH_URL\}/g, config.commercetools.authURL);
+    fileContent = fileContent.replace(/\{CT_PROJECT_KEY\}/g, config.commercetools.projectKey);
+    fileContent = fileContent.replace(/\{CT_ID\}/g, config.commercetools.clientID);
+    fileContent = fileContent.replace(/\{CT_SECRET\}/g, config.commercetools.clientSecret);
+    fileContent = fileContent.replace(/\{CT_SCOPE\}/g, config.commercetools.scope);
+    fileContent = fileContent.replace(/\{CT_LOCALE\}/g, config.commercetools.locale);
+
     file.contents = new Buffer.from(fileContent);
     // send the updated file down the pipe
     cb(null, file);
@@ -70,10 +73,7 @@ var replaceVisualizations = function () {
       return;
     }
     var fileContent = file.contents.toString();
-    fileContent = fileContent.replace(
-      /\{VISUALIZATIONS\}/g,
-      globalVisualizationsString
-    );
+    fileContent = fileContent.replace(/\{VISUALIZATIONS\}/g, globalVisualizationsString);
     file.contents = new Buffer.from(fileContent);
     // send the updated file down the pipe
     cb(null, file);
@@ -86,7 +86,7 @@ gulp.task('del', function () {
 
 gulp.task('copy-icons', function () {
   return gulp
-    .src(['src/**/icons/*.icon.png'])
+    .src(['src/**/icons/*.icon.png', 'src/**/icons/*.icon.jpg'])
     .pipe(flatten())
     .pipe(gulp.dest('dist/icons'));
 });

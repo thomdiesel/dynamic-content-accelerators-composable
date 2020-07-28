@@ -163,7 +163,13 @@ gulp.task('deploy-extensions-dc', function (cb) {
                   message: error,
                 });
               }
-              //console.log(body);
+              console.log(body);
+              console.log(config.amplience["dynamic-content"]['api-url'] +
+              '/hubs/' +
+              config.amplience["dynamic-content"]['dc-hub-id'] +
+              '/extensions/' +
+              match['id'])
+              console.log(JSON.stringify(mergedJSON));
               //console.log(error);
               //console.log(response)
               console.log('i have patched the Extension');

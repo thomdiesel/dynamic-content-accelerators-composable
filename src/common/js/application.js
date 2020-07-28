@@ -26,6 +26,9 @@
   var cid = getUrlParameter('cid');
   var hidemenu = getUrlParameter('hidemenu', 'false');
   hidemenu = hidemenu == 'true' ? true : false;
+  var isRenderService = getUrlParameter('template');
+
+  if( isRenderService) return;
 
   /** Init the SDK */
   var AmpSDKObj = {
@@ -33,6 +36,7 @@
     stagingEnvironment: vse,
     locale: locale,
   };
+
   var clientV2 = new ampDynamicContent.ContentClient(AmpSDKObj);
 
   function loadContent(key, container) {

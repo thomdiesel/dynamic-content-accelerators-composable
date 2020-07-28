@@ -77,6 +77,10 @@
 {{> acc-template-rich-text }}
 {{~/if}}
 
+{{#if (test this.[@type] (toRegex ".*/curated-product-list.json")) ~}}
+{{> acc-template-curated-product-list }}
+{{~/if}}
+
 {{#if (test this.[@type] (toRegex ".*/slot.json")) ~}}
     {{#each this.content}}
         {{> templateChooser this }}

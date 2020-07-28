@@ -31,6 +31,7 @@
                   "{CONTENT_TYPE_BASEPATH}/blog-list.json",
                   "{CONTENT_TYPE_BASEPATH}/card.json",
                   "{CONTENT_TYPE_BASEPATH}/card-list.json",
+                  "{CONTENT_TYPE_BASEPATH}/curated-product-list.json",
                   "{CONTENT_TYPE_BASEPATH}/external-block.json",
                   "{CONTENT_TYPE_BASEPATH}/promo-list.json",
                   "{CONTENT_TYPE_BASEPATH}/slider.json",

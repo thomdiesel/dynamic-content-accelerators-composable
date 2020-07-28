@@ -66,6 +66,10 @@
 {{> acc-template-advanced-banner }}
 {{~/if}}
 
+{{#if (test this.[@type] (toRegex ".*/curated-product-list.json")) ~}}
+{{> acc-template-curated-product-list }}
+{{~/if}}
+
 {{#if (test this.[@type] (toRegex ".*/simple-image-banner-localised.json")) ~}}
 {{> acc-template-simple-image-banner-localised }}
 {{~/if}}

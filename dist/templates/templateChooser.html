@@ -66,6 +66,10 @@
 {{> acc-template-advanced-banner }}
 {{~/if}}
 
+{{#if (test this.[@type] (toRegex ".*/curated-product-list.json")) ~}}
+{{> acc-template-curated-product-list }}
+{{~/if}}
+
 {{#if (test this.[@type] (toRegex ".*/simple-image-banner-localised.json")) ~}}
 {{> acc-template-simple-image-banner-localised }}
 {{~/if}}
@@ -75,6 +79,10 @@
 
 {{#if (test this.[@type] (toRegex ".*/navigation.json")) ~}}
 {{> acc-template-navigation }}
+{{~/if}}
+
+{{#if (test this.[@type] (toRegex ".*/title.json")) ~}}
+{{> acc-template-title }}
 {{~/if}}
 
 {{#if (test this.[@type] (toRegex ".*/slot.json")) ~}}
@@ -87,6 +95,10 @@
     {{#each this.content}}
         {{> templateChooser this }}
     {{/each}}
+{{~/if}}
+
+{{#if (test this.[@type] (toRegex ".*/navigation-slot.json")) ~}}
+    {{> templateChooser navigation }}
 {{~/if}}
 
 {{#if (test this.[@type] (toRegex ".*/email-banner")) ~}} {{> banner }} {{~/if}}

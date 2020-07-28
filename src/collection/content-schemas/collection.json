@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "{CONTENT_TYPE_BASEPATH}/collection.json",
+
+  "title": "Title",
+  "description": "Description",
+
+  "allOf": [
+    {
+      "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+    }
+  ],
+
+  "type": "object",
+  "properties": {
+    "image": {
+      "title": "Collection Image",
+      "description": "Select or create an image content",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "{CONTENT_TYPE_BASEPATH}/image.json"
+        }
+      ]
+    },
+    "titleText": {
+      "title": "Title",
+      "description": "Add a collection title",
+      "type": "string",
+      "minLength": 0,
+      "maxLength": 100
+    },
+    "button": {
+      "title": "Button",
+      "description": "Add a button",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "{CONTENT_TYPE_BASEPATH}/advanced-button.json"
+        }
+      ]
+    }
+  },
+  "propertyOrder": ["titleText", "image", "button"]
+}

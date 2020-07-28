@@ -81,6 +81,10 @@
 {{> acc-template-navigation }}
 {{~/if}}
 
+{{#if (test this.[@type] (toRegex ".*/title.json")) ~}}
+{{> acc-template-title }}
+{{~/if}}
+
 {{#if (test this.[@type] (toRegex ".*/slot.json")) ~}}
     {{#each this.content}}
         {{> templateChooser this }}

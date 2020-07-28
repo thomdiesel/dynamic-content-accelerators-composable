@@ -2,6 +2,10 @@
 {{> acc-template-text }}
 {{~/if}}
 
+{{#if (test this.[@type] (toRegex ".*/title")) ~}}
+{{> acc-template-title }}
+{{~/if}}
+
 {{#if (test this.[@type] (toRegex ".*/video")) ~}}
 {{> acc-card-template-video }}
 {{~/if}}

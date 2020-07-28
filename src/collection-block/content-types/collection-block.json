@@ -1,0 +1,22 @@
+{
+    "contentTypeUri": "{CONTENT_TYPE_BASEPATH}/collection-block.json",
+    "settings": {
+      "label": "Title",
+      "visualizations": [
+        {VISUALIZATIONS}
+      ],
+      "icons": [
+        {
+          "size": 256,
+          "url": "https://bigcontent.io/cms/icons/potter/potter-text.png"
+        }
+      ],
+      "cards": [
+        {
+          "templatedUri": "https://{{vse.domain}}/v1/content/demo/content-item/{{content.sys.id}}?template=acc-template-cardsPreview"
+        }
+      ]
+    },
+    "repositories": ["content"]
+  }
+  

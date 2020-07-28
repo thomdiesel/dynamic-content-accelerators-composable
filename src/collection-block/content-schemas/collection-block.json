@@ -1,0 +1,41 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "{CONTENT_TYPE_BASEPATH}/collection-block.json",
+
+  "title": "Title",
+  "description": "Description",
+
+  "allOf": [
+    {
+      "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+    }
+  ],
+
+  "type": "object",
+  "properties": {
+    "collections": {
+      "title": "Collections",
+      "description": "Add collections to the collection block",
+      "type": "array",
+      "minItems": 0,
+      "maxItems": 10,
+      "items": {
+        "allOf": [
+          {
+            "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+          },
+          {
+            "properties": {
+              "contentType": {
+                "enum": [
+                  "{CONTENT_TYPE_BASEPATH}/collection.json"
+                ]
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "propertyOrder": []
+}

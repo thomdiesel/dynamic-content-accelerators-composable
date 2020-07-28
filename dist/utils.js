@@ -950,12 +950,15 @@ algoliasearch.version = version;
   };
 
   var vse = getUrlParameter('vse', '{DELIVERY_BASE}');
-  var key = getUrlParameter('key', 'web/home');
-  var menukey = getUrlParameter('menukey', 'web/menu');
+  var key = getUrlParameter('key', 'athleta/web/home');
+  var menukey = getUrlParameter('menukey', 'athleta/web/menu');
   var locale = getUrlParameter('locale', 'en-GB,en-*,*');
   var cid = getUrlParameter('cid');
   var hidemenu = getUrlParameter('hidemenu', 'false');
   hidemenu = hidemenu == 'true' ? true : false;
+  var isRenderService = getUrlParameter('template');
+
+  if( isRenderService) return;
 
   /** Init the SDK */
   var AmpSDKObj = {
@@ -963,17 +966,34 @@ algoliasearch.version = version;
     stagingEnvironment: vse,
     locale: locale,
   };
+
+  var AmpSDKObjCRS = {
+    account: 'gaptest',
+    stagingEnvironment: vse,
+    locale: locale,
+  };
+
+  var clientV1 = new ampDynamicContent.ContentClient(AmpSDKObjCRS);
   var clientV2 = new ampDynamicContent.ContentClient(AmpSDKObj);
+  
 
   function loadContent(key, container) {
-    console.log('asked to load!', cid);
+    console.log('asked to load!', key);
     clientV2
-      .getContentItemByKey(cid)
+      .getContentItemByKey(key)
       .then((content) => {
         console.log(content.body);
-        /*var htmltorender = rendertemplate(content.body);
-            console.log(htmltorender);
-            document.getElementById('amp-content-replace').innerHTML = htmltorender;*/
+
+        /** */
+        clientV1
+          .renderContentItem(content.body._meta.deliveryId,'templateChooser')
+          .then(response => {
+            console.log(response.body);
+            document.getElementById(container).innerHTML = response.body;
+          })
+          .catch(error => {
+            console.log('unable to find content', error);
+          });
       })
       .catch((error) => {
         console.log('content not found', error);
@@ -1016,6 +1036,7 @@ algoliasearch.version = version;
 (
   window.AmpCa = window.AmpCa || {}
 );
+
 
 'use strict';
 
@@ -1356,7 +1377,7 @@ algoliasearch.version = version;
     setTimeout(scrollCard, 2000);
   }
 
-  exports.Utils = window.AmpCa.Utils || exports.Utils || {};
+  exports.Utils = exports.Utils || {};
   exports.Utils.attachComponents = attachComponents;
 
   /**

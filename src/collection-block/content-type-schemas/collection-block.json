@@ -1,0 +1,5 @@
+{
+    "body": "../content-schemas/collection-block.json",
+    "schemaId": "{CONTENT_TYPE_BASEPATH}/collection-block.json",
+    "validationLevel": "CONTENT_TYPE"
+  }

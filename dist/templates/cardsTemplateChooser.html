@@ -2,6 +2,10 @@
 {{> acc-template-text }}
 {{~/if}}
 
+{{#if (test this.[@type] (toRegex ".*/title")) ~}}
+{{> acc-template-title }}
+{{~/if}}
+
 {{#if (test this.[@type] (toRegex ".*/video")) ~}}
 {{> acc-card-template-video }}
 {{~/if}}
@@ -77,6 +81,10 @@
 {{> acc-template-rich-text }}
 {{~/if}}
 
+{{#if (test this.[@type] (toRegex ".*/curated-product-list.json")) ~}}
+{{> acc-template-curated-product-list }}
+{{~/if}}
+
 {{#if (test this.[@type] (toRegex ".*/slot.json")) ~}}
     {{#each this.content}}
         {{> templateChooser this }}
@@ -87,4 +95,8 @@
     {{#each this.content}}
         {{> templateChooser this }}
     {{/each}}
+{{~/if}}
+
+{{#if (test this.[@type] (toRegex ".*/navigation-slot.json")) ~}}
+    {{> templateChooser navigation }}
 {{~/if}}

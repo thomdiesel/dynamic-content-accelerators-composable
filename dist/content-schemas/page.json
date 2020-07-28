@@ -34,11 +34,13 @@
                   "https://gap.com/blog-list.json",
                   "https://gap.com/card.json",
                   "https://gap.com/card-list.json",
+                  "https://gap.com/curated-product-list.json",
                   "https://gap.com/external-block.json",
                   "https://gap.com/promo-list.json",
                   "https://gap.com/slider.json",
                   "https://gap.com/split-block.json",
                   "https://gap.com/text.json",
+                  "https://gap.com/title.json",
                   "https://gap.com/rich-text.json",
                   "https://gap.com/video.json"
                 ]

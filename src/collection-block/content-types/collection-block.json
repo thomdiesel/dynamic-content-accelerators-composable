@@ -1,7 +1,7 @@
 {
     "contentTypeUri": "{CONTENT_TYPE_BASEPATH}/collection-block.json",
     "settings": {
-      "label": "Title",
+      "label": "Collection Block",
       "visualizations": [
         {VISUALIZATIONS}
       ],

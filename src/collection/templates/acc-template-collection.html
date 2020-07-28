@@ -1,5 +1,43 @@
-<div class="o-dc-title{{#if titlepadding}} o-dc-title-{{titlepadding}}-pad{{/if}}">
-    {{#if header}}<h1 class="o-dc-text-headline1 {{#if headerFontSize}}o-dc-text-headline1-{{headerFontSize}}{{/if}} {{#if headerFontWeight}}o-dc-text-{{headerFontWeight}}{{/if}} {{#if headerStyle}}o-dc-text-{{headerStyle}}{{/if}}" {{#if headerFontColour}}style="color:{{headerFontColour}}"{{/if}}>{{{header}}}</h1>{{/if}}
-    {{#if description}}<p class="o-dc-text-copy {{#if descriptionFontSize}}o-dc-text-copy-{{descriptionFontSize}}{{/if}} {{#if descriptionFontWeight}}o-dc-text-{{descriptionFontWeight}}{{/if}} {{#if descriptionStyle}}o-dc-text-{{descriptionStyle}}{{/if}} {{#if hideMobileText}}show-for-medium{{/if}}" {{#if descriptionFontColour}}style="color:{{descriptionFontColour}}"{{/if}}>{{{description}}}</p>{{/if}}
-    {{#if button}}<a href="{{button.buttonLink}}" class="o-dc-button {{button.buttonStyle}} {{#if button.buttonFontWeight}}o-dc-text-{{button.buttonFontWeight}}{{/if}} {{button.buttonTransition}}{{#if button.buttonBackgroundColour}} inline-color {{/if}}" style="{{#if button.buttonBackgroundColour}}background:{{button.buttonBackgroundColour}};{{/if}}{{#if button.buttonForegroundColour}} color:{{button.buttonForegroundColour}};{{/if}}">{{button.buttonLabel}}{{#is button.buttonTransition 'hvr-icon-forward'}} <i class="kiplingicon-chevron-right hvr-icon"></i>{{/is}}{{#is button.buttonTransition 'hvr-icon-fade'}} <i class="kiplingicon-check hvr-icon"></i>{{/is}}</a>{{/if}}
-</div>
+<div class="o-dc-collection-item">
+    <div class="o-dc-collection-item-title grid-x align-justify align-middle">
+      <div class="cell large-auto">
+        <h1 class="o-dc-text-headline1 o-dc-text-headline1-small">
+          {{titleText}}
+        </h1>
+      </div>
+  
+      <div class="cell large-shrink">
+        {{#if button}}<a
+          href="{{button.buttonLink}}"
+          class="o-dc-button small {{button.buttonStyle}} {{#if button.buttonFontWeight}}o-dc-text-{{button.buttonFontWeight}}{{/if}} {{button.buttonTransition}}{{#if button.buttonBackgroundColour}} inline-color {{/if}}"
+          style="{{#if button.buttonBackgroundColour}}background:{{button.buttonBackgroundColour}};{{/if}}{{#if button.buttonForegroundColour}} color:{{button.buttonForegroundColour}};{{/if}}"
+          >{{button.buttonLabel}}{{#is button.buttonTransition
+          'hvr-icon-forward'}}
+          <i class="kiplingicon-chevron-right hvr-icon"></i>{{/is}}{{#is
+          button.buttonTransition 'hvr-icon-fade'}}
+          <i class="kiplingicon-check hvr-icon"></i>{{/is}}</a
+        >{{/if}}
+      </div>
+    </div>
+  
+    <div class="o-dc-collection-item-img">
+      {{#if button.buttonLink}}<a href="{{button.buttonLink}}"
+        >{{/if}}
+        <picture>
+          {{#if image.imageholder.image.gifImage}} <img
+          src="//kipling.a.bigcontent.io/v1/static/{{encodeURI image.image.name}}"
+          {{#if image.imageAltText}}alt="{{image.imageAltText}}"{{/if}}> {{else}}
+          <source
+            media="(max-width: 640px)"
+            srcset="//{{image.imageholder.image.image.defaultHost}}/i/{{image.imageholder.image.image.endpoint}}/{{encodeURI image.imageholder.image.image.name}}?$poi$&w=640&sm=aspect&aspect=1:1&qlt=80"
+          />
+          <img
+          src="//{{image.imageholder.image.image.defaultHost}}/i/{{image.imageholder.image.image.endpoint}}/{{encodeURI
+            image.imageholder.image.image.name}}?$poi$&w=1440&sm=aspect&aspect=16:9&qlt=80" {{#if
+          image.imageAltText}}alt="{{image.imageAltText}}"{{/if}}> {{/if}}
+        </picture>
+        {{#if button.buttonLink}}</a
+      >{{/if}}
+    </div>
+  </div>
+  

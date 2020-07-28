@@ -15,7 +15,7 @@
     "smallerheight",
     "showscrollarrow",
     "scrollarrowcolour",
-    "header",
+    "headerloc",
     "headerStyle",
     "headerFontSize",
     "headerFontWeight",
@@ -89,12 +89,17 @@
       "format": "color",
       "type": "string"
     },
-    "header": {
-      "type": "string",
-      "minLength": 0,
-      "maxLength": 100,
+    "headerloc": {
       "title": "Header",
-      "description": "Add header text"
+      "description": "Add header text",
+      "allOf": [
+        {
+          "$ref": "http://bigcontent.io/cms/schema/v1/localization#/definitions/localized-string"
+        }
+      ],
+      "ui:extension": {
+        "name": "localisation"
+      }
     },
     "headerStyle": {
       "title": "Header Colour",

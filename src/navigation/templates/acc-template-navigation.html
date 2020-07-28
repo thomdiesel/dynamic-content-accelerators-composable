@@ -39,7 +39,7 @@
                 class="af-nav-mobileonly dropdown-item"
                 data-amp-link="{{data.link}}"
                 href="javascript:void(0);"
-                onclick="AmpCa.Utils.evaluateAmplienceMenuLink('{{data.link}}');"
+                onclick="AmpCa.Utils.evaluateAmplienceLink('{{data.link}}');"
                 ><h3>All {{data.label}}</h3></a
               >
               {{/if}} {{#each children}}
@@ -50,7 +50,7 @@
                   <a
                     data-amp-link="{{data.link}}"
                     href="javascript:void(0);"
-                    onclick="AmpCa.Utils.evaluateAmplienceMenuLink('{{data.link}}');"
+                    onclick="AmpCa.Utils.evaluateAmplienceLink('{{data.link}}');"
                     >{{data.label}}</a
                   >
                 </li>
@@ -73,7 +73,7 @@
           class="nav-link"
           data-amp-link="{{data.link}}"
           href="javascript:void(0);"
-          onclick="AmpCa.Utils.evaluateAmplienceMenuLink('{{data.link}}');"
+          onclick="AmpCa.Utils.evaluateAmplienceLink('{{data.link}}');"
           >{{data.label}}</a
         >
       </li>

@@ -34,12 +34,15 @@
                   "{CONTENT_TYPE_BASEPATH}/blog-list.json",
                   "{CONTENT_TYPE_BASEPATH}/card.json",
                   "{CONTENT_TYPE_BASEPATH}/card-list.json",
+                  "{CONTENT_TYPE_BASEPATH}/collection.json",
+                  "{CONTENT_TYPE_BASEPATH}/collection-block.json",
                   "{CONTENT_TYPE_BASEPATH}/curated-product-list.json",
                   "{CONTENT_TYPE_BASEPATH}/external-block.json",
                   "{CONTENT_TYPE_BASEPATH}/promo-list.json",
                   "{CONTENT_TYPE_BASEPATH}/slider.json",
                   "{CONTENT_TYPE_BASEPATH}/split-block.json",
                   "{CONTENT_TYPE_BASEPATH}/text.json",
+                  "{CONTENT_TYPE_BASEPATH}/title.json",
                   "{CONTENT_TYPE_BASEPATH}/rich-text.json",
                   "{CONTENT_TYPE_BASEPATH}/video.json"
                 ]

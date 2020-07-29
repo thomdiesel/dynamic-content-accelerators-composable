@@ -5,6 +5,17 @@
     line-height: 1.4;
     color: #46454a
 }
+#amp-debug-container{
+    background: red;
+    color: #ffffff;
+    text-align: right;
+    font-weight: 400;
+    font-size: 0.9rem;
+}
+
+#segments{
+    margin: 0.5rem;
+}
 
 .lead {
     font-size: 125%;

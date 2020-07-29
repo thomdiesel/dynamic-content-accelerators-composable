@@ -19,7 +19,8 @@
     if (sDefault) return sDefault;
   };
 
-  var vse = getUrlParameter('vse', '{DELIVERY_BASE}');
+  var vse = getUrlParameter('vse', 'gaptest.cdn.content.amplience.net');
+  var crsvse = getUrlParameter('vse', 'c1.adis.ws');
   var key = getUrlParameter('key', 'athleta/web/home');
   var menukey = getUrlParameter('menukey', 'athleta/web/menu');
   var locale = getUrlParameter('locale', 'en-GB,en-*,*');
@@ -39,7 +40,7 @@
 
   var AmpSDKObjCRS = {
     account: '{COMPANY_TAG}',
-    stagingEnvironment: vse,
+    stagingEnvironment: crsvse,
     locale: locale,
   };
 
@@ -102,6 +103,7 @@
   }
   exports.Utils = window.AmpCa.Utils || exports.Utils || {};
   exports.Utils.evaluateAmplienceLink = evaluateAmplienceLink;
+  exports.Utils.getUrlParameter = getUrlParameter;
 })
 (
   window.AmpCa = window.AmpCa || {}

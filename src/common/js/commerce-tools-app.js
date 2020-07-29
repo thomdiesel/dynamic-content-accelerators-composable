@@ -56,7 +56,7 @@
           console.log('Success');
           console.log(data);
           try {
-            var link = "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/algolia-amplience-ct-demo/product.html?productcode=" + data.masterVariant.sku;
+            var link = "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/gaptest/templates/acc-template-pdp.html?productcode=" + data.masterVariant.sku;
             var image = data.masterVariant.images[0].url;
             var name = data.name['{CT_LOCALE}'];
             var priceObj = data.masterVariant.prices[0].value;

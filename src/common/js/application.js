@@ -31,9 +31,23 @@
   hidemenu = hidemenu == 'true' ? true : false;
   var isRenderService = getUrlParameter('template');
 
-  if( isRenderService) return;
+  if( isRenderService){
+    exports.Utils = window.AmpCa.Utils || exports.Utils || {};
+    exports.Utils.evaluateAmplienceLink = evaluateAmplienceLink;
+    exports.Utils.getUrlParameter = getUrlParameter;
+    return;
+  }
+  function loadDynamicSlots(){
+    var slots = document.querySelectorAll('[data-amp-deliverykey]');
+    slots.forEach(function (item) {
+      var dynamickey = item.getAttribute('data-amp-deliverykey');
+      var eID = item.id;
+      loadContent(dynamickey, eID);
+    })
+  }
 
   function drawDebug(){
+    loadDynamicSlots();
     if(timestamp){
       console.log("Timestamp:" + timestamp)
       var displayDate = new Date(Number(timestamp))
@@ -102,6 +116,7 @@
   }
 
   /** Init the SDK */
+
   var AmpSDKObj = {
     hubName: '{COMPANY_TAG}',
     stagingEnvironment: vse,

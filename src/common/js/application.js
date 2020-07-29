@@ -152,9 +152,9 @@
             console.log(response.body);
             document.getElementById(container).innerHTML = response.body;
 
-            var load_event = document.createEvent('Event');  
-            load_event.initEvent('load', false, false);  
-            window.dispatchEvent(load_event);
+            AmpCa.Utils.attachComponents()
+            AmpCa.Utils.findSearches()
+            AmpCa.Utils.findProducts()
           })
           .catch(error => {
             console.log('unable to find content', error);

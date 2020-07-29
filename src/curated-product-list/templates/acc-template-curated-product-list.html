@@ -1,15 +1,11 @@
-<div class="amp-dc-product-list
-{{#compare products.length '<' 6}}amp-dc-prod-{{products.length}}-rows
-{{else}}amp-dc-prod-3-rows{{/compare}}
-{{#if heroList}}amp-dc-prduct-hero{{/if}}
-">
-    <div class="amp-dc-prod-title">
+<div class="amp-dc-product-list">
+    <h1 class="o-dc-text-headline1 o-dc-text-headline1-small text-align-center">
         {{ header }}
-    </div>
+    </h1>
 
-    <div class="amp-dc-prod-list-wrap">
+    <div class="grid-x grid-padding-x o-dc-card-list o-dc-card2-slider" role="toolbar">
         {{#each products}}
-        	<div class="amp-dc-prod" data-amp-product-code="{{this}}"></div>
+        	<div class="cell medium-6 large-3 o-dc-card2-slider-item" data-amp-product-code="{{this}}"></div>
         {{/each}}
     </div>
 </div>

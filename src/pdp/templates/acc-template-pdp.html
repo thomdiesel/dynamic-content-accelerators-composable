@@ -1,0 +1,247 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>PDP</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+         <!-- Bootstrap for Menu -->
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <!-- Amplience accelerators dependencies -->
+        <link rel="stylesheet" href="{DEPLOY_PATH}styles.min.css" />
+        <!-- Amplience Viewer files -->
+        <script src="https://unpkg.com/dc-delivery-sdk-js/dist/dynamicContent.browser.umd.min.js"></script>
+      <link rel="stylesheet" href="https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/algolia-amplience-ct-demo/viewer/css/viewer.min.css">
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/algolia-amplience-ct-demo/viewer/jquery-ui-custom.js"></script>
+      <script src="https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/accelerators/algolia-amplience-ct-demo/viewer/viewer.js"></script>
+
+        <script src="{DEPLOY_PATH}utils.min.js"></script>
+        <script src="{DEPLOY_PATH}lory.min.js"></script>
+
+        <style>
+            .amp-product-detail{
+                display: flex;
+                flex-wrap: wrap;
+            }
+            .amp-product-viewer{
+                flex: 0 0 50%;
+            }
+            .amp-product-details{
+                flex: 1;
+                flex-grow: 1;
+                flex-shrink: 1;
+                flex-basis: 0%;
+                padding: 20px;
+            }
+            .amp-product-title{
+                font-size: 3rem;
+                font-family: Hind;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: .57px;
+            }
+            .amp-product-price{
+                font-size: 2rem;
+                font-family: Hind;
+                font-weight: 700;
+                letter-spacing: .57px;
+                color: grey;
+                padding-bottom: 1rem;
+            }
+            .amp-product-description{
+                font-size: 1.5rem;
+                font-family: Hind;
+                letter-spacing: .57px;
+                padding-bottom: 2rem;
+            }
+            .af-pdp-content__product .af-pdp-details-controls .af-button {
+                margin: 10px 0px 10px 0px;
+            }
+
+            button, html [type="button"], [type="reset"], [type="submit"] {
+                -webkit-appearance: button;
+            }
+            .af-button-dark {
+                background-color: #000;
+                border-color: #000;
+                color: #fff;
+            }
+            .af-button {
+                display: inline-block;
+                padding: .84615em 1.3em;
+                font-weight: 400;
+                font-size: 13px;
+                line-height: 1.3em;
+                text-transform: uppercase;
+                text-decoration: none;
+                text-align: center;
+                vertical-align: middle;
+                cursor: pointer;
+                height: auto;
+                min-height: 3.15385em;
+                -webkit-transition: all 0.3s cubic-bezier(0.6, 0, 0, 1);
+                transition: all 0.3s cubic-bezier(0.6, 0, 0, 1);
+                border: 1px solid transparent;
+                position: relative;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header-container"></div>
+        <div id="amp-menu-holder"></div>
+        <div class="amp-product-detail">
+            <!-- Amplience Content Written  in here..... -->
+            <div class="amp-product-viewer" id="amp-container"></div>
+            <div class="amp-product-details">
+                <div class="amp-product-title">LOADING...</div>
+                <div class="amp-product-price">Please wait</div>
+                <div class="amp-product-description"></div>
+                <button type="button" class="af-button af-button-dark">ADD TO MY BAG</button>
+            </div>
+        </div>
+
+        <script>
+            var CT_AccessToken;
+            var creds = 'u1dO23i5JuRIRllKMk9NOCVV:VwxflHqzerWZvlyNenAzCZGgfhZQ0uRc';
+            var creds64 = window.btoa(creds);
+
+           
+            var productCode = window.AmpCa.Utils.getUrlParameter('productcode', 'M0E20000000FHAQ');
+
+            function authenticateProductAPI(cb) {
+                console.log('authenticating');
+                $.ajax({
+                url: 'https://auth.europe-west1.gcp.commercetools.com/oauth/token',
+                method: 'POST',
+                dataType: 'json',
+                contentType: 'application/x-www-form-urlencoded',
+                data: {
+                    grant_type: 'client_credentials',
+                    scope: 'view_published_products:anyafinn view_products:anyafinn',
+                },
+                cache: false,
+                beforeSend: function (xhr) {
+                    /* Authorization header */
+                    xhr.setRequestHeader('Authorization', 'Basic ' + creds64);
+                },
+                success: function (data) {
+                    console.log('Success');
+                    console.log(data);
+                    CT_AccessToken = data.access_token;
+                    cb();
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    console.log('error');
+                    console.log(jqXHR, textStatus, errorThrown);
+                },
+                });
+            }
+
+            authenticateProductAPI(
+                function(){
+                    $.ajax({
+                        url:
+                        'https://api.europe-west1.gcp.commercetools.com/anyafinn/product-projections/search?staged=true&limit=10&text.en="' + productCode,
+                        method: 'GET',
+                        dataType: 'json',
+                        cache: false,
+                        beforeSend: function (xhr) {
+                        /* Authorization header */
+                        xhr.setRequestHeader('Authorization', 'Bearer ' + CT_AccessToken);
+                        },
+                        success: function (data) {
+                        console.log('Success');
+                        console.log(data);
+                     //try {
+                            var productdata = data.results[0];;
+                            var image = productdata.masterVariant.images[0].url;
+                            // Need to get the last index....
+                            var setname = image.match(/([^\/]*)\/*$/)[1];
+                            console.log(setname)
+
+                            var viewer = new amp.Viewer({
+                                client: 'willow',
+                                imageBasePath: 'https://i8.amplience.net/',
+                                set: setname,
+                                locale: 'en-gb,*',
+                                secure: true,
+                                zoomInlineDoubleTap: false,
+                                doubleTapTime: 250,
+                                initCallback: function () {
+                                    if (this.currentView === "desktopFullView") {
+                                        var videoData = null;
+                                        for (var x = 0; x < this.tags.length; x++) {
+                                            if (this.tags[x].alias === 'videoContainer') {
+                                                var $tag = this.tags[x].$tag;
+                                                videoData = $tag.data()['amp-ampVideo'] || $tag.data()['ampAmpVideo'];
+                                                var player = videoData._player;
+                                                player.ready(function () {
+                                                    player.currentResolution('High');
+                                                });
+                                            }
+                                        }
+                                    }
+                                },
+                                errCallback: function () {
+                                    console.log('set call failed');
+                                },
+                                navIconsMain: {
+                                    next: 'icon icon-right main-next-test',
+                                    prev: 'icon icon-left main-prev-test'
+                                },
+                                navIconsNav: {
+                                    next: 'icon icon-right nav-next-test',
+                                    prev: 'icon icon-left nav-prev-test'
+                                },
+                                navIconsPortraitNav: {
+                                    next: 'icon icon-right navPortrait-next-test',
+                                    prev: 'icon icon-left navPortrait-next-test'
+                                },
+                                ampConfigs: {
+                                    mainContainerCarousel: {
+                                        loop:true
+                                    },
+                                    mainContainerZoomInline: {
+                                        scaleStep: 0.5
+                                    },
+                                    mainContainerSpin: {
+                                        friction: 0.8
+                                    }
+                                },
+                                tooltips: {
+                                    offsets: {
+                                        left: -102,
+                                        top: -39
+                                    },
+                                    displayTime: 3000,
+                        
+                                }
+                            });
+                        
+                            window.viewer = viewer;
+
+
+                            var name = productdata.name['en'];
+                            var description = "";
+                            if( productdata.metaDescription) description = productdata.metaDescription['en'];
+                            var priceObj = productdata.masterVariant.prices[0].value;
+                            var price =
+                            '$' +
+                            (priceObj.centAmount * 0.1).toFixed(priceObj.fractionDigits);
+                            $('.amp-product-title').text(name);
+                            $('.amp-product-description').text(description);
+                            $('.amp-product-price').text(price);
+
+                        //} catch (e) {
+                            
+                        //}
+                        },
+                        error: function (jqXHR, textStatus, errorThrown) {
+                        console.log('error');
+                        console.log(jqXHR, textStatus, errorThrown);
+                        },
+                    });
+                }
+            )
+        </script>
+    </body>
+</html>

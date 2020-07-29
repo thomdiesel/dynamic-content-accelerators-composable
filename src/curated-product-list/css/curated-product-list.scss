@@ -1,116 +1,18 @@
-.amp-dc-image {
-    min-width: 0;
-}
-
-.amp-dc-prod-title {
-    font-size: 2em;
-    text-align: center;
-}
-
-.amp-dc-prod-list {
-    .amp-dc-prod-list-wrap {
-        font-size: 0;
-        margin-top: 20px;
-        margin-left: -50px;
+.amp-dc-product-list{
+    .o-dc-card.card-bg{
+        display:block;
+        text-decoration: none;
+    }
+    .text-align-center{
+        text-align: center !important;
+        font-size: 2rem !important;
+        font-weight: 200 !important;
+    }
+    .extra-padding-bottom{
+        padding-bottom: 0.75rem;
     }
 
-    .amp-dc-prod {
-        display: inline-block;
-        vertical-align: top;
-    }
-}
-
-.amp-dc-prod-5-rows {
-    .amp-dc-prod {
-        width: 20%;
-    }
-}
-
-.amp-dc-prod-4-rows {
-    .amp-dc-prod {
-        width: 25%;
-    }
-}
-
-.amp-dc-prod-3-rows {
-    .amp-dc-prod {
-        width: 33.33%;
-    }
-}
-
-.amp-dc-prod-2-rows {
-    .amp-dc-prod {
-        width: 50%;
-    }
-}
-
-.amp-dc-prod-1-rows {
-    .amp-dc-prod {
-        width: 100%;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .amp-dc-prod-5-rows {
-        .amp-dc-prod {
-            width: 50%;
-        }
-    }
-
-    .amp-dc-prod-4-rows {
-        .amp-dc-prod {
-            width: 50%;
-        }
-    }
-
-    .amp-dc-prod-3-rows {
-        .amp-dc-prod {
-            width: 50%;
-        }
-
-    }
-
-    .amp-dc-prod-2-rows {
-        .amp-dc-prod {
-            width: 50%;
-        }
-    }
-
-    .amp-dc-prod-1-rows {
-        .amp-dc-prod {
-            width: 100%;
-        }
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .amp-dc-prod-5-rows {
-        .amp-dc-prod {
-            width: 100%;
-        }
-    }
-
-    .amp-dc-prod-4-rows {
-        .amp-dc-prod {
-            width: 100%;
-        }
-    }
-
-    .amp-dc-prod-3-rows {
-        .amp-dc-prod {
-            width: 100%;
-        }
-    }
-
-    .amp-dc-prod-2-rows {
-        .amp-dc-prod {
-            width: 100%;
-        }
-    }
-
-    .amp-dc-prod-1-rows {
-        .amp-dc-prod {
-            width: 100%;
-        }
+    .amp-dc-image {
+        min-width: 0;
     }
 }

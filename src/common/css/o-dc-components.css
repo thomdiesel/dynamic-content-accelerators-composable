@@ -5,6 +5,11 @@
     line-height: 1.4;
     color: #46454a
 }
+
+.site-logo-container{
+    width: 14.5em;
+    margin: 1em auto;
+}
 #amp-debug-container{
     background: red;
     color: #ffffff;

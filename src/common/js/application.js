@@ -54,7 +54,7 @@
 
 
           var optionsString = '<option value="" disabled selected>Select your segment</option>';
-          if(segmentParam) optionsString = '';
+          if(segmentParam) optionsString = '<option value="">No segment</option>';
           for(var i in data.items){
             var optionval = data.items[i].name;
             if( segmentParam == optionval){

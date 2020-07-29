@@ -43,7 +43,7 @@
               ],
               "contentTypeSettings": {
                 "cards": {
-                  "*": "https://{{vse.domain}}/v1/content/demo/content-item/{{content.sys.id}}?template=acc-template-cardsPreview"
+                  "*": "https://{{vse.domain}}/v1/content/demo/content-item/{{content.sys.id}}?template=acc-template-cardsPreview&locale={{locales}},en-*,*"
                 }
               }
             }

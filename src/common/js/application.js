@@ -23,7 +23,7 @@
   var crsvse = getUrlParameter('vse', 'c1-orig.adis.ws');
   var key = getUrlParameter('key', 'athleta/web/home');
   var menukey = getUrlParameter('menukey', 'athleta/web/menu');
-  var locale = getUrlParameter('locale', 'en-GB,en-*,*');
+  var locale = getUrlParameter('locale', 'en-US,en-*,*');
   var cid = getUrlParameter('cid');
   var timestamp = getUrlParameter('timestamp');
   var segmentParam = getUrlParameter('segment');
@@ -188,20 +188,48 @@
     if (lnk.indexOf('https://') >= 0) {
       // check if there are any paramaters
       var currenturl = window.location.href;
-      lnk = lnk.replace("{{vse.domain}}", vse);
-      lnk = lnk.replace("{{locales}}", locale);
-      lnk = lnk.replace("{{timestamp}}", timestamp);
-      // check for key
-      if (currenturl.indexOf('&key=') >= 0) {
-        var urlarr = currenturl.split('&');
-        for (var i = 0; i < urlarr.length; i++) {
-          var line = urlarr[i];
-          if (line.indexOf('key=') == 0) {
-            lnk += '&' + line;
+      
+      if(timestamp){
+        lnk = lnk.replace("{{vse.domain}}", vse);
+        lnk = lnk.replace("{{locales}}", locale);
+        lnk = lnk.replace("{{timestamp}}", timestamp);
+
+        if (currenturl.indexOf('&key=') >= 0) {
+          var urlarr = currenturl.split('&');
+          for (var i = 0; i < urlarr.length; i++) {
+            var line = urlarr[i];
+            if (line.indexOf('key=') == 0) {
+              lnk += '&' + line;
+            }
           }
         }
+        window.open(lnk, '_self');
+      }else{
+        // We want the key and the locales....
+        //Gey the key!
+        var newkey;
+        if (lnk.indexOf('&key=') >= 0) {
+          var urlarr = lnk.split('&');
+          for (var i = 0; i < urlarr.length; i++) {
+            var line = urlarr[i];
+            if (line.indexOf('key=') == 0) {
+              newkey = '&' + line
+            }
+          }
+        }
+
+        var n = lnk.indexOf('?');
+        lnk = lnk.substring(0, n != -1 ? n : lnk.length);
+
+        // Need to add in locales
+        lnk+='?locale=' + locale;
+        if(newkey){
+          lnk += newkey;
+        }
+        window.open(lnk, '_self');
+        
       }
-      window.open(lnk, '_self');
+      
     } else {
       var currenturl = window.location.href;
       if (currenturl.indexOf('&key=') >= 0) {

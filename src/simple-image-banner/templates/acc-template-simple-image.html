@@ -26,8 +26,8 @@
     </picture>
 {{else}}    
     <picture class="amp-dc-simple-image">
-        <source srcset="{{mobileimageref}}" media="max-width:768px"}>
-        <source srcset="{{imageref}}" media="min-width:768px"}>
+        <source srcset="{{mobileimageref}}" media="(max-width:768px)"}>
+        <source srcset="{{imageref}}" media="(min-width:768px)"}>
         <img src="{{imageref}}" {{#if imageAltText}}alt="{{imageAltText}}"{{/if}} class="amp-dc-image-pic {{classNames}}">
     </picture>
 {{/if}}

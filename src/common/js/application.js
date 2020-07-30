@@ -20,7 +20,7 @@
   };
 
   var vse = getUrlParameter('vse', 'gaptest.cdn.content.amplience.net');
-  var crsvse = getUrlParameter('vse', 'c1.adis.ws');
+  var crsvse = getUrlParameter('vse', 'c1-orig.adis.ws');
   var key = getUrlParameter('key', 'athleta/web/home');
   var menukey = getUrlParameter('menukey', 'athleta/web/menu');
   var locale = getUrlParameter('locale', 'en-GB,en-*,*');
@@ -186,6 +186,21 @@
   function evaluateAmplienceLink(lnk) {
     console.log('link clicked = ' + lnk);
     if (lnk.indexOf('https://') >= 0) {
+      // check if there are any paramaters
+      var currenturl = window.location.href;
+      lnk = lnk.replace("{{vse.domain}}", vse);
+      lnk = lnk.replace("{{locales}}", locale);
+      lnk = lnk.replace("{{timestamp}}", timestamp);
+      // check for key
+      if (currenturl.indexOf('&key=') >= 0) {
+        var urlarr = currenturl.split('&');
+        for (var i = 0; i < urlarr.length; i++) {
+          var line = urlarr[i];
+          if (line.indexOf('key=') == 0) {
+            lnk += '&' + line;
+          }
+        }
+      }
       window.open(lnk, '_self');
     } else {
       var currenturl = window.location.href;

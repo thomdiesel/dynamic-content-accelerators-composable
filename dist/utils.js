@@ -949,18 +949,104 @@ algoliasearch.version = version;
     if (sDefault) return sDefault;
   };
 
-  var vse = getUrlParameter('vse', '{DELIVERY_BASE}');
+  var vse = getUrlParameter('vse', 'gaptest.cdn.content.amplience.net');
+  var crsvse = getUrlParameter('vse', 'c1-orig.adis.ws');
   var key = getUrlParameter('key', 'athleta/web/home');
   var menukey = getUrlParameter('menukey', 'athleta/web/menu');
   var locale = getUrlParameter('locale', 'en-GB,en-*,*');
   var cid = getUrlParameter('cid');
+  var timestamp = getUrlParameter('timestamp');
+  var segmentParam = getUrlParameter('segment');
   var hidemenu = getUrlParameter('hidemenu', 'false');
   hidemenu = hidemenu == 'true' ? true : false;
   var isRenderService = getUrlParameter('template');
 
-  if( isRenderService) return;
+  if( isRenderService){
+    exports.Utils = window.AmpCa.Utils || exports.Utils || {};
+    exports.Utils.evaluateAmplienceLink = evaluateAmplienceLink;
+    exports.Utils.getUrlParameter = getUrlParameter;
+    return;
+  }
+  function loadDynamicSlots(){
+    var slots = document.querySelectorAll('[data-amp-deliverykey]');
+    slots.forEach(function (item) {
+      var dynamickey = item.getAttribute('data-amp-deliverykey');
+      var eID = item.id;
+      loadContent(dynamickey, eID);
+    })
+  }
+
+  function drawDebug(){
+    loadDynamicSlots();
+    if(timestamp){
+      console.log("Timestamp:" + timestamp)
+      var displayDate = new Date(Number(timestamp))
+      console.log(displayDate)
+      var debugContainer = document.getElementById('amp-debug-container');
+      if( debugContainer){
+        debugContainer.innerHTML = '<span>Currently Viewing: ' + displayDate + '</span>';
+      }
+
+      $.ajax({
+        url:
+        'https://presalesadisws.s3.eu-west-1.amazonaws.com/ui-extensions/data-extension/gapsegments.json',
+        method: 'GET',
+        dataType: 'json',
+        cache: false,
+        success: function (data) {
+          console.log(data)
+
+
+          var optionsString = '<option value="" disabled selected>Select your segment</option>';
+          if(segmentParam) optionsString = '<option value="">No segment</option>';
+          for(var i in data.items){
+            var optionval = data.items[i].name;
+            if( segmentParam == optionval){
+              optionsString += '<option value="' + optionval + '" disabled selected>' + optionval + '</option>'
+            } else{
+              optionsString += '<option value="' + optionval + '">' + optionval + '</option>'
+            }
+            
+          }
+
+          debugContainer.innerHTML += '<select name="segments" id="segments">' + optionsString + '</select>'
+
+          document.getElementById('segments').addEventListener("change", function(change){
+            console.log(change.target.value);
+            var newSegment = change.target.value;
+
+            var currenturl = window.location.href;
+            if (currenturl.indexOf('&segment=') >= 0) {
+              var urlarr = currenturl.split('&');
+              for (var i = 0; i < urlarr.length; i++) {
+                var line = urlarr[i];
+                if (line.indexOf('segment=') == 0) {
+                  urlarr[i] = 'segment=' + newSegment;
+                }
+              }
+              var newurl = urlarr.join('&');
+              window.open(newurl, '_self');
+            } else {
+              if (currenturl.indexOf('?') >= 0) {
+                window.open(currenturl + '&segment=' + newSegment, '_self');
+              } else {
+                window.open(currenturl + '?segment=' + newSegment, '_self');
+              }
+            }
+
+          });
+
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+          console.log('error');
+          console.log(jqXHR, textStatus, errorThrown);
+        }
+      });
+    }
+  }
 
   /** Init the SDK */
+
   var AmpSDKObj = {
     hubName: 'gaptest',
     stagingEnvironment: vse,
@@ -969,7 +1055,7 @@ algoliasearch.version = version;
 
   var AmpSDKObjCRS = {
     account: 'gaptest',
-    stagingEnvironment: vse,
+    stagingEnvironment: crsvse,
     locale: locale,
   };
 
@@ -983,13 +1069,37 @@ algoliasearch.version = version;
       .getContentItemByKey(key)
       .then((content) => {
         console.log(content.body);
+        var renderID  = content.body._meta.deliveryId;
+        if(content && content.body){
+          var schema = content.body._meta.schema;
+          if(schema === 'https://gap.com/personalized-slot.json'){
+            // check segments
+            if(segmentParam){
+              // We should check for a match
+              var indexOfMatch = content.body.segments.findIndex(x => x.segment === segmentParam);
+              if(indexOfMatch >= 0){
+                renderID = content.body.segments[indexOfMatch].content._meta.deliveryId;
+              }else{
+                // no match - pick the first
+                renderID = content.body.segments[0].content._meta.deliveryId;
+              }
+            } else {
+              // Need to find a way to get the no segment option....
+              renderID = content.body.segments[0].content._meta.deliveryId;
+            }
+          }
+        }
 
         /** */
         clientV1
-          .renderContentItem(content.body._meta.deliveryId,'templateChooser')
+          .renderContentItem(renderID,'templateChooser')
           .then(response => {
             console.log(response.body);
             document.getElementById(container).innerHTML = response.body;
+
+            AmpCa.Utils.attachComponents()
+            AmpCa.Utils.findSearches()
+            AmpCa.Utils.findProducts()
           })
           .catch(error => {
             console.log('unable to find content', error);
@@ -1006,6 +1116,21 @@ algoliasearch.version = version;
   function evaluateAmplienceLink(lnk) {
     console.log('link clicked = ' + lnk);
     if (lnk.indexOf('https://') >= 0) {
+      // check if there are any paramaters
+      var currenturl = window.location.href;
+      lnk = lnk.replace("{{vse.domain}}", vse);
+      lnk = lnk.replace("{{locales}}", locale);
+      lnk = lnk.replace("{{timestamp}}", timestamp);
+      // check for key
+      if (currenturl.indexOf('&key=') >= 0) {
+        var urlarr = currenturl.split('&');
+        for (var i = 0; i < urlarr.length; i++) {
+          var line = urlarr[i];
+          if (line.indexOf('key=') == 0) {
+            lnk += '&' + line;
+          }
+        }
+      }
       window.open(lnk, '_self');
     } else {
       var currenturl = window.location.href;
@@ -1032,11 +1157,124 @@ algoliasearch.version = version;
   }
   exports.Utils = window.AmpCa.Utils || exports.Utils || {};
   exports.Utils.evaluateAmplienceLink = evaluateAmplienceLink;
+  exports.Utils.getUrlParameter = getUrlParameter;
+
+  window.addEventListener('load', function () {
+    drawDebug();
+  });
 })
 (
   window.AmpCa = window.AmpCa || {}
 );
 
+'use strict';
+
+(function (exports) {
+  var CT_AccessToken;
+  var creds = 'u1dO23i5JuRIRllKMk9NOCVV:VwxflHqzerWZvlyNenAzCZGgfhZQ0uRc';
+  var creds64 = window.btoa(creds);
+  var products;
+  var dynamicProducts;
+
+  function authenticateProductAPI(cb) {
+    console.log('authenticating');
+    $.ajax({
+      url: 'https://auth.europe-west1.gcp.commercetools.com/oauth/token',
+      method: 'POST',
+      dataType: 'json',
+      contentType: 'application/x-www-form-urlencoded',
+      data: {
+        grant_type: 'client_credentials',
+        scope: 'view_published_products:anyafinn',
+      },
+      cache: false,
+      beforeSend: function (xhr) {
+        /* Authorization header */
+        xhr.setRequestHeader('Authorization', 'Basic ' + creds64);
+      },
+      success: function (data) {
+        console.log('Success');
+        console.log(data);
+        CT_AccessToken = data.access_token;
+        cb();
+      },
+      error: function (jqXHR, textStatus, errorThrown) {
+        console.log('error');
+        console.log(jqXHR, textStatus, errorThrown);
+      },
+    });
+  }
+
+  function drawProducts() {
+    products.forEach(function (item) {
+      var productCode = item.getAttribute('data-amp-product-code');
+      $.ajax({
+        url:
+          'https://api.europe-west1.gcp.commercetools.com/anyafinn/product-projections/' +
+          productCode +
+          '?localeProjection=en',
+        method: 'GET',
+        dataType: 'json',
+        context: item,
+        cache: false,
+        beforeSend: function (xhr) {
+          /* Authorization header */
+          xhr.setRequestHeader('Authorization', 'Bearer ' + CT_AccessToken);
+        },
+        success: function (data) {
+          console.log('Success');
+          console.log(data);
+          try {
+            var link = "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/gaptest/templates/acc-template-pdp.html?productcode=" + data.masterVariant.sku;
+            var image = data.masterVariant.images[0].url;
+            var name = data.name['en'];
+            var priceObj = data.masterVariant.prices[0].value;
+            var price =
+              '&dollar;' +
+              (priceObj.centAmount * 0.1).toFixed(priceObj.fractionDigits);
+
+            var html =
+              '<a class="o-dc-card card-bg  card2" href="' +
+              link +
+              '"><div class="amp-dc-card-wrap"><div class="o-dc-card-img"><picture class="amp-dc-image"><img src="' +
+              image +
+              '?$product-list$" class="amp-dc-image-pic"/></picture></div><div class="o-dc-card-text"><h4 class="o-dc-card-title">' +
+              name +
+              '</h4><p class="o-dc-card-copy extra-padding-bottom">'+
+              price +'</p><div class="cell large-shrink"><div class="o-dc-button small">Shop Now</div></div></div></div></a>';
+            item.innerHTML = html;
+          } catch (e) {
+            console.log('Error with CommerceTools Product:' + productCode);
+            var html =
+              '<a class="amp-dc-card-wrap" href="#"><div class="amp-dc-card-wrap"><div class="amp-dc-card-img-wrap"><picture class="amp-dc-image"><img src="https://i8.amplience.net/s/willow/noimagefound?$product-list$" class="amp-dc-image-pic"/></picture></div><div class="amp-dc-card-text-wrap"><div class="amp-dc-card-name">Product: ' +
+              productCode +
+              ' not found</div><p class="amp-dc-card-description">Please select another</p><div class="amp-dc-card-link"></div></div></a></div>';
+            $(item).html(html);
+          }
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+          console.log('error');
+          console.log(jqXHR, textStatus, errorThrown);
+        },
+      });
+    });
+  }
+
+  function findProducts() {
+    products = document.querySelectorAll('[data-amp-product-code]');
+    if (products.length >= 1) authenticateProductAPI(drawProducts);
+
+    dynamicProducts = document.querySelectorAll('[data-amp-product-search]');
+    if (dynamicProducts.length >= 1)
+      authenticateProductAPI(drawDynamicProducts);
+  }
+
+  exports.Utils = window.AmpCa.Utils || exports.Utils || {};
+  exports.Utils.findProducts = findProducts;
+  window.addEventListener('load', function () {
+    findProducts();
+  });
+})((window.AmpCa = window.AmpCa || {}));
 
 'use strict';
 

@@ -70,6 +70,11 @@
       "type": "string",
       "enum": ["black", "white"]
     },
+    "subheaderFontColour": {
+      "title": "Subheader Font Color",
+      "type": "string",
+      "format": "color"
+    },
     "subheaderFontSize": {
       "title": "Subheader Font Size",
       "description": "Specify a font size",
@@ -137,11 +142,12 @@
       "type": "string",
       "enum": ["normal", "bold"]
     },
-    "descriptionFontColour": {
-          "title": "Description Font Color",
-          "type": "string",
-          "format": "color"
-        },
+    "descriptionStyle": {
+      "title": "Description Colour",
+      "description": "Specify a style",
+      "type": "string",
+      "enum": ["black", "white"]
+    },
     "disclaimer": {
       "type": "string",
       "minLength": 0,

@@ -15,7 +15,13 @@
                 {{> acc-card-template-image this}}
             </div>
             {{~/if}}
+            {{#if (test this.[@type] (toRegex ".*/advanced-banner.json")) ~}}
+            {{> acc-template-advanced-banner }}
+            {{~/if}}
 
+            {{#if (test this.[@type] (toRegex ".*/simple-image-banner.json")) ~}}
+            {{> acc-template-simple-image-banner }}
+            {{~/if}}
         </div>
     </div>
     {{/each}}

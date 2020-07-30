@@ -11,7 +11,8 @@
       searchElements.forEach(function (item) {
         var indexName = item.getAttribute('data-amp-dc-indexname');
         var max = item.getAttribute('data-amp-dc-numItems');
-        var query = item.getAttribute('data-amp-dc-query');;
+        var query = item.getAttribute('data-amp-dc-query');
+        item.innerHTML="";
 
         var index = searchClient.initIndex(indexName);
         var searchSettings = {

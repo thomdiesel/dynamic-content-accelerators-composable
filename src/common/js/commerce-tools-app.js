@@ -101,7 +101,7 @@
   }
 
   exports.Utils = window.AmpCa.Utils || exports.Utils || {};
-  // exports.Utils.evaluateAmplienceLink = evaluateAmplienceLink;
+  exports.Utils.findProducts = findProducts;
   window.addEventListener('load', function () {
     findProducts();
   });

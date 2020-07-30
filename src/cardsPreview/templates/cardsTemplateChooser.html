@@ -85,6 +85,9 @@
 {{> acc-template-curated-product-list }}
 {{~/if}}
 
+{{#if (test this.[@type] (toRegex ".*/collection.json")) ~}} {{> acc-template-collection }} {{~/if}}
+{{#if (test this.[@type] (toRegex ".*/collection-block.json")) ~}} {{> acc-template-collection-block }} {{~/if}}
+
 {{#if (test this.[@type] (toRegex ".*/slot.json")) ~}}
     {{#each this.content}}
         {{> templateChooser this }}

@@ -23,9 +23,9 @@
     <div class="o-dc-collection-item-img">
       {{#if button.buttonLink}}<a href="{{button.buttonLink}}"
         >{{/if}}
-        <picture>
+        <picture class="amp-dc-image">
           {{#if image.imageholder.image.gifImage}} <img
-          src="//kipling.a.bigcontent.io/v1/static/{{encodeURI image.image.name}}"
+          src="//{{image.imageholder.image.image.defaultHost}}.a.bigcontent.io/v1/static/{{encodeURI image.imageholder.image.image.name}}"
           {{#if image.imageAltText}}alt="{{image.imageAltText}}"{{/if}}> {{else}}
           <source
             media="(max-width: 640px)"

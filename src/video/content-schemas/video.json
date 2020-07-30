@@ -48,15 +48,6 @@
         }
       ]
     },
-    "videoThumbnail": {
-      "title": "Poster image",
-      "description": "Add image for video",
-      "allOf": [
-        {
-          "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
-        }
-      ]
-    },
     "backgroundEffect": {
       "title": "Add overlay effect?",
       "description": "Yes",

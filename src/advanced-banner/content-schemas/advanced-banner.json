@@ -3,7 +3,6 @@
   "$id": "{CONTENT_TYPE_BASEPATH}/advanced-banner.json",
   "title": "Advanced Banner",
   "description": "Banner accelerator",
-
   "allOf": [
     {
       "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
@@ -71,6 +70,11 @@
       "type": "string",
       "enum": ["black", "white"]
     },
+    "subheaderFontColour": {
+      "title": "Subheader Font Color",
+      "type": "string",
+      "format": "color"
+    },
     "subheaderFontSize": {
       "title": "Subheader Font Size",
       "description": "Specify a font size",
@@ -83,12 +87,6 @@
       "type": "string",
       "enum": ["normal", "bold"]
     },
-    "subheaderFontColour": {
-      "title": "Override Subheader Font Colour",
-      "description": "Choose a colour to override default",
-      "format": "color",
-      "type": "string"
-    },
     "headerloc": {
       "title": "Header",
       "description": "Add header text",
@@ -100,12 +98,6 @@
       "ui:extension": {
         "name": "localisation"
       }
-    },
-    "headerStyle": {
-      "title": "Header Colour",
-      "description": "Specify a style",
-      "type": "string",
-      "enum": ["black", "white"]
     },
     "headerFontSize": {
       "title": "Header Font Size",
@@ -120,23 +112,23 @@
       "enum": ["normal", "bold"]
     },
     "headerFontColour": {
-      "title": "Override Header Font Colour",
-      "description": "Choose a colour to override default",
-      "format": "color",
-      "type": "string"
-    },
+          "title": "Header Font Color",
+          "type": "string",
+        "ui:extension": {
+        "name": "color-picker",
+        "params": {
+          "title": "Header Font Color",
+          "contentID": "1beb14f9-55a2-4910-9243-f388aa60a549",
+          "groups": ["Web - Text"]
+        }
+      }
+        },
     "description": {
       "type": "string",
       "minLength": 0,
       "maxLength": 250,
       "title": "Description",
       "description": "Add description text"
-    },
-    "descriptionStyle": {
-      "title": "Description Style",
-      "description": "Specify a style",
-      "type": "string",
-      "enum": ["black", "white"]
     },
     "descriptionFontSize": {
       "title": "Description Font Size",
@@ -150,11 +142,11 @@
       "type": "string",
       "enum": ["normal", "bold"]
     },
-    "descriptionFontColour": {
-      "title": "Description Font Colour",
-      "description": "Choose a colour",
-      "format": "color",
-      "type": "string"
+    "descriptionStyle": {
+      "title": "Description Colour",
+      "description": "Specify a style",
+      "type": "string",
+      "enum": ["black", "white"]
     },
     "disclaimer": {
       "type": "string",
@@ -244,27 +236,6 @@
     "showVideoTitle": {
       "title": "Show Content Above Video",
       "description": "Show headline, copy, CTA, etc above video",
-      "type": "boolean"
-    },
-    "smallerheight": {
-      "title": "Smaller banner height?",
-      "description": "Check this to show a smaller banner height",
-      "type": "boolean"
-    },
-    "showscrollarrow": {
-      "title": "Show scroll arrow",
-      "description": "Show scroll arrow",
-      "type": "boolean"
-    },
-    "scrollarrowcolour": {
-      "title": "Scroll arrow colour",
-      "description": "Select scroll arrow colour",
-      "type": "string",
-      "enum": ["white", "black"]
-    },
-    "togglePOI": {
-      "title": "Toggle POI",
-      "description": "Turn POI off",
       "type": "boolean"
     }
   }

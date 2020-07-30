@@ -54,7 +54,7 @@ Recommended Steps:
 
 7. Choose an icon / copy icon URL from the recommended values below
 
-8. Add card URL: ```https://{{vse.domain}}/v1/content/demo/content-item/{{content.sys.id}}?template=acc-template-cardsPreview```
+8. Add card URL: ```https://{{vse.domain}}/v1/content/demo/content-item/{{content.sys.id}}?template=acc-template-cardsPreview&locale={{locales}},en-*,*```
 
 ![Configure Card](../media/configure-card.jpeg)
 

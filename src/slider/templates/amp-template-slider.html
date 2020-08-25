@@ -5,16 +5,16 @@
             {{#each slides}}
             <li class="amp-dc-slider-slide js_dc_slide">
                 {{#if (test this.[@type] (toRegex ".*/banner")) ~}}
-                {{> acc-template-banner }}
+                {{> amp-template-banner }}
                 {{~/if}}
 
                 {{#if (test this.[@type] (toRegex ".*/video")) ~}}
-                {{> acc-template-video }}
+                {{> amp-template-video }}
                 {{~/if}}
 
                 {{#if (test this.[@type] (toRegex ".*/image")) ~}}
                 <div class="amp-dc-poi-image">
-                    {{> acc-template-image-generator
+                    {{> amp-template-image-generator
                         image=this
                         mediaQueries='[
                             {"query": 768, "width": 768},

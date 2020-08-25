@@ -78,4 +78,4 @@ export const sampleContent = {
 };
 
 storiesOf('Advanced Banner', module)
-  .add('Example Content', () => renderContent('acc-template-advanced-banner', sampleContent));
+  .add('Example Content', () => renderContent('amp-template-advanced-banner', sampleContent));

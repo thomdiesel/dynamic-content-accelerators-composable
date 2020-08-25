@@ -19,4 +19,4 @@ export const sampleContent = {
 };
 
 storiesOf('External Block', module)
-  .add('Example content', () => renderContent('acc-template-externalBlock', sampleContent));
+  .add('Example content', () => renderContent('amp-template-externalBlock', sampleContent));

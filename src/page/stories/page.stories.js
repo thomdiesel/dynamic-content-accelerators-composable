@@ -612,4 +612,4 @@ export const sampleContent = {
 };
 
 storiesOf('Page', module)
-  .add('Example content', () => renderContent('acc-template-page', sampleContent));
+  .add('Example content', () => renderContent('amp-template-page', sampleContent));

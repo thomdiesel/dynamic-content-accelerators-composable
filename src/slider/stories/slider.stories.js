@@ -200,16 +200,16 @@ const sampleVideoContent = {
 };
 
 storiesOf('Slider', module)
-  .add('Looping', () => renderContent('acc-template-slider', sampleContent))
-  .add('Non-Looping', () => renderContent('acc-template-slider', {
+  .add('Looping', () => renderContent('amp-template-slider', sampleContent))
+  .add('Non-Looping', () => renderContent('amp-template-slider', {
     ...sampleContent,
     loop: false
   }))
-  .add('Without Navigation Dots', () => renderContent('acc-template-slider', {
+  .add('Without Navigation Dots', () => renderContent('amp-template-slider', {
     ...sampleContent,
     navigationDots: false
   }))
-  .add('Video Slide', () => renderContent('acc-template-slider', {
+  .add('Video Slide', () => renderContent('amp-template-slider', {
     ...sampleContent,
     slides: sampleContent.slides.concat([sampleVideoContent])
   }))

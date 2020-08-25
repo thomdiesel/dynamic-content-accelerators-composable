@@ -9,7 +9,7 @@ Instead of hard coding the HTML fragment for each story, this project also inclu
 ```js
 import { renderContent } from '../../.storybook/rendering-service';
 
-renderContent('acc-template-image', sampleContent);
+renderContent('amp-template-image', sampleContent);
 ```
 
 ## Adding new components
@@ -34,8 +34,8 @@ You can add new stories / scenarios to existing components by inserting another 
 
 ```js
 storiesOf('Image', module)
-    .add('story 1', () => renderContent('acc-template-image', story1Content))
-    .add('story 2', () => renderContent('acc-template-image', story2Content));
+    .add('story 1', () => renderContent('amp-template-image', story1Content))
+    .add('story 2', () => renderContent('amp-template-image', story2Content));
 ```
 
 ## Adding component styles and JavaScript

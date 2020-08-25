@@ -9,7 +9,7 @@ The current templates have partials (where necessary) for image templates. You c
 You can use parameters with the `handlebars` partial (?). This basic method passes the `image` object and  a `mediaQueries` array.
 
 ```js
-{{> acc-template-image-generator
+{{> amp-template-image-generator
     image=this
     mediaQueries='[
         {"query": 768, "width": 768},
@@ -24,7 +24,7 @@ Here we are passing an array of queries to our image generator partial. The last
 ### Advanced image parameters
 
 ```js
-{{> acc-template-image-generator
+{{> amp-template-image-generator
     image=bannerImage
     mediaQueries='[
         {"query": 768, "width": 768, "x2": { "w": "{$this.metadata.image.height*2}", "h": "{$this.metadata.image.height*2}"} },

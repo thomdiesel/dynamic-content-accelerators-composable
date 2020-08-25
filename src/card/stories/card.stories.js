@@ -48,4 +48,4 @@ export const sampleContent = {
 };
 
 storiesOf('Card', module)
-  .add('Example content', () => renderContent('acc-template-card', sampleContent));
+  .add('Example content', () => renderContent('amp-template-card', sampleContent));

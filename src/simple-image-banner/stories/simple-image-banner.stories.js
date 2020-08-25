@@ -56,4 +56,4 @@ export const sampleContent = {
 };
 
 storiesOf('Banner', module)
-  .add('Example Content', () => renderContent('acc-template-banner', sampleContent));
+  .add('Example Content', () => renderContent('amp-template-banner', sampleContent));

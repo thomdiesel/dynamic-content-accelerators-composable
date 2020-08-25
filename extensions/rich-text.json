@@ -10,7 +10,7 @@
     "parameters" : "{}",
     "snippets" : [ {
       "label" : "Custom Rich Text",
-      "body" : "{\n    \"type\": \"array\",\n    \"ui:extension\": {\n        \"name\": \"rich-text\",\n        \"params\": {\n            \"language\": \"json\",\n            \"tools\": {\n                \"dc-content-link\": {\n                    \"contentTypes\": [\n                        \"{CONTENT_TYPE_BASEPATH}\/image.json\"\n                    ],\n                    \"contentTypeSettings\": {\n                        \"cards\": {\n                            \"*\": \"https:\/\/{{vse.domain}}\/v1\/content\/demo\/content-item\/{{content.sys.id}}?template=acc-template-cardsPreview&locale={{locales}},en-*,*\"\n                        }\n                    }\n                }\n            }\n        }\n    }\n}"
+      "body" : "{\n    \"type\": \"array\",\n    \"ui:extension\": {\n        \"name\": \"rich-text\",\n        \"params\": {\n            \"language\": \"json\",\n            \"tools\": {\n                \"dc-content-link\": {\n                    \"contentTypes\": [\n                        \"{CONTENT_TYPE_BASEPATH}\/image.json\"\n                    ],\n                    \"contentTypeSettings\": {\n                        \"cards\": {\n                            \"*\": \"https:\/\/{{vse.domain}}\/v1\/content\/demo\/content-item\/{{content.sys.id}}?template=amp-template-cardsPreview&locale={{locales}},en-*,*\"\n                        }\n                    }\n                }\n            }\n        }\n    }\n}"
     } ],
     "status" : "ACTIVE"
   }

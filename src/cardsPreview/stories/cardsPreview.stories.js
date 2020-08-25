@@ -25,17 +25,17 @@ import {sampleContent as sampleVideoContent} from '../../video/stories/video.sto
 
 
 storiesOf('Cards Preview', module)
-  .add('Banner card', () => renderContent('acc-template-cardsPreview', sampleBannerContent))
-  .add('Blog card', () => renderContent('acc-template-cardsPreview', sampleBlogContent))
-  .add('Card card', () => renderContent('acc-template-cardsPreview', sampleCardContent))
-  .add('Card list card', () => renderContent('acc-template-cardsPreview', sampleCardListContent))
-  .add('External block card', () => renderContent('acc-template-cardsPreview', sampleExternalBlockContent))
-  .add('Image card', () => renderContent('acc-template-cardsPreview', sampleImageContent))
-  .add('Page card', () => renderContent('acc-template-cardsPreview', samplePageContent))
-  .add('Promo card', () => renderContent('acc-template-cardsPreview', samplePromoContent))
-  .add('Promo list', () => renderContent('acc-template-cardsPreview', samplePromoListContent))
-  .add('Slider card', () => renderContent('acc-template-cardsPreview', sampleContent))
-  .add('Split block card', () => renderContent('acc-template-cardsPreview', sampleSplitBlockContent))
-  .add('Text card', () => renderContent('acc-template-cardsPreview', sampleTextContent))
-  .add('Video card', () => renderContent('acc-template-cardsPreview', sampleVideoContent));
+  .add('Banner card', () => renderContent('amp-template-cardsPreview', sampleBannerContent))
+  .add('Blog card', () => renderContent('amp-template-cardsPreview', sampleBlogContent))
+  .add('Card card', () => renderContent('amp-template-cardsPreview', sampleCardContent))
+  .add('Card list card', () => renderContent('amp-template-cardsPreview', sampleCardListContent))
+  .add('External block card', () => renderContent('amp-template-cardsPreview', sampleExternalBlockContent))
+  .add('Image card', () => renderContent('amp-template-cardsPreview', sampleImageContent))
+  .add('Page card', () => renderContent('amp-template-cardsPreview', samplePageContent))
+  .add('Promo card', () => renderContent('amp-template-cardsPreview', samplePromoContent))
+  .add('Promo list', () => renderContent('amp-template-cardsPreview', samplePromoListContent))
+  .add('Slider card', () => renderContent('amp-template-cardsPreview', sampleContent))
+  .add('Split block card', () => renderContent('amp-template-cardsPreview', sampleSplitBlockContent))
+  .add('Text card', () => renderContent('amp-template-cardsPreview', sampleTextContent))
+  .add('Video card', () => renderContent('amp-template-cardsPreview', sampleVideoContent));
 */

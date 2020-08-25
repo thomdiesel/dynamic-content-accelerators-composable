@@ -17,4 +17,4 @@ export const sampleContent = {
 };
 
 storiesOf('Text', module)
-  .add('Example content', () => renderContent('acc-template-text', sampleContent));
+  .add('Example content', () => renderContent('amp-template-text', sampleContent));

@@ -1,10 +1,10 @@
 {
-  "BASEPATH": "https://gap.com",
-  "COMPANY_TAG": "gaptest",
+  "BASEPATH": "https://amplience.com/composablecommerce",
+  "COMPANY_TAG": "nmdemo",
   "VISUALIZATIONS": [
     {
       "label": "Visualization",
-      "templatedUri": "https://{{vse.domain}}/v1/content/demo/content-item/{{content.sys.id}}?template=acc-template-visualization&locale={{locales}},en-*,*",
+      "templatedUri": "https://{{vse.domain}}/v1/content/demo/content-item/{{content.sys.id}}?template=amp-template-visualization&locale={{locales}},en-*,*",
       "default": true
     },
     {

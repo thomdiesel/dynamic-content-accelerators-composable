@@ -1,92 +1,92 @@
 {{#if (test this.[@type] (toRegex ".*/text")) ~}}
-{{> acc-template-text }}
+{{> amp-template-text }}
 {{~/if}}
 
 {{#if (test this.[@type] (toRegex ".*/title")) ~}}
-{{> acc-template-title }}
+{{> amp-template-title }}
 {{~/if}}
 
 {{#if (test this.[@type] (toRegex ".*/video")) ~}}
-{{> acc-card-template-video }}
+{{> amp-card-template-video }}
 {{~/if}}
 
 {{#if (test this.[@type] (toRegex ".*/promo-list")) ~}}
-{{> acc-template-promo-list }}
+{{> amp-template-promo-list }}
 {{~/if}}
 
 {{#if (test this.[@type] (toRegex ".*/promo.json")) ~}}
-{{> acc-template-promo }}
+{{> amp-template-promo }}
 {{~/if}}
 
 {{#if (test this.[@type] (toRegex ".*/split-block")) ~}}
-{{> acc-card-template-split-block }}
+{{> amp-card-template-split-block }}
 {{~/if}}
 
 {{#if (test this.[@type] (toRegex ".*/slider")) ~}}
-{{> acc-card-template-slider }}
+{{> amp-card-template-slider }}
 {{~/if}}
 
 {{#if (test this.[@type] (toRegex ".*/image")) ~}}
-{{> acc-card-template-image this}}
+{{> amp-card-template-image this}}
 {{~/if}}
 
 {{#if (test this.[0].[@type] (toRegex ".*/image")) ~}}
-{{> acc-card-template-image this.[0]}}
+{{> amp-card-template-image this.[0]}}
 {{~/if}}
 
 {{#if (test this.[@type] (toRegex ".*/external-block")) ~}}
-{{> acc-template-external-block }}
+{{> amp-template-external-block }}
 {{~/if}}
 
 {{#if (test this.[@type] (toRegex ".*/card-list")) ~}}
-{{> acc-card-template-card-list }}
+{{> amp-card-template-card-list }}
 {{~/if}}
 
 {{#if (test this.[@type] (toRegex ".*/card.json")) ~}}
-{{> acc-card-template-card }}
+{{> amp-card-template-card }}
 {{~/if}}
 
 {{#if (test this.[@type] (toRegex ".*/blog-post")) ~}}
-{{> acc-card-template-blog-post }}
+{{> amp-card-template-blog-post }}
 {{~/if}}
 
 {{#if (test this.[@type] (toRegex ".*/blog-list.json")) ~}}
-{{> acc-template-blog-list }}
+{{> amp-template-blog-list }}
 {{~/if}}
 
 {{#if (test this.[@type] (toRegex ".*/banner")) ~}}
-{{> acc-card-template-banner }}
+{{> amp-card-template-banner }}
 {{~/if}}
 
 {{#if (test this.[@type] (toRegex ".*/advanced-banner")) ~}}
-{{> acc-template-advanced-banner }}
+{{> amp-template-advanced-banner }}
 {{~/if}}
 
 {{#if (test this.[@type] (toRegex ".*/simple-image-banner-localised.json")) ~}}
-{{> acc-template-simple-image-banner-localised }}
+{{> amp-template-simple-image-banner-localised }}
 {{~/if}}
 {{#if (test this.[@type] (toRegex ".*/simple-image-banner.json")) ~}}
-{{> acc-template-simple-image-banner }}
+{{> amp-template-simple-image-banner }}
 {{~/if}}
 
 {{#if (test this.[@type] (toRegex ".*/page")) ~}}
-{{> acc-card-template-page }}
+{{> amp-card-template-page }}
 {{~/if}}
 
 {{#if (test this.[@type] (toRegex ".*/navigation.json")) ~}}
-{{> acc-template-navigation }}
+{{> amp-template-navigation }}
 {{~/if}}
 
 {{#if (test this.[@type] (toRegex ".*/rich-text.json")) ~}}
-{{> acc-template-rich-text }}
+{{> amp-template-rich-text }}
 {{~/if}}
 
 {{#if (test this.[@type] (toRegex ".*/curated-product-list.json")) ~}}
-{{> acc-template-curated-product-list }}
+{{> amp-template-curated-product-list }}
 {{~/if}}
 
-{{#if (test this.[@type] (toRegex ".*/collection.json")) ~}} {{> acc-template-collection }} {{~/if}}
-{{#if (test this.[@type] (toRegex ".*/collection-block.json")) ~}} {{> acc-template-collection-block }} {{~/if}}
+{{#if (test this.[@type] (toRegex ".*/collection.json")) ~}} {{> amp-template-collection }} {{~/if}}
+{{#if (test this.[@type] (toRegex ".*/collection-block.json")) ~}} {{> amp-template-collection-block }} {{~/if}}
 
 {{#if (test this.[@type] (toRegex ".*/slot.json")) ~}}
     {{#each this.content}}

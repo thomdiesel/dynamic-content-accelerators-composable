@@ -105,5 +105,5 @@ export const samplePromoListContent = {
 };
 
 storiesOf('Promo', module)
-  .add('Single Promo', () => renderContent('acc-template-promo', sampleContent))
-  .add('Promo List', () => renderContent('acc-template-promoList', samplePromoListContent));
+  .add('Single Promo', () => renderContent('amp-template-promo', sampleContent))
+  .add('Promo List', () => renderContent('amp-template-promoList', samplePromoListContent));

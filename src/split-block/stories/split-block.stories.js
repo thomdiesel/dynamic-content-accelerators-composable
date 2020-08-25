@@ -48,12 +48,12 @@ export const sampleContent = {
 };
 
 storiesOf('Split Block', module)
-  .add('30/70 Split', () => renderContent('acc-template-split-block', sampleContent))
-  .add('50/50 Split', () => renderContent('acc-template-split-block', {
+  .add('30/70 Split', () => renderContent('amp-template-split-block', sampleContent))
+  .add('50/50 Split', () => renderContent('amp-template-split-block', {
     ...sampleContent,
     split: '50/50'
   }))
-  .add('Default Size', () => renderContent('acc-template-split-block', {
+  .add('Default Size', () => renderContent('amp-template-split-block', {
     ...sampleContent,
     split: null
   }));

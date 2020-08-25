@@ -140,4 +140,4 @@ export const sampleContent = {
 };
 
 storiesOf('Blog Post', module)
-  .add('Example content', () => renderContent('acc-template-blogPost', sampleContent));
+  .add('Example content', () => renderContent('amp-template-blogPost', sampleContent));

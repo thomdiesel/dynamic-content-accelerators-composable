@@ -22,4 +22,4 @@ export const sampleContent = {
 };
 
 storiesOf('Video', module)
-  .add('Example content', () => renderContent('acc-template-video', sampleContent));
+  .add('Example content', () => renderContent('amp-template-video', sampleContent));

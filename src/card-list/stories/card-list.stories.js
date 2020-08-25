@@ -173,4 +173,4 @@ export const sampleContent = {
 };
 
 storiesOf('Card List', module)
-  .add('Example content', () => renderContent('acc-template-cardList', sampleContent));
+  .add('Example content', () => renderContent('amp-template-cardList', sampleContent));

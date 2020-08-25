@@ -41,4 +41,4 @@ export const sampleContent = {
 };
 
 storiesOf('Image', module)
-  .add('Example content', () => renderContent('acc-template-image', sampleContent));
+  .add('Example content', () => renderContent('amp-template-image', sampleContent));

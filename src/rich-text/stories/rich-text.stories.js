@@ -13,4 +13,4 @@ export const sampleContent = {};
 const sampleVideoContent = {};
 
 storiesOf('Rich Text', module)
-  .add('Looping', () => renderContent('acc-template-rich-text', sampleContent))
+  .add('Looping', () => renderContent('amp-template-rich-text', sampleContent))

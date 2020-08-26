@@ -1,7 +1,7 @@
 node_modules/*
 dist/*
-dist/
 .idea
 .automation-credentials.json
 .automation-credentials-gap.json
+.automation-*
 .config*

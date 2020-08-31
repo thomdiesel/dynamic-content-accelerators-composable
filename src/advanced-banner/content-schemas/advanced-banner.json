@@ -19,12 +19,12 @@
     "headerFontSize",
     "headerFontWeight",
     "headerFontColour",
-    "subheader",
+    "subheaderloc",
     "subheaderStyle",
     "subheaderFontSize",
     "subheaderFontWeight",
     "subheaderFontColour",
-    "description",
+    "descriptionloc",
     "descriptionStyle",
     "descriptionFontSize",
     "descriptionFontWeight",
@@ -57,12 +57,14 @@
         }
       ]
     },
-    "subheader": {
-      "type": "string",
-      "minLength": 0,
-      "maxLength": 100,
+    "subheaderloc": {
       "title": "Subheader",
-      "description": "Add subheader text"
+      "description": "Add subheader text",
+      "allOf": [
+        {
+          "$ref": "http://bigcontent.io/cms/schema/v1/localization#/definitions/localized-string"
+        }
+      ]
     },
     "subheaderStyle": {
       "title": "Subheader Colour",
@@ -94,10 +96,7 @@
         {
           "$ref": "http://bigcontent.io/cms/schema/v1/localization#/definitions/localized-string"
         }
-      ],
-      "ui:extension": {
-        "name": "localisation"
-      }
+      ]
     },
     "headerFontSize": {
       "title": "Header Font Size",
@@ -112,23 +111,18 @@
       "enum": ["normal", "bold"]
     },
     "headerFontColour": {
-          "title": "Header Font Color",
-          "type": "string",
-        "ui:extension": {
-        "name": "color-picker",
-        "params": {
-          "title": "Header Font Color",
-          "contentID": "1beb14f9-55a2-4910-9243-f388aa60a549",
-          "groups": ["Web - Text"]
-        }
-      }
-        },
-    "description": {
+      "title": "Header Font Color",
       "type": "string",
-      "minLength": 0,
-      "maxLength": 250,
+      "format": "color"
+    },
+    "descriptionloc": {
       "title": "Description",
-      "description": "Add description text"
+      "description": "Add description text",
+      "allOf": [
+        {
+          "$ref": "http://bigcontent.io/cms/schema/v1/localization#/definitions/localized-string"
+        }
+      ]
     },
     "descriptionFontSize": {
       "title": "Description Font Size",

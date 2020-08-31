@@ -17,7 +17,5 @@
       }
     ]
   },
-  "repositories": [
-    "slots"
-  ]
+  "repositories": ["slots", "SlotsDE"]
 }

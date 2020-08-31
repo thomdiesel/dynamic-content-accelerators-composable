@@ -19,10 +19,10 @@
     if (sDefault) return sDefault;
   };
 
-  var vse = getUrlParameter('vse', 'gaptest.cdn.content.amplience.net');
+  var vse = getUrlParameter('vse', 'labdigitaldev.cdn.content.amplience.net');
   var crsvse = getUrlParameter('vse', 'c1-orig.adis.ws');
-  var key = getUrlParameter('key', 'athleta/web/home');
-  var menukey = getUrlParameter('menukey', 'athleta/web/menu');
+  var key = getUrlParameter('key', 'kato/web/home');
+  var menukey = getUrlParameter('menukey', 'kato/web/menu');
   var locale = getUrlParameter('locale', 'en-US,en-*,*');
   var cid = getUrlParameter('cid');
   var timestamp = getUrlParameter('timestamp');
@@ -59,7 +59,7 @@
 
       $.ajax({
         url:
-        'https://presalesadisws.s3.eu-west-1.amazonaws.com/ui-extensions/data-extension/gapsegments.json',
+        'https://presalesadisws.s3.eu-west-1.amazonaws.com/ui-extensions/data-extension/segments.json',
         method: 'GET',
         dataType: 'json',
         cache: false,
@@ -142,7 +142,7 @@
         var renderID  = content.body._meta.deliveryId;
         if(content && content.body){
           var schema = content.body._meta.schema;
-          if(schema === 'https://gap.com/personalized-slot.json'){
+          if(schema === 'https://amplience.com/composablecommerce/personalized-slot.json'){
             // check segments
             if(segmentParam){
               // We should check for a match

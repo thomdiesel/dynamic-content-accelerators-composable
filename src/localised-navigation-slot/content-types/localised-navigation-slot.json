@@ -1,7 +1,7 @@
 {
-    "contentTypeUri": "{CONTENT_TYPE_BASEPATH}/navigation-slot.json",
+    "contentTypeUri": "{CONTENT_TYPE_BASEPATH}/localised-navigation-slot.json",
     "settings": {
-      "label": "Navigation Slot",
+      "label": "Localised Navigation Slot",
       "visualizations": [
         {VISUALIZATIONS}
       ],

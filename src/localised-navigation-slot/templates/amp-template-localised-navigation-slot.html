@@ -1,0 +1,84 @@
+<nav class="af-navigation navbar navbar-expand-md navbar-light">
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarNavDropdown"
+    aria-controls="navbarNavDropdown"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div
+    class="collapse navbar-collapse af-navigation__droppable"
+    id="navbarNavDropdown"
+  >
+    <ul class="af-navigation__top-level navbar-nav w-100">
+      {{#each this.menu}} {{#if (and children children.length)}}
+      <li class="af-navigation__droppable nav-item dropdown">
+        <a
+          class="nav-link dropdown-toggle"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          id="navbarDropdown"
+          aria-expanded="false"
+          href="#"
+          >{{data.label}}</a
+        >
+        <div
+          class="af-navigation__mega-menu dropdown-menu"
+          aria-labelledby="navbarDropdown"
+        >
+          <div class="af-navigation__panel">
+            <div class="af-navigation-panel-container">
+              <!--  Only show if there is a link -->
+              {{#if data.link}}
+              <a
+                class="af-nav-mobileonly dropdown-item"
+                data-amp-link="{{data.link}}"
+                href="javascript:void(0);"
+                onclick="AmpCa.Utils.evaluateAmplienceMenuLink('{{data.link}}');"
+                ><h3>All {{data.label}}</h3></a
+              >
+              {{/if}} {{#each children}}
+              <ul class="ul-reset">
+                <h3>{{data.label}}</h3>
+                {{#each children}}
+                <li class="dropdown-item">
+                  <a
+                    data-amp-link="{{data.link}}"
+                    href="javascript:void(0);"
+                    onclick="AmpCa.Utils.evaluateAmplienceMenuLink('{{data.link}}');"
+                    >{{data.label}}</a
+                  >
+                </li>
+                {{/each}}
+              </ul>
+              {{/each}}
+            </div>
+
+            {{#if data.slot}}
+            <div class="af-navigation__banner">
+              {{ templateChooser data.slot }}
+            </div>
+            {{/if}}
+          </div>
+        </div>
+      </li>
+      {{else}}
+      <li class="af-navigation__droppable nav-item">
+        <a
+          class="nav-link"
+          data-amp-link="{{data.link}}"
+          href="javascript:void(0);"
+          onclick="AmpCa.Utils.evaluateAmplienceMenuLink('{{data.link}}');"
+          >{{data.label}}</a
+        >
+      </li>
+      {{/if}} {{/each}}
+    </ul>
+    <!-- .container .ul-reset -->
+  </div>
+</nav>

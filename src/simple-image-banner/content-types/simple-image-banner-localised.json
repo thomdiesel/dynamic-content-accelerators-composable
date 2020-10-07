@@ -17,5 +17,5 @@
       }
     ]
   },
-  "repositories": ["b2c-content-global", "b2c-content-benelux", "b2c-content-jp"]
+  "repositories": ["content"]
 }

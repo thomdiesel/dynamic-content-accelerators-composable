@@ -19,11 +19,11 @@
     if (sDefault) return sDefault;
   };
 
-  var vse = getUrlParameter('vse', 'labdigitaldev.cdn.content.amplience.net');
+  var vse = getUrlParameter('vse', 'grandvisionpoc.cdn.content.amplience.net');
   var crsvse = getUrlParameter('vse', 'c1-orig.adis.ws');
-  var key = getUrlParameter('key', 'kato/web/home');
-  var menukey = getUrlParameter('menukey', 'kato/web/menu');
-  var locale = getUrlParameter('locale', 'en-US,en-*,*');
+  var key = getUrlParameter('key', 'grandvisionpoc/web/home');
+  var menukey = getUrlParameter('menukey', 'grandvisionpoc/web/menu');
+  var locale = getUrlParameter('locale', 'en-GB,en-*');
   var cid = getUrlParameter('cid');
   var timestamp = getUrlParameter('timestamp');
   var segmentParam = getUrlParameter('segment');
@@ -76,7 +76,7 @@
             } else{
               optionsString += '<option value="' + optionval + '">' + optionval + '</option>'
             }
-            
+
           }
 
           debugContainer.innerHTML += '<select name="segments" id="segments">' + optionsString + '</select>'
@@ -131,7 +131,7 @@
 
   var clientV1 = new ampDynamicContent.ContentClient(AmpSDKObjCRS);
   var clientV2 = new ampDynamicContent.ContentClient(AmpSDKObj);
-  
+
 
   function loadContent(key, container) {
     console.log('asked to load!', key);
@@ -188,7 +188,7 @@
     if (lnk.indexOf('https://') >= 0) {
       // check if there are any paramaters
       var currenturl = window.location.href;
-      
+
       if(timestamp){
         lnk = lnk.replace("{{vse.domain}}", vse);
         lnk = lnk.replace("{{locales}}", locale);
@@ -227,9 +227,9 @@
           lnk += newkey;
         }
         window.open(lnk, '_self');
-        
+
       }
-      
+
     } else {
       var currenturl = window.location.href;
       if (currenturl.indexOf('&key=') >= 0) {

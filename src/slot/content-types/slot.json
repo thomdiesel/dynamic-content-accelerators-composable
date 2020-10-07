@@ -17,6 +17,5 @@
         }
       ]
     },
-    "repositories": ["b2c-slots-global", "b2c-slots-benelux", "b2c-slots-jp"]
+    "repositories": ["slots"]
   }
-  

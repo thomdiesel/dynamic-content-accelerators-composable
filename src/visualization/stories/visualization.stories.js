@@ -19,7 +19,8 @@ const components = [
   ['Slider', 'slider'],
   ['Split Block', 'splitBlock'],
   ['Text', 'text'],
-  ['Video', 'video']
+  ['Video', 'video'],
+  ['Map', 'map']
 ];
 
 const stories = storiesOf('Visualization', module);

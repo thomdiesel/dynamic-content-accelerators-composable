@@ -101,6 +101,12 @@
     {{/each}}
 {{~/if}}
 
+{{#if (test this.[@type] (toRegex ".*/map.json")) ~}}
+    {{#each this.content}}
+        {{> templateChooser this }}
+    {{/each}}
+{{~/if}}
+
 {{#if (test this.[@type] (toRegex ".*/navigation-slot.json")) ~}}
     {{> templateChooser navigation }}
 {{~/if}}

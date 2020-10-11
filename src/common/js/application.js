@@ -19,7 +19,7 @@
     if (sDefault) return sDefault;
   };
 
-  var vse = getUrlParameter('vse', 'visiondirect.cdn.content.amplience.net');
+  var vse = getUrlParameter('vse', 'bigcommercedemo.cdn.content.amplience.net');
   var crsvse = getUrlParameter('vse', 'c1-orig.adis.ws');
   // Removed as we will get this from the DIV attributes
   /*
@@ -158,7 +158,7 @@
         var renderID  = content.body._meta.deliveryId;
         if(content && content.body){
           var schema = content.body._meta.schema;
-          if(schema === 'https://amplience.com/composablecommerce/personalized-slot.json'){
+          if(schema === 'https://amplience.com/bigcommercedemo/personalized-slot.json'){
             // check segments
             if(segmentParam){
               // We should check for a match

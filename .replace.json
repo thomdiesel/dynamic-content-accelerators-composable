@@ -1,6 +1,6 @@
 {
-  "BASEPATH": "https://amplience.com/composablecommerce",
-  "COMPANY_TAG": "nmdemo",
+  "BASEPATH": "https://amplience.com/bigcommercedemo",
+  "COMPANY_TAG": "bigcommercedemo",
   "VISUALIZATIONS": [
     {
       "label": "Visualization",

@@ -13,9 +13,9 @@
     ],
     "cards": [
       {
-        "templatedUri": "https://{{vse.domain}}/v1/content/demo/content-item/{{content.sys.id}}?template=amp-template-cardsPreview&locale={{locales}},en-*,*&locale={{locales}},en-*,*"
+        "templatedUri": "https://{{vse.domain}}/v1/content/demo/content-item/{{content.sys.id}}?template=amp-template-cardsPreview&locale={{locales}},en-*,*"
       }
     ]
   },
-  "repositories": ["content", "contentenca", "contentfrca"]
+  "repositories": ["content"]
 }

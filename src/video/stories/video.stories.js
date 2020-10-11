@@ -21,5 +21,39 @@ export const sampleContent = {
   "@type": "https://unpkg.com/@amplience/dynamic-content-accelerators/dist/contentTypes/video.json"
 };
 
+export const sampleContentAmplience = {
+  "_meta": {
+    "name": "CC - Video Amplience",
+    "schema": "https://amplience.com/composablecommerce/video.json",
+    "deliveryId": "ffdd0cb2-64a1-487b-b6ff-d3e76ec2358f"
+  },
+  "amplienceVideo": {
+    "_meta": {
+      "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/video-link"
+    },
+    "id": "18d7c604-f5f9-4d92-be11-af1fdd4d51d3",
+    "name": "nly2019_campaign_Party-puffs_08",
+    "endpoint": "nmdemo",
+    "defaultHost": "j8k03awso8f81on4oigwzgwv1.staging.bigcontent.io"
+  },
+  "backgroundFullScreen": false,
+  "backgroundEffect": false,
+  "component": "Video"
+}
+
+export const sampleContentYoutube = {
+  "_meta": {
+    "name": "CC - Video Youtube",
+    "schema": "https://amplience.com/composablecommerce/video.json",
+    "deliveryId": "3eddd16b-497f-4a25-a698-52c50056beca"
+  },
+  "backgroundFullScreen": false,
+  "backgroundEffect": false,
+  "component": "Video",
+  "addYoutube": "https://www.youtube.com/embed/EdD99M8c4us"
+}
+
 storiesOf('Video', module)
-  .add('Example content', () => renderContent('amp-template-video', sampleContent));
+  .add('OLD CS Example content', () => renderContent('amp-template-video', sampleContent))
+  .add('Video - Amplience', () => renderContent('amp-template-video', sampleContentAmplience))
+  .add('Video - Youtube', () => renderContent('amp-template-video', sampleContentYoutube));

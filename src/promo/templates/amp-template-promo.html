@@ -6,7 +6,7 @@
                    {{#unless icon.name}}class="amp-dc-promo-center" {{/unless}} >
                     {{#if icon.name}}
                         <picture class="amp-dc-promo-ico">
-                            <img src="//{{icon.defaultHost}}/i/{{icon.endpoint}}/{{icon.name}}?w=40&h=40"
+                            <img loading="lazy" src="//{{icon.defaultHost}}/i/{{icon.endpoint}}/{{icon.name}}?w=40&h=40"
                                  srcset="//{{icon.defaultHost}}/i/{{icon.endpoint}}/{{icon.name}}?w=40&h=40 1x, //{{icon.defaultHost}}/i/{{icon.endpoint}}/{{icon.name}}?w=80&h=80 2x"
                                  class="amp-dc-image-pic"/>
                         </picture>

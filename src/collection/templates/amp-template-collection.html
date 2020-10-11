@@ -31,7 +31,7 @@
             media="(max-width: 640px)"
             srcset="//{{image.imageholder.image.image.defaultHost}}/i/{{image.imageholder.image.image.endpoint}}/{{encodeURI image.imageholder.image.image.name}}?$poi$&w=640&sm=aspect&aspect=1:1&qlt=80"
           />
-          <img
+          <img loading="lazy"
           src="//{{image.imageholder.image.image.defaultHost}}/i/{{image.imageholder.image.image.endpoint}}/{{encodeURI
             image.imageholder.image.image.name}}?$poi$&w=1440&sm=aspect&aspect=16:9&qlt=80" {{#if
           image.imageAltText}}alt="{{image.imageAltText}}"{{/if}}> {{/if}}

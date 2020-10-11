@@ -8,43 +8,6 @@
       "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
     }
   ],
-  "propertyOrder": [
-    "bannerImage",
-    "imageEffect",
-    "smallerheight",
-    "showscrollarrow",
-    "scrollarrowcolour",
-    "headerloc",
-    "headerStyle",
-    "headerFontSize",
-    "headerFontWeight",
-    "headerFontColour",
-    "subheader",
-    "subheaderStyle",
-    "subheaderFontSize",
-    "subheaderFontWeight",
-    "subheaderFontColour",
-    "description",
-    "descriptionStyle",
-    "descriptionFontSize",
-    "descriptionFontWeight",
-    "descriptionFontColour",
-    "hideMobileText",
-    "button",
-    "textPositionHorizontal",
-    "textPositionVertical",
-    "backgroundGradient",
-    "textPositionHorizontalMobile",
-    "textPositionVerticalMobile",
-    "backgroundGradientMobile",
-    "hasVideo",
-    "video",
-    "showVideoTitle",
-    "disclaimer",
-    "disclaimerFontColour",
-    "disclaimerTextHorizontal",
-    "togglePOI"
-  ],
   "type": "object",
   "properties": {
     "bannerImage": {
@@ -57,96 +20,35 @@
         }
       ]
     },
-    "subheader": {
-      "type": "string",
-      "minLength": 0,
-      "maxLength": 100,
-      "title": "Subheader",
-      "description": "Add subheader text"
-    },
-    "subheaderStyle": {
-      "title": "Subheader Colour",
-      "description": "Specify a style",
-      "type": "string",
-      "enum": ["black", "white"]
-    },
-    "subheaderFontColour": {
-      "title": "Subheader Font Color",
-      "type": "string",
-      "format": "color"
-    },
-    "subheaderFontSize": {
-      "title": "Subheader Font Size",
-      "description": "Specify a font size",
-      "type": "string",
-      "enum": ["small", "medium", "large"]
-    },
-    "subheaderFontWeight": {
-      "title": "Subheader Font Weight",
-      "description": "Specify a font weight",
-      "type": "string",
-      "enum": ["normal", "bold"]
-    },
-    "headerloc": {
-      "title": "Header",
-      "description": "Add header text",
+    "header": {
+      "title":"Header",
+      "description": "Text for a header",
+      "type": "object",
       "allOf": [
         {
-          "$ref": "http://bigcontent.io/cms/schema/v1/localization#/definitions/localized-string"
+          "$ref": "{CONTENT_TYPE_BASEPATH}/accelerator-partials.json#/definitions/advancedTextLocalised"
         }
-      ],
-      "ui:extension": {
-        "name": "localisation"
-      }
+      ]
     },
-    "headerFontSize": {
-      "title": "Header Font Size",
-      "description": "Specify a font size",
-      "type": "string",
-      "enum": ["small", "medium", "large"]
-    },
-    "headerFontWeight": {
-      "title": "Header Font Weight",
-      "description": "Specify a font weight",
-      "type": "string",
-      "enum": ["normal", "bold"]
-    },
-    "headerFontColour": {
-          "title": "Header Font Color",
-          "type": "string",
-        "ui:extension": {
-        "name": "color-picker",
-        "params": {
-          "title": "Header Font Color",
-          "contentID": "1beb14f9-55a2-4910-9243-f388aa60a549",
-          "groups": ["Web - Text"]
+    "subheader": {
+      "title":"Sub Header",
+      "description": "Text for a sub header",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "{CONTENT_TYPE_BASEPATH}/accelerator-partials.json#/definitions/advancedText"
         }
-      }
-        },
+      ]
+    },
     "description": {
-      "type": "string",
-      "minLength": 0,
-      "maxLength": 250,
-      "title": "Description",
-      "description": "Add description text"
-    },
-    "descriptionFontSize": {
-      "title": "Description Font Size",
-      "description": "Specify a font size",
-      "type": "string",
-      "enum": ["small", "medium", "large"]
-    },
-    "descriptionFontWeight": {
-      "title": "Description Font Weight",
-      "description": "Specify a font weight",
-      "type": "string",
-      "enum": ["normal", "bold"]
-    },
-    "descriptionStyle": {
-      "title": "Description Colour",
-      "description": "Specify a style",
-      "type": "string",
-      "enum": ["black", "white"]
+      "title":"Description",
+      "description": "Text for a Description",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "{CONTENT_TYPE_BASEPATH}/accelerator-partials.json#/definitions/advancedText"
+        }
+      ]
     },
     "disclaimer": {
       "type": "string",
@@ -238,5 +140,26 @@
       "description": "Show headline, copy, CTA, etc above video",
       "type": "boolean"
     }
-  }
+  },
+  "propertyOrder": [
+    "bannerImage",
+    "header",
+    "subheader",
+    "description",
+    "hideMobileText",
+    "button",
+    "textPositionHorizontal",
+    "textPositionVertical",
+    "backgroundGradient",
+    "textPositionHorizontalMobile",
+    "textPositionVerticalMobile",
+    "backgroundGradientMobile",
+    "hasVideo",
+    "video",
+    "showVideoTitle",
+    "disclaimer",
+    "disclaimerFontColour",
+    "disclaimerTextHorizontal",
+    "togglePOI"
+  ]
 }

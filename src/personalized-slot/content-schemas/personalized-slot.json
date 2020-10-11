@@ -31,7 +31,7 @@
             "ui:extension": {
               "url": "https://presalesadisws.s3.eu-west-1.amazonaws.com/ui-extensions/data-extension/index.html",
               "params": {
-                "apiurl": "https://presalesadisws.s3.eu-west-1.amazonaws.com/ui-extensions/data-extension/gapsegments.json"
+                "apiurl": "https://presalesadisws.s3.eu-west-1.amazonaws.com/ui-extensions/data-extension/segments.json"
               }
             }
           },

@@ -19,11 +19,15 @@
     if (sDefault) return sDefault;
   };
 
-  var vse = getUrlParameter('vse', 'gaptest.cdn.content.amplience.net');
+  var vse = getUrlParameter('vse', 'visiondirect.cdn.content.amplience.net');
   var crsvse = getUrlParameter('vse', 'c1-orig.adis.ws');
-  var key = getUrlParameter('key', 'athleta/web/home');
-  var menukey = getUrlParameter('menukey', 'athleta/web/menu');
-  var locale = getUrlParameter('locale', 'en-US,en-*,*');
+  // Removed as we will get this from the DIV attributes
+  /*
+  var key = getUrlParameter('key', 'web/home');
+  var menukey = getUrlParameter('menukey', 'web/navigation');
+  */
+  var mainContentKey = getUrlParameter('key', '');
+  var locale = getUrlParameter('locale', 'en-GB,en-*,*');
   var cid = getUrlParameter('cid');
   var timestamp = getUrlParameter('timestamp');
   var segmentParam = getUrlParameter('segment');
@@ -38,11 +42,28 @@
     return;
   }
   function loadDynamicSlots(){
-    var slots = document.querySelectorAll('[data-amp-deliverykey]');
-    slots.forEach(function (item) {
+    var keyslots = document.querySelectorAll('[data-amp-deliverykey]');
+    var idslots = document.querySelectorAll('[data-amp-deliveryid]');
+
+    // what if there is already a key in the URL??
+    
+
+
+    keyslots.forEach(function (item) {
       var dynamickey = item.getAttribute('data-amp-deliverykey');
       var eID = item.id;
-      loadContent(dynamickey, eID);
+      if(item.getAttribute('data-amp-maincontent') == "true" ){
+        if (mainContentKey && mainContentKey != ''){
+          dynamickey = mainContentKey;
+        } 
+      }
+      loadContent(dynamickey, eID, 'key');
+      
+    })
+    idslots.forEach(function (item) {
+      var dynamicid = item.getAttribute('data-amp-deliveryid');
+      var eID = item.id;
+      loadContent(dynamicid, eID, 'id');
     })
   }
 
@@ -59,7 +80,7 @@
 
       $.ajax({
         url:
-        'https://presalesadisws.s3.eu-west-1.amazonaws.com/ui-extensions/data-extension/gapsegments.json',
+        'https://presalesadisws.s3.eu-west-1.amazonaws.com/ui-extensions/data-extension/segments.json',
         method: 'GET',
         dataType: 'json',
         cache: false,
@@ -131,18 +152,13 @@
 
   var clientV1 = new ampDynamicContent.ContentClient(AmpSDKObjCRS);
   var clientV2 = new ampDynamicContent.ContentClient(AmpSDKObj);
-  
 
-  function loadContent(key, container) {
-    console.log('asked to load!', key);
-    clientV2
-      .getContentItemByKey(key)
-      .then((content) => {
-        console.log(content.body);
+  function handleLoadedContent(container, content){
+    console.log(content.body);
         var renderID  = content.body._meta.deliveryId;
         if(content && content.body){
           var schema = content.body._meta.schema;
-          if(schema === 'https://gap.com/personalized-slot.json'){
+          if(schema === 'https://amplience.com/composablecommerce/personalized-slot.json'){
             // check segments
             if(segmentParam){
               // We should check for a match
@@ -167,21 +183,52 @@
             console.log(response.body);
             document.getElementById(container).innerHTML = response.body;
 
+            // remove loader
+            var loader = document.getElementById('amp-content-loader')
+            if (loader){
+              loader.style.display = 'none';
+            }
+
             AmpCa.Utils.attachComponents()
             AmpCa.Utils.findSearches()
             AmpCa.Utils.findProducts()
+
           })
           .catch(error => {
             console.log('unable to find content', error);
           });
+
+  }
+  
+
+  function loadContent(key, container, method) {
+    console.log('asked to load!', key);
+    if( method == 'id'){
+      clientV2
+      .getContentItemById(key)
+      .then((content) => {
+        handleLoadedContent(container, content);
       })
       .catch((error) => {
         console.log('content not found', error);
       });
+    } else {
+      clientV2
+      .getContentItemByKey(key)
+      .then((content) => {
+        handleLoadedContent(container, content);
+      })
+      .catch((error) => {
+        console.log('content not found', error);
+      });
+    }
   }
 
+  // Removed as we will load by data attributes on DIVs
+  /*
   loadContent(menukey, 'amp-menu-holder');
   loadContent(key, 'amp-page-content-holder');
+  */
 
   function evaluateAmplienceLink(lnk) {
     console.log('link clicked = ' + lnk);
@@ -258,6 +305,7 @@
   exports.Utils.getUrlParameter = getUrlParameter;
 
   window.addEventListener('load', function () {
+    // Need to put in here to not draw debug if visualising
     drawDebug();
   });
 })

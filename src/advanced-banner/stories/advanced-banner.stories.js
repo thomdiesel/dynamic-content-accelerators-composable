@@ -13,69 +13,94 @@ import globalBannerStyles from '../../common/css/o-dc-components.css';
 import advancedBannerStyles from '../css/advanced-banner.scss';
 
 export const sampleContent = {
-	"@id": "http://content.cms.amplience.com/8fecf907-34da-4abe-83d3-4c4eb167fbd2",
-	"hasVideo": false,
-	"descriptionStyle": "white",
-	"descriptionFontSize": "small",
-	"_meta": {
-		"schema": "https://unpkg.com/dc-accelerators-content-rendering-service/dist/contentTypes/banner.json",
-		"name": "summer---banner"
-	},
-	"description": "Auf ausgewählte Waren. Der Rabatt erscheint automatisch in deinem Warenkorb.",
-	"video": {
-		"backgroundEffect": false,
-		"backgroundFullScreen": false,
-		"_meta": {
-			"schema": "https://unpkg.com/dc-accelerators-content-rendering-service/dist/contentTypes/video.json"
-		}
-	},
-	"smallerheight": false,
-	"hideMobileText": true,
-	"textPositionVertical": "middle",
-	"showVideoTitle": false,
-	"headerStyle": "white",
-	"textPositionHorizontal": "center",
-	"backgroundGradient": "left",
-	"button": {
-		"buttonBackgroundColour": "transparent",
-		"buttonStyle": "tiny",
-		"buttonLink": "https://eu.wrangler.com/de-de/shop/sale/damen--30-c090400",
-		"buttonBorderStyle": "dashed",
-		"buttonBorderColour": "white",
-		"_meta": {
-			"schema": "https://unpkg.com/dc-accelerators-content-rendering-service/dist/contentTypes/button.json"
-		},
-		"buttonLabel": "30% Rabatt für sie"
-	},
-	"bannerImage": {
-		"image": {
-			"@id": "http://image.cms.amplience.com/e24f87cc-d12a-4847-a955-8998997e137d",
-			"endpoint": "dem",
-			"defaultHost": "1qsp9jqe0mztt1m86vvc1muff6.staging.bigcontent.io",
-			"name": "salestep-red",
-			"_meta": {
-				"schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+	"content": {
+	  "_meta": {
+		"name": "Advanced Banner - CC",
+		"schema": "https://amplience.com/composablecommerce/advanced-banner.json",
+		"deliveryId": "8c4a0b35-57d8-4a35-8893-72beb87c8457"
+	  },
+	  "bannerImage": {
+		"imageholder": {
+		  "image": {
+			"crop": [
+			  0,
+			  0,
+			  0,
+			  0
+			],
+			"rot": 0,
+			"hue": 0,
+			"sat": 0,
+			"bri": 0,
+			"fliph": false,
+			"flipv": false,
+			"poi": {
+			  "x": 0.2359223300970874,
+			  "y": 0.45548471236052746
 			},
-			"id": "e24f87cc-d12a-4847-a955-8998997e137d",
-			"mediaType": "image"
-		},
-		"_meta": {
-			"schema": "https://unpkg.com/dc-accelerators-content-rendering-service/dist/contentTypes/image.json"
+			"aspectLock": "poi",
+			"image": {
+			  "_meta": {
+				"schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+			  },
+			  "id": "e6a26855-9533-49d9-9dd4-b2ab91182422",
+			  "name": "hp-banner-desktop-full-1920x670",
+			  "endpoint": "nmdemo",
+			  "defaultHost": "j8k03awso8f81on4oigwzgwv1.staging.bigcontent.io"
+			},
+			"query": "poi=0.2359,0.4555,0,0&scaleFit=poi"
+		  }
 		},
 		"gifImage": false,
-    "togglePOI": false,
-    "imageEffect": "Double-line Horizontal"
-	},
-	"subheader": "BIS ZU 50% RABATT",
-	"headerFontSize": "small",
-	"subheaderStyle": "white",
-	"subheaderFontWeight": "bold",
-	"showscrollarrow": false,
-	"header": "SUMMER SALE",
-	"togglePOI": false,
-	"subheaderFontSize": "medium",
-	"@type": "https://unpkg.com/dc-accelerators-content-rendering-service/dist/contentTypes/banner.json"
-};
+		"togglePOI": false,
+		"component": "Image",
+		"_meta": {
+		  "schema": "https://amplience.com/composablecommerce/image.json"
+		}
+	  },
+	  "headerloc": "FEED YOUR ASPIRATIONS",
+	  "hideMobileText": false,
+	  "button": {
+		"buttonLabel": "SHOP NOW",
+		"buttonLink": "https://www.bodyandfit.com/en-gb/en-gb/c/back-to-your-best?hpbanner",
+		"buttonStyle": "white",
+		"_meta": {
+		  "schema": "https://amplience.com/composablecommerce/advanced-button.json"
+		},
+		"buttonFontWeight": "bold"
+	  },
+	  "hasVideo": false,
+	  "video": {
+		"backgroundFullScreen": false,
+		"backgroundEffect": false,
+		"component": "Video",
+		"_meta": {
+		  "schema": "https://amplience.com/composablecommerce/video.json"
+		}
+	  },
+	  "showVideoTitle": false,
+	  "headerStyle": "white",
+	  "headerFontSize": "medium",
+	  "headerFontWeight": "bold",
+	  "subheader": "UP TO",
+	  "subheaderStyle": "white",
+	  "subheaderFontSize": "small",
+	  "subheaderFontWeight": "normal",
+	  "description": "50% OFF",
+	  "descriptionStyle": "white",
+	  "descriptionFontSize": "large",
+	  "descriptionFontWeight": "bold",
+	  "textPositionHorizontal": "right",
+	  "textPositionVertical": "middle",
+	  "backgroundGradient": "right",
+	  "textPositionHorizontalMobile": "center",
+	  "textPositionVerticalMobile": "bottom",
+	  "backgroundGradientMobile": "bottom",
+	  "disclaimer": "#IGNITEYOURFIT",
+	  "disclaimerFontColour": "rgb(255, 255, 255)",
+	  "disclaimerTextHorizontal": "center"
+	}
+  };
 
 storiesOf('Advanced Banner', module)
-  .add('Example Content', () => renderContent('amp-template-advanced-banner', sampleContent));
+  .add('Example Content', () => renderContent('amp-template-advanced-banner', sampleContent.content));

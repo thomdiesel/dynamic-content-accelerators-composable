@@ -10,6 +10,81 @@
   ],
   "type": "object",
   "definitions": {
+    "advancedText":{
+      "type": "object",
+      "properties":{
+        "text": {
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 255,
+          "title": "Text",
+          "description": "Add Text"
+        },
+        "style": {
+          "title": "Style",
+          "description": "Specify a style (defaults to black)",
+          "type": "string",
+          "enum": ["black", "white"]
+        },
+        "fontColor": {
+          "title": "(Optional) - Choose a font colour",
+          "type": "string",
+          "format": "color"
+        },
+        "fontSize": {
+          "title": "Font Size",
+          "description": "Specify a font size",
+          "type": "string",
+          "enum": ["small", "medium", "large"]
+        },
+        "fontWeight": {
+          "title": "Subheader Font Weight",
+          "description": "Specify a font weight",
+          "type": "string",
+          "enum": ["normal", "bold"]
+        }
+      }
+    },
+    "advancedTextLocalised":{
+      "type": "object",
+      "properties":{
+        "text": {
+          "title": "Text",
+          "description": "Add  text",
+          "allOf": [
+            {
+              "$ref": "http://bigcontent.io/cms/schema/v1/localization#/definitions/localized-string"
+            }
+          ],
+          "ui:extension": {
+            "name": "localisation"
+          }
+        },
+        "style": {
+          "title": "Style",
+          "description": "Specify a style (defaults to black)",
+          "type": "string",
+          "enum": ["black", "white"]
+        },
+        "fontColor": {
+          "title": "(Optional) - Choose a font colour",
+          "type": "string",
+          "format": "color"
+        },
+        "fontSize": {
+          "title": "Font Size",
+          "description": "Specify a font size",
+          "type": "string",
+          "enum": ["small", "medium", "large"]
+        },
+        "fontWeight": {
+          "title": "Subheader Font Weight",
+          "description": "Specify a font weight",
+          "type": "string",
+          "enum": ["normal", "bold"]
+        }
+      }
+    },
     "roundel": {
       "title": "Roundel",
       "description": "Use this to enter image roundel's details",

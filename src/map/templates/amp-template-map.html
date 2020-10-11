@@ -1,10 +1,6 @@
-<div class="amp-dc-poi-image">
-    {{> amp-template-image-generator
-            image=this
-            mediaQueries='[
-                {"query": 768, "width": 768},
-                {"query": 1024, "width": 1024},
-                {"query": 1025, "width": 1600}
-            ]'
-    }}
+<div class="amp-dc-map">
+    <div class="amp-dc-map-holder"
+        id="map"
+        data-amp-mapConfiguration="{{JSONstringify this}}"
+        ></div>
 </div>

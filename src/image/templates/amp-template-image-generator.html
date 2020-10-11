@@ -11,7 +11,7 @@
     >
     {{#if @last}}
     {{#with (first (JSONparse ../mediaQueries) 1)}}
-    <img
+    <img loading="lazy"
             src="//{{../../image.image.defaultHost}}/i/{{../../image.image.endpoint}}/{{encodeURI ../../image.image.name}}{{#if ../../image.seoText}}/{{../../image.seoText}}{{/if}}?{{#if this.0.x1}}{{> amp-template-banner-poi name=../../image.image.name settings=this.0.x1}}{{/if}}"
             srcset="//{{../../image.image.defaultHost}}/i/{{../../image.image.endpoint}}/{{encodeURI ../../image.image.name}}{{#if ../../image.seoText}}/{{../../image.seoText}}{{/if}}?upscale=true&fmt=webp&w={{this.0.width}}{{#if this.widthPercents}}%{{/if}}{{#if this.0.x1}}{{> amp-template-banner-poi name=../../image.image.name settings=this.0.x1}}{{/if}} 1x,
                                 //{{../../image.image.defaultHost}}/i/{{../../image.image.endpoint}}/{{encodeURI ../../image.image.name}}{{#if ../../image.seoText}}/{{../../image.seoText}}{{/if}}?upscale=true&fmt=webp&w={{multiply this.0.width 2}}{{#if this.widthPercents}}%{{/if}}{{#if this.0.x2}}{{> amp-template-banner-poi name=../../image.image.name settings=this.0.x2}}{{/if}} 2x,

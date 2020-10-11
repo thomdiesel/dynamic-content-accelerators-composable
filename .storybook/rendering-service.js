@@ -41,6 +41,9 @@ context.keys().forEach((filename)=>{
 });
 
 export function renderContent(templateName, contentJson) {
+    console.log("Attempting to render content......")
+    console.log(contentJson);
+
     const template = templates[templateName];
     if (!template) {
         throw new Error(`Unable to find template ${templateName}`);

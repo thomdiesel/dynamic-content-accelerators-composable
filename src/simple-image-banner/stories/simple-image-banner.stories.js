@@ -9,51 +9,111 @@ import {
   renderContent
 } from '../../../.storybook/rendering-service';
 
-import bannerStyles from '../css/simple-image-banner-localised.scss';
+import bannerStyles from '../css/simple-image-banner.scss';
 
 export const sampleContent = {
-  "@id": "http://content.cms.amplience.com/04125527-a0b0-415e-9b83-0791d7669638",
-  "_meta": {
-    "schema": "https://dev-solutions.s3.amazonaws.com/DynamicContentTypes/Accelerators/banner.json",
-    "name": "accelerator-banner-1"
-  },
-  "button": {
-    "label": "Read More",
+  "content": {
     "_meta": {
-      "schema": "https://dev-solutions.s3.amazonaws.com/DynamicContentTypes/Accelerators/link.json"
+      "name": "Simple Image Banner - CC",
+      "schema": "https://amplience.com/composablecommerce/simple-image-banner.json",
+      "deliveryId": "a5255324-16ab-473f-8fed-6afae734995e"
     },
-    "value": "http://dev-solutions.s3.amazonaws.com/dc-demo-site/dist/blog/index.html?c=54db7a18-1768-400f-8e96-bbd2e35e4b9c&s=e6bdb253-db3c-4458-b5cc-0d90aa02e114"
-  },
-  "bannerImage": {
-    "@id": "http://content.cms.amplience.com/38476590-9594-4d46-8f5a-c54e293fd094",
-    "@type": "https://dev-solutions.s3.amazonaws.com/DynamicContentTypes/Accelerators/image.json",
-    "_meta": {
-      "schema": "https://dev-solutions.s3.amazonaws.com/DynamicContentTypes/Accelerators/image.json",
-      "name": "accelerator-image-1"
-    },
-    "image": {
-      "@id": "http://image.cms.amplience.com/f46fecc5-945c-451c-879e-5c974a821891",
+    "bannerImage": {
+      "gifImage": false,
+      "component": "SimpleImage",
+      "imageref": "https://www.bodyandfit.com/medias/UK-hp-banner-desktop-full-1920x670-UT50-off.png?context=bWFzdGVyfHJvb3R8NTQ2MTk1fGltYWdlL3BuZ3xoNGQvaDgzLzk1Njc4NjQwMjkyMTQucG5nfDRlNzY4MzRjMWY3YzRlNzljOThkZjcwMTY1MzU4M2ExNDM2NzZiMmI5ZmFiMzU1MTllMDgyMWY5OTUxMjgwYzI",
+      "mobileimageref": "https://www.bodyandfit.com/medias/UK-hp-banner-mobile-480x632-UT50-off.png?context=bWFzdGVyfHJvb3R8MTIzNTQwfGltYWdlL3BuZ3xoYWYvaGQxLzk1Njc4NjQxNjAyODYucG5nfGQ5M2IwMGViY2UxZmVhZWMyYmMzN2JmMmE1ODExMjdlZDAwNThkNjM2NWFkMjE3MDM3Y2JjZDA1NmRiMjU3NTA",
       "_meta": {
-        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
-      },
-      "id": "f46fecc5-945c-451c-879e-5c974a821891",
-      "name": "blue-and-pink",
-      "endpoint": "csdemo",
-      "defaultHost": "i1.adis.ws",
-      "mediaType": "image"
+        "schema": "https://amplience.com/composablecommerce/simple-image.json"
+      }
     },
-    "imageAltText": "lady-in-red",
-    "seoText": "lady-in-red"
-  },
-  "textPositionLeft": "55",
-  "textPositionTop": "50",
-  "textColor": "rgb(255,255,255)",
-  "header": "Pretty in Pink",
-  "description": "Exploring Spring & Summer Looks in London",
-  "stackMobileLayout": true,
-  "bannerColor": "rgb(255,0,0)",
-  "@type": "https://dev-solutions.s3.amazonaws.com/DynamicContentTypes/Accelerators/banner.json"
+    "component": "SimpleImageBanner",
+    "link": "https://www.bodyandfit.com/en-gb/en-gb/c/back-to-your-best?hpbanner",
+    "analytics": "hpbanner"
+  }
 };
 
-storiesOf('Banner', module)
-  .add('Example Content', () => renderContent('amp-template-banner', sampleContent));
+export const sampleWithAmplienceImages = {
+  "content": {
+    "_meta": {
+      "name": "Simple Image Banner - CC",
+      "schema": "https://amplience.com/composablecommerce/simple-image-banner.json",
+      "deliveryId": "55db3243-4c15-438a-aae4-ca176a0a9d76"
+    },
+    "bannerImage": {
+      "gifImage": false,
+      "component": "SimpleImage",
+      "_meta": {
+        "schema": "https://amplience.com/composablecommerce/simple-image.json"
+      },
+      "image": {
+        "image": {
+          "_meta": {
+            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+          },
+          "id": "c05d1fb7-683f-4065-bfce-c3da93be488a",
+          "name": "UK-hp-banner-desktop-full-1920x670-UT50-off",
+          "endpoint": "nmdemo",
+          "defaultHost": "j8k03awso8f81on4oigwzgwv1.staging.bigcontent.io"
+        }
+      },
+      "mobileImage": {
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+        },
+        "id": "3478c923-fdbb-4e08-8b20-5a9571e56031",
+        "name": "UK-hp-banner-mobile-480x632-UT50-off",
+        "endpoint": "nmdemo",
+        "defaultHost": "j8k03awso8f81on4oigwzgwv1.staging.bigcontent.io"
+      }
+    },
+    "link": "https://www.bodyandfit.com/en-gb/en-gb/c/back-to-your-best?hpbanner",
+    "analytics": "hpbanner",
+    "component": "SimpleImageBanner"
+  }
+}
+
+export const sampleLocalisedNL = {
+  "content": {
+    "_meta": {
+      "name": "Simple Image Banner Localised - CC",
+      "schema": "https://amplience.com/composablecommerce/simple-image-banner-localised.json",
+      "deliveryId": "6d8a1eb8-5303-407c-bba2-454b8b8d4aa4"
+    },
+    "bannerImage": {
+      "gifImage": false,
+      "component": "SimpleImage",
+      "_meta": {
+        "schema": "https://amplience.com/composablecommerce/simple-image.json"
+      },
+      "image": {
+        "image": {
+          "_meta": {
+            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+          },
+          "id": "323005ac-b1ef-49a3-b56c-839d1b99a3dd",
+          "name": "NL-hp-banner-desktop-full-1920x670-UT50-off",
+          "endpoint": "nmdemo",
+          "defaultHost": "j8k03awso8f81on4oigwzgwv1.staging.bigcontent.io"
+        }
+      },
+      "mobileImage": {
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+        },
+        "id": "0ce6ae06-3e5e-4dfb-9f9f-41250d8240d3",
+        "name": "NL-hp-banner-mobile-480x632-UT50-off",
+        "endpoint": "nmdemo",
+        "defaultHost": "j8k03awso8f81on4oigwzgwv1.staging.bigcontent.io"
+      }
+    },
+    "link": "https://www.bodyandfit.com/nl-nl/nl-nl/c/back-to-your-best?hpbanner",
+    "analytics": null,
+    "component": "SimpleImageBannerLocalised"
+  }
+}
+
+storiesOf('Simple Image Banner', module)
+  .add('Simple Image Banner', () => renderContent('amp-template-simple-image-banner', sampleContent.content))
+  .add('Simple Image Banner Amplience', () => renderContent('amp-template-simple-image-banner', sampleWithAmplienceImages.content))
+  .add('Simple Image Banner Localised NL', () => renderContent('amp-template-simple-image-banner', sampleLocalisedNL.content));

@@ -4,7 +4,7 @@
             {{#if mobileImage}}
                 <source srcset="//{{mobileImage.image.endpoint}}.a.bigcontent.io/v1/static/{{encodeURI mobileImage.image.name}}{{#if image.seoText}}/{{image.seoText}}{{/if}}" media="(max-width: 768px)">
             {{/if}}
-            <img src="//{{image.endpoint}}.a.bigcontent.io/v1/static/{{encodeURI image.image.name}}{{#if image.seoText}}/{{image.seoText}}{{/if}}" {{#if image.imageAltText}}alt="{{image.imageAltText}}"{{/if}} class="amp-dc-image-pic {{classNames}}">
+            <img loading="lazy" src="//{{image.endpoint}}.a.bigcontent.io/v1/static/{{encodeURI image.image.name}}{{#if image.seoText}}/{{image.seoText}}{{/if}}" {{#if image.imageAltText}}alt="{{image.imageAltText}}"{{/if}} class="amp-dc-image-pic {{classNames}}">
             }
         {{else}}
             {{> source image.image minWidth="1280" width="1600" highDensityWidth="3200" format="webp" poiAspect="2.5:1" }}
@@ -20,13 +20,13 @@
                 {{> source image.image maxWidth="768" width="768" highDensityWidth="1536" format="webp" poiAspect="1:1" }}
                 {{> source image.image maxWidth="768" width="768" highDensityWidth="1536" poiAspect="1:1" }}
             {{/if}}
-             <img src="//{{image.image.defaultHost}}/i/{{image.image.endpoint}}/{{encodeURI image.image.name}}{{#if seoText}}/{{encodeURI seoText}}{{/if}}{{#if format}}.{{format}}{{/if}}?w=1600&upscale=false&strip=true{{#if ../query}}&{{{../query}}}{{/if}}{{#eq ../aspectLock 'poi'}}{{#gt ../poi.x 0}}&sm=aspect&aspect={{poiAspect}}{{/gt}}{{/eq}}" {{#if imageAltText}}alt="{{imageAltText}}"{{/if}} class="amp-dc-image-pic {{classNames}}">
+             <img loading="lazy" src="//{{image.image.defaultHost}}/i/{{image.image.endpoint}}/{{encodeURI image.image.name}}{{#if seoText}}/{{encodeURI seoText}}{{/if}}{{#if format}}.{{format}}{{/if}}?w=1600&upscale=false&strip=true{{#if ../query}}&{{{../query}}}{{/if}}{{#eq ../aspectLock 'poi'}}{{#gt ../poi.x 0}}&sm=aspect&aspect={{poiAspect}}{{/gt}}{{/eq}}" {{#if imageAltText}}alt="{{imageAltText}}"{{/if}} class="amp-dc-image-pic {{classNames}}">
         {{/if}}
     </picture>
 {{else}}    
     <picture class="amp-dc-simple-image">
         <source srcset="{{mobileimageref}}" media="(max-width:768px)"}>
         <source srcset="{{imageref}}" media="(min-width:768px)"}>
-        <img src="{{imageref}}" {{#if imageAltText}}alt="{{imageAltText}}"{{/if}} class="amp-dc-image-pic {{classNames}}">
+        <img loading="lazy" src="{{imageref}}" {{#if imageAltText}}alt="{{imageAltText}}"{{/if}} class="amp-dc-image-pic {{classNames}}">
     </picture>
 {{/if}}

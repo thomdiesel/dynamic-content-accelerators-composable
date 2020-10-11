@@ -17,5 +17,5 @@
       }
     ]
   },
-  "repositories": ["content", "contentenca", "contentfrca"]
+  "repositories": ["content"]
 }

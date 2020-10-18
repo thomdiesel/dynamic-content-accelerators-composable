@@ -1,7 +1,7 @@
 {
     "contentTypeUri": "{CONTENT_TYPE_BASEPATH}/localised-slot.json",
     "settings": {
-      "label": "Localised Slot",
+      "label": "Localised Slot (CC)",
       "visualizations": [
         {VISUALIZATIONS}
       ],

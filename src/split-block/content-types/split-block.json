@@ -1,7 +1,7 @@
 {
     "contentTypeUri": "{CONTENT_TYPE_BASEPATH}/split-block.json",
     "settings": {
-      "label": "Split Block",
+      "label": "Split Block (CC)",
       "visualizations": [
         {VISUALIZATIONS}
       ],

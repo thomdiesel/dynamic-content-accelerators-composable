@@ -1,7 +1,7 @@
 {
     "contentTypeUri": "{CONTENT_TYPE_BASEPATH}/map.json",
     "settings": {
-      "label": "Map",
+      "label": "Map (CC)",
       "visualizations": [
         {VISUALIZATIONS}
       ],

@@ -1,7 +1,7 @@
 {
     "contentTypeUri": "{CONTENT_TYPE_BASEPATH}/map-search.json",
     "settings": {
-      "label": "Map Searcg",
+      "label": "Map Search (CC)",
       "visualizations": [
         {VISUALIZATIONS}
       ],

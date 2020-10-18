@@ -1,7 +1,7 @@
 {
     "contentTypeUri": "{CONTENT_TYPE_BASEPATH}/text.json",
     "settings": {
-      "label": "Text",
+      "label": "Text (CC)",
       "visualizations": [
         {VISUALIZATIONS}
       ],

@@ -1,7 +1,7 @@
 {
     "contentTypeUri": "{CONTENT_TYPE_BASEPATH}/external-block.json",
     "settings": {
-      "label": "External Block",
+      "label": "External Block (CC)",
       "visualizations": [
         {VISUALIZATIONS}
       ],

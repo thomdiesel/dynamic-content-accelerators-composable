@@ -1,7 +1,7 @@
 {
     "contentTypeUri": "{CONTENT_TYPE_BASEPATH}/navigation.json",
     "settings": {
-      "label": "Navigation",
+      "label": "Navigation (CC)",
       "visualizations": [
         {VISUALIZATIONS}
       ],

@@ -1,7 +1,7 @@
 {
     "contentTypeUri": "{CONTENT_TYPE_BASEPATH}/card-list.json",
     "settings": {
-      "label": "Card List",
+      "label": "Card List (CC)",
       "visualizations": [
         {VISUALIZATIONS}
       ],

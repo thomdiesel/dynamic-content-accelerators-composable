@@ -1,7 +1,7 @@
 {
     "contentTypeUri": "{CONTENT_TYPE_BASEPATH}/title.json",
     "settings": {
-      "label": "Title",
+      "label": "Title (CC)",
       "visualizations": [
         {VISUALIZATIONS}
       ],

@@ -1,7 +1,7 @@
 {
     "contentTypeUri": "{CONTENT_TYPE_BASEPATH}/navigation-slot.json",
     "settings": {
-      "label": "Navigation Slot",
+      "label": "Navigation Slot (CC)",
       "visualizations": [
         {VISUALIZATIONS}
       ],

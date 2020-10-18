@@ -1,7 +1,7 @@
 {
     "contentTypeUri": "{CONTENT_TYPE_BASEPATH}/sfcc-product-search.json",
     "settings": {
-      "label": "SFCC Product Search",
+      "label": "SFCC Product Search (CC)",
       "visualizations": [
         {VISUALIZATIONS}
       ],

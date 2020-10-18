@@ -1,7 +1,7 @@
 {
   "contentTypeUri": "{CONTENT_TYPE_BASEPATH}/simple-image-banner-localised.json",
   "settings": {
-    "label": "Simple Image Banner Localised",
+    "label": "Simple Image Banner Localised (CC)",
     "visualizations": [
       {VISUALIZATIONS}
     ],

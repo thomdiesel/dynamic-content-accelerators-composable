@@ -1,7 +1,7 @@
 {
   "contentTypeUri": "{CONTENT_TYPE_BASEPATH}/banner.json",
   "settings": {
-    "label": "Banner",
+    "label": "Banner (CC)",
     "visualizations": [
       {VISUALIZATIONS}
     ],

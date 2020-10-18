@@ -1,7 +1,7 @@
 {
     "contentTypeUri": "{CONTENT_TYPE_BASEPATH}/blog-post.json",
     "settings": {
-      "label": "Blog Post",
+      "label": "Blog Post (CC)",
       "visualizations": [
         {VISUALIZATIONS}
       ],

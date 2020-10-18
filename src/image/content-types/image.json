@@ -1,7 +1,7 @@
 {
     "contentTypeUri": "{CONTENT_TYPE_BASEPATH}/image.json",
     "settings": {
-      "label": "Image",
+      "label": "Image (CC)",
       "visualizations": [
         {VISUALIZATIONS}
       ],

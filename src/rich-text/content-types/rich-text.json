@@ -1,7 +1,7 @@
 {
     "contentTypeUri": "{CONTENT_TYPE_BASEPATH}/rich-text.json",
     "settings": {
-      "label": "Rich Text",
+      "label": "Rich Text (CC)",
       "visualizations": [
         {VISUALIZATIONS}
       ],

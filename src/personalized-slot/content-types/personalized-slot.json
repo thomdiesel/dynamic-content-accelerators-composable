@@ -1,7 +1,7 @@
 {
   "contentTypeUri": "{CONTENT_TYPE_BASEPATH}/personalized-slot.json",
   "settings": {
-    "label": "Targeted Slot",
+    "label": "Targeted Slot (CC)",
     "visualizations": [
       {VISUALIZATIONS}
     ],

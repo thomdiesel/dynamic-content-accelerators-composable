@@ -1,7 +1,7 @@
 {
     "contentTypeUri": "{CONTENT_TYPE_BASEPATH}/video.json",
     "settings": {
-      "label": "Video",
+      "label": "Video (CC)",
       "visualizations": [
         {VISUALIZATIONS}
       ],

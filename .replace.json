@@ -1,9 +1,9 @@
 {
   "BASEPATH": "https://amplience.com/composablecommerce",
-  "COMPANY_TAG": "nmdemo",
+  "COMPANY_TAG": "dem",
   "VISUALIZATIONS": [
     {
-      "label": "Visualization",
+      "label": "Visualization CRS",
       "templatedUri": "https://{{vse.domain}}/v1/content/demo/content-item/{{content.sys.id}}?template=amp-template-visualization&locale={{locales}},en-*,*",
       "default": true
     },

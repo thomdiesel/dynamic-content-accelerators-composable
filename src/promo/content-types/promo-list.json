@@ -1,7 +1,7 @@
 {
     "contentTypeUri": "{CONTENT_TYPE_BASEPATH}/promo-list.json",
     "settings": {
-      "label": "Promo List",
+      "label": "Promo List (CC)",
       "visualizations": [
         {VISUALIZATIONS}
       ],

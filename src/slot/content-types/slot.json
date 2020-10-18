@@ -1,7 +1,7 @@
 {
     "contentTypeUri": "{CONTENT_TYPE_BASEPATH}/slot.json",
     "settings": {
-      "label": "Slot",
+      "label": "Slot (CC)",
       "visualizations": [
         {VISUALIZATIONS}
       ],

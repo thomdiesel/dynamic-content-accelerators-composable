@@ -1,7 +1,7 @@
 {
     "contentTypeUri": "{CONTENT_TYPE_BASEPATH}/collection.json",
     "settings": {
-      "label": "Collection ",
+      "label": "Collection (CC)",
       "visualizations": [
         {VISUALIZATIONS}
       ],

@@ -1,7 +1,7 @@
 {
     "contentTypeUri": "{CONTENT_TYPE_BASEPATH}/page.json",
     "settings": {
-      "label": "Page",
+      "label": "Page (CC)",
       "visualizations": [
         {VISUALIZATIONS}
       ],

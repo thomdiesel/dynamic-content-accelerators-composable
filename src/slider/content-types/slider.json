@@ -1,7 +1,7 @@
 {
     "contentTypeUri": "{CONTENT_TYPE_BASEPATH}/slider.json",
     "settings": {
-      "label": "Slider",
+      "label": "Slider (CC)",
       "visualizations": [
         {VISUALIZATIONS}
       ],

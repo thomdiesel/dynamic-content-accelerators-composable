@@ -1,7 +1,7 @@
 {
     "contentTypeUri": "{CONTENT_TYPE_BASEPATH}/form.json",
     "settings": {
-      "label": "Form",
+      "label": "Form (CC)",
       "visualizations": [
         {VISUALIZATIONS}
       ],

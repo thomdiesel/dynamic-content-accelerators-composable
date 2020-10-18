@@ -4,7 +4,7 @@
   "VISUALIZATIONS": [
     {
       "label": "Visualization Standalone",
-      "templatedUri": "https://presalesadisws.s3.eu-west-1.amazonaws.com/sfcc/composable-commerce/dist/templates/amp-template-visualisation-external.html?vse={{vse.domain}}&cid={{content.sys.id}}&locale={{locales}}",
+      "templatedUri": "https://presalesadisws.s3.eu-west-1.amazonaws.com/sfcc/composable-commerce/templates/amp-template-visualization-external.html?vse={{vse.domain}}&cid={{content.sys.id}}&locale={{locales}}",
       "default": true
     },
     {

@@ -1,0 +1,5 @@
+{
+    "body": "../content-schemas/form-input.json",
+    "schemaId": "{CONTENT_TYPE_BASEPATH}/form-input.json",
+    "validationLevel": "CONTENT_TYPE"
+  }

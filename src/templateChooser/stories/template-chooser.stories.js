@@ -25,5 +25,5 @@ const components = [
 const stories = storiesOf('Template Chooser', module);
 
 components.forEach(([label, name, contentName = 'sampleContent']) => {
-  stories.add(label, () => renderContent('templateChooser', require(`../../${name}/stories/${name}.stories`)[contentName]));
+  stories.add(label, () => renderContent('amp-template-templateChooser', require(`../../${name}/stories/${name}.stories`)[contentName]));
 });

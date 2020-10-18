@@ -1,0 +1,88 @@
+{{#is inputType 'text'}}
+<!-- Text -->
+<div class="input-type">
+  <label
+    class="o-dc-text-headline2 o-dc-text-headline2-small {{#if required}}required{{/if}}"
+    >{{label}}:</label
+  >
+  <input
+    type="text"
+    name="{{name}}"
+    class="input-text {{#if required}}required-entry{{/if}}"
+  />
+</div>
+{{/is}} {{#is inputType 'hidden'}}
+<!-- Text -->
+<div class="input-type">
+  <input type="hidden" name="{{name}}" value="{{value}}" />
+</div>
+{{/is}} {{#is inputType 'email'}}
+<!-- Email -->
+<div class="input-type">
+  <label
+    class="o-dc-text-headline2 o-dc-text-headline2-small {{#if required}}required{{/if}}"
+    >{{label}}:</label
+  >
+  <input
+    type="email"
+    name="{{name}}"
+    class="input-text {{#if required}}required-entry{{/if}}"
+  />
+</div>
+{{/is}} {{#is inputType 'number'}}
+<!-- Number -->
+<div class="input-type">
+  <label
+    class="o-dc-text-headline2 o-dc-text-headline2-small {{#if required}}required{{/if}}"
+    >{{label}}:</label
+  >
+  <input
+    type="number"
+    name="{{name}}"
+    class="input-text {{#if required}}required-entry{{/if}}"
+  />
+</div>
+{{/is}} {{#is inputType 'tel'}}
+<!-- Tel -->
+<div class="input-type">
+  <label
+    class="o-dc-text-headline2 o-dc-text-headline2-small {{#if required}}required{{/if}}"
+    >{{label}}:</label
+  >
+  <input
+    type="tel"
+    name="{{name}}"
+    class="input-text {{#if required}}required-entry{{/if}}"
+  />
+</div>
+{{/is}} {{#is inputType 'textarea'}}
+<!-- Textarea -->
+<div class="input-type">
+  <label class="o-dc-text-headline2 o-dc-text-headline2-small "
+    >{{label}}:</label
+  >
+  <textarea rows="{{numLines}}" cols="50" class="input-text"></textarea>
+</div>
+{{/is}} {{#is inputType 'select'}}
+<!-- Select -->
+<div class="input-type input-select input-select-{{name}}">
+  <label class="o-dc-text-headline2 o-dc-text-headline2-small "
+    >{{label}}:</label
+  >
+  <div class="select-dropdown">
+    <select>
+      {{#each options}}
+      <option value="{{ this }}">{{ this }}</option>
+      {{/each}}
+    </select>
+  </div>
+</div>
+{{/is}} {{#is inputType 'checkbox'}}
+<!-- Checkbox -->
+<div class="input-type input-checkbox">
+  <input type="checkbox" id="{{name}}" name="{{name}}" />
+  <label for="{{name}}" class="o-dc-text-headline2 o-dc-text-headline2-small"
+    >{{label}}:</label
+  >
+</div>
+{{/is}}

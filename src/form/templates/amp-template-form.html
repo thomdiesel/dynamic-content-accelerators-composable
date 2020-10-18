@@ -1,0 +1,21 @@
+<div class="amp-form-container">
+  <div class="amp-form-title">
+    {{#with header}}
+            {{> amp-template-advanced-textline this tag='h3' class='headline1'}}
+    {{/with}}
+    {{#with subheader}}
+            {{> amp-template-advanced-textline this tag='p' class='headline2'}}
+    {{/with}}
+  </div>
+
+  <form id="{{formID}}" class="amp-form" action="{{formAction}}" method="post">
+  <input name="type_newsletter_form" type="hidden" value="{{formName}}">
+    {{#each formFields}}
+      {{> amp-template-form-input}}
+    {{/each}}
+    <!-- Submit -->
+    <div class="input-type input-submit">
+      <input type="submit" value="{{buttonText}}" class="o-dc-button large o-dc-text-bold">
+    </div>
+  </form>
+</div>

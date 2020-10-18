@@ -19,13 +19,18 @@
       href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
     />
     <link rel="stylesheet" href="{DEPLOY_PATH}styles.min.css" />
+    <!-- algolia-->
+    <script src="https://cdn.jsdelivr.net/npm/algoliasearch@4/dist/algoliasearch-lite.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.css@7/themes/algolia-min.css" />
+
     <script src="https://unpkg.com/dc-delivery-sdk-js/dist/dynamicContent.browser.umd.min.js"></script>
     <script src="{DEPLOY_PATH}utils.min.js"></script>
     <script src="{DEPLOY_PATH}lory.min.js"></script>
   </head>
   <body>
-    <div style="position: absolute; width: 100%;">
-      {{> templateChooser this}}
+    <div style="width: 100%;">
+      {{> amp-template-templateChooser this}}
     </div>
   </body>
 </html>

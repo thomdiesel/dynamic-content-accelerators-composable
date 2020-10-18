@@ -1,0 +1,75 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "{CONTENT_TYPE_BASEPATH}/form-input.json",
+
+  "title": "Form Input",
+  "description": "Form Input Field",
+
+  "allOf": [
+    {
+      "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+    }
+  ],
+
+  "type": "object",
+  "properties": {
+    "inputType": {
+      "title": "Field type",
+      "description": "What type of field would you like to add?",
+      "type": "string",
+      "enum": [
+        "text",
+        "select",
+        "checkbox",
+        "textarea",
+        "email",
+        "tel",
+        "number",
+        "hidden"
+      ]
+    },
+
+    "name": {
+      "title": "Name",
+      "description": "Name of the input (no spaces)",
+      "type": "string",
+      "minLength": 0,
+      "maxLength": 100
+    },
+    "label": {
+      "title": "Label",
+      "description": "Label for the form field",
+      "type": "string",
+      "minLength": 0,
+      "maxLength": 100
+    },
+    "required": {
+      "title": "Required",
+      "description": "Is this a required field?",
+      "type": "boolean"
+    },
+    "options": {
+      "title": "Select box options list",
+      "description": "Will only apply to select boxes",
+      "type": "array",
+      "minItems": 0,
+      "maxItems": 200,
+      "items": {
+        "type": "string"
+      }
+    },
+    "numLines": {
+      "title": "Number of lines",
+      "description": "How many lines on the textarea?",
+      "type": "number",
+      "minimum": 4,
+      "maximum": 100
+    },
+    "inputValue": {
+      "title": "Value",
+      "description": "Set the value of the form field",
+      "type": "string"
+    }
+  },
+  "propertyOrder": []
+}

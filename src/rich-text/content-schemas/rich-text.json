@@ -40,7 +40,8 @@
                 "{CONTENT_TYPE_BASEPATH}/text.json",
                 "{CONTENT_TYPE_BASEPATH}/rich-text.json",
                 "{CONTENT_TYPE_BASEPATH}/video.json",
-                "{CONTENT_TYPE_BASEPATH}/page.json"
+                "{CONTENT_TYPE_BASEPATH}/page.json",
+                "{CONTENT_TYPE_BASEPATH}/form.json"
               ],
               "contentTypeSettings": {
                 "cards": {

@@ -91,20 +91,24 @@
 
 {{#if (test this.[@type] (toRegex ".*/slot.json")) ~}}
     {{#each this.content}}
-        {{> templateChooser this }}
+        {{> amp-template-templateChooser this }}
     {{/each}}
 {{~/if}}
 
 {{#if (test this.[@type] (toRegex ".*/localised-slot.json")) ~}}
     {{#each this.content}}
-        {{> templateChooser this }}
+        {{> amp-template-templateChooser this }}
     {{/each}}
 {{~/if}}
 
 {{#if (test this.[@type] (toRegex ".*/navigation-slot.json")) ~}}
-    {{> templateChooser navigation }}
+    {{> amp-template-templateChooser navigation }}
 {{~/if}}
 
 {{#if (test this.[@type] (toRegex ".*/email-banner")) ~}} {{> banner }} {{~/if}}
 {{#if (test this.[@type] (toRegex ".*/two-column")) ~}} {{> two-column }} {{~/if}}
 {{#if (test this.[@type] (toRegex ".*/email-page")) ~}} {{> page-template }} {{~/if}}
+
+{{#if (test this.[@type] (toRegex ".*/map.json")) ~}} {{> amp-template-map }} {{~/if}}
+{{#if (test this.[@type] (toRegex ".*/map-search.json")) ~}} {{> amp-template-map-search }} {{~/if}}
+{{#if (test this.[@type] (toRegex ".*/form.json")) ~}} {{> amp-template-form }} {{~/if}}

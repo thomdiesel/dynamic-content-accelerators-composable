@@ -1,0 +1,81 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "{CONTENT_TYPE_BASEPATH}/form.json",
+
+  "title": "Form",
+  "description": "Form Builder",
+
+  "allOf": [
+    {
+      "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+    }
+  ],
+
+  "type": "object",
+  "properties": {
+    "header": {
+      "title":"Header",
+      "description": "Text for a header",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "{CONTENT_TYPE_BASEPATH}/accelerator-partials.json#/definitions/advancedText"
+        }
+      ]
+    },
+    "subheader": {
+      "title":"Sub Header",
+      "description": "Text for a sub header",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "{CONTENT_TYPE_BASEPATH}/accelerator-partials.json#/definitions/advancedText"
+        }
+      ]
+    },
+    "formFields": {
+      "title": "Form fields",
+      "description": "Add fields to the form",
+      "type": "array",
+      "minItems": 0,
+      "maxItems": 20,
+      "items": {
+				"type": "object",
+				"allOf": [
+					{
+						"$ref": "{CONTENT_TYPE_BASEPATH}/form-input.json"
+					}
+				]
+			}
+    },
+    "buttonText": {
+      "type": "string",
+      "minLength": 0,
+      "maxLength": 100,
+      "title": "Button text",
+      "description": "Add button text"
+    },
+    "formID": {
+      "title": "Form ID",
+      "description": "Add an ID for the form",
+      "type": "string",
+      "minLength": 0,
+      "maxLength": 100
+    },
+    "formAction": {
+      "title": "Form action",
+      "description": "Add an action for the form (url/path to form processing script)",
+      "type": "string",
+      "minLength": 0,
+      "maxLength": 1000
+    },
+    "formName": {
+      "title": "Form name",
+      "description": "Add an identifer for the form for mapping in mPoint",
+      "type": "string",
+      "minLength": 0,
+      "maxLength": 100
+    }
+  },
+  "propertyOrder": []
+}

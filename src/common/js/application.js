@@ -178,7 +178,7 @@
 
         /** */
         clientV1
-          .renderContentItem(renderID,'templateChooser')
+          .renderContentItem(renderID,'amp-template-templateChooser')
           .then(response => {
             console.log(response.body);
             document.getElementById(container).innerHTML = response.body;

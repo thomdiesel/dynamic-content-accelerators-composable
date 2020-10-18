@@ -10,6 +10,20 @@
   ],
   "type": "object",
   "properties": {
+		"header": {
+			"title": "Header",
+			"description": "Header for this product list (Optional)",
+			"type": "string",
+			"minLength": 0,
+			"maxLength": 255
+		},
+		"description": {
+			"title": "Description",
+			"description": "Description for this product list (Optional)",
+			"type": "string",
+			"minLength": 0,
+			"maxLength": 1000
+		},
 		"query": {
 			"title": "Query",
 			"description": "The search term",
@@ -38,6 +52,22 @@
 				"mens-clothing",
 				"mens-accessories",
 				"electronics"
+			]
+		},
+		"sorting": {
+			"title": "Sort By",
+			"description": "Pick on option to sort by",
+			"type": "string",
+			"enum": [
+				"best-matches",
+				"price-low-to-high",
+				"price-high-to-low",
+				"product-name-ascending",
+				"product-name-descending",
+				"brand",
+				"most-popular",
+				"mens-accessories",
+				"top-sellers"
 			]
 		}
 		

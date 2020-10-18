@@ -201,7 +201,9 @@
 
             AmpCa.Utils.attachComponents()
             AmpCa.Utils.findSearches()
-            AmpCa.Utils.findProducts()
+            AmpCa.Utils.findProducts();
+            AmpCa.Utils.initMaps();
+            AmpCa.Utils.initSFCCProducts();
 
           })
           .catch(error => {

@@ -26,6 +26,7 @@
 {{#if (test this.[@type] (toRegex ".*/rich-text-editor")) ~}} <!-- ToRemove --> {{> amp-template-richtext }} {{~/if}}
 {{#if (test this.[@type] (toRegex ".*/map.json")) ~}} {{> amp-template-map }} {{~/if}}
 {{#if (test this.[@type] (toRegex ".*/map-search.json")) ~}} {{> amp-template-map-search }} {{~/if}}
+{{#if (test this.[@type] (toRegex ".*/sfcc-product-search.json")) ~}} {{> amp-template-sfcc-product-search }} {{~/if}}
 {{#if (test this.[@type] (toRegex ".*/form.json")) ~}} {{> amp-template-form }} {{~/if}}
 {{#if (test this.[@type] (toRegex ".*/advanced-banner.json")) ~}} {{> amp-template-advanced-banner }} {{~/if}}
 {{#if (test this.[@type] (toRegex ".*/simple-image-banner-localised.json")) ~}} {{> amp-template-simple-image-banner-localised }} {{~/if}}

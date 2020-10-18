@@ -206,7 +206,7 @@
           mapConfigObj.location.lng
         );
         var mapOptions = {
-          zoom: Number(mapConfigObj.mapZoom),
+          zoom: Number(mapConfigObj.mapZoom) || 18,
           styles: mapConfigObj.theme == 'Dark' ? darkStyles : [],
           center: myLatlng,
         };

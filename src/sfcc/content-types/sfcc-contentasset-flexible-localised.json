@@ -1,14 +1,14 @@
 {
-    "contentTypeUri": "{CONTENT_TYPE_BASEPATH}/collection-block.json",
+    "contentTypeUri": "https://www.amplience.com/examples/sfcc-contentasset-flexible-localised.json",
     "settings": {
-      "label": "Collection Block (CC)",
+      "label": "SFCC - Flexible Localised Content Asset",
       "visualizations": [
         {VISUALIZATIONS}
       ],
       "icons": [
         {
           "size": 256,
-          "url": "https://bigcontent.io/cms/icons/bond/bond-split.png"
+          "url": "https://i1.adis.ws/i/dem/2016sf_CommerceCloud_logo_RGB"
         }
       ],
       "cards": [

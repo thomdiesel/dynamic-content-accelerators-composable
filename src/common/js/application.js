@@ -19,7 +19,7 @@
     if (sDefault) return sDefault;
   };
 
-  var vse = getUrlParameter('vse', 'visiondirect.cdn.content.amplience.net');
+  var vse = getUrlParameter('vse', 'eu-sfcc-ps-demo.cdn.content.amplience.net');
   var crsvse = getUrlParameter('vse', 'c1-orig.adis.ws');
   // Removed as we will get this from the DIV attributes
   /*
@@ -46,6 +46,16 @@
     var idslots = document.querySelectorAll('[data-amp-deliveryid]');
 
     // what if there is already a key in the URL??
+
+    // Check is there is a div which requires loading from the visualisation
+    var vizslots = document.querySelectorAll('[data-amp-visualisation-param-loader]');
+    
+    // if there is a viz slot, then we need to load from the params in the URL: vse, locale, cid and maybe template for email unless done differently
+    vizslots.forEach(function (item) {
+      var eID = item.id;
+      loadContent(cid, eID, 'id');
+    });
+
     
 
 

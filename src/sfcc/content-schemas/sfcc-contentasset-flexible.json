@@ -1,0 +1,96 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://www.amplience.com/examples/sfcc-contentasset-flexible.json",
+	"title": "SFCC - Content Asset",
+	"description": "Content Asset Container",
+	"allOf": [
+		{
+			"$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+		}
+	],
+	"type": "object",
+	"properties": {
+		"_meta": {
+			"type": "object",
+			"properties": {
+				"deliveryKey": {
+					"type": "string",
+					"title": "Delivery key",
+					"description": "Enter the delivery key for this item"
+				}
+			}
+		},
+		"content-asset-id": {
+			"type": "string",
+			"title": "Content Asset ID",
+			"minLength": 1,
+			"maxLength": 256
+		},
+		"page-url": {
+			"type": "string",
+			"title": "Page URL",
+			"minLength": 1,
+			"maxLength": 256
+		},
+		"library-folders": {
+			"type": "array",
+			"title": "Folders",
+			"items": {
+				"type": "string",
+				"title": "Folder",
+				"enum": [
+					"mens-blog",
+					"womens-blog",
+					"shoes-blog",
+					"suits-blog",
+					"dresses-blog",
+					"blog",
+					"blog-archives"
+				]
+			},
+			"minItems": 1,
+			"maxItems": 3
+		},
+		"content-asset-body": {
+			"title": "Content Asset Body",
+			"description": "HTML sent to the content asset body",
+			"type": "object",
+			"allOf": [
+				{
+					"$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+				},
+				{
+					"properties": {
+						"contentType": {
+							"title": "Content Types",
+							"enum": [
+								"https://www.amplience.com/examples/image.json",
+								"https://www.amplience.com/examples/text.json",
+								"https://www.amplience.com/examples/video.json",
+								"https://www.amplience.com/examples/cardlist.json",
+								"https://www.amplience.com/examples/banner.json",
+								"https://www.amplience.com/examples/slider.json",
+								"https://www.amplience.com/examples/splitblock.json",
+								"https://www.amplience.com/examples/promolist.json",
+								"https://www.amplience.com/examples/externalblock.json",
+								"https://www.amplience.com/examples/container.json",
+								"https://www.amplience.com/examples/productlist.json",
+								"https://www.amplience.com/examples/blogPost.json"
+							]
+						}
+					}
+				}
+			]
+		}
+	},
+	"required": [
+		"content-asset-id"
+	],
+	"propertyOrder": [
+		"_meta",
+		"content-asset-id",
+		"page-url",
+		"library-folders",
+		"content-asset-body"
+	]
+}

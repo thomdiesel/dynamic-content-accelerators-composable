@@ -1,0 +1,5 @@
+{
+    "body": "../content-schemas/sfcc-slot-flexible.json",
+    "schemaId": "https://www.amplience.com/examples/sfcc-slot-flexible.json",
+    "validationLevel": "SLOT"
+  }

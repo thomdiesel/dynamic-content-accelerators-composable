@@ -17,6 +17,6 @@
         }
       ]
     },
-    "repositories": ["slots"]
+    "repositories": {SLOT_REPOSITORIES}
   }
   

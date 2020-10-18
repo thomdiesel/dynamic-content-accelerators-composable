@@ -1,0 +1,5 @@
+{
+  "body": "../content-schemas/sfcc-contentasset-flexible-localised.json",
+  "schemaId": "https://www.amplience.com/examples/sfcc-contentasset-flexible-localised.json",
+  "validationLevel": "CONTENT_TYPE"
+}

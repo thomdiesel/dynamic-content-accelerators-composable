@@ -66,12 +66,6 @@
                     }
                 )
             }
-
-
-            /*
-            var image = data.image_groups.find(x => x.view_type === 'large').images[0].link;
-            var html = '<a class="amp-dc-card-wrap" href="https://amplience02-tech-prtnr-na03-dw.demandware.net/s/RefArchGlobal/no-iron-platinum-easy-care-sleeveless-fitted-shirt/' + data.id + '.html"><div class="amp-dc-card-wrap"><div class="amp-dc-card-img-wrap"><picture class="amp-dc-image"><img src="' + image + '" class="amp-dc-image-pic"/></picture></div><div class="amp-dc-card-text-wrap"><div class="amp-dc-card-name">' + data.name + '</div><p class="amp-dc-card-description">&pound;' + data.price + '</p><div class="amp-dc-card-link">SHOP NOW</div></div></a></div>'
-            $(item).html(html);*/
         }
         })
     });

@@ -17,6 +17,6 @@
         }
       ]
     },
-    "repositories": []
+    "repositories": {CONTENT_REPOSITORIES}
   }
   

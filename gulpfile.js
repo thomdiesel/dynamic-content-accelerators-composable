@@ -34,6 +34,8 @@ var replace = function () {
     fileContent = fileContent.replace(/\{COMPANY_TAG\}/g, toReplace.COMPANY_TAG);
     fileContent = fileContent.replace(/\{CONTENT_TYPE_BASEPATH\}/g, toReplace.BASEPATH);
     fileContent = fileContent.replace(/\{DEPLOY_PATH\}/g, config.s3.domain + config.s3.uploadpath);
+    fileContent = fileContent.replace(/\{CONTENT_REPOSITORIES\}/g, JSON.stringify(toReplace.CONTENT_REPOSITORIES));
+    fileContent = fileContent.replace(/\{SLOT_REPOSITORIES\}/g, JSON.stringify(toReplace.SLOT_REPOSITORIES));
     // Algolia
     fileContent = fileContent.replace(/\{ALGOLIA_ID\}/g, config.algolia["application-id"]);
     fileContent = fileContent.replace(/\{ALGOLIA_SECRET\}/g, config.algolia["application-secret"]);

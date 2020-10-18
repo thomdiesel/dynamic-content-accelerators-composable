@@ -1,0 +1,32 @@
+<div style="max-width: 600px; margin: 0 auto;">
+    <table width="100%" max-width="600px" cellspacing="0" cellpadding="0">
+        <tbody>
+            <tr>
+                {{#with image}}
+                <td max-width="600px" height="400px" style="background-image: url('//{{image.defaultHost}}/i/{{image.endpoint}}/{{image.name}}.jpg?$poi$&w=600&aspect=6:4'); background-repeat: no-repeat; background-size: cover; height:400px">
+                </td>
+                {{/with}}
+            </tr>
+            <tr>
+                <td style="text-align: center;">
+                    <div class="amp-dc-banner-info" style="color:#212121; line-height: 20px; padding: 20px 0 0; word-break: break-word">
+                        {{#if header}}
+                        <div class="amp-dc-banner-header" style="font-family: FuturaMedium, Futura, 'Century Gothic', 'Gill Sans', sans-serif; font-size: 16px; letter-spacing: 0.15em; text-transform: uppercase">{{header}}</div>
+                        <br>
+                        {{/if}}
+                        {{#if subheader}}
+                        <div class="amp-dc-banner-subheader" style="font-family: FuturaMedium, Futura, 'Century Gothic', 'Gill Sans', sans-font; font-size: 12px; letter-spacing: 0.025em; text-transform: uppercase; padding-bottom: 20px;">{{subheader}}</div>
+                        {{/if}}
+                        {{#if description}}
+                        <div class="amp-dc-banner-description" style="font-family: FuturaMedium, Futura, 'Century Gothic', 'Gill Sans', sans-font; font-size: 12px; letter-spacing: 0.025em;">{{description}}</div>
+                        <br>
+                        {{/if}}
+                        {{#if link.label}}
+                        <a href="{{link.value}}" class="amp-dc-banner-button" style="font-family: FuturaMedium, Futura, 'Century Gothic', 'Gill Sans', sans-font;font-size: 14px;letter-spacing: 0.025em;text-transform: uppercase;color:#ffffff;text-decoration:none;background-color:#000000;padding:6px;">{{link.label}}</a>
+                        {{/if}}
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

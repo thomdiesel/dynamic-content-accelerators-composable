@@ -3,9 +3,14 @@
   "COMPANY_TAG": "dem",
   "VISUALIZATIONS": [
     {
+      "label": "Visualization Standalone",
+      "templatedUri": "https://presalesadisws.s3.eu-west-1.amazonaws.com/sfcc/composable-commerce/dist/templates/amp-template-visualisation-external.html?vse={{vse.domain}}&cid={{content.sys.id}}&locale={{locales}}",
+      "default": true
+    },
+    {
       "label": "Visualization CRS",
       "templatedUri": "https://{{vse.domain}}/v1/content/demo/content-item/{{content.sys.id}}?template=amp-template-visualization&locale={{locales}},en-*,*",
-      "default": true
+      "default": false
     },
     {
       "label": "JSON (CDV2)",
@@ -17,5 +22,17 @@
       "templatedUri": "https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/dc-visualization-content-delivery/index.html?vse={{vse.domain}}&id={{content.sys.id}}&format=inlined&depth=all&v2=false&locale={{locales}}",
       "default": false
     }
-  ]
+  ],
+  "CONTENT_REPOSITORIES":[
+    "content",
+    "ukcontent",
+    "uscontent",
+    "frenchcontent",
+    "danishcontent",
+    "chinesecontent",
+    "arabiccontent",
+    "italiancontent",
+    "spanishcontent"
+  ],
+  "SLOT_REPOSITORIES":["slots"]
 }

@@ -1,14 +1,14 @@
 {
-    "contentTypeUri": "{CONTENT_TYPE_BASEPATH}/collection-block.json",
+    "contentTypeUri": "https://www.amplience.com/examples/sfcc-slot-flexible-localised.json",
     "settings": {
-      "label": "Collection Block (CC)",
+      "label": "SFCC - Flexible Localised Slot",
       "visualizations": [
         {VISUALIZATIONS}
       ],
       "icons": [
         {
           "size": 256,
-          "url": "https://bigcontent.io/cms/icons/bond/bond-split.png"
+          "url": "https://i1.adis.ws/i/dem/2016sf_CommerceCloud_logo_RGB"
         }
       ],
       "cards": [
@@ -17,6 +17,6 @@
         }
       ]
     },
-    "repositories": {CONTENT_REPOSITORIES}
+    "repositories": {SLOT_REPOSITORIES}
   }
   

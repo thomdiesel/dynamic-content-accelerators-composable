@@ -1,0 +1,19 @@
+{{#if (test this.[@type] (toRegex ".*/sfcc-slot-flexible.json")) ~}}
+{{> amp-template-templateChooser this.content }}
+{{~/if}}
+
+{{#if (test this.[@type] (toRegex ".*/sfcc-slot-flexible-localised.json")) ~}}
+{{> amp-template-templateChooser this.content }}
+{{~/if}}
+
+{{#if (test this.[@type] (toRegex ".*/sfcc-slot-flexible-localized.json")) ~}}
+{{> amp-template-templateChooser-eastpak this.content }}
+{{~/if}}
+
+{{#if (test this.[@type] (toRegex ".*/sfcc-contentasset-flexible.json")) ~}}
+{{> amp-template-templateChooser this.content-asset-body }}
+{{~/if}}
+
+{{#if (test this.[@type] (toRegex ".*/sfcc-contentasset-flexible-localised.json")) ~}}
+{{> amp-template-templateChooser this.content-asset-body }}
+{{~/if}}

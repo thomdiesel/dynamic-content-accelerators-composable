@@ -1,9 +1,14 @@
 {
   "contentTypeUri": "{CONTENT_TYPE_BASEPATH}/banner.json",
   "settings": {
-    "label": "Banner (CC)",
+    "label": "Banner - Basic (CC)",
     "visualizations": [
-      {VISUALIZATIONS}
+      {VISUALIZATIONS},
+      {
+        "label": "Email",
+        "templatedUri": "https://{{vse.domain}}/v1/content/demo/content-item/{{content.sys.id}}?template=amp-template-banner-sfmc&locale={{locales}},en-*,*",
+        "default": false
+      }
     ],
     "icons": [
       {
@@ -17,5 +22,5 @@
       }
     ]
   },
-  "repositories": ["content"]
+  "repositories": {CONTENT_REPOSITORIES}
 }

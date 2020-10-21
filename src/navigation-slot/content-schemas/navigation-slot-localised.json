@@ -1,0 +1,59 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "{CONTENT_TYPE_BASEPATH}/navigation-slot-localised.json",
+  "title": "Navigation Localised Slot",
+  "description": "Navigation Localised Slot",
+  "allOf": [
+    {
+      "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+    }
+  ],
+  "type": "object",
+  "properties": {
+    "_meta": {
+      "type": "object",
+      "properties": {
+        "deliveryKey": {
+          "type": "string",
+          "title": "Delivery key",
+          "description": "Enter the delivery key for this item"
+        }
+      }
+    },
+    "navigation": {
+      "allOf": [
+        {
+          "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+        },
+        {
+          "properties": {
+            "values": {
+              "items": {
+                "properties": {
+                  "value": {
+                    "title": "Localized Content",
+                    "type": "object",
+                    "allOf": [
+                      {
+                        "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+                      },
+                      {
+                        "properties": {
+                          "contentType": {
+                            "title": "Content",
+                            "enum": ["{CONTENT_TYPE_BASEPATH}/navigation.json"]
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "propertyOrder": ["_meta", "navigation"]
+}

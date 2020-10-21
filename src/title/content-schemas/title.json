@@ -13,66 +13,24 @@
   "type": "object",
   "properties": {
     "header": {
-      "type": "string",
-      "minLength": 0,
-      "maxLength": 100,
-      "title": "Header",
-      "description": "Add header text"
-    },
-    "headerStyle": {
-      "title": "Header Colour",
-      "description": "Specify a style",
-      "type": "string",
-      "enum": ["black", "white"]
-    },
-    "headerFontSize": {
-      "title": "Header Font Size",
-      "description": "Specify a font size",
-      "type": "string",
-      "enum": ["small", "medium", "large"]
-    },
-    "headerFontWeight": {
-      "title": "Header Font Weight",
-      "description": "Specify a font weight",
-      "type": "string",
-      "enum": ["normal", "bold"]
-    },
-    "headerFontColour": {
-      "title": "Override Header Font Colour",
-      "description": "Choose a colour to override default",
-      "format": "color",
-      "type": "string"
+      "title":"Header",
+      "description": "Text for a header",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "{CONTENT_TYPE_BASEPATH}/accelerator-partials.json#/definitions/advancedText"
+        }
+      ]
     },
     "description": {
-      "type": "string",
-      "minLength": 0,
-      "maxLength": 250,
-      "title": "Description",
-      "description": "Add description text"
-    },
-    "descriptionStyle": {
-      "title": "Description Style",
-      "description": "Specify a style",
-      "type": "string",
-      "enum": ["black", "white"]
-    },
-    "descriptionFontSize": {
-      "title": "Description Font Size",
-      "description": "Specify a font size",
-      "type": "string",
-      "enum": ["small", "medium", "large"]
-    },
-    "descriptionFontWeight": {
-      "title": "Description Font Weight",
-      "description": "Specify a font weight",
-      "type": "string",
-      "enum": ["normal", "bold"]
-    },
-    "descriptionFontColour": {
-      "title": "Description Font Colour",
-      "description": "Choose a colour",
-      "format": "color",
-      "type": "string"
+      "title":"Description",
+      "description": "Description Text",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "{CONTENT_TYPE_BASEPATH}/accelerator-partials.json#/definitions/advancedText"
+        }
+      ]
     },
     "button": {
       "title": "Button",
@@ -93,16 +51,9 @@
   },
   "propertyOrder": [
     "header",
-    "headerStyle",
-    "headerFontSize",
-    "headerFontWeight",
-    "headerFontColour",
     "description",
-    "descriptionStyle",
-    "descriptionFontSize",
-    "descriptionFontWeight",
-    "descriptionFontColour",
-    "button"
+    "button",
+    "titlepadding"
   ]
 }
 

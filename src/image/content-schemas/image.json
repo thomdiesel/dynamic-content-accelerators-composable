@@ -150,6 +150,11 @@
       "title": "toggle POI",
       "description": "toggle POI?",
       "type": "boolean"
+    },
+    "hotspots": {
+      "title": "Hotspots",
+      "description": "Show hotspots?",
+      "type": "boolean"
     }
   },
   "propertyOrder": [
@@ -159,6 +164,7 @@
     "imageEffect",
     "gifImage",
     "togglePOI",
+    "hotspots",
     "component"
   ]
 }

@@ -50,6 +50,7 @@
                       "{CONTENT_TYPE_BASEPATH}/banner.json",
                       "{CONTENT_TYPE_BASEPATH}/simple-image-banner-localised.json",
                       "{CONTENT_TYPE_BASEPATH}/advanced-banner.json",
+                      "{CONTENT_TYPE_BASEPATH}/advanced-banner-localised.json",
                       "{CONTENT_TYPE_BASEPATH}/curated-product-list.json",
                       "{CONTENT_TYPE_BASEPATH}/form.json"
                     ]

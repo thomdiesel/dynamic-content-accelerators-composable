@@ -30,6 +30,7 @@
                   "{CONTENT_TYPE_BASEPATH}/simple-image-banner.json",
                   "{CONTENT_TYPE_BASEPATH}/simple-image-banner-localised.json",
                   "{CONTENT_TYPE_BASEPATH}/advanced-banner.json",
+                  "{CONTENT_TYPE_BASEPATH}/advanced-banner-localised.json",
                   "{CONTENT_TYPE_BASEPATH}/collection-block.json",
                   "{CONTENT_TYPE_BASEPATH}/collection.json",
                   "{CONTENT_TYPE_BASEPATH}/blog-list.json",
@@ -43,7 +44,13 @@
                   "{CONTENT_TYPE_BASEPATH}/title.json",
                   "{CONTENT_TYPE_BASEPATH}/rich-text.json",
                   "{CONTENT_TYPE_BASEPATH}/video.json",
-                  "{CONTENT_TYPE_BASEPATH}/form.json"
+                  "{CONTENT_TYPE_BASEPATH}/form.json",
+                  "{CONTENT_TYPE_BASEPATH}/sfcc-product-search.json",
+                  "{CONTENT_TYPE_BASEPATH}/navigation.json",
+                  "{CONTENT_TYPE_BASEPATH}/map.json",
+                  "{CONTENT_TYPE_BASEPATH}/map-search.json",
+                  "https://www.amplience.com/examples/productlist.json",
+                  "{CONTENT_TYPE_BASEPATH}/video-yuca.json"
                 ]
               }
             }

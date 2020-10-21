@@ -52,6 +52,46 @@ export const sampleContentYoutube = {
   "component": "Video",
   "addYoutube": "https://www.youtube.com/embed/EdD99M8c4us"
 }
+export const sampeContentBGTY = {
+  "content": {
+    "_meta": {
+      "name": "Advanced Banner (CC)",
+      "schema": "https://amplience.com/composablecommerce/advanced-banner.json",
+      "deliveryId": "72df49b4-4b7c-439c-a2ed-b35a8c54132a"
+    },
+    "bannerImage": {
+      "imageholder": {
+        "image": {
+          "poi": {
+            "x": -1,
+            "y": -1
+          },
+          "fliph": false,
+          "flipv": false
+        }
+      },
+      "gifImage": false,
+      "togglePOI": false,
+      "hotspots": false,
+      "component": "Image",
+      "_meta": {
+        "schema": "https://amplience.com/composablecommerce/image.json"
+      }
+    },
+    "hideMobileText": false,
+    "hasVideo": true,
+    "video": {
+      "backgroundFullScreen": true,
+      "backgroundEffect": false,
+      "component": "Video",
+      "addYoutube": "https://www.youtube.com/embed/hpIYQdnnzOI",
+      "_meta": {
+        "schema": "https://amplience.com/composablecommerce/video.json"
+      }
+    },
+    "showVideoTitle": false
+  }
+}
 
 storiesOf('Video', module)
   .add('OLD CS Example content', () => renderContent('amp-template-video', sampleContent))

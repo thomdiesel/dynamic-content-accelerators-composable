@@ -283,10 +283,10 @@
 
   function initPOI() {
     var params = window.poiDefaults || {
-      domain: '//i1.adis.ws',
+      domain: '//i1-mid.adis.ws',
       account: '{COMPANY_TAG}',
-      containerClass: 'amp-dc-poi-image',
-      imgClass: 'amp-dc-image-pic',
+      containerClass: 'amp-dc-image-pic-wrap-hotspots',
+      imgClass: 'amp-dc-image-pic', 
       images: [{
         name: '*',
         polygonCallbacks: [
@@ -295,6 +295,14 @@
             action: "click",
             callback: function (evt, settings) {
               console.log('generic click', settings);
+              if( settings.polygon.selector == "product"){
+                // Go to the product URL
+                var link = 'https://amplience02-tech-prtnr-na03-dw.demandware.net/s/RefArchGlobal/amp-product-link/' + settings.polygon.target + '.html';
+                window.open(link,"_self");
+              } else{
+                // just go to the URL
+                window.open(settings.polygon.target,"_self");
+              }
 
             },
             initCallback: function (settings) {
@@ -308,6 +316,13 @@
             action: "click",
             callback: function (evt, settings) {
               console.log('yay, i was clicked :)', settings);
+              if( settings.hotspot.selector == "product"){
+                // Go to the product URL
+                var link = 'https://amplience02-tech-prtnr-na03-dw.demandware.net/s/RefArchGlobal/amp-product-link/' + settings.hotspot.target + '.html';
+                window.open(link,"_self");
+              } else {
+                window.open(settings.hotspot.target,"_self");
+              }
             },
             initCallback: function (settings) {
               console.log('init callback hotspot', settings);

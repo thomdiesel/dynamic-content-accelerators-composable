@@ -1,4 +1,4 @@
-<div class="amp-dc-image-pic-wrap">
+<div class="{{#if hotspots}}amp-dc-image-pic-wrap-hotspots {{/if}}amp-dc-image-pic-wrap">
     {{#is imageEffect 'Parallax'}}
         {{#if gifImage}}
             <div class="o-dc-parrallax" data-ios-disabled="false" data-android-disabled="false" data-parallax="scroll" data-bleed="0" data-position="center center" data-speed="0.0" data-image-src="//{{imageholder.image.image.endpoint}}.a.bigcontent.io/v1/static/{{encodeURI imageholder.image.image.name}}"  data-mirror-container=".amp-dc-advanced-banner-mirror-{{encodeURI imageholder.image.image.name}}"></div>
@@ -8,26 +8,43 @@
     {{else}}
     <picture class="amp-dc-image {{#is imageEffect 'Zoom-in dark'}} hovereffect ehover1 {{/is}}{{#is imageEffect 'Zoom-in blur'}} hovereffect ehover3 {{/is}}{{#is imageEffect 'Linear'}} hovereffect ehover12 {{/is}}{{#is imageEffect 'Double-line Horizontal'}} hovereffect ehover13 {{/is}}">
         {{#if gifImage}}
-            <img loading="lazy" src="//{{imageholder.image.image.endpoint}}.a.bigcontent.io/v1/static/{{encodeURI imageholder.image.image.name}}" {{#if imageAltText}}alt="{{imageAltText}}"{{/if}}>
+            <img loading="lazy" class="amp-dc-image-pic" src="//{{imageholder.image.image.endpoint}}.a.bigcontent.io/v1/static/{{encodeURI imageholder.image.image.name}}" {{#if imageAltText}}alt="{{imageAltText}}"{{/if}}>
         {{else}}
             {{#if togglePOI}}
-            <source media="(max-width: 640px)" srcset="//{{imageholder.image.image.defaultHost}}/i/{{imageholder.image.image.endpoint}}/{{encodeURI imageholder.image.image.name}}.webp?w=640&qlt=75" type="image/webp">
+                <source media="(max-width: 640px)" srcset="//{{imageholder.image.image.defaultHost}}/i/{{imageholder.image.image.endpoint}}/{{encodeURI imageholder.image.image.name}}.webp?w=640&qlt=75" type="image/webp">
                 <source media="(max-width: 768px)" srcset="//{{imageholder.image.image.defaultHost}}/i/{{imageholder.image.image.endpoint}}/{{encodeURI imageholder.image.image.name}}.webp?w=1024&qlt=75" type="image/webp">
                 <source media="(min-width: 768px)" srcset="//{{imageholder.image.image.defaultHost}}/i/{{imageholder.image.image.endpoint}}/{{encodeURI imageholder.image.image.name}}.webp?w=1440&qlt=75" type="image/webp">
+                <source media="(min-width: 1024px)" srcset="//{{imageholder.image.image.defaultHost}}/i/{{imageholder.image.image.endpoint}}/{{encodeURI imageholder.image.image.name}}.webp?w=2000&qlt=75" type="image/webp">
 
                 <source media="(max-width: 640px)" srcset="//{{imageholder.image.image.defaultHost}}/i/{{imageholder.image.image.endpoint}}/{{encodeURI imageholder.image.image.name}}?w=640&qlt=75" type="image/jpeg">
                 <source media="(max-width: 768px)" srcset="//{{imageholder.image.image.defaultHost}}/i/{{imageholder.image.image.endpoint}}/{{encodeURI imageholder.image.image.name}}?w=1024&qlt=75" type="image/jpeg">
                 <source media="(min-width: 768px)" srcset="//{{imageholder.image.image.defaultHost}}/i/{{imageholder.image.image.endpoint}}/{{encodeURI imageholder.image.image.name}}?w=1440&qlt=75" type="image/jpeg">
-                <img loading="lazy" src="//{{imageholder.image.image.defaultHost}}/i/{{imageholder.image.image.endpoint}}/{{encodeURI imageholder.image.image.name}}" {{#if imageAltText}}alt="{{imageAltText}}"{{/if}}>
+                <source media="(min-width: 1024px)" srcset="//{{imageholder.image.image.defaultHost}}/i/{{imageholder.image.image.endpoint}}/{{encodeURI imageholder.image.image.name}}?w=2000&qlt=75" type="image/jpeg">
+                <img loading="lazy" class="amp-dc-image-pic" src="//{{imageholder.image.image.defaultHost}}/i/{{imageholder.image.image.endpoint}}/{{encodeURI imageholder.image.image.name}}" {{#if imageAltText}}alt="{{imageAltText}}"{{/if}}>
             {{else}}
-            <source media="(max-width: 640px)" srcset="//{{imageholder.image.image.defaultHost}}/i/{{imageholder.image.image.endpoint}}/{{encodeURI imageholder.image.image.name}}.webp?$poi${{#if imageholder.image.query}}&{{{imageholder.image.query}}}{{/if}}&w=640&sm=aspect&aspect=1:1&qlt=75" type="image/webp">
-                <source media="(max-width: 768px)" srcset="//{{imageholder.image.image.defaultHost}}/i/{{imageholder.image.image.endpoint}}/{{encodeURI imageholder.image.image.name}}.webp?$poi${{#if imageholder.image.query}}&{{{imageholder.image.query}}}{{/if}}&w=1024&sm=aspect&aspect=4:3&qlt=75" type="image/webp">
-                <source media="(min-width: 768px)" srcset="//{{imageholder.image.image.defaultHost}}/i/{{imageholder.image.image.endpoint}}/{{encodeURI imageholder.image.image.name}}.webp?$poi${{#if imageholder.image.query}}&{{{imageholder.image.query}}}{{/if}}&w=1440&sm=aspect&aspect=2:1&qlt=75" type="image/webp">
+                    {{#if hotspots}}
+                    <source media="(max-width: 640px)" srcset="//{{imageholder.image.image.defaultHost}}/i/{{imageholder.image.image.endpoint}}/{{encodeURI imageholder.image.image.name}}.webp?w=640&qlt=75" type="image/webp">
+                        <source media="(max-width: 768px)" srcset="//{{imageholder.image.image.defaultHost}}/i/{{imageholder.image.image.endpoint}}/{{encodeURI imageholder.image.image.name}}.webp?w=1024&qlt=75" type="image/webp">
+                        <source media="(min-width: 768px)" srcset="//{{imageholder.image.image.defaultHost}}/i/{{imageholder.image.image.endpoint}}/{{encodeURI imageholder.image.image.name}}.webp?w=1440&qlt=75" type="image/webp">
+                        <source media="(min-width: 1024px)" srcset="//{{imageholder.image.image.defaultHost}}/i/{{imageholder.image.image.endpoint}}/{{encodeURI imageholder.image.image.name}}.webp?w=2000&qlt=75" type="image/webp">
+        
+                        <source media="(max-width: 640px)" srcset="//{{imageholder.image.image.defaultHost}}/i/{{imageholder.image.image.endpoint}}/{{encodeURI imageholder.image.image.name}}?w=640&qlt=75" type="image/jpeg">
+                        <source media="(max-width: 768px)" srcset="//{{imageholder.image.image.defaultHost}}/i/{{imageholder.image.image.endpoint}}/{{encodeURI imageholder.image.image.name}}?w=1024&qlt=75" type="image/jpeg">
+                        <source media="(min-width: 768px)" srcset="//{{imageholder.image.image.defaultHost}}/i/{{imageholder.image.image.endpoint}}/{{encodeURI imageholder.image.image.name}}?w=1440&qlt=75" type="image/jpeg">
+                        <source media="(min-width: 1024px)" srcset="//{{imageholder.image.image.defaultHost}}/i/{{imageholder.image.image.endpoint}}/{{encodeURI imageholder.image.image.name}}?w=2000&qlt=75" type="image/jpeg">
+                        <img loading="lazy" class="amp-dc-image-pic" src="//{{imageholder.image.image.defaultHost}}/i/{{imageholder.image.image.endpoint}}/{{encodeURI imageholder.image.image.name}}" {{#if imageAltText}}alt="{{imageAltText}}"{{/if}}>
+                    {{else}}
+                        <source media="(max-width: 640px)" srcset="//{{imageholder.image.image.defaultHost}}/i/{{imageholder.image.image.endpoint}}/{{encodeURI imageholder.image.image.name}}.webp?$poi${{#if imageholder.image.query}}&{{{imageholder.image.query}}}{{/if}}&w=640&sm=aspect&aspect=1:1&qlt=75" type="image/webp">
+                        <source media="(max-width: 768px)" srcset="//{{imageholder.image.image.defaultHost}}/i/{{imageholder.image.image.endpoint}}/{{encodeURI imageholder.image.image.name}}.webp?$poi${{#if imageholder.image.query}}&{{{imageholder.image.query}}}{{/if}}&w=1024&sm=aspect&aspect=4:3&qlt=75" type="image/webp">
+                        <source media="(min-width: 768px)" srcset="//{{imageholder.image.image.defaultHost}}/i/{{imageholder.image.image.endpoint}}/{{encodeURI imageholder.image.image.name}}.webp?$poi${{#if imageholder.image.query}}&{{{imageholder.image.query}}}{{/if}}&w=1440&sm=aspect&aspect=2:1&qlt=75" type="image/webp">
+                        <source media="(min-width: 1024px)" srcset="//{{imageholder.image.image.defaultHost}}/i/{{imageholder.image.image.endpoint}}/{{encodeURI imageholder.image.image.name}}.webp?$poi${{#if imageholder.image.query}}&{{{imageholder.image.query}}}{{/if}}&w=2000&qlt=75" type="image/webp">
 
-                <source media="(max-width: 640px)" srcset="//{{imageholder.image.image.defaultHost}}/i/{{imageholder.image.image.endpoint}}/{{encodeURI imageholder.image.image.name}}?$poi${{#if imageholder.image.query}}&{{{imageholder.image.query}}}{{/if}}&w=640&sm=aspect&aspect=1:1&qlt=75" type="image/jpeg">
-                <source media="(max-width: 768px)" srcset="//{{imageholder.image.image.defaultHost}}/i/{{imageholder.image.image.endpoint}}/{{encodeURI imageholder.image.image.name}}?$poi${{#if imageholder.image.query}}&{{{imageholder.image.query}}}{{/if}}&w=1024&sm=aspect&aspect=4:3&qlt=75" type="image/jpeg">
-                <source media="(min-width: 768px)" srcset="//{{imageholder.image.image.defaultHost}}/i/{{imageholder.image.image.endpoint}}/{{encodeURI imageholder.image.image.name}}?$poi${{#if imageholder.image.query}}&{{{imageholder.image.query}}}{{/if}}&w=1440&sm=aspect&aspect=2:1&qlt=75" type="image/jpeg">
-                <img loading="lazy" class="amp-dc-image-pic" src="//{{imageholder.image.image.defaultHost}}/i/{{imageholder.image.image.endpoint}}/{{encodeURI imageholder.image.image.name}}?$poi${{#if imageholder.image.query}}&{{{imageholder.image.query}}}{{/if}}&w=1440&sm=aspect&aspect={{#if smallerheight}}3{{else}}2{{/if}}:1&qlt=75" {{#if imageAltText}}alt="{{imageAltText}}"{{/if}}>
+                        <source media="(max-width: 640px)" srcset="//{{imageholder.image.image.defaultHost}}/i/{{imageholder.image.image.endpoint}}/{{encodeURI imageholder.image.image.name}}?$poi${{#if imageholder.image.query}}&{{{imageholder.image.query}}}{{/if}}&w=640&sm=aspect&aspect=1:1&qlt=75" type="image/jpeg">
+                        <source media="(max-width: 768px)" srcset="//{{imageholder.image.image.defaultHost}}/i/{{imageholder.image.image.endpoint}}/{{encodeURI imageholder.image.image.name}}?$poi${{#if imageholder.image.query}}&{{{imageholder.image.query}}}{{/if}}&w=1024&sm=aspect&aspect=4:3&qlt=75" type="image/jpeg">
+                        <source media="(min-width: 768px)" srcset="//{{imageholder.image.image.defaultHost}}/i/{{imageholder.image.image.endpoint}}/{{encodeURI imageholder.image.image.name}}?$poi${{#if imageholder.image.query}}&{{{imageholder.image.query}}}{{/if}}&w=1440&sm=aspect&aspect=2:1&qlt=75" type="image/jpeg">
+                        <source media="(min-width: 1024px)" srcset="//{{imageholder.image.image.defaultHost}}/i/{{imageholder.image.image.endpoint}}/{{encodeURI imageholder.image.image.name}}?$poi${{#if imageholder.image.query}}&{{{imageholder.image.query}}}{{/if}}&w=2000&qlt=75" type="image/jpeg">
+                        <img loading="lazy" class="amp-dc-image-pic" src="//{{imageholder.image.image.defaultHost}}/i/{{imageholder.image.image.endpoint}}/{{encodeURI imageholder.image.image.name}}?$poi${{#if imageholder.image.query}}&{{{imageholder.image.query}}}{{/if}}&w=1440&sm=aspect&aspect={{#if smallerheight}}3{{else}}2{{/if}}:1&qlt=75" {{#if imageAltText}}alt="{{imageAltText}}"{{/if}}>
+                    {{/if}}
             {{/if}}
         {{/if}}
         <div class="overlay"></div>

@@ -33,9 +33,16 @@
 		},
 		"locationName": {
 			"title": "Store Name ",
-			"description": "Short name of location to show, ex \"Athleta NYC Flagship\"",
+			"description": "Short name of location to show, ex \"headquarters\"",
 			"type": "string",
 			"maxLength": 56
+		},
+		"address": {
+			"title": "Address",
+			"description": "The address of the store",
+			"type": "string",
+			"format": "markdown",
+			"maxLength": 1000
 		},
 		"theme": {
 			"title": "Theme",

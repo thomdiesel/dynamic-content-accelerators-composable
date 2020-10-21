@@ -254,7 +254,7 @@
                     <h2>
                       {{#helpers.highlight}}{ "attribute": "locationName" }{{/helpers.highlight}}
                     </h2>
-                    <p>{{ locationName }}</p>
+                    <p>{{ address }}</p>
                   `,
               },
             }),

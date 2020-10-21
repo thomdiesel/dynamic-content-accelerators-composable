@@ -1,0 +1,5 @@
+{
+    "body": "../content-schemas/navigation-slot-localised.json",
+    "schemaId": "{CONTENT_TYPE_BASEPATH}/navigation-slot-localised.json",
+    "validationLevel": "SLOT"
+  }

@@ -1,8 +1,9 @@
 {{#if addYoutube}}
 <div class="o-dc-video-iframe" {{#if backgroundFullScreen}}style="z-index:-99"{{/if}}>
   <iframe
-    src="{{addYoutube}}?{{#if backgroundFullScreen}}&autoplay=1{{/if}}{{#if backgroundFullScreen}}&controls=0{{/if}}"
+    src="https://www.youtube.com/embed/{{addYoutube}}?playlist={{addYoutube}}{{#if backgroundFullScreen}}&autoplay=1&mute=1&loop=1{{/if}}{{#if backgroundFullScreen}}&controls=0{{/if}}"
     frameborder="0"
+    {{#if backgroundFullScreen}}controls="0"{{/if}}
     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
     allowfullscreen
   ></iframe>
@@ -29,7 +30,7 @@
     videoThumbnail.name}}?w=1440&sm=aspect&aspect=16:9&qlt=80{{else}}{{amplienceVideo.defaultHost}}/v/{{amplienceVideo.endpoint}}/{{amplienceVideo.name}}{{/if}}')"
     {{#if videoAutoPlay}}autoplay="1"{{/if}} {{#unless
     hidePlayButton}}controls="true"{{/unless}}
-    src="//media.kipling.com/v/{{amplienceVideo.endpoint}}/{{amplienceVideo.name}}/mp4_720p?protocol=https"
+    src="///{{amplienceVideo.defaultHost}}/v/{{amplienceVideo.endpoint}}/{{amplienceVideo.name}}/mp4_720p?protocol=https"
     > {{/if}}
 
     <source

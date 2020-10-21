@@ -1,0 +1,14 @@
+<div class="amp-dc-product-code-search">
+    {{#if header}}
+    <h1 class="o-dc-text-headline1  text-align-center" style="margin:0 auto; width:100%; text-align:center">
+        {{ header }}
+    </h1>
+    {{/if}}
+    <div class="amp-dc-product-list">
+        <div class="grid-x grid-padding-x o-dc-card-list o-dc-card2-slider" role="toolbar">
+            {{#each productList}}
+                <div class="cell medium-6 large-3 o-dc-card2-slider-item" data-amp-sfcc-product-code="{{this}}">Loading...</div>
+            {{/each}}
+        </div>
+    </div>
+</div>

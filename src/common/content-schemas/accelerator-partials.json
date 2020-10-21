@@ -38,7 +38,7 @@
           "enum": ["small", "medium", "large"]
         },
         "fontWeight": {
-          "title": "Subheader Font Weight",
+          "title": "Font Weight",
           "description": "Specify a font weight",
           "type": "string",
           "enum": ["normal", "bold"]
@@ -78,7 +78,7 @@
           "enum": ["small", "medium", "large"]
         },
         "fontWeight": {
-          "title": "Subheader Font Weight",
+          "title": "Font Weight",
           "description": "Specify a font weight",
           "type": "string",
           "enum": ["normal", "bold"]

@@ -2589,6 +2589,43 @@
       total: 41,
     };
 
+    // Get all individual product codes
+    var products = document.querySelectorAll('[data-amp-sfcc-product-code]');
+    products.forEach(function (item) {
+      console.log('Found a product to load');
+      var productCode = item.getAttribute('data-amp-sfcc-product-code');
+        $.ajax({
+            url: 'https://amplience02-tech-prtnr-na03-dw.demandware.net/s/RefArchGlobal/dw/shop/v16_1/products/' + productCode + '?client_id=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&expand=prices,images,availability,variations',
+            context: item,
+            success: function(data) {
+                var image = data.image_groups.find(x => x.view_type === 'large').images[0].link;
+                var link = 'https://amplience02-tech-prtnr-na03-dw.demandware.net/s/RefArchGlobal/amp-product-link/' + data.id + '.html';
+                var name = data.name;
+                var price = '&pound;' + data.price;
+                
+                var html =
+                '<a class="o-dc-card card-bg  card2" href="' +
+                link +
+                '"><div class="amp-dc-card-wrap"><div class="o-dc-card-img"><picture class="amp-dc-image"><img loading="lazy" src="' +
+                image +
+                '?$product-list$" class="amp-dc-image-pic"/></picture></div><div class="o-dc-card-text"><h4 class="o-dc-card-title">' +
+                name +
+                '</h4><p class="o-dc-card-copy extra-padding-bottom">' +
+                price +
+                '</p><div class="cell large-shrink"><div class="o-dc-button small">Shop Now</div></div></div></div></a>';
+
+
+
+
+                //var html = '<a class="amp-dc-card-wrap" href="https://amplience02-tech-prtnr-na03-dw.demandware.net/s/RefArchGlobal/amp-product-link/' + data.id + '.html"><div class="amp-dc-card-wrap"><div class="amp-dc-card-img-wrap"><picture class="amp-dc-image"><img src="' + image + '" class="amp-dc-image-pic"/></picture></div><div class="amp-dc-card-text-wrap"><div class="amp-dc-card-name">' + data.name + '</div><p class="amp-dc-card-description">&pound;' + data.price + '</p><div class="amp-dc-card-link">SHOP NOW</div></div></a></div>'
+                $(item).html(html);
+            }
+        })
+    });
+
+
+
+
     // Get all maps
     var searches = document.querySelectorAll('[data-amp-sfcc-product-search]');
     searches.forEach(function (searchdom) {

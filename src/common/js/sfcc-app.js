@@ -2595,11 +2595,11 @@
       console.log('Found a product to load');
       var productCode = item.getAttribute('data-amp-sfcc-product-code');
         $.ajax({
-            url: 'https://amplience02-tech-prtnr-na03-dw.demandware.net/s/RefArchGlobal/dw/shop/v16_1/products/' + productCode + '?client_id=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&expand=prices,images,availability,variations',
+            url: 'https://zzfr-002.sandbox.us01.dx.commercecloud.salesforce.com/s/RefArchGlobal/dw/shop/v20_4/products/' + productCode + '?client_id=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&expand=prices,images,availability,variations',
             context: item,
             success: function(data) {
                 var image = data.image_groups.find(x => x.view_type === 'large').images[0].link;
-                var link = 'https://amplience02-tech-prtnr-na03-dw.demandware.net/s/RefArchGlobal/amp-product-link/' + data.id + '.html';
+                var link = 'https://zzfr-002.sandbox.us01.dx.commercecloud.salesforce.com/s/RefArchGlobal/amp-product-link/' + data.id + '.html';
                 var name = data.name;
                 var price = '&pound;' + data.price;
                 
@@ -2613,11 +2613,6 @@
                 '</h4><p class="o-dc-card-copy extra-padding-bottom">' +
                 price +
                 '</p><div class="cell large-shrink"><div class="o-dc-button small">Shop Now</div></div></div></div></a>';
-
-
-
-
-                //var html = '<a class="amp-dc-card-wrap" href="https://amplience02-tech-prtnr-na03-dw.demandware.net/s/RefArchGlobal/amp-product-link/' + data.id + '.html"><div class="amp-dc-card-wrap"><div class="amp-dc-card-img-wrap"><picture class="amp-dc-image"><img src="' + image + '" class="amp-dc-image-pic"/></picture></div><div class="amp-dc-card-text-wrap"><div class="amp-dc-card-name">' + data.name + '</div><p class="amp-dc-card-description">&pound;' + data.price + '</p><div class="amp-dc-card-link">SHOP NOW</div></div></a></div>'
                 $(item).html(html);
             }
         })
@@ -2637,7 +2632,7 @@
       var sortby = searchdom.getAttribute('data-amp-product-search-sortby'); 
 
       var req =
-        'https://amplience02-tech-prtnr-na03-dw.demandware.net/s/RefArchGlobal/dw/shop/v16_1/product_search?';
+        'https://zzfr-002.sandbox.us01.dx.commercecloud.salesforce.com/s/RefArchGlobal/dw/shop/v20_4/product_search?';
       if (query) req += '&q=' + query;
       if (numItems) req += '&count=' + numItems;
       if (category) req += '&refine_1=cgid=' + category;
@@ -2686,7 +2681,7 @@
               var link =
                 'https://amplience02-tech-prtnr-na03-dw.demandware.net/s/RefArchGlobal/amplience-product-link/' +
                 item.product_id +
-                '.html?lang=default'; //item.link;
+                '.html?lang=default';
               var image = item.image.link;
               var name = item.product_name;
               var price = '&pound;' + item.price;

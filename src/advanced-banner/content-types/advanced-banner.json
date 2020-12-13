@@ -3,12 +3,7 @@
   "settings": {
     "label": "Advanced Banner",
     "visualizations": [
-      {VISUALIZATIONS},
-      {
-        "label": "test!!!",
-        "templatedUri": "https://mytest.com/testappend.html",
-        "default": false
-      }
+      {VISUALIZATIONS}
     ],
     "icons": [
       {

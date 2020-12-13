@@ -4,6 +4,15 @@
         <ul class="amp-dc-slider-slides js_slides">
             {{#each slides}}
             <li class="amp-dc-slider-slide js_dc_slide">
+                {{#if (test this.[@type] (toRegex ".*/simple-image-banner.json")) ~}}
+                    {{> amp-template-simple-image-banner }}
+                {{~/if}}
+                {{#if (test this.[@type] (toRegex ".*/advanced-banner.json")) ~}}
+                    {{> amp-template-advanced-banner }}
+                {{~/if}}
+                {{#if (test this.[@type] (toRegex ".*/countdown-banner.json")) ~}}
+                    {{> amp-template-countdown-banner }}
+                {{~/if}}
                 {{#if (test this.[@type] (toRegex ".*/banner")) ~}}
                 {{> amp-template-banner }}
                 {{~/if}}

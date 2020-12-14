@@ -19,7 +19,7 @@
     if (sDefault) return sDefault;
   };
 
-  var vse = getUrlParameter('vse', 'visiondirect.cdn.content.amplience.net');
+  var vse = getUrlParameter('vse', 'specializeddemo.cdn.content.amplience.net');
   var crsvse = getUrlParameter('vse', 'c1-orig.adis.ws');
   // Removed as we will get this from the DIV attributes
   /*
@@ -27,7 +27,7 @@
   var menukey = getUrlParameter('menukey', 'web/navigation');
   */
   var mainContentKey = getUrlParameter('key', '');
-  var locale = getUrlParameter('locale', 'en-GB,en-*,*');
+  var locale = getUrlParameter('locale', 'en-US,en-*,*');
   var cid = getUrlParameter('cid');
   var timestamp = getUrlParameter('timestamp');
   var segmentParam = getUrlParameter('segment');

@@ -1,6 +1,6 @@
 {
-    "id" : "null",
-    "hubId" : "null",
+    "id" : null,
+    "hubId" : null,
     "name" : "rich-text",
     "label" : "Rich Text",
     "description" : "Custom Rich Text Control",

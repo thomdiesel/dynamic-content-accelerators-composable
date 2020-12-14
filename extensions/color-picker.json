@@ -1,6 +1,6 @@
 {
-    "id" : "null",
-    "hubId" : "null",
+    "id" : null,
+    "hubId" : null,
     "name" : "color-picker",
     "label" : "Color Picker",
     "description" : "Pick from a palette",

@@ -145,8 +145,6 @@ gulp.task('deploy-extensions-dc', function (cb) {
             {
               url:
                 config.amplience["dynamic-content"]['api-url'] +
-                '/hubs/' +
-                config.amplience["dynamic-content"]['dc-hub-id'] +
                 '/extensions/' +
                 match['id'],
 

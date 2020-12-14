@@ -1,0 +1,16 @@
+{
+    "id" : null,
+    "hubId" : null,
+    "name" : "date-picker",
+    "label" : "Date Picker",
+    "description" : "Pick from a Date / Time",
+    "url" : "https://presalesadisws.s3.eu-west-1.amazonaws.com/ui-extensions/date-picker/index.html",
+    "height" : 200,
+    "category" : "CONTENT_FIELD",
+    "parameters" : "{}",
+    "snippets" : [ {
+      "label" : "Date Picker",
+      "body" : "{\r\n      \"title\": \"Date\",\r\n      \"description\": \"A date \/ time\",\r\n      \"type\": \"string\",\r\n      \"format\": \"date-time\",\r\n      \"minLength\": 0,\r\n      \"maxLength\": 50,\r\n      \"examples\": [\"2020-12-15T00:00:00Z\", \"2021-01-05T06:44:03Z\"],\r\n      \"$comment\": \"A string property with the date format stored in UTC\",\r\n      \"ui:extension\": {\r\n        \"name\": \"date-picker\"\r\n      }\r\n    }"
+    } ],
+    "status" : "ACTIVE"
+  }
